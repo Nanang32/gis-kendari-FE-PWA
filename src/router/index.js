@@ -1,9 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import SideMenu from "../layouts/side-menu/Main.vue";
-import SimpleMenu from "../layouts/simple-menu/Main.vue";
-import TopMenu from "../layouts/top-menu/Main.vue";
 import Page1 from "../views/page-1/Main.vue";
 import Page2 from "../views/page-2/Main.vue";
+import Home from "../views/public/Index.vue";
 
 const routes = [
   {
@@ -20,39 +19,12 @@ const routes = [
         name: "side-menu-page-2",
         component: Page2,
       },
+
     ],
   },
   {
-    path: "/simple-menu",
-    component: SimpleMenu,
-    children: [
-      {
-        path: "page-1",
-        name: "simple-menu-page-1",
-        component: Page1,
-      },
-      {
-        path: "page-2",
-        name: "simple-menu-page-2",
-        component: Page2,
-      },
-    ],
-  },
-  {
-    path: "/top-menu",
-    component: TopMenu,
-    children: [
-      {
-        path: "page-1",
-        name: "top-menu-page-1",
-        component: Page1,
-      },
-      {
-        path: "page-2",
-        name: "top-menu-page-2",
-        component: Page2,
-      },
-    ],
+    path: "/home",
+    component: Home
   },
 ];
 
