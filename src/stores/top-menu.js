@@ -5,7 +5,7 @@ export const useTopMenuStore = defineStore("topMenu", {
     menu: [
       {
         icon: "HomeIcon",
-        pageName: "top-menu-home",
+        pageName: "home",
         title: "Beranda",
       },
       {
@@ -15,61 +15,107 @@ export const useTopMenuStore = defineStore("topMenu", {
         subMenu: [
           {
             icon: "",
-            pageName: "profile-visimisi",
+            pageName: "visimisi",
             title: "Visi & Misi",
           },
           {
             icon: "",
-            pageName: "profile-tugasfungsi",
+            pageName: "tugasfungsi",
             title: "Tugas & Fungsi",
           },
           {
             icon: "",
-            pageName: "profile-strukturorg",
+            pageName: "profdinas",
             title: "Struktur Organisasi",
           },
           {
             icon: "",
-            pageName: "profile-profdinas",
+            pageName: "profdinas",
             title: "Profile Dinas",
           },
           {
             icon: "",
-            pageName: "profile-sekret",
+            pageName: "profsekret",
             title: "Profile Sekertariat",
           },
           {
             icon: "",
-            pageName: "profile-profbid",
+            pageName: "profbid",
             title: "Profile Tiap Bidang",
           },
           {
             icon: "",
-            pageName: "profile-profuptd",
+            pageName: "profuptd",
             title: "Profile UPTD",
           },
         ],
       },
       {
         icon: "HomeIcon",
-        pageName: "top-menu-publikasi",
+        pageName: "publikasi",
         title: "Publikasi",
+        subMenu:[
+          {
+            icon: "",
+            pageName: "prodhukum",
+            title: "Produk Hukum",
+          },
+          {
+            icon: "",
+            pageName: "renstra",
+            title: "Rencana Strategis",
+          },
+          {
+            icon: "",
+            pageName: "kinpekerjaan",
+            title: "Kinerja Pekerjaan",
+          },
+        ],
       },
       {
         icon: "HomeIcon",
-        pageName: "top-menu-gallery",
+        pageName: "gallery",
         title: "Gallery",
+        subMenu:[
+          {
+            icon: "",
+            pageName: "news",
+            title: "Berita",
+          },
+          {
+            icon: "",
+            pageName: "agenda",
+            title: "Agenda",
+          },
+          {
+            icon: "",
+            pageName: "galleryphoto",
+            title: "Gallery Photo",
+          },
+          {
+            icon: "",
+            pageName: "galleryvideo",
+            title: "Gallery Video",
+          },
+        ],
       },
       {
         icon: "HomeIcon",
-        pageName: "top-menu-webgis",
+        pageName: "webgis",
         title: "WebGis",
       },
       
       {
         icon: "HomeIcon",
-        pageName: "top-menu-pelayanan",
+        pageName: "pelayanan",
         title: "pelayanan",
+        subMenu:[
+          {
+            icon:"",
+            pageName: "report",
+            title:"Pengaduan Masyarakat"
+          }
+        ]
       },
     ],
   }),

@@ -1,93 +1,145 @@
 import { createRouter, createWebHistory } from "vue-router";
 import TopMenu from "../layouts/top-menu/Main.vue";
-import Home from "../views/public/Home/Main.vue";
+import HomeIndex from "../views/public/Home/Main.vue";
 //profile
-import Profile from "../views/public/Profile/Main.vue";
-import Visimisi from "../views/public/Profile/visimisi.vue";
-import Tugasfungsi from "../views/public/Profile/tugasfungsi.vue";
-import Strukorg from "../views/public/Profile/strukturorg.vue";
-import Profilbid from "../views/public/Profile/profbid.vue";
-import Profileuptd from "../views/public/Profile/profuptd.vue";
-import Profilesekret from "../views/public/Profile/profsekret.vue";
+import ProfileIndex from "../views/public/Profile/Main.vue";
+import VisimisiIndex from "../views/public/Profile/visimisi.vue";
+import TugasfungsiIndex from "../views/public/Profile/tugasfungsi.vue";
+import StrukorgIndex from "../views/public/Profile/strukturorg.vue";
+import ProfilbidIndex from "../views/public/Profile/profbid.vue";
+import ProfileuptdIndex from "../views/public/Profile/profuptd.vue";
+import ProfilesekretIndex from "../views/public/Profile/profsekret.vue";
+import ProfiledinasIndex from "../views/public/Profile/profdinas.vue"
+//publikasi
+import PublicationIndex from "../views/public/Publication/Main.vue";
+import ProductoflawIndex from "../views/public/Publication/prodhukum.vue";
+import StrategicplanIndex from "../views/public/Publication/renstra.vue";
+import JobperformanceIndex from "../views/public/Publication/kinpekerjaan.vue";
+//gallery
+import GalleryIndex from "../views/public/Gallery/Main.vue";
+import GallerynewsIndex from "../views/public/Gallery/news.vue";
+import GalleryagendaIndex from "../views/public/Gallery/agenda.vue";
+import GalleryphotoIndex from "../views/public/Gallery/photoalbum.vue";
+import GalleryvideoIndex from "../views/public/Gallery/videoalbum.vue";
+import WebgisIndex from "../views/public/Webgis/Main.vue";
+import ServicesIndex from "../views/public/Services/Main.vue";
+import ServicesreportIndex from "../views/public/Services/report.vue";
 
-import Publication from "../views/public/Publication/Main.vue";
-import Gallery from "../views/public/Gallery/Main.vue";
-import Webgis from "../views/public/Webgis/Main.vue";
-import Services from "../views/public/Services/Main.vue";
 
 
-const routes = [
-  {
+const routes = [{
     path: "/",
     component: TopMenu,
-    children: [
-      {
-        path: "/",
-        name: "top-menu-home",
-        component: Home,
-      },
-      {
-        path: "/profile",
-        name: "top-menu-profile",
-        component: Profile,
-      },
-      {
-        path: "visimis",
-        name: "top-menu-visimisi",
-        component: Visimisi,
-      },
-      {
-        path: "tugasfungsi",
-        name: "top-menu-tugas-fungsi",
-        component: Tugasfungsi,
-      },
-      {
-        path: "profbid",
-        name: "top-menu-profbid",
-        component: Profilbid,
-      },
-      {
-        path: "profuptd",
-        name: "top-menu-profileuptd",
-        component: Profileuptd,
-      },
-      {
-        path: "profsekret",
-        name: "top-menu-profilesekret",
-        component: Profilesekret,
-      },
-      
-      {
-        path: "publikasi",
-        name: "top-menu-publikasi",
-        component: Publication,
-      },
-      {
-        path: "gallery",
-        name: "top-menu-gallery",
-        component: Gallery,
-      },
-      {
-        path: "webgis-2",
-        name: "top-menu-webgis",
-        component: Webgis,
-      },
-      {
-        path: "pelayanan",
-        name: "top-menu-pelayanan",
-        component: Services,
-      },
+    children: [{
+            path: "/home",
+            name: "home",
+            component: HomeIndex,
+        },
+        {
+            path: "/profile",
+            name: "profile",
+            component: ProfileIndex,
+        },
+        {
+            path: "visimisi",
+            name: "visimisi",
+            component: VisimisiIndex,
+        },
+        {
+            path: "profdinas",
+            name: "profdinas",
+            component: ProfiledinasIndex,
+        },
+        {
+            path: "tugasfungsi",
+            name: "tugasfungsi",
+            component: TugasfungsiIndex,
+        },
+        {
+            path: "profbid",
+            name: "profbid",
+            component: ProfilbidIndex,
+        },
+        {
+            path: "profuptd",
+            name: "profuptd",
+            component: ProfileuptdIndex,
+        },
+        {
+            path: "profsekret",
+            name: "profsekret",
+            component: ProfilesekretIndex,
+        },
 
+        {
+            path: "publikasi",
+            name: "publikasi",
+            component: PublicationIndex,
+        },
+        {
+            path: "prodhukum",
+            name: "prodhukum",
+            component: ProductoflawIndex,
+        },
+        {
+            path: "renstra",
+            name: "renstra",
+            component: StrategicplanIndex,
+        },
+        {
+            path: "kinpekerjaan",
+            name: "kinpekerjaan",
+            component: JobperformanceIndex,
+        },
+        {
+            path: "gallery",
+            name: "gallery",
+            component: GalleryIndex,
+        },
+        {
+            path: "news",
+            name: "news",
+            component: GallerynewsIndex,
+        },
+        {
+            path: "agenda",
+            name: "agenda",
+            component: GalleryagendaIndex,
+        },
+        {
+            path: "galleryphoto",
+            name: "galleryphoto",
+            component: GalleryphotoIndex,
+        },
+        {
+            path: "galleryvideo",
+            name: "galleryvideo",
+            component: GalleryvideoIndex,
+        },
+        {
+            path: "webgis",
+            name: "webgis",
+            component: WebgisIndex,
+        },
+        {
+            path: "pelayanan",
+            name: "pelayanan",
+            component: ServicesIndex,
+        },
+        {
+            path: "report",
+            name: "report",
+            component: ServicesreportIndex,
+        },
     ],
-  },
-];
+}, ];
 
 const router = createRouter({
-  history: createWebHistory(),
-  routes,
-  scrollBehavior(to, from, savedPosition) {
-    return savedPosition || { left: 0, top: 0 };
-  },
+    history: createWebHistory(),
+    routes,
+    scrollBehavior(to, from, savedPosition) {
+        return savedPosition || { left: 0, top: 0 };
+    },
 });
 
 export default router;
