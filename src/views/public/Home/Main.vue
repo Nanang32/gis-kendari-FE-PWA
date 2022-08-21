@@ -95,14 +95,16 @@
                 v-for="(faker, fakerKey) in $_.take($f(), 6)"
                 :key="fakerKey"
                 class="h-64 px-2">
-                <div class="h-40 2xl:h-64 image-fit">
-                    <img alt="Midone Tailwind HTML Admin Template" class="rounded-md" :src="faker.images[0]" />
-                </div>
-                <a href="" class="block font-medium text-base mt-5">{{
-                    faker.news[0].title
-                    }}</a>
-                <div class="text-slate-600 dark:text-slate-500 mt-2">
-                    {{ faker.news[0].shortContent }}
+                <div class="px-2 intro-y col-span-12 md:col-span-3 box">
+                    <div class="h-40 2xl:h-64 image-fit">
+                        <img alt="Midone Tailwind HTML Admin Template" class="rounded-md" :src="faker.images[0]" />
+                    </div>
+                    <a href="" class="block font-medium text-base mt-5">{{
+                        faker.news[0].title
+                        }}</a>
+                    <div class="text-slate-600 dark:text-slate-500 mt-2">
+                        {{ faker.news[0].shortContent }}
+                    </div>
                 </div>
             </div>
         </TinySlider>
