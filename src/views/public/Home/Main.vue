@@ -23,7 +23,11 @@
                 </div>
                 <div class="col-span-12 xl:col-span-4">
                     <div class="mt-5">
-                        <div v-for="(faker, fakerKey) in $_.take($f(), 2)" :key="fakerKey" class="intro-y col-span-12 md:col-span-6 xl:col-span-3  mb-2 box">
+                        <div
+                            v-for="(faker, fakerKey) in $_.take($f(), 6)"
+                            :key="fakerKey"
+                            class="intro-y col-span-12 md:col-span-6 xl:col-span-3 mb-2 box"
+                        >
                             <div class="p-5">
                                 <div class="h-40 2xl:h-64 image-fit">
                                     <img alt="Midone Tailwind HTML Admin Template" class="rounded-md" :src="faker.images[0]" />
@@ -73,7 +77,7 @@
         <TinySlider :options="{
                     autoplay: false,
                     controls: true,
-                    items: 1,
+                    items: 4,
                     nav: true,
                     responsive: {
                       600: {
@@ -84,46 +88,18 @@
                       },
                     },
                   }">
-            <div class="h-32 px-2">
-                <div class="h-full bg-slate-100 dark:bg-darkmode-400 rounded-md">
-                    <h3 class="h-full font-medium flex items-center justify-center text-2xl">
-                        1
-                    </h3>
+            <div 
+                v-for="(faker, fakerKey) in $_.take($f(), 6)"
+                :key="fakerKey"
+                class="h-64 px-2">
+                <div class="h-40 2xl:h-64 image-fit">
+                    <img alt="Midone Tailwind HTML Admin Template" class="rounded-md" :src="faker.images[0]" />
                 </div>
-            </div>
-            <div class="h-32 px-2">
-                <div class="h-full bg-slate-100 dark:bg-darkmode-400 rounded-md">
-                    <h3 class="h-full font-medium flex items-center justify-center text-2xl">
-                        2
-                    </h3>
-                </div>
-            </div>
-            <div class="h-32 px-2">
-                <div class="h-full bg-slate-100 dark:bg-darkmode-400 rounded-md">
-                    <h3 class="h-full font-medium flex items-center justify-center text-2xl">
-                        3
-                    </h3>
-                </div>
-            </div>
-            <div class="h-32 px-2">
-                <div class="h-full bg-slate-100 dark:bg-darkmode-400 rounded-md">
-                    <h3 class="h-full font-medium flex items-center justify-center text-2xl">
-                        1
-                    </h3>
-                </div>
-            </div>
-            <div class="h-32 px-2">
-                <div class="h-full bg-slate-100 dark:bg-darkmode-400 rounded-md">
-                    <h3 class="h-full font-medium flex items-center justify-center text-2xl">
-                        2
-                    </h3>
-                </div>
-            </div>
-            <div class="h-32 px-2">
-                <div class="h-full bg-slate-100 dark:bg-darkmode-400 rounded-md">
-                    <h3 class="h-full font-medium flex items-center justify-center text-2xl">
-                        3
-                    </h3>
+                <a href="" class="block font-medium text-base mt-5">{{
+                    faker.news[0].title
+                    }}</a>
+                <div class="text-slate-600 dark:text-slate-500 mt-2">
+                    {{ faker.news[0].shortContent }}
                 </div>
             </div>
         </TinySlider>
