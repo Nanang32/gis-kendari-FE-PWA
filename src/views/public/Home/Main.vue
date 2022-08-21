@@ -80,6 +80,9 @@
                     items: 4,
                     nav: true,
                     responsive: {
+                      1280: {
+                        items: 4,
+                      },
                       600: {
                         items: 3,
                       },
