@@ -60,6 +60,7 @@
                                 <Tab class="w-full py-2" tag="button">Agenda</Tab>
                             </TabList>
                             <TabPanels class="mt-5">
+                                <!-- berita section -->
                                 <TabPanel class="leading-relaxed">
                                     <div class="intro-y grid grid-cols-12 gap-6 mt-5">
                                         <!-- BEGIN: Blog Layout -->
@@ -139,6 +140,8 @@
                                         <!-- END: Pagiantion -->
                                     </div>
                                 </TabPanel>
+                                <!-- end berita section -->
+                                <!-- video section -->
                                 <TabPanel class="leading-relaxed">
                                     <div class="intro-y grid grid-cols-12 gap-6 mt-5">
                                         <div v-for="(faker, fakerKey) in $_.take($f(), 6)" :key="fakerKey" class="intro-y col-span-12 md:col-span-6 xl:col-span-6 col-span-2  box">
@@ -160,6 +163,8 @@
                                         </div>
                                     </div>
                                 </TabPanel>
+                                <!-- end video section -->
+                                <!-- photo section -->
                                 <TabPanel class="leading-relaxed">
                                     <div class="intro-y grid grid-cols-12 gap-6 mt-5">
                                         <div v-for="(faker, fakerKey) in $_.take($f(), 6)" :key="fakerKey" class="intro-y col-span-12 md:col-span-6 xl:col-span-6 col-span-2  box">
@@ -185,9 +190,12 @@
                                         </div>
                                     </div>
                                 </TabPanel>
+                                <!-- end photo section -->
+                                <!-- agenda section -->
                                 <TabPanel class="leading-relaxed">
                                     agenda
                                 </TabPanel>
+                                <!-- agenda section -->
                             </TabPanels>
                         </TabGroup>
                     </Preview>
