@@ -25,126 +25,124 @@ import GalleryvideoIndex from "../views/public/Gallery/videoalbum.vue";
 import WebgisIndex from "../views/public/Webgis/Main.vue";
 import ServicesIndex from "../views/public/Services/Main.vue";
 import ServicesreportIndex from "../views/public/Services/report.vue";
+//admin
+import AdminNewsIndex from "../views/admin/blog.vue";
 
 
-
-const routes = [
-    {
+const routes = [{
         path: "/admin",
         component: SideMenu,
         children: [{
             path: "home",
             name: "adminhome",
-            component: GalleryIndex,
-            },
-        ],
+            component: AdminNewsIndex,
+        }, ],
     },
     {
-    path: "/public",
-    component: TopMenu,
-    children: [
-        {
-            path: "/home",
-            name: "home",
-            component: HomeIndex,
-        },
-        {
-            path: "/profile",
-            name: "profile",
-            component: ProfileIndex,
-        },
-        {
-            path: "visimisi",
-            name: "visimisi",
-            component: VisimisiIndex,
-        },
-        {
-            path: "profdinas",
-            name: "profdinas",
-            component: ProfiledinasIndex,
-        },
-        {
-            path: "tugasfungsi",
-            name: "tugasfungsi",
-            component: TugasfungsiIndex,
-        },
-        {
-            path: "profbid",
-            name: "profbid",
-            component: ProfilbidIndex,
-        },
-        {
-            path: "profuptd",
-            name: "profuptd",
-            component: ProfileuptdIndex,
-        },
-        {
-            path: "profsekret",
-            name: "profsekret",
-            component: ProfilesekretIndex,
-        },
+        path: "/public",
+        component: TopMenu,
+        children: [{
+                path: "/home",
+                name: "home",
+                component: HomeIndex,
+            },
+            {
+                path: "/profile",
+                name: "profile",
+                component: ProfileIndex,
+            },
+            {
+                path: "visimisi",
+                name: "visimisi",
+                component: VisimisiIndex,
+            },
+            {
+                path: "profdinas",
+                name: "profdinas",
+                component: ProfiledinasIndex,
+            },
+            {
+                path: "tugasfungsi",
+                name: "tugasfungsi",
+                component: TugasfungsiIndex,
+            },
+            {
+                path: "profbid",
+                name: "profbid",
+                component: ProfilbidIndex,
+            },
+            {
+                path: "profuptd",
+                name: "profuptd",
+                component: ProfileuptdIndex,
+            },
+            {
+                path: "profsekret",
+                name: "profsekret",
+                component: ProfilesekretIndex,
+            },
 
-        {
-            path: "publikasi",
-            name: "publikasi",
-            component: PublicationIndex,
-        },
-        {
-            path: "prodhukum",
-            name: "prodhukum",
-            component: ProductoflawIndex,
-        },
-        {
-            path: "renstra",
-            name: "renstra",
-            component: StrategicplanIndex,
-        },
-        {
-            path: "kinpekerjaan",
-            name: "kinpekerjaan",
-            component: JobperformanceIndex,
-        },
-        {
-            path: "gallery",
-            name: "gallery",
-            component: GalleryIndex,
-        },
-        {
-            path: "news",
-            name: "news",
-            component: GallerynewsIndex,
-        },
-        {
-            path: "agenda",
-            name: "agenda",
-            component: GalleryagendaIndex,
-        },
-        {
-            path: "galleryphoto",
-            name: "galleryphoto",
-            component: GalleryphotoIndex,
-        },
-        {
-            path: "galleryvideo",
-            name: "galleryvideo",
-            component: GalleryvideoIndex,
-        },
-        {
-            path: "webgis",
-            name: "webgis",
-            component: WebgisIndex,
-        },
-        {
-            path: "pelayanan",
-            name: "pelayanan",
-            component: ServicesIndex,
-        },
-        {
-            path: "report",
-            name: "report",
-            component: ServicesreportIndex,
-        }
-    ],
+            {
+                path: "publikasi",
+                name: "publikasi",
+                component: PublicationIndex,
+            },
+            {
+                path: "prodhukum",
+                name: "prodhukum",
+                component: ProductoflawIndex,
+            },
+            {
+                path: "renstra",
+                name: "renstra",
+                component: StrategicplanIndex,
+            },
+            {
+                path: "kinpekerjaan",
+                name: "kinpekerjaan",
+                component: JobperformanceIndex,
+            },
+            {
+                path: "gallery",
+                name: "gallery",
+                component: GalleryIndex,
+            },
+            {
+                path: "news",
+                name: "news",
+                component: GallerynewsIndex,
+            },
+            {
+                path: "agenda",
+                name: "agenda",
+                component: GalleryagendaIndex,
+            },
+            {
+                path: "galleryphoto",
+                name: "galleryphoto",
+                component: GalleryphotoIndex,
+            },
+            {
+                path: "galleryvideo",
+                name: "galleryvideo",
+                component: GalleryvideoIndex,
+            },
+            {
+                path: "webgis",
+                name: "webgis",
+                component: WebgisIndex,
+            },
+            {
+                path: "pelayanan",
+                name: "pelayanan",
+                component: ServicesIndex,
+            },
+            {
+                path: "report",
+                name: "report",
+                component: ServicesreportIndex,
+            }
+        ],
     },
 ];
 
