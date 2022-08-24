@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import TopMenu from "../layouts/top-menu/Main.vue";
+import SideMenu from "../layouts/side-menu/Main.vue";
 import HomeIndex from "../views/public/Home/Main.vue";
 //profile
 import ProfileIndex from "../views/public/Profile/Main.vue";
@@ -27,10 +28,22 @@ import ServicesreportIndex from "../views/public/Services/report.vue";
 
 
 
-const routes = [{
-    path: "/",
+const routes = [
+    {
+        path: "/admin",
+        component: SideMenu,
+        children: [{
+            path: "home",
+            name: "adminhome",
+            component: GalleryIndex,
+            },
+        ],
+    },
+    {
+    path: "/public",
     component: TopMenu,
-    children: [{
+    children: [
+        {
             path: "/home",
             name: "home",
             component: HomeIndex,
@@ -130,9 +143,10 @@ const routes = [{
             path: "report",
             name: "report",
             component: ServicesreportIndex,
-        },
+        }
     ],
-}, ];
+    },
+];
 
 const router = createRouter({
     history: createWebHistory(),
