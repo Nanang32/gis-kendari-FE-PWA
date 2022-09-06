@@ -27,9 +27,35 @@ export const useTopMenuStore = defineStore("topMenu", {
                         title: "Struktur Organisasi",
                     },
                     {
-                        icon: "",
-                        pageName: "profdinas",
-                        title: "Profile Dinas",
+                        icon: "HomeIcon",
+                        pageName: "top-menu-profile",
+                        title: "Profile",
+                        subMenu: [{
+                                icon: "",
+                                pageName: "profdinas",
+                                title: "Profile Dinas",
+                            },
+                            {
+                                icon: "",
+                                pageName: "profsda",
+                                title: "Sumber daya air",
+                            },
+                            {
+                                icon: "",
+                                pageName: "profbmarga",
+                                title: "Bina marga",
+                            },
+                            {
+                                icon: "",
+                                pageName: "profcpkarya",
+                                title: "Cipta karya",
+                            },
+                            {
+                                icon: "",
+                                pageName: "profperumahan",
+                                title: "Perumahan",
+                            },
+                        ],
                     },
                     {
                         icon: "",

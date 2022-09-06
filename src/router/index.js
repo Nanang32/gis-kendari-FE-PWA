@@ -11,6 +11,12 @@ import ProfilbidIndex from "../views/public/Profile/profbid.vue";
 import ProfileuptdIndex from "../views/public/Profile/profuptd.vue";
 import ProfilesekretIndex from "../views/public/Profile/profsekret.vue";
 import ProfiledinasIndex from "../views/public/Profile/profdinas.vue"
+import ProfilesdaIndex from "../views/public/Profile/profsda.vue"
+import ProfilebmargaIndex from "../views/public/Profile/profbmarga.vue"
+import ProfilecpkaryaIndex from "../views/public/Profile/profcpkarya.vue"
+import ProfileperumahanIndex from "../views/public/Profile/profperumahan.vue"
+
+
 //publikasi
 import PublicationIndex from "../views/public/Publication/Main.vue";
 import ProductoflawIndex from "../views/public/Publication/prodhukum.vue";
@@ -60,6 +66,26 @@ const routes = [{
                 path: "profdinas",
                 name: "profdinas",
                 component: ProfiledinasIndex,
+            },
+            {
+                path: "profsda",
+                name: "profsda",
+                component: ProfilesdaIndex,
+            },
+            {
+                path: "profbmarga",
+                name: "profbmarga",
+                component: ProfilebmargaIndex,
+            },
+            {
+                path: "profcpkarya",
+                name: "profcpkarya",
+                component: ProfilecpkaryaIndex,
+            },
+            {
+                path: "profperumahan",
+                name: "profperumahan",
+                component: ProfileperumahanIndex,
             },
             {
                 path: "tugasfungsi",
