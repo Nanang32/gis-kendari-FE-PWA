@@ -15,8 +15,6 @@ import ProfilesdaIndex from "../views/public/Profile/profsda.vue"
 import ProfilebmargaIndex from "../views/public/Profile/profbmarga.vue"
 import ProfilecpkaryaIndex from "../views/public/Profile/profcpkarya.vue"
 import ProfileperumahanIndex from "../views/public/Profile/profperumahan.vue"
-
-
 //publikasi
 import PublicationIndex from "../views/public/Publication/Main.vue";
 import ProductoflawIndex from "../views/public/Publication/prodhukum.vue";
@@ -33,16 +31,29 @@ import ServicesIndex from "../views/public/Services/Main.vue";
 import ServicesreportIndex from "../views/public/Services/report.vue";
 //admin
 import AdminNewsIndex from "../views/admin/blog.vue";
+import AdminPostIndex from "../views/admin/post/index.vue";
+import AdminPostCreate from "../views/admin/post/create.vue";
 
 
 const routes = [{
         path: "/admin",
         component: SideMenu,
         children: [{
-            path: "home",
-            name: "adminhome",
-            component: AdminNewsIndex,
-        }, ],
+                path: "home",
+                name: "adminhome",
+                component: AdminNewsIndex,
+            },
+            {
+                path: "post",
+                name: "admin-post",
+                component: AdminPostIndex,
+            },
+            {
+                path: "post-create",
+                name: "admin-post-create",
+                component: AdminPostCreate,
+            },
+        ],
     },
     {
         path: "/public",

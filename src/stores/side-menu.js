@@ -7,6 +7,11 @@ export const useSideMenuStore = defineStore("sideMenu", {
         icon: "HomeIcon",
         pageName: "adminhome",
         title: "Page 1",
+      },
+      {
+        icon: "HomeIcon",
+        pageName: "admin-post",
+        title: "Post",
       }
     ],
   }),
