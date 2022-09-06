@@ -31,9 +31,14 @@ import ServicesIndex from "../views/public/Services/Main.vue";
 import ServicesreportIndex from "../views/public/Services/report.vue";
 //admin
 import AdminNewsIndex from "../views/admin/blog.vue";
+//posting
 import AdminPostIndex from "../views/admin/post/index.vue";
 import AdminPostCreate from "../views/admin/post/create.vue";
-
+import AdminPostEdit from "../views/admin/post/edit.vue";
+//categories
+import AdminCategoyIndex from "../views/admin/category/index.vue";
+import AdminCategoyCreate from "../views/admin/category/create.vue";
+import AdminCategoyEdit from "../views/admin/category/edit.vue";
 
 const routes = [{
         path: "/admin",
@@ -49,9 +54,24 @@ const routes = [{
                 component: AdminPostIndex,
             },
             {
-                path: "post-create",
+                path: "post/reate",
                 name: "admin-post-create",
                 component: AdminPostCreate,
+            },
+            {
+                path: "category",
+                name: "admin-category",
+                component: AdminCategoyIndex,
+            },
+            {
+                path: "category/create",
+                name: "admin-category-create",
+                component: AdminCategoyCreate,
+            },
+            {
+                path: "category/edit/:id",
+                name: "admin-category-edit",
+                component: AdminCategoryEdit,
             },
         ],
     },

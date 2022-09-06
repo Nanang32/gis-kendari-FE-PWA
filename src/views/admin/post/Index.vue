@@ -7,8 +7,8 @@
             <button class="btn btn-primary shadow-md mr-2" @click="router.push({ name: 'admin-post-create'})">
                 Add new
             </button>
-            <div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
-                <table class="table table-report -mt-2">
+            <div class="intro-y box col-span-12 overflow-auto lg:overflow-visible">
+                <table class="table table-report mt-2">
                     <thead>
                         <tr>
                             <th class="whitespace-nowrap">#</th>

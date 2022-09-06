@@ -12,6 +12,11 @@ export const useSideMenuStore = defineStore("sideMenu", {
         icon: "HomeIcon",
         pageName: "admin-post",
         title: "Post",
+      },
+      {
+        icon: "HomeIcon",
+        pageName: "admin-category",
+        title: "Kategori",
       }
     ],
   }),
