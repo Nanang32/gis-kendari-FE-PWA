@@ -68,11 +68,11 @@ const routes = [{
                 name: "admin-category-create",
                 component: AdminCategoyCreate,
             },
-            {
-                path: "category/edit/:id",
-                name: "admin-category-edit",
-                component: AdminCategoryEdit,
-            },
+            // {
+            //     path: "category/edit/:id",
+            //     name: "admin-category-edit",
+            //     component: AdminCategoryEdit,
+            // },
         ],
     },
     {
