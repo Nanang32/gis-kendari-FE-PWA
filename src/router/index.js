@@ -39,6 +39,8 @@ import AdminPostEdit from "../views/admin/post/edit.vue";
 import AdminCategoyIndex from "../views/admin/category/index.vue";
 import AdminCategoyCreate from "../views/admin/category/create.vue";
 import AdminCategoyEdit from "../views/admin/category/edit.vue";
+// login
+import Login from "../views/login/Main.vue";
 
 const routes = [{
         path: "/admin",
@@ -201,6 +203,10 @@ const routes = [{
             }
         ],
     },
+    {
+    path: "/login",
+    component: Login
+  },
 ];
 
 const router = createRouter({
