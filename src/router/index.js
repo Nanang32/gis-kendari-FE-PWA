@@ -10,11 +10,13 @@ import StrukorgIndex from "../views/public/Profile/strukturorg.vue";
 import ProfilbidIndex from "../views/public/Profile/profbid.vue";
 import ProfileuptdIndex from "../views/public/Profile/profuptd.vue";
 import ProfilesekretIndex from "../views/public/Profile/profsekret.vue";
-import ProfiledinasIndex from "../views/public/Profile/profdinas.vue"
-import ProfilesdaIndex from "../views/public/Profile/profsda.vue"
+import ProfilepjpaIndex from "../views/public/Profile/profpjpa.vue"
+import ProfilepjsaIndex from "../views/public/Profile/profpjsa.vue"
 import ProfilebmargaIndex from "../views/public/Profile/profbmarga.vue"
-import ProfilecpkaryaIndex from "../views/public/Profile/profcpkarya.vue"
-import ProfileperumahanIndex from "../views/public/Profile/profperumahan.vue"
+import ProfileuwilayahIndex from "../views/public/Profile/profuwilayah.vue"
+import ProfileulabIndex from "../views/public/Profile/profulab.vue"
+import ProfileupkonstruksiIndex from "../views/public/Profile/profupkonstruksi.vue"
+
 //publikasi
 import PublicationIndex from "../views/public/Publication/Main.vue";
 import ProductoflawIndex from "../views/public/Publication/prodhukum.vue";
@@ -56,7 +58,7 @@ const routes = [{
                 component: AdminPostIndex,
             },
             {
-                path: "post/reate",
+                path: "post/create",
                 name: "admin-post-create",
                 component: AdminPostCreate,
             },
@@ -96,14 +98,14 @@ const routes = [{
                 component: VisimisiIndex,
             },
             {
-                path: "profdinas",
-                name: "profdinas",
-                component: ProfiledinasIndex,
+                path: "profpjpa",
+                name: "profpjpa",
+                component: ProfilepjpaIndex,
             },
             {
-                path: "profsda",
-                name: "profsda",
-                component: ProfilesdaIndex,
+                path: "profpjsa",
+                name: "profpjsa",
+                component: ProfilepjsaIndex,
             },
             {
                 path: "profbmarga",
@@ -111,14 +113,24 @@ const routes = [{
                 component: ProfilebmargaIndex,
             },
             {
-                path: "profcpkarya",
-                name: "profcpkarya",
-                component: ProfilecpkaryaIndex,
+                path: "profuwilayah",
+                name: "profuwilayah",
+                component: ProfileuwilayahIndex,
             },
             {
-                path: "profperumahan",
-                name: "profperumahan",
-                component: ProfileperumahanIndex,
+                path: "profulab",
+                name: "profulab",
+                component: ProfileulabIndex,
+            },
+            {
+                path: "profupkonstruksi",
+                name: "profupkonstruksi",
+                component: ProfileupkonstruksiIndex,
+            },
+            {
+                path: "strukturorg",
+                name: "strukturorg",
+                component: StrukorgIndex,
             },
             {
                 path: "tugasfungsi",
