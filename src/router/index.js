@@ -31,8 +31,22 @@ import GalleryvideoIndex from "../views/public/Gallery/videoalbum.vue";
 import WebgisIndex from "../views/public/Webgis/Main.vue";
 import ServicesIndex from "../views/public/Services/Main.vue";
 import ServicesreportIndex from "../views/public/Services/report.vue";
+
 //admin
 import AdminNewsIndex from "../views/admin/blog.vue";
+// profile
+//tugas dan fungsi dinas
+import AdminTaskNFunctionIndex from "../views/admin/profile/office_taskfunction/index.vue";
+import AdminTaskNFunctionCreate from "../views/admin/profile/office_taskfunction/create.vue";
+import AdminTaskNFunctionEdit from "../views/admin/profile/office_taskfunction/edit.vue";
+//visi dan misi dinas
+import AdminVissionmissionIndex from "../views/admin/profile/office_vissionmission/index.vue";
+import AdminVissionmissionCreate from "../views/admin/profile/office_vissionmission/create.vue";
+import AdminVissionmissionEdit from "../views/admin/profile/office_vissionmission/edit.vue";
+//visi dan misi dinas
+import AdminStructureIndex from "../views/admin/profile/office_structure/index.vue";
+import AdminStructureCreate from "../views/admin/profile/office_structure/create.vue";
+import AdminStructureEdit from "../views/admin/profile/office_structure/edit.vue";
 //news
 import AdminPostIndex from "../views/admin/news/post/index.vue";
 import AdminPostCreate from "../views/admin/news/post/create.vue";
@@ -72,11 +86,36 @@ const routes = [{
                 name: "admin-category-create",
                 component: AdminCategoyCreate,
             },
-            // {
-            //     path: "category/edit/:id",
-            //     name: "admin-category-edit",
-            //     component: AdminCategoryEdit,
-            // },
+            {
+                path:"taskfunction",
+                name: "admin-taskfunction",
+                component:AdminTaskNFunctionIndex,
+            },
+            {
+                path:"taskfunction/create",
+                name: "admin-taskfunction-create",
+                component:AdminTaskNFunctionCreate,
+            },
+            {
+                path:"vissionmission",
+                name: "admin-vissionmission",
+                component:AdminVissionmissionIndex,
+            },
+            {
+                path:"vissionmission/create",
+                name: "admin-vissionmission-create",
+                component:AdminVissionmissionCreate,
+            },
+            {
+                path:"structure",
+                name: "admin-structure",
+                component:AdminStructureIndex,
+            },
+            {
+                path:"structure/create",
+                name: "admin-structure-create",
+                component:AdminStructureCreate,
+            }
         ],
     },
     {

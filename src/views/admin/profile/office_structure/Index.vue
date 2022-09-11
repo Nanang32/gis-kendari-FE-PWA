@@ -1,6 +1,6 @@
 <template>
     <div class="intro-y flex items-center mt-8">
-        <h2 class="text-lg font-medium mr-auto">Data list posting</h2>
+        <h2 class="text-lg font-medium mr-auto">Data Struktur organisasi dinas</h2>
     </div>
     <div class="grid grid-cols-12 gap-6 mt-5 mb-20">
         <div class="intro-y col-span-12">
@@ -13,18 +13,20 @@
                         <tr>
                             <th class="whitespace-nowrap">#</th>
                             <th class="whitespace-nowrap">Judul</th>
-                            <th class="whitespace-nowrap">Kategori</th>
-                            <th class="whitespace-nowrap">Tanggal</th>
+                            <th class="whitespace-nowrap">berkas</th>
+                            <th class="whitespace-nowrap">Tgl. publish</th>
+                            <th class="whitespace-nowrap">status</th>
                             <th class="text-center whitespace-nowrap">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td>Lorem</td>
-                            <td>Video, news</td>
-                            <td>Published
-                                2022/08/30 at 7:18 am</td>
+                            <td>struktur org 2024</td>
+                            <td>V22-22-2022</td>
+                            <td>V22-22-2022</td>
+
+                            <td>aktif / tidak</td>
                             <td>
                                 <div class="flex justify-center items-center">
                                     <button class="flex items-center mr-3">
