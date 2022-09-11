@@ -33,14 +33,14 @@ import ServicesIndex from "../views/public/Services/Main.vue";
 import ServicesreportIndex from "../views/public/Services/report.vue";
 //admin
 import AdminNewsIndex from "../views/admin/blog.vue";
-//posting
-import AdminPostIndex from "../views/admin/post/index.vue";
-import AdminPostCreate from "../views/admin/post/create.vue";
-import AdminPostEdit from "../views/admin/post/edit.vue";
+//news
+import AdminPostIndex from "../views/admin/news/post/index.vue";
+import AdminPostCreate from "../views/admin/news/post/create.vue";
+import AdminPostEdit from "../views/admin/news/post/edit.vue";
 //categories
-import AdminCategoyIndex from "../views/admin/category/index.vue";
-import AdminCategoyCreate from "../views/admin/category/create.vue";
-import AdminCategoyEdit from "../views/admin/category/edit.vue";
+import AdminCategoyIndex from "../views/admin/news/category/index.vue";
+import AdminCategoyCreate from "../views/admin/news/category/create.vue";
+import AdminCategoyEdit from "../views/admin/news/category/edit.vue";
 // login
 import Login from "../views/login/Main.vue";
 
