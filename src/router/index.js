@@ -38,9 +38,9 @@ import AdminPostIndex from "../views/admin/post/index.vue";
 import AdminPostCreate from "../views/admin/post/create.vue";
 import AdminPostEdit from "../views/admin/post/edit.vue";
 //categories
-import AdminCategoyIndex from "../views/admin/category/index.vue";
-import AdminCategoyCreate from "../views/admin/category/create.vue";
-import AdminCategoyEdit from "../views/admin/category/edit.vue";
+import AdminCategoryIndex from "../views/admin/category/index.vue";
+import AdminCategoryCreate from "../views/admin/category/create.vue";
+import AdminCategoryEdit from "../views/admin/category/edit.vue";
 // login
 import Login from "../views/login/Main.vue";
 
@@ -65,18 +65,18 @@ const routes = [{
             {
                 path: "category",
                 name: "admin-category",
-                component: AdminCategoyIndex,
+                component: AdminCategoryIndex,
             },
             {
                 path: "category/create",
                 name: "admin-category-create",
-                component: AdminCategoyCreate,
+                component: AdminCategoryCreate,
             },
-            // {
-            //     path: "category/edit/:id",
-            //     name: "admin-category-edit",
-            //     component: AdminCategoryEdit,
-            // },
+            {
+                path: "category/edit/:id",
+                name: "admin-category-edit",
+                component: AdminCategoryEdit,
+            },
         ],
     },
     {

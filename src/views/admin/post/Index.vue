@@ -52,7 +52,7 @@
         </div>
     </div>
 </template>
-<!-- <script setup>
+<script setup>
 import Paginator from "@/components/paginator/Main.vue";
 import ModalConfirmDelete from "@/components/modal-confirm-delete/Main.vue";
 import sendRequest from '@libs/http.js'
@@ -106,4 +106,4 @@ watch(page, async (newPage) => {
 onMounted(async()=>{
   await loadData()
 });
-</script> -->
+</script>

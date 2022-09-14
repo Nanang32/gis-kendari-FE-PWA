@@ -26,11 +26,11 @@
                             <td>{{ category.terpakai }}</td> -->
                             <td>
                                 <div class="flex justify-center items-center">
-                                    <button class="flex items-center mr-3" @click="router.push({name: 'admin-category-edit', params: { id: room_type.id }})">
+                                    <button class="flex items-center mr-3" @click="router.push({name: 'admin-category-edit', params: { id: category.id }})">
                                         <EditIcon class="w-4 h-4 mr-1" />
                                         Edit
                                     </button>
-                                    <a class="flex items-center text-danger" href="javascript:;" @click="confirmDelete(room_type.id)">
+                                    <a class="flex items-center text-danger" href="javascript:;" @click="confirmDelete(category.id)">
                                         <Trash2Icon class="w-4 h-4 mr-1" />
                                         Delete
                                     </a>
