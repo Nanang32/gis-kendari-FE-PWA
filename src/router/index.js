@@ -172,6 +172,11 @@ const routes = [{
                 component: AdminCategoryCreate,
             },
             {
+                path: "category/edit/:id",
+                name: "admin-category-edit",
+                component: AdminCategoryEdit,
+            },
+            {
                 path: "taskfunction",
                 name: "admin-taskfunction",
                 component: AdminTaskNFunctionIndex,
