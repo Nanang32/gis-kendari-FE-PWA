@@ -137,9 +137,9 @@ import AdminPostIndex from "../views/admin/news/post/index.vue";
 import AdminPostCreate from "../views/admin/news/post/create.vue";
 import AdminPostEdit from "../views/admin/news/post/edit.vue";
 //categories
-import AdminCategoryIndex from "../views/admin/category/index.vue";
-import AdminCategoryCreate from "../views/admin/category/create.vue";
-import AdminCategoryEdit from "../views/admin/category/edit.vue";
+import AdminCategoryIndex from "../views/admin/news/category/index.vue";
+import AdminCategoryCreate from "../views/admin/news/category/create.vue";
+import AdminCategoryEdit from "../views/admin/news/category/edit.vue";
 // login
 import Login from "../views/login/Main.vue";
 
