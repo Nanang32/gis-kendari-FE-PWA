@@ -47,8 +47,8 @@ import AdminVissionmissionEdit from "../views/admin/profile/office_vissionmissio
 // sekertariat
 import AdminSecretariatIndex from "../views/admin/profile/office_secretariat/Main.vue"
 // master data tugas&fungsi
-import AdminsecretariatvissionmissionCreate from "../views/admin/profile/office_secretariat/vissionmission/create.vue";
-import AdminsecretariatvissionmissionEdit from "../views/admin/profile/office_secretariat/vissionmission/edit.vue";
+import AdminsecretariattaskfunctionCreate from "../views/admin/profile/office_secretariat/taskfunction/create.vue";
+import AdminsecretariattaskfunctionEdit from "../views/admin/profile/office_secretariat/taskfunction/edit.vue";
 // master data program
 import AdminsecretariatprogrammeCreate from "../views/admin/profile/office_secretariat/programme/create.vue";
 import AdminsecretariatprogrammeEdit from "../views/admin/profile/office_secretariat/programme/edit.vue";
@@ -59,8 +59,8 @@ import AdminsecretariatstructureEdit from "../views/admin/profile/office_secreta
 // Profile PJPA
 import AdminpjpaIndex from "../views/admin/profile/office_subpjpa/Main.vue"
 // master data tugas&fungsi
-import AdminpjpavissionmissionCreate from "../views/admin/profile/office_subpjpa/vissionmission/create.vue";
-import AdminpjpavissionmissionEdit from "../views/admin/profile/office_subpjpa/vissionmission/edit.vue";
+import AdminpjpataskfunctionCreate from "../views/admin/profile/office_subpjpa/taskfunction/create.vue";
+import AdminpjpataskfunctionEdit from "../views/admin/profile/office_subpjpa/taskfunction/edit.vue";
 // master data program
 import AdminpjpaprogrammeCreate from "../views/admin/profile/office_subpjpa/programme/create.vue";
 import AdminpjpaprogrammeEdit from "../views/admin/profile/office_subpjpa/programme/edit.vue";
@@ -71,8 +71,8 @@ import AdminpjpastructureEdit from "../views/admin/profile/office_subpjpa/struct
 // Profile PJSA
 import AdminpjsaIndex from "../views/admin/profile/office_subpjsa/Main.vue"
 // master data tugas&fungsi
-import AdminpjsavissionmissionCreate from "../views/admin/profile/office_subpjsa/vissionmission/create.vue";
-import AdminpjsavissionmissionEdit from "../views/admin/profile/office_subpjsa/vissionmission/edit.vue";
+import AdminpjsataskfunctionCreate from "../views/admin/profile/office_subpjsa/taskfunction/create.vue";
+import AdminpjsataskfunctionEdit from "../views/admin/profile/office_subpjsa/taskfunction/edit.vue";
 // master data program
 import AdminpjsaprogrammeCreate from "../views/admin/profile/office_subpjsa/programme/create.vue";
 import AdminpjsaprogrammeEdit from "../views/admin/profile/office_subpjsa/programme/edit.vue";
@@ -83,8 +83,8 @@ import AdminpjsastructureEdit from "../views/admin/profile/office_subpjsa/struct
 // Profile Binamarga
 import AdminbinamargaIndex from "../views/admin/profile/office_subbinamarga/Main.vue"
 // master data tugas&fungsi
-import AdminbinamargavissionmissionCreate from "../views/admin/profile/office_subbinamarga/vissionmission/create.vue";
-import AdminbinamargavissionmissionEdit from "../views/admin/profile/office_subbinamarga/vissionmission/edit.vue";
+import AdminbinamargataskfunctionCreate from "../views/admin/profile/office_subbinamarga/taskfunction/create.vue";
+import AdminbinamargataskfunctionEdit from "../views/admin/profile/office_subbinamarga/taskfunction/edit.vue";
 // master data program
 import AdminbinamargaprogrammeCreate from "../views/admin/profile/office_subbinamarga/programme/create.vue";
 import AdminpbinamargaprogrammeEdit from "../views/admin/profile/office_subbinamarga/programme/edit.vue";
@@ -95,8 +95,8 @@ import AdminbinamargastructureEdit from "../views/admin/profile/office_subbinama
 // Profile uptd wilayah
 import AdminuptdregionIndex from "../views/admin/profile/office_subuptdregion/Main.vue"
 // master data tugas&fungsi
-import AdminuptdregionvissionmissionCreate from "../views/admin/profile/office_subuptdregion/vissionmission/create.vue";
-import AdminuptdregionvissionmissionEdit from "../views/admin/profile/office_subuptdregion/vissionmission/edit.vue";
+import AdminuptdregiontaskfunctionCreate from "../views/admin/profile/office_subuptdregion/taskfunction/create.vue";
+import AdminuptdregiontaskfunctionEdit from "../views/admin/profile/office_subuptdregion/taskfunction/edit.vue";
 // master data program
 import AdminuptdregionprogrammeCreate from "../views/admin/profile/office_subuptdregion/programme/create.vue";
 import AdminpuptdregionprogrammeEdit from "../views/admin/profile/office_subuptdregion/programme/edit.vue";
@@ -107,11 +107,11 @@ import AdminuptdregionstructureEdit from "../views/admin/profile/office_subuptdr
 // Profile uptd lab konstruksi
 import AdminuptdlabcontructionIndex from "../views/admin/profile/office_subuptdlabcontruction/Main.vue"
 // master data tugas&fungsi
-import AdminuptdlabcontructionvissionmissionCreate from "../views/admin/profile/office_subuptdlabcontruction/vissionmission/create.vue";
-import AdminuptdlabcontructionvissionmissionEdit from "../views/admin/profile/office_subuptdlabcontruction/vissionmission/edit.vue";
+import AdminuptdlabcontructiontaskfunctionCreate from "../views/admin/profile/office_subuptdlabcontruction/taskfunction/create.vue";
+import AdminuptdlabcontructiontaskfunctionEdit from "../views/admin/profile/office_subuptdlabcontruction/taskfunction/edit.vue";
 // master data program
 import AdminuptdlabcontructionprogrammeCreate from "../views/admin/profile/office_subuptdlabcontruction/programme/create.vue";
-import AdminpuptdlabcontructionprogrammeEdit from "../views/admin/profile/office_subuptdlabcontruction/programme/edit.vue";
+import AdminuptdlabcontructionprogrammeEdit from "../views/admin/profile/office_subuptdlabcontruction/programme/edit.vue";
 // master data struktur
 import AdminuptdlabcontructionstructureCreate from "../views/admin/profile/office_subuptdlabcontruction/structure/create.vue";
 import AdminuptdlabcontructionstructureEdit from "../views/admin/profile/office_subuptdlabcontruction/structure/edit.vue";
@@ -119,11 +119,11 @@ import AdminuptdlabcontructionstructureEdit from "../views/admin/profile/office_
 // Profile uptd peralatan konstruksi
 import AdminuptdcontructionequipmentIndex from "../views/admin/profile/office_subuptdconstructionequipment/Main.vue"
 // master data tugas&fungsi
-import AdminuptdconstructionequipmentvissionmissionCreate from "../views/admin/profile/office_subuptdconstructionequipment/vissionmission/create.vue";
-import AdminuptdconstructionequipmentvissionmissionEdit from "../views/admin/profile/office_subuptdconstructionequipment/vissionmission/edit.vue";
+import AdminuptdconstructionequipmenttaskfunctionCreate from "../views/admin/profile/office_subuptdconstructionequipment/taskfunction/create.vue";
+import AdminuptdconstructionequipmenttaskfunctionEdit from "../views/admin/profile/office_subuptdconstructionequipment/taskfunction/edit.vue";
 // master data program
 import AdminuptdconstructionequipmentprogrammeCreate from "../views/admin/profile/office_subuptdconstructionequipment/programme/create.vue";
-import AdminpuptdconstructionequipmentprogrammeEdit from "../views/admin/profile/office_subuptdconstructionequipment/programme/edit.vue";
+import AdminuptdconstructionequipmentprogrammeEdit from "../views/admin/profile/office_subuptdconstructionequipment/programme/edit.vue";
 // master data struktur
 import AdminuptdconstructionequipmentstructureCreate from "../views/admin/profile/office_subuptdconstructionequipment/structure/create.vue";
 import AdminuptdconstructionequipmentstructureEdit from "../views/admin/profile/office_subuptdconstructionequipment/structure/edit.vue";
@@ -172,35 +172,309 @@ const routes = [{
                 component: AdminCategoyCreate,
             },
             {
-                path:"taskfunction",
+                path: "taskfunction",
                 name: "admin-taskfunction",
-                component:AdminTaskNFunctionIndex,
+                component: AdminTaskNFunctionIndex,
             },
             {
-                path:"taskfunction/create",
+                path: "taskfunction/create",
                 name: "admin-taskfunction-create",
-                component:AdminTaskNFunctionCreate,
+                component: AdminTaskNFunctionCreate,
             },
             {
-                path:"vissionmission",
+                path: "vissionmission",
                 name: "admin-vissionmission",
-                component:AdminVissionmissionIndex,
+                component: AdminVissionmissionIndex,
             },
             {
-                path:"vissionmission/create",
+                path: "vissionmission/create",
                 name: "admin-vissionmission-create",
-                component:AdminVissionmissionCreate,
+                component: AdminVissionmissionCreate,
             },
             {
-                path:"structure",
+                path: "structure",
                 name: "admin-structure",
-                component:AdminStructureIndex,
+                component: AdminStructureIndex,
             },
             {
-                path:"structure/create",
+                path: "structure/create",
                 name: "admin-structure-create",
-                component:AdminStructureCreate,
-            }
+                component: AdminStructureCreate,
+            },
+            //index sekertariat
+            {
+                path: "secretariat",
+                name: "admin-secretariat",
+                component: AdminSecretariatIndex,
+            },
+            //sekertariat , tugas fungsi
+            {
+                path: "secretariat/taskfunction/create",
+                name: "admin-secretariat-taskfunction",
+                component: AdminsecretariattaskfunctionCreate,
+            },
+            {
+                path: "secretariat/taskfunction/:id",
+                name: "admin-secretariat-taskfunction-edit",
+                component: AdminsecretariattaskfunctionEdit,
+            },
+            // sekertariat ,  program
+            {
+                path: "secretariat/programme/create",
+                name: "admin-secretariat-programme",
+                component: AdminsecretariattaskfunctionCreate,
+            },
+            {
+                path: "secretariat/programme/:id",
+                name: "admin-secretariat-programme-edit",
+                component: AdminsecretariattaskfunctionEdit,
+            },
+            // sekertariat ,  structure
+            {
+                path: "secretariat/structure/create",
+                name: "admin-secretariat-structure",
+                component: AdminsecretariatstructureCreate,
+            },
+            {
+                path: "secretariat/structure/:id",
+                name: "admin-secretariat-structure-edit",
+                component: AdminsecretariatstructureEdit,
+            },
+            //index pjpa
+            {
+                path: "pjpa",
+                name: "admin-pjpa",
+                component: AdminpjpaIndex,
+            },
+            //pjpa , tugas fungsi
+            {
+                path: "pjpa/taskfunction/create",
+                name: "admin-pjpa-taskfunction",
+                component: AdminpjpataskfunctionCreate,
+            },
+            {
+                path: "pjpa/taskfunction/:id",
+                name: "admin-pjpa-taskfunction-edit",
+                component: AdminpjpataskfunctionEdit,
+            },
+            // pjpa ,  program
+            {
+                path: "pjpa/programme/create",
+                name: "admin-pjpa-programme",
+                component: AdminpjpaprogrammeCreate,
+            },
+            {
+                path: "pjpa/programme/:id",
+                name: "admin-pjpa-programme-edit",
+                component: AdminpjpaprogrammeEdit,
+            },
+            // pjpa ,  structure
+            {
+                path: "pjpa/structure/create",
+                name: "admin-pjpa-structure",
+                component: AdminpjpastructureCreate,
+            },
+            {
+                path: "pjpa/structure/:id",
+                name: "admin-pjpa-structure-edit",
+                component: AdminpjpastructureEdit,
+            },
+            //index pjsa
+            {
+                path: "pjsa",
+                name: "admin-pjsa",
+                component: AdminpjsaIndex,
+            },
+            //pjsa , tugas fungsi
+            {
+                path: "pjsa/taskfunction/create",
+                name: "admin-pjsa-taskfunction",
+                component: AdminpjsataskfunctionCreate,
+            },
+            {
+                path: "pjpa/taskfunction/:id",
+                name: "admin-pjpa-taskfunction-edit",
+                component: AdminpjsataskfunctionEdit,
+            },
+            // pjsa ,  program
+            {
+                path: "pjsa/programme/create",
+                name: "admin-pjsa-programme",
+                component: AdminpjsaprogrammeCreate,
+            },
+            {
+                path: "pjsa/programme/:id",
+                name: "admin-pjsa-programme-edit",
+                component: AdminpjsaprogrammeEdit,
+            },
+            // pjsa ,  structure
+            {
+                path: "pjsa/structure/create",
+                name: "admin-pjsa-structure",
+                component: AdminpjsastructureCreate,
+            },
+            {
+                path: "pjsa/structure/:id",
+                name: "admin-pjsa-structure-edit",
+                component: AdminpjsastructureEdit,
+            },
+            //index binamarga
+            {
+                path: "binamarga",
+                name: "admin-binamarga",
+                component: AdminbinamargaIndex,
+            },
+            //binamarga , tugas fungsi
+            {
+                path: "binamarga/taskfunction/create",
+                name: "admin-binamarga-taskfunction",
+                component: AdminbinamargataskfunctionCreate,
+            },
+            {
+                path: "binamarga/taskfunction/:id",
+                name: "admin-binamarga-taskfunction-edit",
+                component: AdminbinamargataskfunctionEdit,
+            },
+            // binamarga ,  program
+            {
+                path: "binamarga/programme/create",
+                name: "admin-binamarga-programme",
+                component: AdminbinamargaprogrammeCreate,
+            },
+            {
+                path: "binamarga/programme/:id",
+                name: "admin-binamarga-programme-edit",
+                component: AdminpbinamargaprogrammeEdit,
+            },
+            // binamarga ,  structure
+            {
+                path: "binamarga/structure/create",
+                name: "admin-binamarga-structure",
+                component: AdminbinamargastructureCreate,
+            },
+            {
+                path: "binamarga/structure/:id",
+                name: "admin-binamarga-structure-edit",
+                component: AdminbinamargastructureEdit,
+            },
+            //index uptd wilayah
+            {
+                path: "uptdregion",
+                name: "admin-uptdregion",
+                component: AdminuptdregionIndex,
+            },
+            //uptd wilayah , tugas fungsi
+            {
+                path: "uptdregion/taskfunction/create",
+                name: "admin-uptdregion-taskfunction",
+                component: AdminuptdregiontaskfunctionCreate,
+            },
+            {
+                path: "uptdregion/taskfunction/:id",
+                name: "admin-uptdregion-taskfunction-edit",
+                component: AdminuptdregiontaskfunctionEdit,
+            },
+            // uptd wilayah ,  program
+            {
+                path: "uptdregion/programme/create",
+                name: "admin-uptdregion-programme",
+                component: AdminuptdregionprogrammeCreate,
+            },
+            {
+                path: "uptdregion/programme/:id",
+                name: "admin-uptdregion-programme-edit",
+                component: AdminpuptdregionprogrammeEdit,
+            },
+            // uptd wilayah ,  structure
+            {
+                path: "uptdregion/structure/create",
+                name: "admin-uptdregion-structure",
+                component: AdminuptdregionstructureCreate,
+            },
+            {
+                path: "uptdregion/structure/:id",
+                name: "admin-uptdregion-structure-edit",
+                component: AdminuptdregionstructureEdit,
+            },
+            //index uptd lab konstruksi
+            {
+                path: "uptdlabcontruction",
+                name: "admin-uptdlabcontruction",
+                component: AdminuptdlabcontructionIndex,
+            },
+            //uptd lab konstruksi , tugas fungsi
+            {
+                path: "uptdlabcontruction/taskfunction/create",
+                name: "admin-uptdlabcontruction-taskfunction",
+                component: AdminuptdlabcontructiontaskfunctionCreate,
+            },
+            {
+                path: "uptdlabcontruction/taskfunction/:id",
+                name: "admin-uptdlabcontruction-taskfunction-edit",
+                component: AdminuptdlabcontructiontaskfunctionEdit,
+            },
+            // uptd lab konstruksi ,  program
+            {
+                path: "uptdlabcontruction/programme/create",
+                name: "admin-uptdlabcontruction-programme",
+                component: AdminuptdlabcontructionprogrammeCreate,
+            },
+            {
+                path: "uptdlabcontruction/programme/:id",
+                name: "admin-uptdlabcontruction-programme-edit",
+                component: AdminuptdlabcontructionprogrammeEdit,
+            },
+            // uptd lab konstruksi ,  structure
+            {
+                path: "uptdlabcontruction/structure/create",
+                name: "admin-uptdlabcontruction-structure",
+                component: AdminuptdlabcontructionstructureCreate,
+            },
+            {
+                path: "uptdlabcontruction/structure/:id",
+                name: "admin-uptdlabcontruction-structure-edit",
+                component: AdminuptdlabcontructionstructureEdit,
+            },
+            //index uptd peralatan konstruksi
+            {
+                path: "uptdcontructionequipment",
+                name: "admin-uptdcontructionequipment",
+                component: AdminuptdcontructionequipmentIndex,
+            },
+            //uptd peralatan konstruksi , tugas fungsi
+            {
+                path: "uptdcontructionequipment/taskfunction/create",
+                name: "admin-uptdcontructionequipment-taskfunction",
+                component: AdminuptdconstructionequipmenttaskfunctionCreate,
+            },
+            {
+                path: "uptdcontructionequipment/taskfunction/:id",
+                name: "admin-uptdcontructionequipment-taskfunction-edit",
+                component: AdminuptdconstructionequipmenttaskfunctionEdit,
+            },
+            // uptd peralatan konstruksi ,  program
+            {
+                path: "uptdcontructionequipment/programme/create",
+                name: "admin-uptdcontructionequipment-programme",
+                component: AdminuptdconstructionequipmentprogrammeCreate,
+            },
+            {
+                path: "uptdcontructionequipment/programme/:id",
+                name: "admin-uptdcontructionequipment-programme-edit",
+                component: AdminuptdconstructionequipmentprogrammeEdit,
+            },
+            // uptd peralatan konstruksi ,  structure
+            {
+                path: "uptdcontructionequipment/structure/create",
+                name: "admin-uptdcontructionequipment-structure",
+                component: AdminuptdconstructionequipmentstructureCreate,
+            },
+            {
+                path: "uptdcontructionequipment/structure/:id",
+                name: "admin-uptdcontructionequipment-structure-edit",
+                component: AdminuptdconstructionequipmentstructureEdit,
+            },
+
         ],
     },
     {
@@ -340,9 +614,9 @@ const routes = [{
         ],
     },
     {
-    path: "/login",
-    component: Login
-  },
+        path: "/login",
+        component: Login
+    },
 ];
 
 const router = createRouter({
