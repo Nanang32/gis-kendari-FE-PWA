@@ -71,8 +71,40 @@
                     </div>
                     <div class="top-menu__title">
                       {{ lastSubMenu.title }}
+                      <ChevronDownIcon
+                        v-if="subMenu.subMenu"
+                        class="top-menu__sub-icon"
+                      />
                     </div>
                   </a>
+                  <!-- BEGIN: Third Child -->
+                  <ul v-if="subMenu.subMenu">
+                    <li
+                      v-for="(lastSubMenu, lastSubMenuKey) in subMenu.subMenu"
+                      :key="lastSubMenuKey"
+                    >
+                      <a
+                        :href="
+                          lastSubMenu.subMenu
+                            ? 'javascript:;'
+                            : router.resolve({ name: lastSubMenu.pageName }).path
+                        "
+                        class="top-menu"
+                        @click="linkTo(lastSubMenu, router, $event)"
+                      >
+                        <div class="top-menu__icon">
+                          <component :is="'zap-icon'" />
+                        </div>
+                        <div class="top-menu__title">
+                          {{ lastSubMenu.title }}
+                          <ChevronDownIcon
+                            v-if="subMenu.subMenu"
+                            class="top-menu__sub-icon"
+                          />
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
                 </li>
               </ul>
               <!-- END: Third Child -->

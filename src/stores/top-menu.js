@@ -9,7 +9,7 @@ export const useTopMenuStore = defineStore("topMenu", {
             },
             {
                 icon: "HomeIcon",
-                pageName: "top-menu-profile",
+                // pageName: "top-menu-profile",
                 title: "Profile",
                 subMenu: [{
                         icon: "",
@@ -28,7 +28,7 @@ export const useTopMenuStore = defineStore("topMenu", {
                     },
                     {
                         icon: "HomeIcon",
-                        pageName: "top-menu-profile",
+                        pageName: "profile-dinas",
                         title: "Profile dinas",
                         subMenu: [{
                                 icon: "",
@@ -52,7 +52,7 @@ export const useTopMenuStore = defineStore("topMenu", {
                             },
                             {
                                 icon: "HomeIcon",
-                                pageName: "top-menu-profile",
+                                pageName: "UPTD",
                                 title: "UPTD",
                                 subMenu: [{
                                         icon: "",
