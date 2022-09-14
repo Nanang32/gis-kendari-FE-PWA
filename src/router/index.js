@@ -43,6 +43,91 @@ import AdminTaskNFunctionEdit from "../views/admin/profile/office_taskfunction/e
 import AdminVissionmissionIndex from "../views/admin/profile/office_vissionmission/index.vue";
 import AdminVissionmissionCreate from "../views/admin/profile/office_vissionmission/create.vue";
 import AdminVissionmissionEdit from "../views/admin/profile/office_vissionmission/edit.vue";
+
+// sekertariat
+import AdminSecretariatIndex from "../views/admin/profile/office_secretariat/Main.vue"
+// master data tugas&fungsi
+import AdminsecretariatvissionmissionCreate from "../views/admin/profile/office_secretariat/vissionmission/create.vue";
+import AdminsecretariatvissionmissionEdit from "../views/admin/profile/office_secretariat/vissionmission/edit.vue";
+// master data program
+import AdminsecretariatprogrammeCreate from "../views/admin/profile/office_secretariat/programme/create.vue";
+import AdminsecretariatprogrammeEdit from "../views/admin/profile/office_secretariat/programme/edit.vue";
+// master data struktur
+import AdminsecretariatstructureCreate from "../views/admin/profile/office_secretariat/structure/create.vue";
+import AdminsecretariatstructureEdit from "../views/admin/profile/office_secretariat/structure/edit.vue";
+
+// Profile PJPA
+import AdminpjpaIndex from "../views/admin/profile/office_subpjpa/Main.vue"
+// master data tugas&fungsi
+import AdminpjpavissionmissionCreate from "../views/admin/profile/office_subpjpa/vissionmission/create.vue";
+import AdminpjpavissionmissionEdit from "../views/admin/profile/office_subpjpa/vissionmission/edit.vue";
+// master data program
+import AdminpjpaprogrammeCreate from "../views/admin/profile/office_subpjpa/programme/create.vue";
+import AdminpjpaprogrammeEdit from "../views/admin/profile/office_subpjpa/programme/edit.vue";
+// master data struktur
+import AdminpjpastructureCreate from "../views/admin/profile/office_subpjpa/structure/create.vue";
+import AdminpjpastructureEdit from "../views/admin/profile/office_subpjpa/structure/edit.vue";
+
+// Profile PJSA
+import AdminpjsaIndex from "../views/admin/profile/office_subpjsa/Main.vue"
+// master data tugas&fungsi
+import AdminpjsavissionmissionCreate from "../views/admin/profile/office_subpjsa/vissionmission/create.vue";
+import AdminpjsavissionmissionEdit from "../views/admin/profile/office_subpjsa/vissionmission/edit.vue";
+// master data program
+import AdminpjsaprogrammeCreate from "../views/admin/profile/office_subpjsa/programme/create.vue";
+import AdminpjsaprogrammeEdit from "../views/admin/profile/office_subpjsa/programme/edit.vue";
+// master data struktur
+import AdminpjsastructureCreate from "../views/admin/profile/office_subpjsa/structure/create.vue";
+import AdminpjsastructureEdit from "../views/admin/profile/office_subpjsa/structure/edit.vue";
+
+// Profile Binamarga
+import AdminbinamargaIndex from "../views/admin/profile/office_subbinamarga/Main.vue"
+// master data tugas&fungsi
+import AdminbinamargavissionmissionCreate from "../views/admin/profile/office_subbinamarga/vissionmission/create.vue";
+import AdminbinamargavissionmissionEdit from "../views/admin/profile/office_subbinamarga/vissionmission/edit.vue";
+// master data program
+import AdminbinamargaprogrammeCreate from "../views/admin/profile/office_subbinamarga/programme/create.vue";
+import AdminpbinamargaprogrammeEdit from "../views/admin/profile/office_subbinamarga/programme/edit.vue";
+// master data struktur
+import AdminbinamargastructureCreate from "../views/admin/profile/office_subbinamarga/structure/create.vue";
+import AdminbinamargastructureEdit from "../views/admin/profile/office_subbinamarga/structure/edit.vue";
+
+// Profile uptd wilayah
+import AdminuptdregionIndex from "../views/admin/profile/office_subuptdregion/Main.vue"
+// master data tugas&fungsi
+import AdminuptdregionvissionmissionCreate from "../views/admin/profile/office_subuptdregion/vissionmission/create.vue";
+import AdminuptdregionvissionmissionEdit from "../views/admin/profile/office_subuptdregion/vissionmission/edit.vue";
+// master data program
+import AdminuptdregionprogrammeCreate from "../views/admin/profile/office_subuptdregion/programme/create.vue";
+import AdminpuptdregionprogrammeEdit from "../views/admin/profile/office_subuptdregion/programme/edit.vue";
+// master data struktur
+import AdminuptdregionstructureCreate from "../views/admin/profile/office_subuptdregion/structure/create.vue";
+import AdminuptdregionstructureEdit from "../views/admin/profile/office_subuptdregion/structure/edit.vue";
+
+// Profile uptd lab konstruksi
+import AdminuptdregionIndex from "../views/admin/profile/office_subuptdlabconstruction/Main.vue"
+// master data tugas&fungsi
+import AdminuptdlabconstructionvissionmissionCreate from "../views/admin/profile/office_subuptdlabconstruction/vissionmission/create.vue";
+import AdminuptdlabconstructionvissionmissionEdit from "../views/admin/profile/office_subuptdlabconstruction/vissionmission/edit.vue";
+// master data program
+import AdminuptdlabconstructionprogrammeCreate from "../views/admin/profile/office_subuptdlabconstruction/programme/create.vue";
+import AdminpuptdlabconstructionprogrammeEdit from "../views/admin/profile/office_subuptdlabconstruction/programme/edit.vue";
+// master data struktur
+import AdminuptdlabconstructionstructureCreate from "../views/admin/profile/office_subuptdlabconstruction/structure/create.vue";
+import AdminuptdlabconstructionstructureEdit from "../views/admin/profile/office_subuptdlabconstruction/structure/edit.vue";
+
+// Profile uptd peralatan konstruksi
+import AdminuptdconstructionequipmentIndex from "../views/admin/profile/office_subuptdconstruction/Main.vue"
+// master data tugas&fungsi
+import AdminuptdconstructionequipmentvissionmissionCreate from "../views/admin/profile/office_subuptdconstruction/vissionmission/create.vue";
+import AdminuptdconstructionequipmentvissionmissionEdit from "../views/admin/profile/office_subuptdconstruction/vissionmission/edit.vue";
+// master data program
+import AdminuptdconstructionequipmentprogrammeCreate from "../views/admin/profile/office_subuptdconstruction/programme/create.vue";
+import AdminpuptdconstructionequipmentprogrammeEdit from "../views/admin/profile/office_subuptdconstruction/programme/edit.vue";
+// master data struktur
+import AdminuptdconstructionequipmentstructureCreate from "../views/admin/profile/office_subuptdconstruction/structure/create.vue";
+import AdminuptdconstructionequipmentstructureEdit from "../views/admin/profile/office_subuptdconstruction/structure/edit.vue";
+
 //visi dan misi dinas
 import AdminStructureIndex from "../views/admin/profile/office_structure/index.vue";
 import AdminStructureCreate from "../views/admin/profile/office_structure/create.vue";
