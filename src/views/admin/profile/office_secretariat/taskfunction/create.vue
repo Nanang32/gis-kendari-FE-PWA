@@ -16,7 +16,7 @@
 
 <script setup>
 // import sendRequest from '@libs/http.js'
-import Form from "./components/Form.vue";
+import Form from "@/components/form-editor/Main.vue";
 import { useRouter } from "vue-router";
 import { ref, reactive } from "vue";
 const router = useRouter();

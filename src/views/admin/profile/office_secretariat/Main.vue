@@ -53,7 +53,7 @@
     </div>
     <div class="grid grid-cols-12 mt-5">
         <div class="intro-y col-span-12">
-            <button class="btn btn-primary shadow-md mb-2" @click="router.push({ name: 'admin-post-create'})">
+            <button class="btn btn-primary shadow-md mb-2" @click="router.push({ name: 'admin-secretariat-programme'})">
                 Add new
             </button>
             <div class="intro-y box col-span-12 overflow-auto lg:overflow-visible">
@@ -102,7 +102,7 @@
     </div>
     <div class="grid grid-cols-12 mt-5">
         <div class="intro-y col-span-12">
-            <button class="btn btn-primary shadow-md mb-2" @click="router.push({ name: 'admin-post-create'})">
+            <button class="btn btn-primary shadow-md mb-2" @click="router.push({ name: 'admin-secretariat-structure'})">
                 Add new
             </button>
             <div class="intro-y box col-span-12 overflow-auto lg:overflow-visible">

@@ -227,7 +227,7 @@ const routes = [{
             {
                 path: "secretariat/programme/create",
                 name: "admin-secretariat-programme",
-                component: AdminsecretariattaskfunctionCreate,
+                component: AdminsecretariatprogrammeCreate,
             },
             {
                 path: "secretariat/programme/:id",
