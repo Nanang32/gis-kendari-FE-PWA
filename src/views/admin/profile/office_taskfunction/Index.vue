@@ -4,7 +4,7 @@
     </div>
     <div class="grid grid-cols-12 gap-6 mt-5 mb-20">
         <div class="intro-y col-span-12">
-            <button class="btn btn-primary shadow-md mr-2" @click="router.push({ name: 'admin-post-create'})">
+            <button class="btn btn-primary shadow-md mr-2" @click="router.push({ name: 'admin-taskfunction-create'})">
                 Add new
             </button>
             <div class="intro-y box col-span-12 overflow-auto lg:overflow-visible">
@@ -18,11 +18,11 @@
                             <th class="text-center whitespace-nowrap">Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody v-for="(departmentTask, index) in departmentTasks" key="index">
                         <tr>
-                            <td>1</td>
-                            <td>visi misi 2024</td>
-                            <td>V22-22-2022</td>
+                            <td>{{ index + 1 }}</td>
+                            <td>{{ departmentTask.title }}</td>
+                            <td>{{departmentTask.created_at}}</td>
                             <td>aktif / tidak</td>
                             <td>
                                 <div class="flex justify-center items-center">
@@ -38,7 +38,7 @@
                     </tbody>
                 </table>
             </div>
-            <!-- <Paginator
+            <Paginator
         :page="page"
         :perPage="perPage"
         :lastPage="lastPage"
@@ -47,18 +47,18 @@
       <ModalConfirmDelete 
         :isShowModal="showDeleteModal"
         @confirm="onConfirmDelete"
-      /> -->
+      />
         </div>
     </div>
 </template>
-<!-- <script setup>
+<script setup>
 import Paginator from "@/components/paginator/Main.vue";
 import ModalConfirmDelete from "@/components/modal-confirm-delete/Main.vue";
 import sendRequest from '@libs/http.js'
 import { ref, watch , onMounted } from "vue";
 import { useRouter } from "vue-router";
 
-const facilities = ref([]);
+const departmentTasks = ref([]);
 const page = ref(1);
 const perPage = ref(10);
 const lastPage = ref(1);
@@ -78,7 +78,7 @@ function confirmDelete(id){
 async function onConfirmDelete(){
   const responseDelete = await sendRequest({
     method: 'delete',
-    url: `/facilities/${deleteId.value}`,
+    url: `/departmentTasks/${deleteId.value}`,
   });
   showDeleteModal.value=false
   await loadData(page.value);
@@ -87,14 +87,14 @@ async function onConfirmDelete(){
 async function loadData(page=1){
   const response = await sendRequest({
       method: 'get',
-      url: '/facilities',
+      url: '/departmentTasks',
       params: {
         page: page
       },
   });
   if ((response !== null) && (response.status === true)) {
-    facilities.value = response.data.facilities.data
-    lastPage.value = response.data.facilities.last_page
+    departmentTasks.value = response.data.departmentTasks.data
+    lastPage.value = response.data.departmentTasks.last_page
   }
 }
 
@@ -105,4 +105,4 @@ watch(page, async (newPage) => {
 onMounted(async()=>{
   await loadData()
 });
-</script> -->
+</script>

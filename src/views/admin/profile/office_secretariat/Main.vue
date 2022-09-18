@@ -18,10 +18,11 @@
                             <th class="text-center whitespace-nowrap">Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody v-for="(taskFunction, index) in taskFunctions" :key="index">
                         <tr>
-                            <td>1</td>
-                            <td>Lorem</td>
+                            <td>{{ index + 1 }}</td>
+                            <td>{{ taskFunction.title}}</td>
+
                             <td>
                                 Aktif/ tidak
                             </td>
@@ -39,16 +40,8 @@
                     </tbody>
                 </table>
             </div>
-            <!-- <Paginator
-        :page="page"
-        :perPage="perPage"
-        :lastPage="lastPage"
-        @goToPage="setPage"
-      />
-      <ModalConfirmDelete 
-        :isShowModal="showDeleteModal"
-        @confirm="onConfirmDelete"
-      /> -->
+            <Paginator :page="page" :perPage="perPage" :lastPage="lastPage" @goToPage="setPage" />
+            <ModalConfirmDelete :isShowModal="showDeleteModal" @confirm="onConfirmDelete" />
         </div>
     </div>
     <div class="grid grid-cols-12 mt-5">
@@ -88,7 +81,7 @@
                     </tbody>
                 </table>
             </div>
-            <!-- <Paginator
+            <Paginator
         :page="page"
         :perPage="perPage"
         :lastPage="lastPage"
@@ -97,7 +90,7 @@
       <ModalConfirmDelete 
         :isShowModal="showDeleteModal"
         @confirm="onConfirmDelete"
-      /> -->
+      />
         </div>
     </div>
     <div class="grid grid-cols-12 mt-5">
@@ -137,7 +130,7 @@
                     </tbody>
                 </table>
             </div>
-            <!-- <Paginator
+            <Paginator
         :page="page"
         :perPage="perPage"
         :lastPage="lastPage"
@@ -146,7 +139,7 @@
       <ModalConfirmDelete 
         :isShowModal="showDeleteModal"
         @confirm="onConfirmDelete"
-      /> -->
+      />
         </div>
     </div>
 </template>
@@ -157,7 +150,7 @@ import sendRequest from '@libs/http.js'
 import { ref, watch, onMounted } from "vue";
 import { useRouter } from "vue-router";
 
-const facilities = ref([]);
+const taskFunctions = ref([]);
 const page = ref(1);
 const perPage = ref(10);
 const lastPage = ref(1);
@@ -177,7 +170,7 @@ function confirmDelete(id) {
 async function onConfirmDelete() {
     const responseDelete = await sendRequest({
         method: 'delete',
-        url: `/facilities/${deleteId.value}`,
+        url: `taskFunction/sekretariat-dinas/${deleteId.value}`,
     });
     showDeleteModal.value = false
     await loadData(page.value);
@@ -186,14 +179,14 @@ async function onConfirmDelete() {
 async function loadData(page = 1) {
     const response = await sendRequest({
         method: 'get',
-        url: '/facilities',
+        url: 'taskFunction/sekretariat-dinas/',
         params: {
             page: page
         },
     });
     if ((response !== null) && (response.status === true)) {
-        facilities.value = response.data.facilities.data
-        lastPage.value = response.data.facilities.last_page
+        taskFunctions.value = response.data.taskFunctions.data
+        lastPage.value = response.data.taskFunctions.last_page
     }
 }
 

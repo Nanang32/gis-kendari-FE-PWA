@@ -2,11 +2,11 @@
     <div class="intro-y box p-5">
         <div>
             <label class="form-label">Judul</label>
-            <input type="text" class="form-control w-full" placeholder="Input text" v-model="category.name" :disabled="loading" />
+            <input type="text" class="form-control w-full" placeholder="Input text" v-model="departmentTask.name" :disabled="loading" />
         </div>
-        <div>
+        <div class="mt-3">
             <label class="form-label">Deskripsi</label>
-            <ClassicEditor v-model="editorData" />
+            <ClassicEditor v-model="departmentTask.content" />
         </div>
         <div class="form-check mt-5">
             <input id="vertical-form-3" class="form-check-input" type="checkbox" value="" />
@@ -25,14 +25,13 @@
 </template>
 <script setup>
 import { ref } from "vue";
-const editorData = ref("<p>Content of the editor.</p>");
 
 defineProps({
     loading: {
         type: Boolean,
         default: false
     },
-    category: {
+    departmentTask: {
         type: Object,
         default: { name: null }
     }
