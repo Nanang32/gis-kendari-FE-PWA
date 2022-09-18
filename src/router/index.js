@@ -232,7 +232,7 @@ const routes = [{
             {
                 path: "secretariat/programme/:id",
                 name: "admin-secretariat-programme-edit",
-                component: AdminsecretariattaskfunctionEdit,
+                component: AdminsecretariatprogrammeEdit,
             },
             // sekertariat ,  structure
             {
