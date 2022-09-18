@@ -18,7 +18,7 @@
                             <th class="text-center whitespace-nowrap">Action</th>
                         </tr>
                     </thead>
-                    <tbody v-for="(departmentTask, index) in departmentTasks" key="index">
+                    <tbody v-for="(departmentTask, index) in departmentTasks" :key="index">
                         <tr>
                             <td>{{ index + 1 }}</td>
                             <td>{{ departmentTask.title }}</td>
