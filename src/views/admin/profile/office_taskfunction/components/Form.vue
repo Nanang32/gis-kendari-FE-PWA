@@ -2,7 +2,7 @@
     <div class="intro-y box p-5">
         <div>
             <label class="form-label">Judul</label>
-            <input type="text" class="form-control w-full" placeholder="Input text" v-model="departmentTask.name" :disabled="loading" />
+            <input type="text" class="form-control w-full" placeholder="Input text" v-model="departmentTask.title" :disabled="loading" />
         </div>
         <div class="mt-3">
             <label class="form-label">Deskripsi</label>
@@ -33,7 +33,10 @@ defineProps({
     },
     departmentTask: {
         type: Object,
-        default: { name: null }
+        default: { 
+            title: '',
+            content: ''
+        }
     }
 })
 const emit = defineEmits(['submit'])

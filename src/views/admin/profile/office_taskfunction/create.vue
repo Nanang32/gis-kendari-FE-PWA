@@ -19,14 +19,15 @@
 </template>
 
 <script setup>
-// import sendRequest from '@libs/http.js'
+import sendRequest from '@libs/http.js'
 import Form from "./components/Form.vue";
 import { useRouter } from "vue-router";
 import { ref, reactive } from "vue";
 const router = useRouter();
 const loading = ref(false);
 let departmentTask = reactive({
-    name: null
+    title: '',
+    content: ''
 })
 
 async function onSubmit(data){
