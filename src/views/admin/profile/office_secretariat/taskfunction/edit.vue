@@ -1,12 +1,12 @@
 <template>
   <div class="intro-y flex items-center mt-8">
-    <h2 class="text-lg font-medium mr-auto">Form Layout</h2>
+    <h2 class="text-lg font-medium mr-auto">Form pembaruan tugas dan fungsi</h2>
   </div>
   <div class="grid grid-cols-12 gap-6 mt-5">
     <div class="intro-y col-span-12 lg:col-span-6">
       <Form
         :loading="loading"
-        :facility="facility"
+        :formData="formData"
         @submit="onSubmit"
       ></Form>
     </div>
@@ -21,18 +21,19 @@ import { ref, reactive, onMounted } from "vue";
 const route = useRoute();
 const router = useRouter();
 const loading = ref(false);
-let facility = reactive({
-    name: null
+let formData = reactive({
+    title: null,
+    content: ''
 })
 
 onMounted(async () => {
   loading.value = true;
   const response = await sendRequest({
       method: 'GET',
-      url: `/facilities/${route.params.id}`
+      url: `/taskFunction/sekretariat-dinas/${route.params.id}`
   });
   if ((response !== null) && (response.status === true)) {
-    Object.assign(facility, response.data.facility);
+    Object.assign(formData, response.data.formData);
   }
   loading.value = false;
 })
@@ -41,12 +42,12 @@ async function onSubmit(){
   loading.value = true;
   const response = await sendRequest({
       method: 'PUT',
-      url: `/facilities/${route.params.id}`,
-      data: facility
+      url: `/taskFunction/sekretariat-dinas/${route.params.id}`,
+      data: formData
   });
   loading.value = false;
   if ((response !== null) && (response.status === true)) {
-    router.push({name: 'admin-facility'});
+    router.push({name: 'admin-secretariat'});
   }
 }
 </script>
