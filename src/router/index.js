@@ -187,6 +187,11 @@ const routes = [{
                 component: AdminTaskNFunctionCreate,
             },
             {
+                path: "taskfunction/edit/:id",
+                name: "admin-taskfunction-edit",
+                component: AdminTaskNFunctionEdit,
+            },
+            {
                 path: "vissionmission",
                 name: "admin-vissionmission",
                 component: AdminVissionmissionIndex,

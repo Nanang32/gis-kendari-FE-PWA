@@ -1,6 +1,6 @@
 <template>
     <div class="intro-y flex items-center mt-8">
-        <h2 class="text-lg font-medium mr-auto">Data list tugas dan fungsi dinas</h2>
+        <h2 class="text-lg font-medium mr-auto">Data list tugas dan fungsi dinsas</h2>
     </div>
     <div class="grid grid-cols-12 gap-6 mt-5 mb-20">
         <div class="intro-y col-span-12">
@@ -26,10 +26,10 @@
                             <td>aktif / tidak</td>
                             <td>
                                 <div class="flex justify-center items-center">
-                                    <button class="flex items-center mr-3">
+                                    <button class="flex items-center mr-3" @click="router.push({name: 'admin-taskfunction-edit', params: { id: departmentTask.id }})">
                                         <EditIcon class="w-4 h-4 mr-1" /> Edit
                                     </button>
-                                    <a class="flex items-center text-danger">
+                                    <a class="flex items-center text-danger" href="javascript:;" @click="confirmDelete(departmentTask.id)">
                                         <Trash2Icon class="w-4 h-4 mr-1" /> Delete
                                     </a>
                                 </div>
@@ -38,16 +38,8 @@
                     </tbody>
                 </table>
             </div>
-            <Paginator
-        :page="page"
-        :perPage="perPage"
-        :lastPage="lastPage"
-        @goToPage="setPage"
-      />
-      <ModalConfirmDelete 
-        :isShowModal="showDeleteModal"
-        @confirm="onConfirmDelete"
-      />
+            <Paginator :page="page" :perPage="perPage" :lastPage="lastPage" @goToPage="setPage" />
+            <ModalConfirmDelete :isShowModal="showDeleteModal" @confirm="onConfirmDelete" />
         </div>
     </div>
 </template>
@@ -55,7 +47,7 @@
 import Paginator from "@/components/paginator/Main.vue";
 import ModalConfirmDelete from "@/components/modal-confirm-delete/Main.vue";
 import sendRequest from '@libs/http.js'
-import { ref, watch , onMounted } from "vue";
+import { ref, watch, onMounted } from "vue";
 import { useRouter } from "vue-router";
 
 const departmentTasks = ref([]);
@@ -66,43 +58,43 @@ const showDeleteModal = ref(false);
 const deleteId = ref(null);
 const router = useRouter();
 
-function setPage(newPage){
-  page.value = newPage
-} 
-
-function confirmDelete(id){
-  showDeleteModal.value = true
-  deleteId.value = id;
+function setPage(newPage) {
+    page.value = newPage
 }
 
-async function onConfirmDelete(){
-  const responseDelete = await sendRequest({
-    method: 'delete',
-    url: `/departmentTasks/${deleteId.value}`,
-  });
-  showDeleteModal.value=false
-  await loadData(page.value);
+function confirmDelete(id) {
+    showDeleteModal.value = true
+    deleteId.value = id;
 }
 
-async function loadData(page=1){
-  const response = await sendRequest({
-      method: 'get',
-      url: '/departmentTasks',
-      params: {
-        page: page
-      },
-  });
-  if ((response !== null) && (response.status === true)) {
-    departmentTasks.value = response.data.departmentTasks.data
-    lastPage.value = response.data.departmentTasks.last_page
-  }
+async function onConfirmDelete() {
+    const responseDelete = await sendRequest({
+        method: 'delete',
+        url: `/departmentTasks/${deleteId.value}`,
+    });
+    showDeleteModal.value = false
+    await loadData(page.value);
+}
+
+async function loadData(page = 1) {
+    const response = await sendRequest({
+        method: 'get',
+        url: '/departmentTasks',
+        params: {
+            page: page
+        },
+    });
+    if ((response !== null) && (response.status === true)) {
+        departmentTasks.value = response.data.departmentTasks.data
+        lastPage.value = response.data.departmentTasks.last_page
+    }
 }
 
 watch(page, async (newPage) => {
-  await loadData(newPage)
+    await loadData(newPage)
 })
 
-onMounted(async()=>{
-  await loadData()
+onMounted(async () => {
+    await loadData()
 });
 </script>
