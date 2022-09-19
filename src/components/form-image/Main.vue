@@ -2,11 +2,15 @@
     <div class="intro-y box p-5">
         <div>
             <label class="form-label">Judul</label>
-            <input type="text" class="form-control w-full" placeholder="Input text"  :disabled="loading" />
+            <input type="text" class="form-control w-full" placeholder="Input text" :disabled="loading" v-model="formData.title" />
         </div>
         <div v-if="!loading">
-            <input type="file">
-            
+            <input
+                type="file"
+                class="form-control w-full"
+                :disabled="loading"
+                @change="onFileChange"
+            />
         </div>
         <div class="text-right mt-5">
             <button type="button" class="btn btn-outline-secondary w-24 mr-1">
@@ -20,8 +24,16 @@
     </div>
 </template>
 <script setup>
-import sendRequest from '@libs/http.js'
-import { ref, onMounted } from "vue";
+defineProps({
+    loading: {
+        type: Boolean,
+        default: false
+    },
+    formData: {
+        type: Object,
+        required: true
+    }
+})
 
 const emit = defineEmits(['submit', 'fileChange'])
 
