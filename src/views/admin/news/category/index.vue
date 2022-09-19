@@ -1,11 +1,11 @@
 <template>
     <div class="intro-y flex items-center mt-8">
-        <h2 class="text-lg font-medium mr-auto">Data list Kategori</h2>
+        <h2 class="text-lg font-medium capitalize mr-auto">Data list Kategori (pemberitaan & produk hukum)</h2>
     </div>
     <div class="grid grid-cols-12 gap-6 mt-5 mb-20">
         <div class="intro-y col-span-12">
             <button class="btn btn-primary shadow-md mr-2" @click="router.push({name: 'admin-category-create'})">
-                Add new
+                Tambah
             </button>
             <div class="intro-y col-span-12 overflow-x-auto">
                 <table class="table table-report -mt-2">
@@ -13,8 +13,6 @@
                         <tr>
                             <th class="whitespace-nowrap">#</th>
                             <th class="whitespace-nowrap">Nama</th>
-                            <th class="whitespace-nowrap">Desc</th>
-                            <th class="whitespace-nowrap">Terpakai</th>
                             <th class="text-center whitespace-nowrap">Action</th>
                         </tr>
                     </thead>
@@ -22,8 +20,6 @@
                         <tr>
                             <td>{{ index + 1 }}</td>
                             <td>{{ category.name }}</td>
-                            <!-- <td>{{ category.desc }}</td>
-                            <td>{{ category.terpakai }}</td> -->
                             <td>
                                 <div class="flex justify-center items-center">
                                     <button class="flex items-center mr-3" @click="router.push({name: 'admin-category-edit', params: { id: category.id }})">
