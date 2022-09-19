@@ -128,7 +128,7 @@ import AdminuptdconstructionequipmentprogrammeEdit from "../views/admin/profile/
 import AdminuptdconstructionequipmentstructureCreate from "../views/admin/profile/office_subuptdconstructionequipment/structure/create.vue";
 import AdminuptdconstructionequipmentstructureEdit from "../views/admin/profile/office_subuptdconstructionequipment/structure/edit.vue";
 
-//visi dan misi dinas
+//struktur organisasi dinas
 import AdminStructureIndex from "../views/admin/profile/office_structure/index.vue";
 import AdminStructureCreate from "../views/admin/profile/office_structure/create.vue";
 import AdminStructureEdit from "../views/admin/profile/office_structure/edit.vue";
@@ -210,6 +210,11 @@ const routes = [{
                 path: "structure/create",
                 name: "admin-structure-create",
                 component: AdminStructureCreate,
+            },
+            {
+                path: "structure/edit/:id",
+                name: "admin-structure-edit",
+                component: AdminStructureEdit,
             },
             //index sekertariat
             {
