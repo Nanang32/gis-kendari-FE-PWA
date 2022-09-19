@@ -3,7 +3,7 @@
         <div class="intro-y col-span-12">
             <button class="btn btn-primary shadow-md mb-2"
                 @click="router.push({ name: addRouteName })">
-                Add new
+                Tambah data
             </button>
             <div class="intro-y box col-span-12 overflow-auto lg:overflow-visible">
                 <h3 class="text-sm text-center font-black p-2">Program Kerja</h3>
