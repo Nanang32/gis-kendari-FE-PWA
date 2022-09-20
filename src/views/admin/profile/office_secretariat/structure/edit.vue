@@ -1,9 +1,3 @@
-
-
-
-
-
-
 <template>
   <div class="intro-y flex items-center mt-8">
     <h2 class="text-lg font-medium mr-auto">Form Pembaruan sekertariat</h2>
@@ -50,13 +44,14 @@ onMounted(async () => {
 
 async function onSubmit(){
   loading.value = true;
-  const formdata = new FormData();
-  formdata.append('title', formData.title)
-  formdata.append('file', image.value)
+  const formFileData = new FormData();
+  formFileData.append('title', formData.title)
+  formFileData.append('file', image.value)
+  formFileData.append('_method', 'PUT')
   const response = await sendRequest({
-      method: 'PUT',
+      method: 'POST',
       url: `/organizationDiagram/sekretariat-dinas/${route.params.id}`,
-      data: formData
+      data: formFileData
   });
   loading.value = false;
   if ((response !== null) && (response.status === true)) {
