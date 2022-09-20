@@ -308,7 +308,7 @@ const routes = [{
             },
             {
                 path: "pjpa/taskfunction/:id",
-                name: "admin-pjpa-taskfunction-edit",
+                name: "admin-pjsa-taskfunction-edit",
                 component: AdminpjsataskfunctionEdit,
             },
             // pjsa ,  program
