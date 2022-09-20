@@ -33,7 +33,7 @@ onMounted(async () => {
       url: `/taskFunction/sekretariat-dinas/${route.params.id}`
   });
   if ((response !== null) && (response.status === true)) {
-    Object.assign(formData, response.data.formData);
+    Object.assign(formData, response.data.taskFunction);
   }
   loading.value = false;
 })
