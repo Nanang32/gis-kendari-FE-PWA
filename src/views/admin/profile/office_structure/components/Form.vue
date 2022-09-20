@@ -2,15 +2,11 @@
     <div class="intro-y box p-5">
         <div>
             <label class="form-label">Judul</label>
-            <input type="text" class="form-control w-full" placeholder="Input text" v-model="category.name" :disabled="loading" />
+            <input type="text" class="form-control w-full" placeholder="Input text" v-model="departmentOrganization.title" :disabled="loading" />
         </div>
-        <div>
-            <label class="form-label">Deskripsi</label>
-            <input type="file" class="form-control w-full" placeholder="Input text" :disabled="loading" />
-        </div>
-        <div class="form-check mt-5">
-            <input id="vertical-form-3" class="form-check-input" type="checkbox" value="" />
-            <label class="form-check-label" for="vertical-form-3">aktif</label>
+        <div class="m-1">
+            <label class="form-label">Feature Image</label>
+            <input type="file" class="form-control w-full" :disabled="loading" @change="onFileChange" />
         </div>
         <div class="text-right mt-5">
             <button type="button" class="btn btn-outline-secondary w-24 mr-1">
@@ -31,9 +27,9 @@ defineProps({
         type: Boolean,
         default: false
     },
-    category: {
+    departmentOrganization: {
         type: Object,
-        default: { name: null }
+        default: { title: null }
     }
 })
 const emit = defineEmits(['submit'])
