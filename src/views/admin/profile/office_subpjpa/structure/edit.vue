@@ -1,6 +1,6 @@
 <template>
   <div class="intro-y flex items-center mt-8">
-    <h2 class="text-lg font-medium mr-auto">Form Pembaruan sekertariat</h2>
+    <h2 class="text-lg font-medium mr-auto">Form Pembaruan struktur</h2>
   </div>
   <div class="grid grid-cols-12 gap-6 mt-5">
     <div class="intro-y col-span-12 lg:col-span-6">
@@ -34,7 +34,7 @@ onMounted(async () => {
   loading.value = true;
   const response = await sendRequest({
       method: 'GET',
-      url: `/organizationDiagram/sekretariat-dinas/${route.params.id}`
+      url: `/organizationDiagram/pjpa/${route.params.id}`
   });
   if ((response !== null) && (response.status === true)) {
     Object.assign(formData, response.data.organizationDiagram);
@@ -50,12 +50,12 @@ async function onSubmit(){
   formFileData.append('_method', 'PUT')
   const response = await sendRequest({
       method: 'POST',
-      url: `/organizationDiagram/sekretariat-dinas/${route.params.id}`,
+      url: `/organizationDiagram/pjpa/${route.params.id}`,
       data: formFileData
   });
   loading.value = false;
   if ((response !== null) && (response.status === true)) {
-    router.push({name: 'admin-secretariat'});
+    router.push({name: 'admin-pjpa'});
   }
 }
 </script>

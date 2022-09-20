@@ -1,6 +1,6 @@
 <template>
   <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
-    <h2 class="text-lg font-medium mr-auto">Register tugas dan fungsi</h2>
+    <h2 class="text-lg font-medium mr-auto">Register program kerja</h2>
     
   </div>
   <div class="grid grid-cols-12 gap-6 mt-5">
@@ -30,11 +30,11 @@ async function onSubmit(data){
   loading.value = true;
   const response = await sendRequest({
       method: 'post',
-      url: '/workingProgram/sekretariat-dinas',
+      url: '/workingProgram/pjpa',
       data: formData
   });
   if ((response !== null) && (response.status === true)) {
-    router.push({name: 'admin-secretariat'});
+    router.push({name: 'admin-pjpa'});
   }
   loading.value = false;
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
-    <h2 class="text-lg font-medium mr-auto">Register tugas dan fungsi</h2>
+    <h2 class="text-lg font-medium mr-auto">Register struktur</h2>
     
   </div>
   <div class="grid grid-cols-12 gap-6 mt-5">
@@ -37,11 +37,11 @@ async function onSubmit(data){
   formdata.append('file', image.value)
   const response = await sendRequest({
     method: 'post',
-    url: '/organizationDiagram/sekretariat-dinas',
+    url: '/organizationDiagram/pjpa',
     data: formdata
   });
   if ((response !== null) && (response.status === true)) {
-    router.push({name: 'admin-secretariat'});
+    router.push({name: 'admin-pjpa'});
   }
   loading.value = false;
 }
