@@ -7,7 +7,7 @@
         </div>
         <div v-if="!loading">
             <label class="form-label">Ketik dibawah ini..</label>
-            <DocumentEditor
+            <ClassicEditor
                 class="form-control w-full"
                 placeholder="Input text"
                 v-model="formData.content"

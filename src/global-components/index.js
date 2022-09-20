@@ -7,10 +7,10 @@ import TippyContent from "./tippy-content/Main.vue";
 import TomSelect from "./tom-select/Main.vue";
 import LoadingIcon from "./loading-icon/Main.vue";
 import TinySlider from "./tiny-slider/Main.vue";
-// import ClassicEditor from "./ckeditor/ClassicEditor.vue";
+import ClassicEditor from "./ckeditor/ClassicEditor.vue";
 // import BalloonBlockEditor from './ckeditor/BalloonBlockEditor.vue'
 // import BalloonEditor from './ckeditor/BalloonEditor.vue'
-import DocumentEditor from './ckeditor/DocumentEditor.vue'
+// import DocumentEditor from './ckeditor/DocumentEditor.vue'
 // import InlineEditor from './ckeditor/InlineEditor.vue'
 import Dropzone from "./dropzone/Main.vue";
 // import FullCalendar from "./calendar/Main.vue";
@@ -53,10 +53,10 @@ export default (app) => {
   app.component("LoadingIcon", LoadingIcon);
   app.component("TinySlider", TinySlider);
   app.component("Dropzone", Dropzone);
-  // app.component("ClassicEditor", ClassicEditor);
+  app.component("ClassicEditor", ClassicEditor);
   // app.component('BalloonBlockEditor', BalloonBlockEditor)
   // app.component('BalloonEditor', BalloonEditor)
-  app.component('DocumentEditor', DocumentEditor)
+  // app.component('DocumentEditor', DocumentEditor)
   // app.component('InlineEditor', InlineEditor)
   // app.component("FullCalendar", FullCalendar);
   // app.component("FullCalendarDraggable", FullCalendarDraggable);
