@@ -7,7 +7,7 @@
     <div class="intro-y col-span-12 lg:col-span-12">
       <Form
         :loading="loading"
-        :post="post"
+        :formData="formData"
         @submit="onSubmit"
       ></Form>
     </div>
@@ -15,26 +15,27 @@
 </template>
 
 <script setup>
-// import sendRequest from '@libs/http.js'
-import Form from "./components/Form.vue";
+import sendRequest from '@libs/http.js'
+import Form from "@/components/form-editor/Main.vue";
 import { useRouter } from "vue-router";
 import { ref, reactive } from "vue";
 const router = useRouter();
 const loading = ref(false);
-let post = reactive({
-    name: null
+let formData = reactive({
+    title: null,
+    content: ''
 })
 
-// async function onSubmit(data){
-//   loading.value = true;
-//   const response = await sendRequest({
-//       method: 'post',
-//       url: '/facilities',
-//       data: facility
-//   });
-//   if ((response !== null) && (response.status === true)) {
-//     router.push({name: 'admin-facility'});
-//   }
-//   loading.value = false;
-// }
+async function onSubmit(data){
+  loading.value = true;
+  const response = await sendRequest({
+      method: 'post',
+      url: 'taskFunction/peralatan-konstruksi',
+      data: formData
+  });
+  if ((response !== null) && (response.status === true)) {
+    router.push({name: 'admin-uptdcontructionequipment'});
+  }
+  loading.value = false;
+}
 </script>
