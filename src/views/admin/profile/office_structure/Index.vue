@@ -23,7 +23,7 @@
                         <tr>
                             <td>{{ index + 1 }}</td>
                             <td>{{ departmentOrganization.title }}</td>
-                            <td>{{ departmentOrganization.content }}</td>
+                            <td>{{ departmentOrganization.file }}</td>
                             <td>{{departmentOrganization.created_at}}</td>
                             <td>
                                 <div class="flex justify-center items-center">
