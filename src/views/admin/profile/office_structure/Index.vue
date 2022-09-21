@@ -25,7 +25,6 @@
                             <td>{{ departmentOrganization.title }}</td>
                             <td>{{ departmentOrganization.content }}</td>
                             <td>{{departmentOrganization.created_at}}</td>
-                            <td>aktif / tidak</td>
                             <td>
                                 <div class="flex justify-center items-center">
                                     <button class="flex items-center mr-3" @click="router.push({name: 'admin-structure-edit', params: { id: departmentOrganization.id }})">
