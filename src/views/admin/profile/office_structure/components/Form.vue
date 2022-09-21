@@ -32,9 +32,13 @@ defineProps({
         default: { title: null }
     }
 })
-const emit = defineEmits(['submit'])
+const emit = defineEmits(['submit', 'fileChange'])
 
 function submit() {
     emit('submit');
+}
+
+function onFileChange(e) {
+    emit('fileChange', e);
 }
 </script>

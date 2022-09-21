@@ -32,7 +32,7 @@ const onFileChange = (e) => {
 async function onSubmit(data){
   loading.value = true;
   const formdata = new FormData();
-  formdata.append('content', image.value)
+  formdata.append('file', image.value)
   formdata.append('title', departmentOrganization.title)
   const response = await sendRequest({
       method: 'post',
