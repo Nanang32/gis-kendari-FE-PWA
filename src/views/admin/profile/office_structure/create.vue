@@ -37,7 +37,7 @@ async function onSubmit(data){
   const response = await sendRequest({
       method: 'post',
       url: '/departmentOrganizations',
-      data: departmentOrganization
+      data: formdata
   });
   if ((response !== null) && (response.status === true)) {
     router.push({name: 'admin-structure'});
