@@ -202,6 +202,11 @@ const routes = [{
                 component: AdminVissionmissionCreate,
             },
             {
+                path: "vissionmission/edit/:id",
+                name: "admin-vissionmission-edit",
+                component: AdminVissionmissionEdit,
+            },
+            {
                 path: "structure",
                 name: "admin-structure",
                 component: AdminStructureIndex,
