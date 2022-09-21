@@ -2,15 +2,15 @@
     <div class="intro-y box p-5">
         <div>
             <label class="form-label">Judul</label>
-            <input type="text" class="form-control w-full" placeholder="Input text" v-model="category.name" :disabled="loading" />
+            <input type="text" class="form-control w-full" placeholder="Input text" v-model="departmentVision.title" :disabled="loading" />
         </div>
         <div>
             <label class="form-label">Deskripsi</label>
-            <ClassicEditor v-model="editorData" />
-        </div>
-        <div class="form-check mt-5">
-            <input id="vertical-form-3" class="form-check-input" type="checkbox" value="" />
-            <label class="form-check-label" for="vertical-form-3">aktif</label>
+            <ClassicEditor
+                class="form-control w-full"
+                placeholder="Input text"
+                v-model="departmentVision.content"
+            />
         </div>
         <div class="text-right mt-5">
             <button type="button" class="btn btn-outline-secondary w-24 mr-1">
@@ -32,9 +32,9 @@ defineProps({
         type: Boolean,
         default: false
     },
-    category: {
+    departmentVision: {
         type: Object,
-        default: { name: null }
+        default: { title: null }
     }
 })
 const emit = defineEmits(['submit'])

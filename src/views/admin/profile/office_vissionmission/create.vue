@@ -1,37 +1,44 @@
 <template>
-  
+  <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
+    <h2 class="text-lg font-medium mr-auto">Register organisasi dinas</h2>
+    
+  </div>
   <div class="grid grid-cols-12 gap-6 mt-5">
     <div class="intro-y col-span-12 lg:col-span-12">
       <Form
         :loading="loading"
-        :post="post"
+        :departmentVision="departmentVision"
         @submit="onSubmit"
+        @fileChange="onFileChange"
       ></Form>
     </div>
   </div>
 </template>
 
 <script setup>
-// import sendRequest from '@libs/http.js'
+import sendRequest from '@libs/http.js'
 import Form from "./components/Form.vue";
 import { useRouter } from "vue-router";
 import { ref, reactive } from "vue";
 const router = useRouter();
 const loading = ref(false);
-let post = reactive({
-    name: null
+let departmentVision = reactive({
+    title: null
 })
-
-// async function onSubmit(data){
-//   loading.value = true;
-//   const response = await sendRequest({
-//       method: 'post',
-//       url: '/facilities',
-//       data: facility
-//   });
-//   if ((response !== null) && (response.status === true)) {
-//     router.push({name: 'admin-facility'});
-//   }
-//   loading.value = false;
-// }
+const image = ref('');
+const onFileChange = (e) => {
+  image.value = e.target.files[0];a
+};
+async function onSubmit(data){
+  loading.value = true;
+  const response = await sendRequest({
+      method: 'post',
+      url: '/departmentVisions',
+      data: departmentVision
+  });
+  if ((response !== null) && (response.status === true)) {
+    router.push({name: 'admin-vissionmission'});
+  }
+  loading.value = false;
+}
 </script>
