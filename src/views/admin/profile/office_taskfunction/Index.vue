@@ -14,7 +14,6 @@
                             <th class="whitespace-nowrap">#</th>
                             <th class="whitespace-nowrap">Judul</th>
                             <th class="whitespace-nowrap">tgl publish</th>
-                            <th class="whitespace-nowrap">status</th>
                             <th class="text-center whitespace-nowrap">Action</th>
                         </tr>
                     </thead>
@@ -23,7 +22,6 @@
                             <td>{{ index + 1 }}</td>
                             <td>{{ departmentTask.title }}</td>
                             <td>{{departmentTask.created_at}}</td>
-                            <td>aktif / tidak</td>
                             <td>
                                 <div class="flex justify-center items-center">
                                     <button class="flex items-center mr-3" @click="router.push({name: 'admin-taskfunction-edit', params: { id: departmentTask.id }})">
