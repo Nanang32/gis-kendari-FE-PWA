@@ -8,10 +8,6 @@
             <label class="form-label">Deskripsi</label>
             <ClassicEditor v-model="departmentTask.content" />
         </div>
-        <div class="form-check mt-5">
-            <input id="vertical-form-3" class="form-check-input" type="checkbox" value="" />
-            <label class="form-check-label" for="vertical-form-3">aktif</label>
-        </div>
         <div class="text-right mt-5">
             <button type="button" class="btn btn-outline-secondary w-24 mr-1">
                 Cancel
@@ -33,7 +29,7 @@ defineProps({
     },
     departmentTask: {
         type: Object,
-        default: { 
+        default: {
             title: '',
             content: ''
         }
