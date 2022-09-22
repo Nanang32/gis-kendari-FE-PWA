@@ -21,15 +21,24 @@
       </div>
     </div>
     
-    <div class="intro-y text-justify leading-relaxed">
-      <h1 class="text-lg text-2xl text-center mr-auto">Visi</h1>
-      <p class="mb-5">{{ $f()[1].news[0].content }}</p>
-      <h1 class="text-lg text-2xl text-center mr-auto">Misi</h1>
-
-      <p class="mb-5">{{ $f()[2].news[0].content }}</p>
-      <h1 class="text-lg text-2xl text-center mr-auto">Prinsip</h1>
-
-      <p>{{ $f()[3].news[0].content }}</p>
+    <div class="intro-y text-justify leading-relaxed" v-html="content">
     </div>
   </div>
 </template>
+
+<script setup>
+  import sendRequest from '@libs/http.js'
+  import { ref, onMounted } from "vue";
+  const loading = ref(false);
+  const content = ref('');
+
+  onMounted(async () => {
+    const response = await sendRequest({
+        method: 'get',
+        url: '/public/departmentVisions',
+    });
+    if ((response !== null) && (response.status === true)) {
+        content.value = response.data.departmentVision.content
+    }
+  });
+</script>
