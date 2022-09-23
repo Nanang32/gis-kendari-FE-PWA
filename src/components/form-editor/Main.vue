@@ -7,7 +7,7 @@
         </div>
         <div v-if="!loading">
             <label class="form-label">Ketik dibawah ini..</label>
-            <editor v-model="formData.conten" :init="{
+            <editor v-model="formData.content" :init="{
                 height: 500,
                 menubar: true,
                 plugins: [
