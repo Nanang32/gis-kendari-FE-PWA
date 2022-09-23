@@ -62,83 +62,7 @@
                             <TabPanels class="mt-5">
                                 <!-- berita section -->
                                 <TabPanel class="leading-relaxed">
-                                    <div class="intro-y grid grid-cols-12 gap-6 mt-5">
-                                        <!-- BEGIN: Blog Layout -->
-                                        <div v-for="(faker, fakerKey) in $_.take($f(), 6)" :key="fakerKey" class="intro-y col-span-12 md:col-span-6 box">
-                                            <div class="h-[320px] before:block before:absolute before:w-full before:h-full before:top-0 before:left-0 before:z-10 before:bg-gradient-to-t before:from-black/90 before:to-black/10 image-fit">
-                                                <img alt="Midone Tailwind HTML Admin Template" class="rounded-t-md" :src="faker.images[0]" />
-                                                <div class="absolute bottom-0 text-white px-5 pb-6 z-10">
-                                                    <span class="bg-white/20 px-2 py-1 rounded">{{
-                                                        faker.products[0].category
-                                                        }}</span>
-                                                    <a href="" class="block font-medium text-xl mt-3">{{
-                                                        faker.news[0].title
-                                                        }}</a>
-                                                    {{ faker.users[0].name }},{{ faker.formattedTimes[0] }}
-                                                </div>
-                                            </div>
-                                            <div class="p-5 text-slate-600 dark:text-slate-500">
-                                                {{ faker.news[0].shortContent }}
-                                            </div>
-                                            <div class="px-5 pt-3 pb-5 border-t border-slate-200/60 dark:border-darkmode-400">
-                                                <div class="w-full flex text-slate-500 text-xs sm:text-sm">
-                                                    <div class="mr-2">
-                                                        Views: <span class="font-medium">{{ faker.totals[1] }}k</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- END: Blog Layout -->
-                                        <!-- BEGIN: Pagiantion -->
-                                        <div class="intro-y col-span-12 flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
-                                            <nav class="w-full sm:w-auto sm:mr-auto">
-                                                <ul class="pagination">
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#">
-                                                            <ChevronsLeftIcon class="w-4 h-4" />
-                                                        </a>
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#">
-                                                            <ChevronLeftIcon class="w-4 h-4" />
-                                                        </a>
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#">...</a>
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#">1</a>
-                                                    </li>
-                                                    <li class="page-item active">
-                                                        <a class="page-link" href="#">2</a>
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#">3</a>
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#">...</a>
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#">
-                                                            <ChevronRightIcon class="w-4 h-4" />
-                                                        </a>
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#">
-                                                            <ChevronsRightIcon class="w-4 h-4" />
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                            <select class="w-20 form-select box mt-3 sm:mt-0">
-                                                <option>10</option>
-                                                <option>25</option>
-                                                <option>35</option>
-                                                <option>50</option>
-                                            </select>
-                                        </div>
-                                        <!-- END: Pagiantion -->
-                                    </div>
+                                    <News />
                                 </TabPanel>
                                 <!-- end berita section -->
                                 <!-- video section -->
@@ -205,3 +129,6 @@
         </div>
     </div>
 </template>
+<script setup>
+    import News from "./components/news.vue";
+</script>
