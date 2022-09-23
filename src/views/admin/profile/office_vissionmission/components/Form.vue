@@ -6,11 +6,18 @@
         </div>
         <div>
             <label class="form-label">Deskripsi</label>
-            <ClassicEditor
+            <!-- <ClassicEditor
                 class="form-control w-full"
                 placeholder="Input text"
                 v-model="departmentVision.content"
-            />
+            /> -->
+            <editor
+            v-model="departmentVision.content"
+      :init="{
+        plugins: 'lists',
+        toolbar: 'numlist bullist'
+      }"
+    />
         </div>
         <div class="text-right mt-5">
             <button type="button" class="btn btn-outline-secondary w-24 mr-1">
@@ -25,7 +32,8 @@
 </template>
 <script setup>
 import { ref } from "vue";
-const editorData = ref("<p>Content of the editor.</p>");
+import Editor from '@tinymce/tinymce-vue'
+// const editorData = ref("<p>Content of the editor.</p>");
 
 defineProps({
     loading: {
