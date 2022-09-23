@@ -6,7 +6,20 @@
         </div>
         <div class="mt-3">
             <label class="form-label">Deskripsi</label>
-            <ClassicEditor v-model="departmentTask.content" />
+            <editor v-model="departmentTask.content" :init="{
+                height: 500,
+                menubar: true,
+                plugins: [
+
+                    'advlist autolink  link image charmap print preview anchor',
+                    'searchreplace visualblocks code fullscreen',
+                    'insertdatetime media table paste code help wordcount'
+                  ],
+                toolbar: 'undo redo | formatselect | ' +
+                  'bold italic backcolor | alignleft aligncenter ' +
+                  'alignright alignjustify | outdent indent | ' +
+                  'removeformat | help',
+                      }" />
         </div>
         <div class="text-right mt-5">
             <button type="button" class="btn btn-outline-secondary w-24 mr-1">
@@ -21,6 +34,7 @@
 </template>
 <script setup>
 import { ref } from "vue";
+import Editor from '@tinymce/tinymce-vue'
 
 defineProps({
     loading: {

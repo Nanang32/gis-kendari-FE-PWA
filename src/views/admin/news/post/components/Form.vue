@@ -17,7 +17,20 @@
                             <div class="font-medium flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5">
                                 <ChevronDownIcon class="w-4 h-4 mr-2" /> Konten
                             </div>
-                            <ClassicEditor v-model="editorData" />
+                            <editor v-model="departmentVision.content" :init="{
+                height: 500,
+                menubar: true,
+                plugins: [
+
+                    'advlist autolink  link image charmap print preview anchor',
+                    'searchreplace visualblocks code fullscreen',
+                    'insertdatetime media table paste code help wordcount'
+                  ],
+                toolbar: 'undo redo | formatselect | ' +
+                  'bold italic backcolor | alignleft aligncenter ' +
+                  'alignright alignjustify | outdent indent | ' +
+                  'removeformat | help',
+                      }" />
                         </div>
                         <div class="border border-slate-200/60 dark:border-darkmode-400 rounded-md p-5 mt-5">
                             <div class="font-medium flex items-center border-b border-slate-200/60 dark:border-darkmode-400 pb-5">
@@ -80,6 +93,7 @@
 </template>
 <script setup>
 import { ref } from "vue";
+import Editor from '@tinymce/tinymce-vue'
 
 const categories = ref(["1", "2"]);
 const tags = ref(["1", "2"]);

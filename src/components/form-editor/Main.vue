@@ -7,11 +7,20 @@
         </div>
         <div v-if="!loading">
             <label class="form-label">Ketik dibawah ini..</label>
-            <ClassicEditor
-                class="form-control w-full"
-                placeholder="Input text"
-                v-model="formData.content"
-            />
+            <editor v-model="formData.conten" :init="{
+                height: 500,
+                menubar: true,
+                plugins: [
+
+                    'advlist autolink  link image charmap print preview anchor',
+                    'searchreplace visualblocks code fullscreen',
+                    'insertdatetime media table paste code help wordcount'
+                  ],
+                toolbar: 'undo redo | formatselect | ' +
+                  'bold italic backcolor | alignleft aligncenter ' +
+                  'alignright alignjustify | outdent indent | ' +
+                  'removeformat | help',
+                      }" />
         </div>
         <div class="text-right mt-5">
             <button type="button" class="btn btn-outline-secondary w-24 mr-1">
@@ -26,6 +35,7 @@
 </template>
 <script setup>
 import sendRequest from '@libs/http.js'
+import Editor from '@tinymce/tinymce-vue'
 import { ref, onMounted } from "vue";
 defineProps({
     loading: {

@@ -1,11 +1,6 @@
 <template>
   <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
     <h2 class="text-lg font-medium mr-auto">Form tugas dan fungsi dinas</h2>
-    <div class="w-full sm:w-auto flex mt-4 sm:mt-0">
-      
-      
-     
-    </div>
   </div>
   <div class="grid grid-cols-12 gap-6 mt-5">
     <div class="intro-y col-span-12 lg:col-span-12">

@@ -6,18 +6,20 @@
         </div>
         <div>
             <label class="form-label">Deskripsi</label>
-            <!-- <ClassicEditor
-                class="form-control w-full"
-                placeholder="Input text"
-                v-model="departmentVision.content"
-            /> -->
-            <editor
-            v-model="departmentVision.content"
-      :init="{
-        plugins: 'lists',
-        toolbar: 'numlist bullist'
-      }"
-    />
+            <editor v-model="departmentVision.content" :init="{
+                height: 500,
+                menubar: true,
+                plugins: [
+
+                    'advlist autolink  link image charmap print preview anchor',
+                    'searchreplace visualblocks code fullscreen',
+                    'insertdatetime media table paste code help wordcount'
+                  ],
+                toolbar: 'undo redo | formatselect | ' +
+                  'bold italic backcolor | alignleft aligncenter ' +
+                  'alignright alignjustify | outdent indent | ' +
+                  'removeformat | help',
+                      }" />
         </div>
         <div class="text-right mt-5">
             <button type="button" class="btn btn-outline-secondary w-24 mr-1">
@@ -33,7 +35,6 @@
 <script setup>
 import { ref } from "vue";
 import Editor from '@tinymce/tinymce-vue'
-// const editorData = ref("<p>Content of the editor.</p>");
 
 defineProps({
     loading: {
