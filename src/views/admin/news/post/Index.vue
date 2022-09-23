@@ -13,8 +13,6 @@
                       <tr>
                           <th class="whitespace-nowrap">#</th>
                           <th class="whitespace-nowrap">Judul</th>
-                          <th class="whitespace-nowrap">Kategori</th>
-                          <th class="whitespace-nowrap">Tanggal</th>
                           <th class="text-center whitespace-nowrap">Action</th>
                       </tr>
                   </thead>
@@ -22,9 +20,6 @@
                       <tr>
                           <td> {{ index +1 }}</td>
                           <td> {{ post.title }} </td>
-                          <td>Video, news</td>
-                          <td>Published
-                              2022/08/30 at 7:18 am</td>
                           <td>
                               <div class="flex justify-center items-center">
                                   <button class="flex items-center mr-3">
