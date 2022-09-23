@@ -1,5 +1,5 @@
 <template>
-  <div class="intro-y news  p-5 box m-8">
+  <div class="intro-y news  p-5 box m-3">
     <div class="intro-y text-justify leading-relaxed" v-html="content">
     </div>
   </div>
