@@ -7,6 +7,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-alignment": "^35.1.0",
     "@ckeditor/ckeditor5-build-balloon": "^29.1.0",
     "@ckeditor/ckeditor5-build-balloon-block": "^29.1.0",
     "@ckeditor/ckeditor5-build-classic": "^29.1.0",
@@ -21,6 +22,7 @@
     "@googlemaps/markerclustererplus": "^1.1.0",
     "@left4code/tw-starter": "^3.1.35",
     "@popperjs/core": "^2.7.0",
+    "@tinymce/tinymce-vue": "^4.0.7",
     "@vuelidate/core": "^2.0.0-alpha.12",
     "@vuelidate/validators": "^2.0.0-alpha.11",
     "axios": "^0.27.2",
@@ -36,6 +38,7 @@
     "simplebar": "^5.3.6",
     "tabulator-tables": "^4.9.3",
     "tiny-slider": "^2.9.3",
+    "tinymce": "^6.2.0",
     "tippy.js": "^6.2.7",
     "toastify-js": "^1.9.3",
     "tom-select": "^1.7.5",
