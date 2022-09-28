@@ -35,7 +35,7 @@
           class="logo__image w-6"
           src="@/assets/images/logo.svg"
         />
-        <span class="logo__text text-white text-sm ml-1 pt-2"> Resort Kapoposang </span>
+        <span class="logo__text text-white text-sm ml-1 pt-2"> SISDJATAN </span>
       </a>
       <!-- END: Logo -->
       <!-- BEGIN: Breadcrumb -->

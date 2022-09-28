@@ -18,9 +18,14 @@
               Provinsi sulawesi tenggara
             </div>
             <div
-              class="-intro-x mt-5 text-lg text-white text-opacity-70 dark:text-slate-400"
+              class="-intro-x text-white uppercase leading-tight mt-10"
             >
-              Dinas pekerjaan umum
+              SISDJATAN (Sistem Informasi SDA Jalan Jembatan)
+            </div>
+            <div
+              class="-intro-x mt-5 text-lg text-white text-opacity-70 dark:text-slate-400 capitalize"
+            >
+              DINAS SUMBER DAYA AIR DAN BINA MARGA
             </div>
           </div>
         </div>
@@ -33,7 +38,7 @@
             <h2
               class="intro-x font-bold text-2xl xl:text-3xl text-center xl:text-left"
             >
-              Masuk disini ...
+              Masuk disini...
             </h2>
             <div class="intro-x mt-2 text-slate-400 xl:hidden text-center">
               anda sedang menggunakan mode smartphone, direkomendasikan untuk di akses di layar lebih besar untuk kenyamanan pengguna.
