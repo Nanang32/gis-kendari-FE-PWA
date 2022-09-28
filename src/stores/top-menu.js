@@ -98,29 +98,8 @@ export const useTopMenuStore = defineStore("topMenu", {
             },
             {
                 icon: "HomeIcon",
-                pageName: "gallery",
-                title: "Gallery",
-                subMenu: [{
-                        icon: "",
-                        pageName: "news",
-                        title: "Berita",
-                    },
-                    {
-                        icon: "",
-                        pageName: "agenda",
-                        title: "Agenda",
-                    },
-                    {
-                        icon: "",
-                        pageName: "galleryphoto",
-                        title: "Gallery Photo",
-                    },
-                    {
-                        icon: "",
-                        pageName: "galleryvideo",
-                        title: "Gallery Video",
-                    },
-                ],
+                pageName: "news",
+                title: "Berita",
             },
             {
                 icon: "HomeIcon",
