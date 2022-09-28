@@ -9,8 +9,8 @@ export const useSideMenuStore = defineStore("sideMenu", {
             },
             {
                 icon: "HomeIcon",
-                 pageName: "admin-post",
-                        title: "Artikel",
+                pageName: "admin-post",
+                title: "Artikel",
             },
             {
                 icon: "HomeIcon",
@@ -82,6 +82,11 @@ export const useSideMenuStore = defineStore("sideMenu", {
 
                 ]
 
+            },
+            {
+                icon: "HomeIcon",
+                pageName: "admin-services",
+                title: "Laporan warga",
             },
 
         ],

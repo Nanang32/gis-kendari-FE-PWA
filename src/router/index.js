@@ -142,7 +142,8 @@ import AdminCategoryCreate from "../views/admin/news/category/create.vue";
 import AdminCategoryEdit from "../views/admin/news/category/edit.vue";
 // login
 import Login from "../views/login/Main.vue";
-
+// report
+import AdminServiceIndex from "../views/admin/service/table-report.vue";
 const routes = [{
         path: "/admin",
         component: SideMenu,
@@ -493,6 +494,12 @@ const routes = [{
                 path: "uptdcontructionequipment/structure/:id",
                 name: "admin-uptdcontructionequipment-structure-edit",
                 component: AdminuptdconstructionequipmentstructureEdit,
+            },
+            // laporan warga
+            {
+                path: "services",
+                name: "admin-services",
+                component: AdminServiceIndex,
             },
 
         ],
