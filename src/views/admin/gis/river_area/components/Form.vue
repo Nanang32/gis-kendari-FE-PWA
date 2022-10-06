@@ -48,7 +48,13 @@
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-20">Status</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <select class="form-select mt-2 sm:mr-2" aria-label="Default select example">
+                        <option>--Pilih salah satu--</option>
+                        <option>Nasional</option>
+                        <option>Provinsi</option>
+                        <option>Kabupaten/Kota</option>
+                        <option>Non Status</option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -131,7 +137,6 @@
             </div>
         </div>
         <div class="box col-span-12 lg:col-span-6">
-            
             <div class="p-5">
                 <div class="form-inline">
                     <label class="form-label sm:w-30">luas (km<sup>2</sup>)</label>
@@ -172,26 +177,37 @@
             </div>
         </div>
         <div class="box col-span-12 lg:col-span-6">
-            
             <div class="p-5">
                 <div class="form-inline">
-                    <label class="form-label sm:w-30">irigasi (ha)</label>
+                    <label class="form-label sm:w-30">irigasi (Ha)</label>
                     <input type="text" class="form-control" placeholder="Ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30 capitalize">DMI (m<sup>3</sup>/detik)</label>
+                    <label class="form-label sm:w-30 capitalize">Waduk</label>
                     <input type="text" class="form-control" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30 capitalize">PLTA (MWH)</label>
+                    <label class="form-label sm:w-30 capitalize">Curah hujan</label>
                     <input type="text" class="form-control" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30 capitalize">Ternak (ekor)</label>
+                    <label class="form-label sm:w-30 capitalize">limpasan</label>
                     <input type="text" class="form-control" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30 capitalize">lain-lain</label>
+                    <label class="form-label sm:w-30 capitalize">populasi</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">kota utama</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">tata guna lahan</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">keterangan</label>
                     <input type="text" class="form-control" placeholder="ketik disini..." />
                 </div>
             </div>
@@ -211,7 +227,7 @@
             <div class="p-5">
                 <div class="form-inline">
                     <label class="form-label sm:w-30">photo</label>
-                    <input type="file" class="form-control"/>
+                    <input type="file" class="form-control" />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">video</label>
@@ -224,7 +240,7 @@
         <button type="button" class="btn btn-outline-secondary w-24 mr-1">
             Batal
         </button>
-        <button type="button" class="btn btn-primary w-24" >
+        <button type="button" class="btn btn-primary w-24">
             <!-- <LoadingIcon icon="tail-spin" class="w-8 h-8" v-if="loading" /> -->
             Simpan
         </button>
