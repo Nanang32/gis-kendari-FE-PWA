@@ -85,6 +85,28 @@ export const useSideMenuStore = defineStore("sideMenu", {
             },
             {
                 icon: "HomeIcon",
+                title: "GIS Menejemen",
+                subMenu: [{
+                        icon: "HomeIcon",
+                        pageName: "admin-riverarea",
+                        title: "Wilayah sungai",
+                    },
+                    // {
+                    //     icon: "",
+                    //     pageName: "admin-uptdlabcontruction",
+                    //     title: "Lab. Konstruksi",
+                    // },
+                    // {
+                    //     icon: "",
+                    //     pageName: "admin-uptdcontructionequipment",
+                    //     title: "Per. Konstruksi",
+                    // }
+
+                ]
+
+            },
+            {
+                icon: "HomeIcon",
                 pageName: "admin-services",
                 title: "Laporan warga",
             },

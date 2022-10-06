@@ -140,6 +140,11 @@ import AdminPostEdit from "../views/admin/news/post/edit.vue";
 import AdminCategoryIndex from "../views/admin/news/category/index.vue";
 import AdminCategoryCreate from "../views/admin/news/category/create.vue";
 import AdminCategoryEdit from "../views/admin/news/category/edit.vue";
+//GIS MASTER DATA
+//river area
+import AdminRiverareaIndex from "../views/admin/gis/river_area/index.vue";
+import AdminRiverareaCreate from "../views/admin/gis/river_area/create.vue";
+import AdminRiverareaEdit from "../views/admin/gis/river_area/edit.vue";
 // login
 import Login from "../views/login/Main.vue";
 // report
@@ -500,6 +505,23 @@ const routes = [{
                 path: "services",
                 name: "admin-services",
                 component: AdminServiceIndex,
+            },
+            // wilayah sungai
+            
+            {
+                path: "riverarea",
+                name: "admin-riverarea",
+                component: AdminRiverareaIndex,
+            },
+            {
+                path: "riverarea/create",
+                name: "admin-riverarea-create",
+                component: AdminRiverareaCreate,
+            },
+            {
+                path: "riverarea/:id",
+                name: "admin-riverarea-edit",
+                component: AdminRiverareaEdit,
             },
 
         ],
