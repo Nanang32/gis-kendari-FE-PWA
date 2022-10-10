@@ -96,6 +96,11 @@ export const useSideMenuStore = defineStore("sideMenu", {
                         pageName: "admin-watershed",
                         title: "Daerah aliran sungai",
                     },
+                    {
+                        icon: "HomeIcon",
+                        pageName: "admin-river",
+                        title: "Sungai",
+                    },
                     // {
                     //     icon: "",
                     //     pageName: "admin-uptdcontructionequipment",

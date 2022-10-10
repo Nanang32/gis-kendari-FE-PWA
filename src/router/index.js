@@ -149,6 +149,10 @@ import AdminRiverareaEdit from "../views/admin/gis/river_area/edit.vue";
 import AdminWatershedIndex from "../views/admin/gis/watershed/index.vue";
 import AdminWatershedCreate from "../views/admin/gis/watershed/create.vue";
 import AdminWatershedEdit from "../views/admin/gis/watershed/edit.vue";
+//river
+import AdminRiverIndex from "../views/admin/gis/river/index.vue";
+import AdminRiverCreate from "../views/admin/gis/river/create.vue";
+import AdminRiverEdit from "../views/admin/gis/river/edit.vue";
 // login
 import Login from "../views/login/Main.vue";
 // report
@@ -543,6 +547,23 @@ const routes = [{
                 path: "watershed/:id",
                 name: "admin-watershed-edit",
                 component: AdminWatershedEdit,
+            },
+            // sungai
+            
+            {
+                path: "river",
+                name: "admin-river",
+                component: AdminRiverIndex,
+            },
+            {
+                path: "river/create",
+                name: "admin-river-create",
+                component: AdminRiverCreate,
+            },
+            {
+                path: "river/:id",
+                name: "admin-river-edit",
+                component: AdminRiverEdit,
             },
 
         ],
