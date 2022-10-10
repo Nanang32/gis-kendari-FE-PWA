@@ -214,7 +214,7 @@
         </div>
         <div class="box col-span-12 lg:col-span-6">
             <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800">
-                <h2 class="text-base text-white  uppercase">vi.photo dan video</h2>
+                <h2 class="text-base text-white  uppercase">vi.koordinat (decimal degree)</h2>
             </div>
             <div class="p-5 text-center">
                 <h1 class="font-medium text-5xl text-yellow-800"> Partial page</h1>
