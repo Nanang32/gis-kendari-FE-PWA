@@ -1,18 +1,13 @@
 <template>
-  <div class="intro-y flex items-center mt-8">
-    <h2 class="text-lg font-medium mr-auto">Form categories</h2>
-  </div>
-  <div class="grid grid-cols-12 gap-6 mt-5">
-    <div class="intro-y col-span-12 lg:col-span-6">
-      <Form
-        :loading="loading"
-        :category="category"
-        @submit="onSubmit"
-      ></Form>
+    <div class="flex items-center p-2 border-b border-slate-200/60 dark:border-darkmode-400 bg-red-800">
+        <h2 class="text-white  uppercase">kementerian pekerjaan umum dan perumahan rakyat</h2>
     </div>
-  </div>
+    <div class="grid grid-cols-12 gap-6 mt-5">
+        <div class="intro-y col-span-12 lg:col-span-12">
+            <Form :loading="loading" :category="category" @submit="onSubmit"></Form>
+        </div>
+    </div>
 </template>
-
 <script setup>
 import sendRequest from '@libs/http.js'
 import Form from "./components/Form.vue";
@@ -24,16 +19,16 @@ let category = reactive({
     name: null
 })
 
-async function onSubmit(data){
-  loading.value = true;
-  const response = await sendRequest({
-      method: 'post',
-      url: '/categories',
-      data: category
-  });
-  if ((response !== null) && (response.status === true)) {
-    router.push({name: 'admin-category'});
-  }
-  loading.value = false;
+async function onSubmit(data) {
+    loading.value = true;
+    const response = await sendRequest({
+        method: 'post',
+        url: '/categories',
+        data: category
+    });
+    if ((response !== null) && (response.status === true)) {
+        router.push({ name: 'admin-category' });
+    }
+    loading.value = false;
 }
 </script>
