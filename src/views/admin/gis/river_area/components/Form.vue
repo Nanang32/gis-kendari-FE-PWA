@@ -179,7 +179,7 @@
         <div class="box col-span-12 lg:col-span-6">
             <div class="p-5">
                 <div class="form-inline">
-                    <label class="form-label sm:w-30">irigasi (Ha)</label>
+                    <label class="form-label sm:w-30 capitalize">daerah genangan (Ha)</label>
                     <input type="text" class="form-control" placeholder="Ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
