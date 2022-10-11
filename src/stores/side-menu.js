@@ -88,7 +88,7 @@ export const useSideMenuStore = defineStore("sideMenu", {
                 title: "GIS Menejemen",
                 subMenu: [{
                         icon: "HomeIcon",
-                        pageName: "admin-riverarea",
+                        pageName: "admin-riverbasin",
                         title: "Wilayah sungai",
                     },
                     {
