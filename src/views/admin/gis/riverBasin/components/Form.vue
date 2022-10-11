@@ -44,7 +44,7 @@
             <div class="p-5">
                 <div class="form-inline">
                     <label class="form-label sm:w-20 capitalize">nama WS</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.nama_wilayah_sungai" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-20">Status</label>
@@ -65,15 +65,15 @@
             <div class="p-5">
                 <div class="form-inline">
                     <label class="form-label sm:w-30 capitalize">kode bidang pekerjaan umum</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.kode_bidang_pekerjaan_umum" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">kode data dasar jenis infrastruktur</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.kode_data_dasar_jenis_infrastruktur" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">kode infrastruktur (sesuai ketentuan ditjen SDA)</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.kode_infrastruktur" placeholder="ketik disini..." />
                 </div>
             </div>
         </div>
@@ -84,23 +84,23 @@
             <div class="p-5">
                 <div class="form-inline">
                     <label class="form-label sm:w-20">propinsi</label>
-                    <input type="text" class="form-control" placeholder="Ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.propinsi" placeholder="Ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-20 capitalize">kota/kab.</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.kota" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-20 capitalize">kecamatan</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.kecamatan" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-20 capitalize">kel./Desa</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.kelurahan" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-20 capitalize">lokasi</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.lokasi" placeholder="ketik disini..." />
                 </div>
             </div>
         </div>
@@ -111,23 +111,23 @@
             <div class="p-5">
                 <div class="form-inline">
                     <label class="form-label sm:w-30">irigasi (ha)</label>
-                    <input type="text" class="form-control" placeholder="Ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.irigasi" placeholder="Ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">DMI (m<sup>3</sup>/detik)</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.dmi" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">PLTA (MWH)</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.plta" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">Ternak (ekor)</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.ternak" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">lain-lain</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.lainnya" placeholder="ketik disini..." />
                 </div>
             </div>
         </div>
@@ -140,39 +140,39 @@
             <div class="p-5">
                 <div class="form-inline">
                     <label class="form-label sm:w-30">luas (km<sup>2</sup>)</label>
-                    <input type="text" class="form-control" placeholder="Ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.luas" placeholder="Ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">panjang sungai utama (km)</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.panjang_sungai_utama" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">mata air</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.mata_air" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">titik tertinggi</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.titik_tertinggi" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">titik terendah</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.titik_terendah" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">muara</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.muara" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">danau utama</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.danau_utama" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">fitur geologi</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.fitur_geologi" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">anak sungai</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.anak_sungai" placeholder="ketik disini..." />
                 </div>
             </div>
         </div>
@@ -180,35 +180,35 @@
             <div class="p-5">
                 <div class="form-inline">
                     <label class="form-label sm:w-30 capitalize">daerah genangan (Ha)</label>
-                    <input type="text" class="form-control" placeholder="Ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.daerah_genangan" placeholder="Ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">Waduk</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.waduk" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">Curah hujan</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.curah_hujan" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">limpasan</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.limpasan" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">populasi</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.populasi" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">kota utama</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.kota_utama" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">tata guna lahan</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.tata_guna_lahan" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">keterangan</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.keterangan" placeholder="ketik disini..." />
                 </div>
             </div>
         </div>
