@@ -1,7 +1,7 @@
 <template>
   <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
     <h2 class="text-lg font-medium mr-auto">Database wilayah sungai</h2>
-    <button class="btn btn-primary float-right" @click="router.push({name: 'admin-riverarea-create'})">Tambah data</button>
+    <button class="btn btn-primary float-right" @click="router.push({name: 'admin-riverbasin-create'})">Tambah data</button>
     
   </div>
   <!-- BEGIN: HTML Table Data -->
