@@ -7,33 +7,33 @@
             <div class="p-5">
                 <div class="form-inline">
                     <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">Unit eselon i</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.unit_eselon_i" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">unit eselon II.A</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.unit_eselon_iia" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">unit eselon II.B/III.A</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.unit_eselon_iiia" placeholder="ketik disini..." />
                 </div>
             </div>
             <div class="p-5 border">
                 <div class="form-inline">
                     <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">kelompok data dasar</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.kelompok_data_dasar" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">nama data dasar</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.nama_data_dasar" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">tahun data</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.tahun" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">kondisi</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="riverBasin.kondisi" placeholder="ketik disini..." />
                 </div>
             </div>
         </div>
@@ -240,9 +240,37 @@
         <button type="button" class="btn btn-outline-secondary w-24 mr-1">
             Batal
         </button>
-        <button type="button" class="btn btn-primary w-24">
+        <button type="button" class="btn btn-primary w-24" @click="submit">
             <!-- <LoadingIcon icon="tail-spin" class="w-8 h-8" v-if="loading" /> -->
             Simpan
         </button>
     </div>
 </template>
+
+<script setup>
+import sendRequest from '@libs/http.js'
+import { ref, onMounted } from "vue";
+const loading = ref(false);
+const emit = defineEmits(['submit', 'fileChange'])
+
+defineProps({
+    loading: {
+        type: Boolean,
+        default: false
+    },
+    riverBasin: {
+        type: Object,
+        default: {}
+    }
+})
+
+function submit() {
+    emit('submit');
+}
+
+// function onFileChange(e) {
+//     emit('fileChange', e);
+// }
+
+
+</script>
