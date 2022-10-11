@@ -522,7 +522,7 @@ const routes = [{
                 component: AdminRiverBasinIndex,
             },
             {
-                path: "riverBasin/create",
+                path: "riverbasin/create",
                 name: "admin-riverbasin-create",
                 component: AdminRiverBasinCreate,
             },
