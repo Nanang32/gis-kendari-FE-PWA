@@ -106,6 +106,11 @@ export const useSideMenuStore = defineStore("sideMenu", {
                         pageName: "admin-weir",
                         title: "Bendung",
                     },
+                    {
+                        icon: "HomeIcon",
+                        pageName: "admin-irrigation",
+                        title: "Daerah irigasi",
+                    },
                     // {
                     //     icon: "",
                     //     pageName: "admin-uptdcontructionequipment",

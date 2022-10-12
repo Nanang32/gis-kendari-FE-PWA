@@ -157,6 +157,10 @@ import AdminRiverEdit from "../views/admin/gis/river/edit.vue";
 import AdminWeirIndex from "../views/admin/gis/weir/index.vue";
 import AdminWeirCreate from "../views/admin/gis/weir/create.vue";
 import AdminWeirEdit from "../views/admin/gis/weir/edit.vue";
+//daerah irigasi
+import AdminIrrigationIndex from "../views/admin/gis/irrigation/index.vue";
+import AdminIrrigationCreate from "../views/admin/gis/irrigation/create.vue";
+import AdminIrrigationEdit from "../views/admin/gis/irrigation/edit.vue";
 // login
 import Login from "../views/login/Main.vue";
 // report
@@ -585,6 +589,23 @@ const routes = [{
                 path: "weir/:id",
                 name: "admin-weir-edit",
                 component: AdminWeirEdit,
+            },
+            // daerah irigasi
+            
+            {
+                path: "irrigation",
+                name: "admin-irrigation",
+                component: AdminIrrigationIndex,
+            },
+            {
+                path: "irrigation/create",
+                name: "admin-irrigation-create",
+                component: AdminIrrigationCreate,
+            },
+            {
+                path: "irrigation/:id",
+                name: "admin-irrigation-edit",
+                component: AdminIrrigationEdit,
             },
 
         ],
