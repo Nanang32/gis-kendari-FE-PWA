@@ -7,33 +7,33 @@
             <div class="p-5">
                 <div class="form-inline">
                     <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">Unit eselon i</label>
-                    <input type="text" class="form-control" v-model="river.unit_eselon_i" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="weir.unit_eselon_i" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">unit eselon II.A</label>
-                    <input type="text" class="form-control" v-model="river.unit_eselon_iia" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="weir.unit_eselon_iia" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">unit eselon II.B/III.A</label>
-                    <input type="text" class="form-control" v-model="river.unit_eselon_iiia" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="weir.unit_eselon_iiia" placeholder="ketik disini..." />
                 </div>
             </div>
             <div class="p-5 border">
                 <div class="form-inline">
                     <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">kelompok data dasar</label>
-                    <input type="text" class="form-control" v-model="river.kelompok_data_dasar" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="weir.kelompok_data_dasar" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">nama data dasar</label>
-                    <input type="text" class="form-control" v-model="river.nama_data_dasar" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="weir.nama_data_dasar" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">tahun data</label>
-                    <input type="text" class="form-control" v-model="river.tahun" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="weir.tahun" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">kondisi</label>
-                    <input type="text" class="form-control" v-model="river.kondisi" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="weir.kondisi" placeholder="ketik disini..." />
                 </div>
             </div>
         </div>
@@ -44,11 +44,11 @@
             <div class="p-5">
                 <div class="form-inline">
                     <label class="form-label sm:w-20 capitalize">nama WS</label>
-                    <input type="text" class="form-control" v-model="river.nama_wilayah_sungai" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="weir.nama_wilayah_sungai" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-20 capitalize">nama DAS</label>
-                    <input type="text" class="form-control" v-model="river.daerah_aliran_sungai" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="weir.daerah_aliran_sungai" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-20">Status</label>
@@ -69,15 +69,15 @@
             <div class="p-5">
                 <div class="form-inline">
                     <label class="form-label sm:w-30 capitalize">kode bidang pekerjaan umum</label>
-                    <input type="text" class="form-control" v-model="river.kode_bidang_pekerjaan_umum" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="weir.kode_bidang_pekerjaan_umum" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">kode data dasar jenis infrastruktur</label>
-                    <input type="text" class="form-control" v-model="river.kode_data_dasar_jenis_infrastruktur" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="weir.kode_data_dasar_jenis_infrastruktur" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">kode infrastruktur (sesuai ketentuan ditjen SDA)</label>
-                    <input type="text" class="form-control" v-model="river.kode_infrastruktur" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="weir.kode_infrastruktur" placeholder="ketik disini..." />
                 </div>
             </div>
         </div>
@@ -88,23 +88,23 @@
             <div class="p-5">
                 <div class="form-inline">
                     <label class="form-label sm:w-20">propinsi</label>
-                    <input type="text" class="form-control" v-model="river.propinsi" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="weir.propinsi" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-20 capitalize">kota/kab.</label>
-                    <input type="text" class="form-control" v-model="river.kota" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="weir.kota" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-20 capitalize">kecamatan</label>
-                    <input type="text" class="form-control" v-model="river.kecamatan" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="weir.kecamatan" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-20 capitalize">kel./Desa</label>
-                    <input type="text" class="form-control" v-model="river.kelurahan" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="weir.kelurahan" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-20 capitalize">lokasi</label>
-                    <input type="text" class="form-control" v-model="river.lokasi" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="weir.lokasi" placeholder="ketik disini..." />
                 </div>
             </div>
         </div>
@@ -115,23 +115,12 @@
             <div class="p-5">
                 <div class="form-inline">
                     <label class="form-label sm:w-30">irigasi (ha)</label>
-                    <input type="text" class="form-control" v-model="river.irigasi" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="weir.irigasi" placeholder="ketik disini..." />
                 </div>
-                <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30 capitalize">DMI (m<sup>3</sup>/detik)</label>
-                    <input type="text" class="form-control" v-model="river.dmi" placeholder="ketik disini..." />
-                </div>
-                <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30 capitalize">PLTA (MWH)</label>
-                    <input type="text" class="form-control" v-model="river.plta" placeholder="ketik disini..." />
-                </div>
-                <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30 capitalize">Ternak (ekor)</label>
-                    <input type="text" class="form-control" v-model="river.ternak" placeholder="ketik disini..." />
-                </div>
+                
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">lain-lain</label>
-                    <input type="text" class="form-control" v-model="river.lainnya" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="weir.lainnya" placeholder="ketik disini..." />
                 </div>
             </div>
         </div>
@@ -142,44 +131,59 @@
         </div>
         <div class="box col-span-12 lg:col-span-6">
             <div class="p-5">
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30">nama sungai</label>
+                    <input type="text" class="form-control" v-model="weir.nama_sungai" placeholder="ketik disini..." />
+                </div>
                 <div class="form-inline">
-                    <label class="form-label sm:w-20">Orde</label>
-                    <select class="form-select mt-2 sm:mr-2" aria-label="Default select example">
+                    <label class="form-label sm:w-20">jenis bendung</label>
+                    <select class="form-select mt-5 sm:mr-2" aria-label="Default select example">
                         <option>--Pilih salah satu--</option>
-                        <option>Orde 1</option>
-                        <option>Orde 2</option>
-                        <option>Orde 3</option>
-                        <option>Orde 4</option>
-                        <option>Orde 5</option>
+                        <option>Tetap</option>
+                        <option>Gerak</option>
+                        <option>Karet</option>
                     </select>
                 </div>
                 <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30">luas DAS (km<sup>2</sup>)</label>
-                    <input type="text" class="form-control" v-model="river.luas_das" placeholder="ketik disini..." />
+                    <label class="form-label sm:w-30">tinggi (m)</label>
+                    <input type="text" class="form-control" v-model="weir.tinggi" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30 capitalize">panjang sungai (km)</label>
-                    <input type="text" class="form-control" v-model="river.panjang_sungai" placeholder="ketik disini..." />
+                    <label class="form-label sm:w-30 capitalize">luas (m)</label>
+                    <input type="text" class="form-control" v-model="weir.lebar" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline">
+                    <label class="form-label sm:w-20">kondisi</label>
+                    <select class="form-select mt-2 sm:mr-2" aria-label="Default select example">
+                        <option>--Pilih salah satu--</option>
+                        <option>Baik</option>
+                        <option>Rusak ringan</option>
+                        <option>Rusak berat</option>
+                    </select>
                 </div>
             </div>
         </div>
         <div class="box col-span-12 lg:col-span-6">
             <div class="p-5">
                 <div class="form-inline">
-                    <label class="form-label sm:w-30 capitalize">lebar maximum (m)</label>
-                    <input type="text" class="form-control" v-model="river.lebar_maximum" placeholder="ketik disini..." />
+                    <label class="form-label sm:w-30 capitalize">debit intake musim hujan (m<sup>2</sup>/detik)</label>
+                    <input type="text" class="form-control" v-model="weir.debit_intake_musim_hujan" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30 capitalize">kelerengan rata<sup>2</sup></label>
-                    <input type="text" class="form-control" v-model="river.kelerengan_rata2" placeholder="ketik disini..." />
+                    <label class="form-label sm:w-30 capitalize">debit intake musim kemarau (m<sup>2</sup>/detik)</label>
+                    <input type="text" class="form-control" v-model="weir.debit_intake_musim_kemarau" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30 capitalize">q max (m<sup>3</sup>/dtk)</label>
-                    <input type="text" class="form-control" v-model="river.q_max" placeholder="ketik disini..." />
+                    <label class="form-label sm:w-30 capitalize">tahun pembuatan</label>
+                    <input type="text" class="form-control" v-model="weir.tahun_pembuatan" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">tahun rehab terakhir</label>
+                    <input type="text" class="form-control" v-model="weir.tahun_rehab_terakhir" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">keterangan</label>
-                    <input type="text" class="form-control" v-model="river.keterangan" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" v-model="weir.keterangan" placeholder="ketik disini..." />
                 </div>
             </div>
         </div>
@@ -228,7 +232,7 @@ defineProps({
         type: Boolean,
         default: false
     },
-    river: {
+    weir: {
         type: Object,
         default: {}
     }

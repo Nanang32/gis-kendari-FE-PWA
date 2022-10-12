@@ -1,98 +1,378 @@
 <template>
-    <div class="intro-y flex items-center mt-8">
-        <h2 class="text-lg font-medium capitalize mr-auto">Data list Kategori (pemberitaan & produk hukum)</h2>
-    </div>
-    <div class="grid grid-cols-12 gap-6 mt-5 mb-20">
-        <div class="intro-y col-span-12">
-            <button class="btn btn-primary shadow-md mr-2" @click="router.push({name: 'admin-category-create'})">
-                Tambah
-            </button>
-            <div class="intro-y col-span-12 overflow-x-auto">
-                <table class="table table-report -mt-2">
-                    <thead>
-                        <tr>
-                            <th class="whitespace-nowrap">#</th>
-                            <th class="whitespace-nowrap">Nama</th>
-                            <th class="text-center whitespace-nowrap">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody v-for="(category, index) in categories" :key="index">
-                        <tr>
-                            <td>{{ index + 1 }}</td>
-                            <td>{{ category.name }}</td>
-                            <td>
-                                <div class="flex justify-center items-center">
-                                    <button class="flex items-center mr-3" @click="router.push({name: 'admin-category-edit', params: { id: category.id }})">
-                                        <EditIcon class="w-4 h-4 mr-1" />
-                                        Edit
-                                    </button>
-                                    <a class="flex items-center text-danger" href="javascript:;" @click="confirmDelete(category.id)">
-                                        <Trash2Icon class="w-4 h-4 mr-1" />
-                                        Delete
-                                    </a>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <Paginator :page="page" :perPage="perPage" :lastPage="lastPage" @goToPage="setPage" />
-            <ModalConfirmDelete :isShowModal="showDeleteModal" @confirm="onConfirmDelete" />
+  <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
+    <h2 class="text-lg font-medium mr-auto">Database sungai</h2>
+    <button class="btn btn-primary float-right" @click="router.push({name: 'admin-riverarea-create'})">Tambah data</button>
+    
+  </div>
+  <!-- BEGIN: HTML Table Data -->
+  <div class="intro-y box p-5 mt-5">
+    <div class="flex flex-col sm:flex-row sm:items-end xl:items-start">
+
+      <form id="tabulator-html-filter-form" class="xl:flex sm:mr-auto">
+        <div class="sm:flex items-center sm:mr-4">
+          <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2"
+            >Field</label
+          >
+          <select
+            id="tabulator-html-filter-field"
+            v-model="filter.field"
+            class="form-select w-full sm:w-32 2xl:w-full mt-2 sm:mt-0 sm:w-auto"
+          >
+            <option value="name">Name</option>
+            <option value="category">Category</option>
+            <option value="remaining_stock">Remaining Stock</option>
+          </select>
         </div>
+        <div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
+          <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2"
+            >Type</label
+          >
+          <select
+            id="tabulator-html-filter-type"
+            v-model="filter.type"
+            class="form-select w-full mt-2 sm:mt-0 sm:w-auto"
+          >
+            <option value="like" selected>like</option>
+            <option value="=">=</option>
+            <option value="<">&lt;</option>
+            <option value="<=">&lt;=</option>
+            <option value=">">></option>
+            <option value=">=">>=</option>
+            <option value="!=">!=</option>
+          </select>
+        </div>
+        <div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
+          <label class="w-12 flex-none xl:w-auto xl:flex-initial mr-2"
+            >Value</label
+          >
+          <input
+            id="tabulator-html-filter-value"
+            v-model="filter.value"
+            type="text"
+            class="form-control sm:w-40 2xl:w-full mt-2 sm:mt-0"
+            placeholder="Search..."
+          />
+        </div>
+        <div class="mt-2 xl:mt-0">
+          <button
+            id="tabulator-html-filter-go"
+            type="button"
+            class="btn btn-primary w-full sm:w-16"
+            @click="onFilter"
+          >
+            Cari
+          </button>
+          <button
+            id="tabulator-html-filter-reset"
+            type="button"
+            class="btn btn-secondary w-full sm:w-16 mt-2 sm:mt-0 sm:ml-1"
+            @click="onResetFilter"
+          >
+            Reset
+          </button>
+        </div>
+      </form>
+      
     </div>
+    <div class="overflow-x-auto scrollbar-hidden">
+      <div
+        id="tabulator"
+        ref="tableRef"
+        class="mt-5 table-report table-report--tabulator"
+      ></div>
+    </div>
+  </div>
+  <!-- END: HTML Table Data -->
 </template>
+
 <script setup>
-import Paginator from "@/components/paginator/Main.vue";
-import ModalConfirmDelete from "@/components/modal-confirm-delete/Main.vue";
-import sendRequest from '@libs/http.js'
-import { ref, watch, onMounted } from "vue";
-import { useRouter } from "vue-router";
+import { ref, reactive, onMounted } from "vue";
+// import xlsx from "xlsx";
+import { createIcons, icons } from "lucide";
+import Tabulator from "tabulator-tables";
+import dom from "@left4code/tw-starter/dist/js/dom";
 
-const categories = ref([]);
-const page = ref(1);
-const perPage = ref(10);
-const lastPage = ref(1);
-const showDeleteModal = ref(false);
-const deleteId = ref(null);
-const router = useRouter();
+const tableRef = ref();
+const tabulator = ref();
+const filter = reactive({
+  field: "name",
+  type: "like",
+  value: "",
+});
 
-function setPage(newPage) {
-    page.value = newPage
-}
+const imageAssets = import.meta.globEager(
+  `/src/assets/images/*.{jpg,jpeg,png,svg}`
+);
+const initTabulator = () => {
+  tabulator.value = new Tabulator(tableRef.value, {
+    ajaxURL: "https://dummy-data.left4code.com",
+    ajaxFiltering: true,
+    ajaxSorting: true,
+    printAsHtml: true,
+    printStyled: true,
+    pagination: "remote",
+    paginationSize: 10,
+    paginationSizeSelector: [10, 20, 30, 40],
+    layout: "fitColumns",
+    responsiveLayout: "collapse",
+    placeholder: "No matching records found",
+    columns: [
+      {
+        formatter: "responsiveCollapse",
+        width: 40,
+        minWidth: 30,
+        hozAlign: "center",
+        resizable: false,
+        headerSort: false,
+      },
 
-function confirmDelete(id) {
-    showDeleteModal.value = true
-    deleteId.value = id;
-}
-
-async function onConfirmDelete() {
-    const responseDelete = await sendRequest({
-        method: 'delete',
-        url: `/categories/${deleteId.value}`,
-    });
-    showDeleteModal.value = false
-    await loadData(page.value);
-}
-
-async function loadData(page = 1) {
-    const response = await sendRequest({
-        method: 'get',
-        url: '/categories',
-        params: {
-            page: page
+      // For HTML table
+      {
+        title: "Nama data dasar",
+        minWidth: 200,
+        responsive: 0,
+        field: "name",
+        vertAlign: "middle",
+        print: false,
+        download: false,
+        formatter(cell) {
+          return `<div>
+                <div class="font-medium whitespace-nowrap">${
+                  cell.getData().name
+                }</div>
+                <div class="text-slate-500 text-xs whitespace-nowrap">${
+                  cell.getData().category
+                }</div>
+              </div>`;
         },
+      },
+      {
+        title: "Tahun",
+        minWidth: 200,
+        responsive: 0,
+        field: "name",
+        vertAlign: "middle",
+        print: false,
+        download: false,
+        formatter(cell) {
+          return `<div>
+                <div class="font-medium whitespace-nowrap">${
+                  cell.getData().name
+                }</div>
+                <div class="text-slate-500 text-xs whitespace-nowrap">${
+                  cell.getData().category
+                }</div>
+              </div>`;
+        },
+      },
+      {
+        title: "Kondisi",
+        minWidth: 200,
+        responsive: 0,
+        field: "name",
+        vertAlign: "middle",
+        print: false,
+        download: false,
+        formatter(cell) {
+          return `<div>
+                <div class="font-medium whitespace-nowrap">${
+                  cell.getData().name
+                }</div>
+                <div class="text-slate-500 text-xs whitespace-nowrap">${
+                  cell.getData().category
+                }</div>
+              </div>`;
+        },
+      },
+      {
+        title: "Nama WS",
+        minWidth: 200,
+        responsive: 0,
+        field: "name",
+        vertAlign: "middle",
+        print: false,
+        download: false,
+        formatter(cell) {
+          return `<div>
+                <div class="font-medium whitespace-nowrap">${
+                  cell.getData().name
+                }</div>
+                <div class="text-slate-500 text-xs whitespace-nowrap">${
+                  cell.getData().category
+                }</div>
+              </div>`;
+        },
+      },
+      {
+        title: "Kode infrastruktur",
+        minWidth: 200,
+        responsive: 0,
+        field: "name",
+        vertAlign: "middle",
+        print: false,
+        download: false,
+        formatter(cell) {
+          return `<div>
+                <div class="font-medium whitespace-nowrap">${
+                  cell.getData().name
+                }</div>
+                <div class="text-slate-500 text-xs whitespace-nowrap">${
+                  cell.getData().category
+                }</div>
+              </div>`;
+        },
+      },
+      {
+        title: "Kelurahan/desa",
+        minWidth: 200,
+        responsive: 0,
+        field: "name",
+        vertAlign: "middle",
+        print: false,
+        download: false,
+        formatter(cell) {
+          return `<div>
+                <div class="font-medium whitespace-nowrap">${
+                  cell.getData().name
+                }</div>
+                <div class="text-slate-500 text-xs whitespace-nowrap">${
+                  cell.getData().category
+                }</div>
+              </div>`;
+        },
+      },
+      {
+        title: "Kecamatan",
+        minWidth: 200,
+        responsive: 0,
+        field: "name",
+        vertAlign: "middle",
+        print: false,
+        download: false,
+        formatter(cell) {
+          return `<div>
+                <div class="font-medium whitespace-nowrap">${
+                  cell.getData().name
+                }</div>
+                <div class="text-slate-500 text-xs whitespace-nowrap">${
+                  cell.getData().category
+                }</div>
+              </div>`;
+        },
+      },
+      {
+        title: "Kota/kabupaten",
+        minWidth: 200,
+        responsive: 0,
+        field: "name",
+        vertAlign: "middle",
+        print: false,
+        download: false,
+        formatter(cell) {
+          return `<div>
+                <div class="font-medium whitespace-nowrap">${
+                  cell.getData().name
+                }</div>
+                <div class="text-slate-500 text-xs whitespace-nowrap">${
+                  cell.getData().category
+                }</div>
+              </div>`;
+        },
+      },
+      {
+        title: "ACTIONS",
+        minWidth: 200,
+        field: "actions",
+        responsive: 1,
+        hozAlign: "center",
+        vertAlign: "middle",
+        print: false,
+        download: false,
+        formatter() {
+          const a = dom(`<div class="flex lg:justify-center items-center">
+                <a class="flex items-center mr-3" href="javascript:;">
+                  <i data-lucide="check-square" class="w-4 h-4 mr-1"></i> Edit
+                </a>
+                <a class="flex items-center text-danger" href="javascript:;">
+                  <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete
+                </a>
+              </div>`);
+          dom(a).on("click", function () {
+            // On click actions
+          });
+
+          return a[0];
+        },
+      },
+
+      // For print format
+    
+    ],
+    renderComplete() {
+      createIcons({
+        icons,
+        "stroke-width": 1.5,
+        nameAttr: "data-lucide",
+      });
+    },
+  });
+};
+
+// Redraw table onresize
+const reInitOnResizeWindow = () => {
+  window.addEventListener("resize", () => {
+    tabulator.value.redraw();
+    createIcons({
+      icons,
+      "stroke-width": 1.5,
+      nameAttr: "data-lucide",
     });
-    if ((response !== null) && (response.status === true)) {
-        categories.value = response.data.categories.data
-        lastPage.value = response.data.categories.last_page
-    }
-}
+  });
+};
 
-watch(page, async (newPage) => {
-    await loadData(newPage)
-})
+// Filter function
+const onFilter = () => {
+  tabulator.value.setFilter(filter.field, filter.type, filter.value);
+};
 
-onMounted(async () => {
-    await loadData()
+// On reset filter
+const onResetFilter = () => {
+  filter.field = "name";
+  filter.type = "like";
+  filter.value = "";
+  onFilter();
+};
+
+// Export
+const onExportCsv = () => {
+  tabulator.value.download("csv", "data.csv");
+};
+
+const onExportJson = () => {
+  tabulator.value.download("json", "data.json");
+};
+
+const onExportXlsx = () => {
+  const win = window;
+  win.XLSX = xlsx;
+  tabulator.value.download("xlsx", "data.xlsx", {
+    sheetName: "Products",
+  });
+};
+
+const onExportHtml = () => {
+  tabulator.value.download("html", "data.html", {
+    style: true,
+  });
+};
+
+// Print
+const onPrint = () => {
+  tabulator.value.print();
+};
+
+onMounted(() => {
+  initTabulator();
+  reInitOnResizeWindow();
 });
 </script>

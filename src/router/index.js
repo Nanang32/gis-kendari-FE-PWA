@@ -142,13 +142,21 @@ import AdminCategoryCreate from "../views/admin/news/category/create.vue";
 import AdminCategoryEdit from "../views/admin/news/category/edit.vue";
 //GIS MASTER DATA
 //river area
-import AdminRiverareaIndex from "../views/admin/gis/river_area/index.vue";
-import AdminRiverareaCreate from "../views/admin/gis/river_area/create.vue";
-import AdminRiverareaEdit from "../views/admin/gis/river_area/edit.vue";
+import AdminRiverBasinIndex from "../views/admin/gis/riverBasin/index.vue";
+import AdminRiverBasinCreate from "../views/admin/gis/riverBasin/create.vue";
+import AdminRiverBasinEdit from "../views/admin/gis/riverBasin/edit.vue";
 //watershed
 import AdminWatershedIndex from "../views/admin/gis/watershed/index.vue";
 import AdminWatershedCreate from "../views/admin/gis/watershed/create.vue";
 import AdminWatershedEdit from "../views/admin/gis/watershed/edit.vue";
+//river
+import AdminRiverIndex from "../views/admin/gis/river/index.vue";
+import AdminRiverCreate from "../views/admin/gis/river/create.vue";
+import AdminRiverEdit from "../views/admin/gis/river/edit.vue";
+//bendung
+import AdminWeirIndex from "../views/admin/gis/weir/index.vue";
+import AdminWeirCreate from "../views/admin/gis/weir/create.vue";
+import AdminWeirEdit from "../views/admin/gis/weir/edit.vue";
 // login
 import Login from "../views/login/Main.vue";
 // report
@@ -513,19 +521,19 @@ const routes = [{
             // wilayah sungai
             
             {
-                path: "riverarea",
-                name: "admin-riverarea",
-                component: AdminRiverareaIndex,
+                path: "riverbasin",
+                name: "admin-riverbasin",
+                component: AdminRiverBasinIndex,
             },
             {
-                path: "riverarea/create",
-                name: "admin-riverarea-create",
-                component: AdminRiverareaCreate,
+                path: "riverbasin/create",
+                name: "admin-riverbasin-create",
+                component: AdminRiverBasinCreate,
             },
             {
-                path: "riverarea/:id",
-                name: "admin-riverarea-edit",
-                component: AdminRiverareaEdit,
+                path: "riverbasin/:id",
+                name: "admin-riverbasin-edit",
+                component: AdminRiverBasinEdit,
             },
             // daerah aliran sungai
             
@@ -543,6 +551,40 @@ const routes = [{
                 path: "watershed/:id",
                 name: "admin-watershed-edit",
                 component: AdminWatershedEdit,
+            },
+            // sungai
+            
+            {
+                path: "river",
+                name: "admin-river",
+                component: AdminRiverIndex,
+            },
+            {
+                path: "river/create",
+                name: "admin-river-create",
+                component: AdminRiverCreate,
+            },
+            {
+                path: "river/:id",
+                name: "admin-river-edit",
+                component: AdminRiverEdit,
+            },
+            // bendung
+            
+            {
+                path: "weir",
+                name: "admin-weir",
+                component: AdminWeirIndex,
+            },
+            {
+                path: "weir/create",
+                name: "admin-weir-create",
+                component: AdminWeirCreate,
+            },
+            {
+                path: "weir/:id",
+                name: "admin-weir-edit",
+                component: AdminWeirEdit,
             },
 
         ],
