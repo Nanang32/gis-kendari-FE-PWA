@@ -269,7 +269,7 @@
             Simpan
         </button>
     </div>
-    <ModalMarker :isShowModal="isShowModal" />
+    <ModalMarker :isShowModal="isShowModal" @submit="getLatLngs" />
 </template>
 <script setup>
 import sendRequest from '@libs/http.js'
@@ -279,7 +279,7 @@ const loading = ref(false);
 const emit = defineEmits(['submit', 'fileChange'])
 const isShowModal = ref(false);
 
-defineProps({
+const props = defineProps({
     loading: {
         type: Boolean,
         default: false
@@ -292,6 +292,11 @@ defineProps({
 
 function submit() {
     emit('submit');
+}
+
+function getLatLngs(latlngs) {
+    props.watershed.latlngs = latlngs;
+    isShowModal.value = false;
 }
 
 // function onFileChange(e) {

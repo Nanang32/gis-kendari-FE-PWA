@@ -1,11 +1,16 @@
 <template>
   <Modal
     :show="isShowModal"
-    @hidden="isShowModal = false"
+    @hidden="submitLatlng"
   >
     <ModalBody class="p-0 w-screen h-screen">
       <div class="map h-screen" id="map"></div>
     </ModalBody>
+    <ModalFooter>
+      <button type="button" class="btn btn-primary w-24" @click="submitLatlng">
+        Simpan
+      </button>
+    </ModalFooter>
   </Modal>
 </template>
 
@@ -26,6 +31,9 @@ defineProps({
 
 const map = ref(null);
 const tileLayer = ref(null);
+const latlngs = ref([]);
+const emit = defineEmits(['submit'])
+
 onMounted(() => {
   initMap();
 });
@@ -73,23 +81,21 @@ function initMap() {
   var drawControl = new L.Control.Draw(drawPluginOptions);
   map.value.addControl(drawControl);
 
-  // var editableLayers = new L.FeatureGroup();
-  // map.addLayer(editableLayers);
-
   map.value.on('draw:created', function(e) {
     var type = e.layerType,
       layer = e.layer;
 
     if (type === 'marker') {
-      layer.bindPopup('A popup!');
+      latlngs.value = [layer.getLatLng()];
+    } else {
+      latlngs.value = layer.getLatLngs();
     }
 
     editableLayers.addLayer(layer);
-    console.log(layer.getLatLngs())
   });
 
-  // map.value.on('click', function(e) {
-  //   console.log("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
-  // });
+}
+function submitLatlng() {
+  emit('submit', latlngs.value);
 }
 </script>
