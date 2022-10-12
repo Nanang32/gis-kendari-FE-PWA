@@ -153,6 +153,10 @@ import AdminWatershedEdit from "../views/admin/gis/watershed/edit.vue";
 import AdminRiverIndex from "../views/admin/gis/river/index.vue";
 import AdminRiverCreate from "../views/admin/gis/river/create.vue";
 import AdminRiverEdit from "../views/admin/gis/river/edit.vue";
+//bendung
+import AdminWeirIndex from "../views/admin/gis/weir/index.vue";
+import AdminWeirCreate from "../views/admin/gis/weir/create.vue";
+import AdminWeirEdit from "../views/admin/gis/weir/edit.vue";
 // login
 import Login from "../views/login/Main.vue";
 // report
@@ -564,6 +568,23 @@ const routes = [{
                 path: "river/:id",
                 name: "admin-river-edit",
                 component: AdminRiverEdit,
+            },
+            // bendung
+            
+            {
+                path: "weir",
+                name: "admin-weir",
+                component: AdminWeirIndex,
+            },
+            {
+                path: "weir/create",
+                name: "admin-weir-create",
+                component: AdminWeirCreate,
+            },
+            {
+                path: "weir/:id",
+                name: "admin-weir-edit",
+                component: AdminWeirEdit,
             },
 
         ],

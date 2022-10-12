@@ -1,6 +1,6 @@
 <template>
     <div class="intro-y flex items-center mt-8">
-        <h2 class="text-lg font-medium capitalize mr-auto">Data list Kategori (pemberitaan & produk hukum)</h2>
+        <h2 class="text-lg font-medium capitalize mr-auto">Database Bendung</h2>
     </div>
     <div class="grid grid-cols-12 gap-6 mt-5 mb-20">
         <div class="intro-y col-span-12">
