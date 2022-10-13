@@ -80,10 +80,13 @@ import dom from "@left4code/tw-starter/dist/js/dom";
 import axios from 'axios'
 import { useAuthStore } from '@stores/auth';
 import { storeToRefs } from 'pinia';
+import { useRouter } from "vue-router";
+
 
 const email = ref(null);
 const password = ref(null);
 const authStore = useAuthStore();
+const router = useRouter();
 
 async function onLogin() {
   if((email.value === '') || (password.value === ''))
@@ -100,6 +103,7 @@ async function onLogin() {
   if((response.status === 200) && (response.data.status === "Success")) {
     authStore.token = response.data.data.token;
     authStore.user = response.data.data.user;
+    router.replace({name: 'admin-category'});
   }
 }
 
