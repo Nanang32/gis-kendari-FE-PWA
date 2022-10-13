@@ -3,8 +3,8 @@
     :show="isShowModal"
     @hidden="submitLatlng"
   >
-    <ModalBody class="p-0 w-screen h-screen">
-      <div class="map h-screen" id="map"></div>
+    <ModalBody class="p-0 w-96 h-96">
+      <div class="map h-80" id="map"></div>
     </ModalBody>
     <ModalFooter>
       <button type="button" class="btn btn-primary w-24" @click="submitLatlng">
@@ -39,7 +39,7 @@ onMounted(() => {
 });
 
 function initMap() {
-  map.value = L.map('map').setView([38.63, -90.23], 12);
+  map.value = L.map('map').setView([-4.144910, 122.174606], 12);
   tileLayer.value = L.tileLayer(
     'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     {
