@@ -200,7 +200,9 @@
                 <h2 class="text-base text-white  uppercase">vi.koordinat (decimal degree)</h2>
             </div>
             <div class="p-5 text-center">
-                <h1 class="font-medium text-5xl text-yellow-800"> Partial page</h1>
+                <button type="button" class="btn btn-primary w-24" @click="isShowModal=true">
+                    Peta
+                </button>
             </div>
         </div>
         <div class="box col-span-12 lg:col-span-6">
@@ -228,14 +230,17 @@
             Simpan
         </button>
     </div>
+    <ModalMarker :isShowModal="isShowModal" @submit="getLatLngs" />
 </template>
 <script setup>
 import sendRequest from '@libs/http.js'
+import ModalMarker from './../../components/ModalMarker.vue'
 import { ref, onMounted } from "vue";
 const loading = ref(false);
 const emit = defineEmits(['submit', 'fileChange'])
+const isShowModal = ref(false);
 
-defineProps({
+const props = defineProps({
     loading: {
         type: Boolean,
         default: false
@@ -253,6 +258,11 @@ function submit() {
 // function onFileChange(e) {
 //     emit('fileChange', e);
 // }
+
+function getLatLngs(latlngs) {
+    props.irrigation.latlngs = latlngs;
+    isShowModal.value = false;
+}
 
 
 </script>
