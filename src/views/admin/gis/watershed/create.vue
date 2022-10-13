@@ -62,6 +62,7 @@ async function onSubmit(data) {
     // formdata.append('kota_utama', watershed.kota_utama)
     // formdata.append('tata_guna_lahan', watershed.tata_guna_lahan)
     formdata.append('keterangan', watershed.keterangan)
+    formdata.append('coords_file', new File([new Blob([watershed.latlngs])], "coords.txt"));
 
     // formdata.append('featured_image_file', image.value)
 
