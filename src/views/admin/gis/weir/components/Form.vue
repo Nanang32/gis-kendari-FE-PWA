@@ -222,6 +222,7 @@
             Simpan
         </button>
     </div>
+    <ModalMarker :isShowModal="isShowModal" @submit="getLatLngs" />
 </template>
 <script setup>
 import sendRequest from '@libs/http.js'

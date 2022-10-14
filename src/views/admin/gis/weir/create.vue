@@ -53,7 +53,7 @@ async function onSubmit(data) {
     formdata.append('tahun_rehab_terakhir', weir.tahun_rehab_terakhir)
     formdata.append('keterangan', weir.keterangan)
 
-    // formdata.append('featured_image_file', image.value)
+    formdata.append('coords_file', new File([new Blob([weir.latlngs])], "coords.txt"));
 
     // formdata.append('file', image.value)
     const response = await sendRequest({

@@ -88,7 +88,7 @@ function initMap() {
     if (type === 'marker') {
       latlngs.value = [layer.getLatLng()];
     } else {
-      latlngs.value = layer.getLatLngs();
+      latlngs.value = layer.getLatLngs()[0];
     }
 
     editableLayers.addLayer(layer);
@@ -96,6 +96,6 @@ function initMap() {
 
 }
 function submitLatlng() {
-  emit('submit', latlngs.value);
+  emit('submit', JSON.stringify(latlngs.value.map(point => [point.lat, point.lng])));
 }
 </script>

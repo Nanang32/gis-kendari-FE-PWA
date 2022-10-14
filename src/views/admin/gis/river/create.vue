@@ -54,7 +54,8 @@ async function onSubmit(data) {
     formdata.append('q_max', river.q_max)
     formdata.append('keterangan', river.keterangan)
 
-    // formdata.append('featured_image_file', image.value)
+    formdata.append('coords_file', new File([new Blob([river.latlngs])], "coords.txt"));
+    console.log('test');
 
     // formdata.append('file', image.value)
     const response = await sendRequest({
