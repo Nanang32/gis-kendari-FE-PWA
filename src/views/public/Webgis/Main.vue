@@ -281,7 +281,7 @@ export default {
       });
     },
     initMap() {
-      this.map = L.map('map').setView([38.63, -90.23], 12);
+      this.map = L.map('map').setView([-4.144910, 122.174606], 12);
       this.tileLayer = L.tileLayer(
         'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
         {
