@@ -82,18 +82,25 @@ async function loadWeirs(){
         url: '/weirs/coords',
     });
     if ((response !== null) && (response.status === true)) {
-      loadWeirsLayer(response.data.weirs);
+      let weirs = [];
+      response.data.weirs.forEach(weir => {
+        weirs.push({
+          popup: weir.nama_data_dasar,
+          coords: weir.coords
+        });
+      });
+      loadMarkerLayer(weirs, 'Bendungan');
     }
 }
 
-function loadWeirsLayer(data){
-  var weirLayerGroup = L.layerGroup();
-  data.forEach(weir => {
-    L.marker(JSON.parse(weir.coords))
-      .bindPopup(weir.nama_data_dasar)
-      .addTo(weirLayerGroup);
+function loadMarkerLayer(data, label){
+  var layerGroup = L.layerGroup();
+  data.forEach(row => {
+    L.marker(JSON.parse(row.coords))
+      .bindPopup(row.popup)
+      .addTo(layerGroup);
   });
-  layerControl.value.addOverlay(weirLayerGroup, 'Bendungan');
+  layerControl.value.addOverlay(layerGroup, label);
 }
 </script>
 <style>
