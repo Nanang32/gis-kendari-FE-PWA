@@ -1,303 +1,186 @@
 <template>
-  <div class="row">
-    <div class="col-md-9">
-      <div class="map" id="map"></div>
+    <div class="row">
+        <div class="col-md-9">
+            <div class="map" id="map"></div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check" v-for="layer in layers" :key="layer.id">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" v-model="layer.active" @change="layerChanged(layer.id, layer.active)" />
+                    {{ layer.name }}
+                </label>
+            </div>
+        </div>
     </div>
-    <div class="col-md-3">
-      <div
-        class="form-check"
-        v-for="layer in layers"
-        :key="layer.id"
-      >
-        <label class="form-check-label">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            v-model="layer.active"
-            @change="layerChanged(layer.id, layer.active)"
-          />
-          {{ layer.name }}
-        </label>
-      </div>
-    </div>
-  </div>
 </template>
 <script>
 import L from "leaflet"
 import "leaflet/dist/leaflet.css";
 
 export default {
-  data: () => ({
-    map: null,
-    tileLayer: null,
-    layers: [
-      {
-        id: 0,
-        name: 'Restaurants',
-        active: false,
-        features: [
-          {
-            id: 0,
-            name: 'Bogart\'s Smokehouse',
-            type: 'marker',
-            coords: [38.6109607, -90.2050322],
-          },
-          {
-            id: 1,
-            name: 'Pappy\'s Smokehouse',
-            type: 'marker',
-            coords: [38.6350008, -90.2261532],
-          },
-          {
-            id: 2,
-            name: 'Broadway Oyster Bar',
-            type: 'marker',
-            coords: [38.6188362, -90.1947098],
-          },
-          {
-            id: 3,
-            name: 'Charlie Gitto\'s On the Hill',
-            type: 'marker',
-            coords: [38.617972, -90.2756436],
-          },
-          {
-            id: 4,
-            name: 'Sugarfire',
-            type: 'marker',
-            coords: [38.6304077, -90.1916921],
-          },
-          {
-            id: 5,
-            name: 'The Shaved Duck',
-            type: 'marker',
-            coords: [38.6036282, -90.2381407],
-          },
-          {
-            id: 6,
-            name: 'Mango Restaurant',
-            type: 'marker',
-            coords: [38.6313642, -90.1961267],
-          },
-          {
-            id: 7,
-            name: 'Zia\'s Restaurant',
-            type: 'marker',
-            coords: [38.6157376, -90.27716],
-          },
-          {
-            id: 8,
-            name: 'Anthonio\'s Taverna',
-            type: 'marker',
-            coords: [38.6143846, -90.280048],
-          },
+    data: () => ({
+        map: null,
+        tileLayer: null,
+        layers: [{
+                id: 0,
+                name: 'Sungai',
+                active: false,
+                features: [{
+                        id: 0,
+                        name: 'Sungait\'s kendari',
+                        type: 'marker',
+                        coords: [-3.843701834229144, 122.42752075195314],
+                    },
+                    {
+                        id: 1,
+                        name: 'Pappy\'s Smokehouse',
+                        type: 'marker',
+                        coords: [-3.983371674599709, 122.54345806116577],
+                    },
+                    {
+                        id: 2,
+                        name: 'Broadway Oyster Bar',
+                        type: 'marker',
+                        coords: [-3.979946733810512, 122.59014995236546],
+                    },
+                    {
+                        id: 3,
+                        name: 'Charlie Gitto\'s On the Hill',
+                        type: 'marker',
+                        coords: [-3.972411813951688, 122.52938182925995],
+                    },
+                    {
+                        id: 4,
+                        name: 'Sugarfire',
+                        type: 'marker',
+                        coords: [-3.983200427898737, 122.56749065222444],
+                    },
+                    {
+                        id: 5,
+                        name: 'The Shaved Duck',
+                        type: 'marker',
+                        coords: [-3.9835429212650464, 122.59864718991835],
+                    },
+                    {
+                        id: 6,
+                        name: 'Mango Restaurant',
+                        type: 'marker',
+                        coords: [-3.9936464113801136, 122.51693638031885],
+                    },
+                    {
+                        id: 7,
+                        name: 'Zia\'s Restaurant',
+                        type: 'marker',
+                        coords: [-3.996471941457056, 122.5132456609777],
+                    },
+                    {
+                        id: 8,
+                        name: 'Anthonio\'s Taverna',
+                        type: 'marker',
+                        coords: [-4.00503409433632, 122.51350315302474],
+                    },
+                ],
+            },
+            {
+                id: 1,
+                name: 'Daerah aliran sungai',
+                active: false,
+                features: [{
+                    id: 0,
+                    name: 'Aliran sungai A',
+                    type: 'polygon',
+                    coords: [
+                        [-4.057426060386102, 122.42889404296876],
+                        [-4.035508178820226, 122.47146606445314],
+                        [-4.035508178820226, 122.48931884765626],
+                        [-4.010849855147802, 122.50717163085939],
+                        [-3.980710893919806, 122.51541137695314],
+                        [-3.960160969103948, 122.51815795898438],
+                        [-3.960160969103948, 122.48107910156251],
+                        [-3.967011000868007, 122.43301391601562],
+                        [-3.9752309640095858, 122.40692138671876],
+                        [-3.9752309640095858, 122.37396240234376],
+                        [-3.956050922825435, 122.32315063476564],
+                        [-3.96290098861849, 122.27508544921876],
+                        [-3.9478307691214565, 122.21740722656251],
+                        [-3.925909961799956, 122.15423583984376],
+                        [-3.9930406027902787, 122.13363647460939],
+                        [-4.109478639690112, 122.13500976562501],
+                        [-4.1382430839837125, 122.14324951171876],
+                        [-4.099890260666376, 122.22564697265626],
+                        [-4.091671558519782, 122.30255126953126],
+                        [-4.084822575634911, 122.35336303710939],
+                        [-4.093041348071993, 122.39181518554689]
+                    ],
+                }, {
+                    id: 1,
+                    name: 'Daerah aliran sungai B',
+                    type: 'polygon',
+                    coords: [
+                        [-4.103314694963716, 122.2053909301758],
+                        [-4.121121516348591, 122.16556549072267],
+                        [-4.130024777622786, 122.1566390991211],
+                        [-4.139270366285474, 122.13020324707033],
+                        [-4.1762516388516255, 122.14599609375001],
+                        [-4.190290370087163, 122.16316223144533],
+                        [-4.176936460843612, 122.21466064453126],
+                        [-4.12899748333924, 122.22015380859375]
+                    ],
+                }, ],
+            }
         ],
-      },
-      {
-        id: 1,
-        name: 'City/County Boundaries',
-        active: false,
-        features: [
-          {
-            id: 0,
-            name: 'City of St. Louis',
-            type: 'polygon',
-            coords: [
-              [38.770547, -90.168056],
-              [38.753816, -90.177326],
-              [38.747390, -90.183849],
-              [38.731456, -90.206337],
-              [38.719805, -90.212002],
-              [38.706142, -90.210629],
-              [38.692879, -90.202217],
-              [38.680150, -90.189857],
-              [38.665139, -90.182991],
-              [38.646774, -90.179729],
-              [38.630818, -90.179214],
-              [38.615663, -90.183849],
-              [38.601713, -90.190201],
-              [38.587759, -90.204620],
-              [38.577427, -90.219212],
-              [38.564140, -90.232258],
-              [38.545615, -90.248566],
-              [38.531650, -90.257664],
-              [38.538901, -90.270023],
-              [38.548702, -90.273113],
-              [38.561053, -90.294399],
-              [38.574072, -90.309334],
-              [38.596346, -90.320320],
-              [38.614054, -90.314827],
-              [38.632159, -90.304527],
-              [38.651198, -90.302296],
-              [38.664067, -90.293713],
-              [38.683768, -90.278263],
-              [38.700650, -90.265388],
-              [38.717662, -90.253887],
-              [38.722349, -90.238266],
-              [38.729715, -90.221272],
-              [38.742302, -90.203934],
-              [38.754886, -90.191746],
-              [38.764792, -90.184021],
-              [38.771350, -90.183334],
-            ],
-          },{
-            id: 1,
-            name: 'St. Louis County',
-            type: 'polygon',
-            coords: [
-              [38.771216, -90.169601],
-              [38.786740, -90.144196],
-              [38.799049, -90.124283],
-              [38.813496, -90.118790],
-              [38.829010, -90.141449],
-              [38.827405, -90.170975],
-              [38.821521, -90.186081],
-              [38.824731, -90.204620],
-              [38.850938, -90.257492],
-              [38.863771, -90.271912],
-              [38.888361, -90.294571],
-              [38.892102, -90.327530],
-              [38.873929, -90.343323],
-              [38.856285, -90.342636],
-              [38.833289, -90.352936],
-              [38.821521, -90.374908],
-              [38.827940, -90.413361],
-              [38.828475, -90.441513],
-              [38.788345, -90.477905],
-              [38.763186, -90.484772],
-              [38.740695, -90.510178],
-              [38.726233, -90.535583],
-              [38.705339, -90.532837],
-              [38.686046, -90.538330],
-              [38.679614, -90.587769],
-              [38.682294, -90.606308],
-              [38.679614, -90.617981],
-              [38.683902, -90.646820],
-              [38.684438, -90.661926],
-              [38.672645, -90.676346],
-              [38.658169, -90.683899],
-              [38.645299, -90.704498],
-              [38.640473, -90.731277],
-              [38.468106, -90.735397],
-              [38.481545, -90.726471],
-              [38.477782, -90.717545],
-              [38.471331, -90.712738],
-              [38.471869, -90.696945],
-              [38.463267, -90.692139],
-              [38.453051, -90.684586],
-              [38.446060, -90.683899],
-              [38.446598, -90.669479],
-              [38.454126, -90.655060],
-              [38.466493, -90.659180],
-              [38.480470, -90.659180],
-              [38.488532, -90.650253],
-              [38.483695, -90.633087],
-              [38.474557, -90.624161],
-              [38.472406, -90.611115],
-              [38.485845, -90.598755],
-              [38.502505, -90.592575],
-              [38.503042, -90.407181],
-              [38.492294, -90.406494],
-              [38.484232, -90.409241],
-              [38.478320, -90.416107],
-              [38.472406, -90.422287],
-              [38.465418, -90.422287],
-              [38.454664, -90.413361],
-              [38.454664, -90.401688],
-              [38.458428, -90.392761],
-              [38.450900, -90.390015],
-              [38.452513, -90.374908],
-              [38.457353, -90.348129],
-              [38.451438, -90.337830],
-              [38.439069, -90.340576],
-              [38.428849, -90.346069],
-              [38.418628, -90.347443],
-              [38.408406, -90.347443],
-              [38.396568, -90.345383],
-              [38.391186, -90.336456],
-              [38.414862, -90.311737],
-              [38.424546, -90.293198],
-              [38.453051, -90.282898],
-              [38.492832, -90.273972],
-              [38.510565, -90.268135],
-              [38.531516, -90.258522],
-              [38.537693, -90.270538],
-              [38.544138, -90.272598],
-              [38.552730, -90.272598],
-              [38.559710, -90.293541],
-              [38.568032, -90.304871],
-              [38.577695, -90.311050],
-              [38.586552, -90.314827],
-              [38.597285, -90.319977],
-              [38.609896, -90.311737],
-              [38.635646, -90.305557],
-              [38.649321, -90.301437],
-              [38.701856, -90.264702],
-              [38.714447, -90.255089],
-              [38.721144, -90.249939],
-              [38.724358, -90.237579],
-              [38.727572, -90.227623],
-              [38.734536, -90.214920],
-              [38.740963, -90.204620],
-              [38.747925, -90.198097],
-              [38.756225, -90.189514],
-              [38.763721, -90.185051],
-              [38.771752, -90.184708],
-            ],
-          },
-        ],
-      }
-    ],
-  }),
-  mounted() {
-    this.initMap();
-    this.initLayers();
-  },
-  methods: {
-    layerChanged(layerId, active) {
-      const layer = this.layers.find(layer => layer.id === layerId);
-      
-      layer.features.forEach((feature) => {
-        if (active) {
-          feature.leafletObject.addTo(this.map);
-        } else {
-          feature.leafletObject.removeFrom(this.map);
-        }
-      });
+    }),
+    mounted() {
+        this.initMap();
+        this.initLayers();
     },
-    initLayers() {
-      this.layers.forEach((layer) => {
-        const markerFeatures = layer.features.filter(feature => feature.type === 'marker');
-        const polygonFeatures = layer.features.filter(feature => feature.type === 'polygon');
-        
-        markerFeatures.forEach((feature) => {
-          feature.leafletObject = L.marker(feature.coords)
-            .bindPopup(feature.name);
-        });
-        
-        polygonFeatures.forEach((feature) => {
-          feature.leafletObject = L.polygon(feature.coords)
-            .bindPopup(feature.name);
-        });
-      });
+    methods: {
+        layerChanged(layerId, active) {
+            const layer = this.layers.find(layer => layer.id === layerId);
+
+            layer.features.forEach((feature) => {
+                if (active) {
+                    feature.leafletObject.addTo(this.map);
+                } else {
+                    feature.leafletObject.removeFrom(this.map);
+                }
+            });
+        },
+        initLayers() {
+            this.layers.forEach((layer) => {
+                const markerFeatures = layer.features.filter(feature => feature.type === 'marker');
+                const polygonFeatures = layer.features.filter(feature => feature.type === 'polygon');
+
+                markerFeatures.forEach((feature) => {
+                    feature.leafletObject = L.marker(feature.coords)
+                        .bindPopup(feature.name);
+                });
+
+                polygonFeatures.forEach((feature) => {
+                    feature.leafletObject = L.polygon(feature.coords)
+                        .bindPopup(feature.name);
+                });
+            });
+        },
+        initMap() {
+            this.map = L.map('map').setView([-4.144910, 122.174606], 12);
+            this.tileLayer = L.tileLayer(
+                'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 18,
+                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>',
+                }
+            );
+
+            this.tileLayer.addTo(this.map);
+            // this.map.on('click', function(e) {
+            //   alert("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
+            // });
+        },
     },
-    initMap() {
-      this.map = L.map('map').setView([-4.144910, 122.174606], 12);
-      this.tileLayer = L.tileLayer(
-        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-        {
-          maxZoom: 18,
-          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attribution">CARTO</a>',
-        }
-      );
-        
-      this.tileLayer.addTo(this.map);
-      // this.map.on('click', function(e) {
-      //   alert("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
-      // });
-    },
-  },
 };
 </script>
 <style>
-  .map { height: 600px }
+.map {
+    height: 600px
+}
 </style>
