@@ -49,48 +49,48 @@ function loadRiver() {
   layerControl.value.addOverlay(streets, 'Streets');
 }
 
-function loadWatershed() {
-  var cities = L.layerGroup();
-  L.polygon([[-4.057426060386102, 122.42889404296876],
-              [-4.035508178820226, 122.47146606445314],
-              [-4.035508178820226, 122.48931884765626],
-              [-4.010849855147802, 122.50717163085939],
-              [-3.980710893919806, 122.51541137695314],
-              [-3.960160969103948, 122.51815795898438],
-              [-3.960160969103948, 122.48107910156251],
-              [-3.967011000868007, 122.43301391601562],
-              [-3.9752309640095858, 122.40692138671876],
-              [-3.9752309640095858, 122.37396240234376],
-              [-3.956050922825435, 122.32315063476564],
-              [-3.96290098861849, 122.27508544921876],
-              [-3.9478307691214565, 122.21740722656251],
-              [-3.925909961799956, 122.15423583984376],
-              [-3.9930406027902787, 122.13363647460939],
-              [-4.109478639690112, 122.13500976562501],
-              [-4.1382430839837125, 122.14324951171876],
-              [-4.099890260666376, 122.22564697265626],
-              [-4.091671558519782, 122.30255126953126],
-              [-4.084822575634911, 122.35336303710939],
-              [-4.093041348071993, 122.39181518554689]])
-    .bindPopup('This is Littleton, CO.').addTo(cities);
-    layerControl.value.addOverlay(cities, 'Cities');
+async function loadWatershed() {
+  const response = await sendRequest({
+      method: 'get',
+      url: '/watersheds/coords',
+  });
+  if ((response !== null) && (response.status === true)) {
+    let watersheds = [];
+    response.data.watershed.forEach(watershed => {
+      watersheds.push({
+        popup: watershed.nama_data_dasar,
+        coords: watershed.coords
+      });
+    });
+    loadPolygonLayer(watersheds, 'Daerah Aliran Sungai');
+  }
+}
+
+function loadPolygonLayer(data, label){
+  var layerGroup = L.layerGroup();
+  data.forEach(row => {
+    L.polygon(JSON.parse(row.coords))
+      .bindPopup(row.popup)
+      .addTo(layerGroup);
+  });
+  layerControl.value.addOverlay(layerGroup, label);
 }
 
 async function loadWeirs(){
-    const response = await sendRequest({
-        method: 'get',
-        url: '/weirs/coords',
-    });
-    if ((response !== null) && (response.status === true)) {
-      let weirs = [];
-      response.data.weirs.forEach(weir => {
-        weirs.push({
-          popup: weir.nama_data_dasar,
-          coords: weir.coords
-        });
+  const response = await sendRequest({
+      method: 'get',
+      url: '/weirs/coords',
+  });
+  if ((response !== null) && (response.status === true)) {
+    let weirs = [];
+    response.data.weirs.forEach(weir => {
+      weirs.push({
+        popup: weir.nama_data_dasar,
+        coords: weir.coords
       });
-      loadMarkerLayer(weirs, 'Bendungan');
-    }
+    });
+    loadMarkerLayer(weirs, 'Bendungan');
+  }
 }
 
 function loadMarkerLayer(data, label){
