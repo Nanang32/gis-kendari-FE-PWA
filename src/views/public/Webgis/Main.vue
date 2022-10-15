@@ -7,6 +7,7 @@
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
+import sendRequest from '@libs/http.js'
 import L from "leaflet"
 import "leaflet/dist/leaflet.css";
 
@@ -15,9 +16,9 @@ const layerControl = ref(null);
 onMounted(() => {
   initMap();
 
-  loadStreet();
-  loadCities();
-  loadParks();
+  loadWatershed();
+  loadRiver();
+  loadWeirs();
 });
 
 function initMap() {
@@ -34,7 +35,7 @@ function initMap() {
     layerControl.value = L.control.layers({'OpenStreetMap': osm}).addTo(map);
 }
 
-function loadStreet() {
+function loadRiver() {
   var streets = L.layerGroup();
   L.polyline([[-4.103314694963716, 122.2053909301758],
                       [-4.121121516348591, 122.16556549072267],
@@ -48,7 +49,7 @@ function loadStreet() {
   layerControl.value.addOverlay(streets, 'Streets');
 }
 
-function loadCities() {
+function loadWatershed() {
   var cities = L.layerGroup();
   L.polygon([[-4.057426060386102, 122.42889404296876],
               [-4.035508178820226, 122.47146606445314],
@@ -75,11 +76,24 @@ function loadCities() {
     layerControl.value.addOverlay(cities, 'Cities');
 }
 
-function loadParks(){
-  var parks = L.layerGroup();
-    L.marker([-3.996471941457056, 122.5132456609777]).bindPopup('This is Crown Hill Park.').addTo(parks);
-    L.marker([-4.00503409433632, 122.51350315302474]).bindPopup('This is Ruby Hill Park.').addTo(parks);
-    layerControl.value.addOverlay(parks, 'Parks');
+async function loadWeirs(){
+    const response = await sendRequest({
+        method: 'get',
+        url: '/weirs/coords',
+    });
+    if ((response !== null) && (response.status === true)) {
+      loadWeirsLayer(response.data.weirs);
+    }
+}
+
+function loadWeirsLayer(data){
+  var weirLayerGroup = L.layerGroup();
+  data.forEach(weir => {
+    L.marker(JSON.parse(weir.coords))
+      .bindPopup(weir.nama_data_dasar)
+      .addTo(weirLayerGroup);
+  });
+  layerControl.value.addOverlay(weirLayerGroup, 'Bendungan');
 }
 </script>
 <style>
