@@ -2,8 +2,9 @@
   <Modal
     :show="isShowModal"
     @hidden="submitLatlng"
+    size="modal-xl"
   >
-    <ModalBody class="p-0 w-96 h-96">
+    <ModalBody class="p-0">
       <div class="map h-80" id="map"></div>
     </ModalBody>
     <ModalFooter>
