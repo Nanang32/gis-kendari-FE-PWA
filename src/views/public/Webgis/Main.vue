@@ -35,18 +35,21 @@ function initMap() {
     layerControl.value = L.control.layers({'OpenStreetMap': osm}).addTo(map);
 }
 
-function loadRiver() {
-  var streets = L.layerGroup();
-  L.polyline([[-4.103314694963716, 122.2053909301758],
-                      [-4.121121516348591, 122.16556549072267],
-                      [-4.130024777622786, 122.1566390991211],
-                      [-4.139270366285474, 122.13020324707033],
-                      [-4.1762516388516255, 122.14599609375001],
-                      [-4.190290370087163, 122.16316223144533],
-                      [-4.176936460843612, 122.21466064453126],
-                      [-4.12899748333924, 122.22015380859375]])
-    .bindPopup('This is Hiddleton, CO.').addTo(streets);
-  layerControl.value.addOverlay(streets, 'Streets');
+async function loadRiver() {
+  const response = await sendRequest({
+      method: 'get',
+      url: '/rivers/coords',
+  });
+  if ((response !== null) && (response.status === true)) {
+    let rivers = [];
+    response.data.river.forEach(river => {
+      rivers.push({
+        popup: river.nama_data_dasar,
+        coords: river.coords
+      });
+    });
+    loadPolylineLayer(rivers, 'Sungai');
+  }
 }
 
 async function loadWatershed() {
@@ -64,16 +67,6 @@ async function loadWatershed() {
     });
     loadPolygonLayer(watersheds, 'Daerah Aliran Sungai');
   }
-}
-
-function loadPolygonLayer(data, label){
-  var layerGroup = L.layerGroup();
-  data.forEach(row => {
-    L.polygon(JSON.parse(row.coords))
-      .bindPopup(row.popup)
-      .addTo(layerGroup);
-  });
-  layerControl.value.addOverlay(layerGroup, label);
 }
 
 async function loadWeirs(){
@@ -97,6 +90,26 @@ function loadMarkerLayer(data, label){
   var layerGroup = L.layerGroup();
   data.forEach(row => {
     L.marker(JSON.parse(row.coords))
+      .bindPopup(row.popup)
+      .addTo(layerGroup);
+  });
+  layerControl.value.addOverlay(layerGroup, label);
+}
+
+function loadPolylineLayer(data, label){
+  var layerGroup = L.layerGroup();
+  data.forEach(row => {
+    L.polyline(JSON.parse(row.coords))
+      .bindPopup(row.popup)
+      .addTo(layerGroup);
+  });
+  layerControl.value.addOverlay(layerGroup, label);
+}
+
+function loadPolygonLayer(data, label){
+  var layerGroup = L.layerGroup();
+  data.forEach(row => {
+    L.polygon(JSON.parse(row.coords))
       .bindPopup(row.popup)
       .addTo(layerGroup);
   });
