@@ -10,7 +10,7 @@ import { ref, onMounted } from "vue";
 import L from "leaflet"
 import "leaflet/dist/leaflet.css";
 
-const map = ref(null);
+// const map = ref(null);
 const layerControl = ref(null);
 
 onMounted(() => {
@@ -27,12 +27,12 @@ function initMap() {
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     });
 
-    map.value = L.map('map', {
+    const map = L.map('map', {
       center: [-4.144910, 122.174606],
       zoom: 10,
       layers: [osm]
     });
-    layerControl.value = L.control.layers({'OpenStreetMap': osm}).addTo(map.value);
+    layerControl.value = L.control.layers({'OpenStreetMap': osm}).addTo(map);
 }
 
 function loadStreet() {
