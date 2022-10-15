@@ -19,6 +19,11 @@ onMounted(() => {
   loadWatershed();
   loadRiver();
   loadWeirs();
+  loadBeachGuard();
+  loadBridge();
+  loadIrrigation();
+  loadRiverBasin();
+  loadRoad();
 });
 
 function initMap() {
@@ -84,6 +89,21 @@ async function loadWeirs(){
     });
     loadMarkerLayer(weirs, 'Bendungan');
   }
+}
+function loadBeachGuard(){
+  loadMarkerLayer([], 'Pelindung pantai');
+}
+function loadBridge(){
+  loadMarkerLayer([], 'Jembatan');
+}
+function loadIrrigation(){
+  loadMarkerLayer([], 'Irigasi');
+}
+function loadRiverBasin(){
+  loadMarkerLayer([], 'Wilayah Sungai');
+}
+function loadRoad(){
+  loadMarkerLayer([], 'Jalan');
 }
 
 function loadMarkerLayer(data, label){
