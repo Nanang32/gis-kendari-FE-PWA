@@ -86,9 +86,11 @@ function initMap() {
       layer = e.layer;
 
     if (type === 'marker') {
-      latlngs.value = [layer.getLatLng()];
-    } else {
-      latlngs.value = layer.getLatLngs()[0];
+      latlngs.value = [layer.getLatLng().lat, layer.getLatLng().lng];
+    } else if(type === 'polyline') {
+      latlngs.value.push(layer.getLatLngs().map(point => [point.lat, point.lng]));
+    } else if(type === 'polygon') {
+      latlngs.value = layer.getLatLngs()[0].map(point => [point.lat, point.lng]);
     }
 
     editableLayers.addLayer(layer);
@@ -96,6 +98,6 @@ function initMap() {
 
 }
 function submitLatlng() {
-  emit('submit', JSON.stringify(latlngs.value.map(point => [point.lat, point.lng])));
+  emit('submit', JSON.stringify(latlngs.value));
 }
 </script>
