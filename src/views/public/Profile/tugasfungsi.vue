@@ -3,7 +3,7 @@
         <!-- BEGIN: Blog Layout -->
         <div class="intro-y mt-6">
             <div class="news__preview image-fit">
-                <img alt="Midone Tailwind HTML Admin Template" class="rounded-md" :src="$f()[0].images[0]" />
+                <img alt="Enigma Tailwind HTML Admin Template" class="object-cover" src="@/assets/images/tugasfungsi.png" />
             </div>
         </div>
         <div class="intro-y text-justify leading-relaxed">
