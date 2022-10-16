@@ -2,6 +2,7 @@
   <div class="py-5 md:py-0 ml-10 mr-10 mt-0 mb-3">
     <DarkModeSwitcher />
     <MobileMenu />
+    <TinySlider />
     <!-- BEGIN: Top Menu -->
     <nav class="top-nav" style="padding-top: 2rem;">
       <ul>
@@ -148,6 +149,7 @@ import TopBar from "@/components/top-bar/Main.vue";
 import MobileMenu from "@/components/mobile-menu/Main.vue";
 import DarkModeSwitcher from "@/components/dark-mode-switcher/Main.vue";
 import MainColorSwitcher from "@/components/main-color-switcher/Main.vue";
+import TinySlider from '@/components/tiny-slider/Main.vue'
 import {
   searchDropdown,
   showSearchDropdown,

@@ -1,28 +1,5 @@
 <template>
-    <div class="mx-11 mt-24">
-        <TinySlider :options="{
-                    mode: 'gallery',
-                    controls: true,
-                    nav: true,
-                    speed: 500,
-                  }">
-            <div class="h-96">
-                <div class="h-full image-fit rounded-md overflow-hidden">
-                    <img alt="Enigma Tailwind HTML Admin Template" src="@/assets/images/back1.png" />
-                </div>
-            </div>
-            <div class="h-96 px-2">
-                <div class="h-full image-fit rounded-md overflow-hidden">
-                    <img alt="Enigma Tailwind HTML Admin Template" src="@/assets/images/back2.png" />
-                </div>
-            </div>
-            <div class="h-96 px-2">
-                <div class="h-full image-fit rounded-md overflow-hidden">
-                    <img alt="Enigma Tailwind HTML Admin Template" src="@/assets/images/back3.png" />
-                </div>
-            </div>
-        </TinySlider>
-    </div>
+    <TinySlider />
     <!-- BEGIN: Top Bar -->
     <div class="top-bar-boxed h-[70px] md:h-[65px] z-[51] border-b border-white/[0.08] mt-12 md:mt-0 -mx-3 sm:-mx-8 md:-mx-0 px-3 md:border-b-0 relative md:fixed md:inset-x-0 md:top-0 sm:px-8 md:px-10 md:pt-10 md:bg-gradient-to-b md:from-slate-100 md:to-transparent dark:md:from-darkmode-700">
         <div class="h-full flex items-center">
@@ -165,6 +142,7 @@
     <!-- END: Top Bar -->
 </template>
 <script setup>
+import TinySlider from '@/components/tiny-slider/Main.vue'
 import { ref } from "vue";
 
 const searchDropdown = ref(false);
