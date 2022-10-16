@@ -1,11 +1,9 @@
 <template>
-  <div class="py-5 md:py-0 ml-10 mr-10 mt-3 mb-3">
+  <div class="py-5 md:py-0 ml-10 mr-10 mt-0 mb-3">
     <DarkModeSwitcher />
-    <MainColorSwitcher />
     <MobileMenu />
-    <TopBar class="top-bar-boxed--top-menu" />
     <!-- BEGIN: Top Menu -->
-    <nav class="top-nav">
+    <nav class="top-nav" style="padding-top: 2rem;">
       <ul>
         <li v-for="(menu, menuKey) in formattedMenu" :key="menuKey">
           <a
@@ -120,6 +118,24 @@
       <router-view />
     </div>
     <!-- END: Content -->
+    <footer class="mt-4 p-4 rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800" style="background-color: rgb(var(--color-slate-100) / var(--tw-bg-opacity));">
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 . All Rights Reserved.
+      </span>
+      <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+          <li>
+              <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+          </li>
+          <li>
+              <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+          </li>
+          <li>
+              <a href="#" class="mr-4 hover:underline md:mr-6">Licensing</a>
+          </li>
+          <li>
+              <a href="#" class="hover:underline">Contact</a>
+          </li>
+      </ul>
+  </footer>
   </div>
 </template>
 
