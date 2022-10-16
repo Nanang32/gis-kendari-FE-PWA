@@ -87,7 +87,7 @@ async function loadWeirs(){
         coords: weir.coords
       });
     });
-    loadMarkerLayer(weirs, 'Bendungan');
+    loadMarkerLayer(weirs, 'Bendung');
   }
 }
 function loadBeachGuard(){
