@@ -1,5 +1,5 @@
 <template>
-  <div class="mx-11 mt-24">
+  <div class="mx-11 mt-5 mb-5">
       <TinySlider :options="{
                   mode: 'gallery',
                   controls: true,
