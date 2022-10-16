@@ -9,24 +9,9 @@
           <div class="my-auto">
             <img
               alt="Midone Tailwind HTML Admin Template"
-              class="-intro-x w-1/2 -mt-16"
-              src="@/assets/images/logosultra.png"
+              class="-intro-x w-10/12 pr-16 -mt-16"
+              src="@/assets/images/logologin.png"
             />
-            <div
-              class="-intro-x text-white pl-20 font-medium text-2xl leading-tight mt-10"
-            >
-              SISDJATAN
-            </div>
-            <div
-              class="-intro-x text-white pl-14 uppercase leading-tight mt-10"
-            >
-              Provinsi sulawesi tenggara
-            </div>
-            <div
-              class="-intro-x mt-5 text-lg text-white text-opacity-70 dark:text-slate-400 capitalize"
-            >
-              DINAS SUMBER DAYA AIR DAN BINA MARGA
-            </div>
           </div>
         </div>
         <!-- END: Login Info -->

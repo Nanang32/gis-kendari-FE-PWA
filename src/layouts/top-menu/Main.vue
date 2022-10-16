@@ -123,16 +123,10 @@
 <footer class="bg-white bg-amber-400">
     <div class="grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
         <div>
-            <h2 class="mb-6 text-lg font-semibold  uppercase text-amber-900">Profil</h2>
+            <h2 class="mb-6 text-lg font-semibold  uppercase text-amber-900">Alamat</h2>
             <ul class="text-amber-900">
                 <li class="mb-4">
-                    <a href="#" class=" hover:underline">Visi & misi</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Tugas & dan fungsi</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Struktur organisasi</a>
+                    <a class=" hover:underline font-semibold">DINAS SUMBER DAYA AIR DAN BINA MARGA PROVINSI SULAWESI TENGGARA <br> Jalan Haluoleo No. 05 Kompleks Perkantoran Bumi Praja Anduonohu, Kota Kendari </a>
                 </li>
             </ul>
         </div>
