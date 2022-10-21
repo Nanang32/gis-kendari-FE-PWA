@@ -165,6 +165,9 @@ import AdminIrrigationEdit from "../views/admin/gis/irrigation/edit.vue";
 import Login from "../views/login/Main.vue";
 // report
 import AdminServiceIndex from "../views/admin/service/table-report.vue";
+
+import Public from "@layouts/public/Main.vue";
+
 const routes = [{
         path: "/admin",
         component: SideMenu,
@@ -750,6 +753,10 @@ const routes = [{
         path: "/login",
         component: Login
     },
+    {
+        path: "/site",
+        component: Public,        
+    }
 ];
 
 const router = createRouter({
