@@ -4,36 +4,19 @@
             <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-red-800">
                 <h2 class="text-base text-white  uppercase">form isian data dasar infrastruktur</h2>
             </div>
-            <div class="p-5">
-                <div class="form-inline">
-                    <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">Unit eselon i</label>
-                    <input type="text" class="form-control" v-model="weir.unit_eselon_i" placeholder="ketik disini..." />
-                </div>
-                <div class="form-inline mt-5">
-                    <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">unit eselon II.A</label>
-                    <input type="text" class="form-control" v-model="weir.unit_eselon_iia" placeholder="ketik disini..." />
-                </div>
-                <div class="form-inline mt-5">
-                    <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">unit eselon II.B/III.A</label>
-                    <input type="text" class="form-control" v-model="weir.unit_eselon_iiia" placeholder="ketik disini..." />
-                </div>
-            </div>
+            
             <div class="p-5 border">
                 <div class="form-inline">
-                    <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">kelompok data dasar</label>
+                    <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">kelompok data dasar infrastruktur</label>
                     <input type="text" class="form-control" v-model="weir.kelompok_data_dasar" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
-                    <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">nama data dasar</label>
+                    <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">nama data dasar infrastruktur</label>
                     <input type="text" class="form-control" v-model="weir.nama_data_dasar" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">tahun data</label>
                     <input type="text" class="form-control" v-model="weir.tahun" placeholder="ketik disini..." />
-                </div>
-                <div class="form-inline mt-5">
-                    <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">kondisi</label>
-                    <input type="text" class="form-control" v-model="weir.kondisi" placeholder="ketik disini..." />
                 </div>
             </div>
         </div>
@@ -43,22 +26,12 @@
             </div>
             <div class="p-5">
                 <div class="form-inline">
-                    <label class="form-label sm:w-20 capitalize">nama WS</label>
+                    <label class="form-label sm:w-20 capitalize">nama wilayah sungai</label>
                     <input type="text" class="form-control" v-model="weir.nama_wilayah_sungai" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-20 capitalize">nama DAS</label>
                     <input type="text" class="form-control" v-model="weir.daerah_aliran_sungai" placeholder="ketik disini..." />
-                </div>
-                <div class="form-inline mt-5">
-                    <label class="form-label sm:w-20">Status</label>
-                    <select class="form-select mt-2 sm:mr-2" aria-label="Default select example">
-                        <option>--Pilih salah satu--</option>
-                        <option>Nasional</option>
-                        <option>Provinsi</option>
-                        <option>Kabupaten/Kota</option>
-                        <option>Non Status</option>
-                    </select>
                 </div>
             </div>
         </div>
@@ -68,16 +41,24 @@
             </div>
             <div class="p-5">
                 <div class="form-inline">
-                    <label class="form-label sm:w-30 capitalize">kode bidang pekerjaan umum</label>
+                    <label class="form-label sm:w-30 capitalize">kode kementrian</label>
                     <input type="text" class="form-control" v-model="weir.kode_bidang_pekerjaan_umum" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30 capitalize">kode data dasar jenis infrastruktur</label>
+                    <label class="form-label sm:w-30 capitalize">kode unit organisasi</label>
                     <input type="text" class="form-control" v-model="weir.kode_data_dasar_jenis_infrastruktur" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30 capitalize">kode infrastruktur (sesuai ketentuan ditjen SDA)</label>
+                    <label class="form-label sm:w-30 capitalize">kode data dasar jenis infrastruktur</label>
                     <input type="text" class="form-control" v-model="weir.kode_infrastruktur" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">kode bendung</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">kode infrastruktur</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
                 </div>
             </div>
         </div>
@@ -117,6 +98,10 @@
                     <label class="form-label sm:w-30">irigasi (ha)</label>
                     <input type="text" class="form-control" v-model="weir.irigasi" placeholder="ketik disini..." />
                 </div>
+                 <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30">DMI (M<sup>3</sup>/Detik)</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
                 
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">lain-lain</label>
@@ -149,8 +134,8 @@
                     <input type="text" class="form-control" v-model="weir.tinggi" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30 capitalize">luas (m)</label>
-                    <input type="text" class="form-control" v-model="weir.lebar" placeholder="ketik disini..." />
+                    <label class="form-label sm:w-30 capitalize">Lebar (m)</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline">
                     <label class="form-label sm:w-20">kondisi</label>
@@ -192,11 +177,17 @@
                 <h2 class="text-base text-white  uppercase">vi.koordinat (decimal degree)</h2>
             </div>
             <div class="p-5 text-center">
-                <button type="button" class="btn btn-primary w-24" @click="isShowModal=true">
-                    Peta
-                </button>
+               <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">Koordinat X titik awal</label>
+                    <input type="text" class="form-control"  placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">Koordinat Y titik awal</label>
+                    <input type="text" class="form-control"  placeholder="ketik disini..." />
+                </div>
             </div>
         </div>
+        
         <div class="box col-span-12 lg:col-span-6">
             <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800">
                 <h2 class="text-base text-white  uppercase">vii.photo dan video</h2>
@@ -210,6 +201,20 @@
                     <label class="form-label sm:w-30 capitalize">video</label>
                     <input type="file" class="form-control"/>
                 </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">Peta</label>
+                    <input type="file" class="form-control"/>
+                </div>
+            </div>
+        </div>
+        <div class="box col-span-12 lg:col-span-12">
+            <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800">
+                <h2 class="text-base text-white  uppercase">viii.Digitasi</h2>
+            </div>
+            <div class="p-5 text-center">
+                <button type="button" class="btn btn-primary w-24" @click="isShowModal=true">
+                    Peta
+                </button>
             </div>
         </div>
     </div>
