@@ -20,11 +20,11 @@
             </div>
             <div class="p-5 border">
                 <div class="form-inline">
-                    <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">kelompok data dasar</label>
+                    <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">kelompok data dasar infrastruktur</label>
                     <input type="text" class="form-control" v-model="riverBasin.kelompok_data_dasar" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
-                    <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">nama data dasar</label>
+                    <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">nama data dasar infrastruktur</label>
                     <input type="text" class="form-control" v-model="riverBasin.nama_data_dasar" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
@@ -50,10 +50,11 @@
                     <label class="form-label sm:w-20">Status</label>
                     <select class="form-select mt-2 sm:mr-2" aria-label="Default select example">
                         <option>--Pilih salah satu--</option>
-                        <option>Nasional</option>
-                        <option>Provinsi</option>
-                        <option>Kabupaten/Kota</option>
-                        <option>Non Status</option>
+                        <option>Lintas negara</option>
+                        <option>Lintas provinsi</option>
+                        <option>Strategis nasional</option>
+                        <option>Lintas kabupaten/kota</option>
+                        <option>Dalam satu kabupaten/kota</option>
                     </select>
                 </div>
             </div>
