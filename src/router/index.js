@@ -165,6 +165,10 @@ import AdminIrrigationEdit from "../views/admin/gis/irrigation/edit.vue";
 import AdminRoadIndex from "../views/admin/gis/road/index.vue";
 import AdminRoadCreate from "../views/admin/gis/road/create.vue";
 import AdminRoadEdit from "../views/admin/gis/road/edit.vue";
+//pengaman pantai
+import AdminBeachGuardIndex from "../views/admin/gis/beach_guard/index.vue";
+import AdminBeachGuardCreate from "../views/admin/gis/beach_guard/create.vue";
+import AdminBeachGuardEdit from "../views/admin/gis/beach_guard/edit.vue";
 // login
 import Login from "../views/login/Main.vue";
 // report
@@ -627,6 +631,23 @@ const routes = [{
                 path: "road/:id",
                 name: "admin-road-edit",
                 component: AdminRoadEdit,
+            },
+             // pengaman pantai
+            
+            {
+                path: "beachguard",
+                name: "admin-beachguard",
+                component: AdminBeachGuardIndex,
+            },
+            {
+                path: "beachguard/create",
+                name: "admin-beachguard-create",
+                component: AdminBeachGuardCreate,
+            },
+            {
+                path: "beachguard/:id",
+                name: "admin-beachguard-edit",
+                component: AdminBeachGuardEdit,
             },
 
         ],
