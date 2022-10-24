@@ -32,7 +32,6 @@ defineProps({
 
 const map = ref(null);
 const tileLayer = ref(null);
-const latlngs = ref([]);
 const emit = defineEmits(['submit'])
 
 onMounted(() => {
@@ -86,19 +85,11 @@ function initMap() {
     var type = e.layerType,
       layer = e.layer;
 
-    if (type === 'marker') {
-      latlngs.value = [layer.getLatLng().lat, layer.getLatLng().lng];
-    } else if(type === 'polyline') {
-      latlngs.value.push(layer.getLatLngs().map(point => [point.lat, point.lng]));
-    } else if(type === 'polygon') {
-      latlngs.value = layer.getLatLngs()[0].map(point => [point.lat, point.lng]);
-    }
-
     editableLayers.addLayer(layer);
   });
 
 }
 function submitLatlng() {
-  emit('submit', JSON.stringify(latlngs.value));
+  emit('submit', editableLayers.toGeoJSON());
 }
 </script>
