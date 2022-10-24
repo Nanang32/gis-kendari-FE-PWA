@@ -111,6 +111,11 @@ export const useSideMenuStore = defineStore("sideMenu", {
                         pageName: "admin-irrigation",
                         title: "Daerah irigasi",
                     },
+                    {
+                        icon: "HomeIcon",
+                        pageName: "admin-road",
+                        title: "Jalan",
+                    },
                     // {
                     //     icon: "",
                     //     pageName: "admin-uptdcontructionequipment",
