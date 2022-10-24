@@ -130,7 +130,7 @@
         
         <div class="box col-span-12 lg:col-span-12">
             <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800">
-                <h2 class="text-base text-white  uppercase">vi.koordinat (decimal degree)</h2>
+                <h2 class="text-base text-white  uppercase">vi.Digitasi</h2>
             </div>
             <div class="p-5 text-center">
                 <button type="button" class="btn btn-primary w-24" @click="isShowModal=true">
