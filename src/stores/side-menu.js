@@ -121,6 +121,11 @@ export const useSideMenuStore = defineStore("sideMenu", {
                         pageName: "admin-beachguard",
                         title: "Pengaman pantai",
                     },
+                    {
+                        icon: "HomeIcon",
+                        pageName: "admin-riverinfrastructure",
+                        title: "Infrastruktur sungai",
+                    },
                     // {
                     //     icon: "",
                     //     pageName: "admin-uptdcontructionequipment",
