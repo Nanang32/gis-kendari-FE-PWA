@@ -213,7 +213,9 @@
                 <h2 class="text-base text-white  uppercase">viii.digitasi</h2>
             </div>
             <div class="p-5 text-center">
-              <ModalMarker/>
+                <button type="button" class="btn btn-primary w-24" @click="isShowModal=true">
+                    Peta
+                </button>
             </div>
         </div>
     </div>
