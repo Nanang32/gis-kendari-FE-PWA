@@ -1,17 +1,16 @@
 <template>
-    <div class="row">
-        <div class="col-md-9">
-            <div class="map" id="map"></div>
-        </div>
-        <div class="col-md-3">
-            <div class="form-check" v-for="layer in layers" :key="layer.id">
-                <label class="form-check-label">
-                    <input class="form-check-input" type="checkbox" v-model="layer.active" @change="layerChanged(layer.id, layer.active)" />
-                    {{ layer.name }}
-                </label>
-            </div>
-        </div>
-    </div>
+  <div class="row">
+      <div class="col-md-9">
+          <div class="map" id="map"></div>
+      </div>
+      <div class="col-md-3">
+          <div class="form-check" v-for="layer in layers" :key="layer.id">
+              <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" v-model="layer.active" @change="layerChanged(layer.id, layer.active)" />
+                  {{ layer.name }}
+              </label>
+          </div>
+      </div>
   </div>
 </template>
 <script setup>
@@ -21,13 +20,14 @@ import L from "leaflet"
 import "leaflet/dist/leaflet.css";
 
 const layerControl = ref(null);
+const map = ref(null);
 
 onMounted(() => {
   initMap();
 
   loadWatershed();
   loadRiver();
-  loadWeirs();
+  // loadWeirs();
   loadBeachGuard();
   loadBridge();
   loadIrrigation();
@@ -41,12 +41,12 @@ function initMap() {
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     });
 
-    const map = L.map('map', {
+    map.value = L.map('map', {
       center: [-4.144910, 122.174606],
       zoom: 10,
       layers: [osm]
     });
-    layerControl.value = L.control.layers({'OpenStreetMap': osm}).addTo(map);
+    layerControl.value = L.control.layers({'OpenStreetMap': osm}).addTo(map.value);
 }
 
 async function loadRiver() {
@@ -102,8 +102,13 @@ async function loadWeirs(){
 function loadBeachGuard(){
   loadMarkerLayer([], 'Pelindung pantai');
 }
-function loadBridge(){
-  loadMarkerLayer([], 'Jembatan');
+async function loadBridge(){
+  const response = await sendRequest({
+      method: 'get',
+      url: '/bridges/geoJson',
+  });
+  const layerGroup = L.geoJSON(response.data);
+  layerControl.value.addOverlay(layerGroup, 'Jembatan');
 }
 function loadIrrigation(){
   loadMarkerLayer([], 'Irigasi');
