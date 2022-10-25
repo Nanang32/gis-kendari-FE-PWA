@@ -174,11 +174,25 @@
                 <h2 class="text-base text-white  uppercase">vi.koordinat (decimal degree)</h2>
             </div>
             <div class="p-5 text-center">
-                <button type="button" class="btn btn-primary w-24" @click="isShowModal=true">
-                    Peta
-                </button>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">tititk koord. 1</label>
+                    <input type="text" class="form-control"  placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">tititk koord. 2</label>
+                    <input type="text" class="form-control"  placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">tititk koord. 3</label>
+                    <input type="text" class="form-control"  placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">tititk koord. 4</label>
+                    <input type="text" class="form-control"  placeholder="ketik disini..." />
+                </div>
             </div>
         </div>
+        
         <div class="box col-span-12 lg:col-span-6">
             <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800">
                 <h2 class="text-base text-white  uppercase">vii.photo dan video</h2>
@@ -192,6 +206,14 @@
                     <label class="form-label sm:w-30 capitalize">video</label>
                     <input type="file" class="form-control"/>
                 </div>
+            </div>
+        </div>
+        <div class="box col-span-12 lg:col-span-12">
+            <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800">
+                <h2 class="text-base text-white  uppercase">viii.digitasi</h2>
+            </div>
+            <div class="p-5 text-center">
+              <ModalMarker/>
             </div>
         </div>
     </div>
