@@ -173,6 +173,10 @@ import AdminBeachGuardEdit from "../views/admin/gis/beach_guard/edit.vue";
 import AdminRiverInfrastructureIndex from "../views/admin/gis/river_infrastructure/index.vue";
 import AdminRiverInfrastructureCreate from "../views/admin/gis/river_infrastructure/create.vue";
 import AdminRiverInfrastructureEdit from "../views/admin/gis/river_infrastructure/edit.vue";
+//jembatan
+import AdminBridgeIndex from "../views/admin/gis/bridge/index.vue";
+import AdminBridgeCreate from "../views/admin/gis/bridge/create.vue";
+import AdminBridgeEdit from "../views/admin/gis/bridge/edit.vue";
 // login
 import Login from "../views/login/Main.vue";
 // report
@@ -669,6 +673,23 @@ const routes = [{
                 path: "riverinfrastructure/:id",
                 name: "admin-riverinfrastructure-edit",
                 component: AdminRiverInfrastructureEdit,
+            },
+              // jembatan
+            
+            {
+                path: "bridge",
+                name: "admin-bridge",
+                component: AdminBridgeIndex,
+            },
+            {
+                path: "bridge/create",
+                name: "admin-bridge-create",
+                component: AdminBridgeCreate,
+            },
+            {
+                path: "bridge/:id",
+                name: "admin-bridge-edit",
+                component: AdminBridgeEdit,
             },
 
         ],

@@ -126,11 +126,11 @@ export const useSideMenuStore = defineStore("sideMenu", {
                         pageName: "admin-riverinfrastructure",
                         title: "Infrastruktur sungai",
                     },
-                    // {
-                    //     icon: "",
-                    //     pageName: "admin-uptdcontructionequipment",
-                    //     title: "Per. Konstruksi",
-                    // }
+                    {
+                        icon: "HomeIcon",
+                        pageName: "admin-bridge",
+                        title: "Jembatan",
+                    }
 
                 ]
 
