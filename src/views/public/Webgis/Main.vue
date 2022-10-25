@@ -12,6 +12,20 @@
           </div>
       </div>
   </div>
+  <Modal
+    :show="showModal"
+    @hidden="showModal=false"
+    size="modal-xl"
+  >
+    <ModalBody class="p-4">
+      <div>{{ data }}</div>
+    </ModalBody>
+    <ModalFooter>
+      <button type="button" class="btn btn-primary w-24" @click="showModal=false">
+        Tutup
+      </button>
+    </ModalFooter>
+  </Modal>
 </template>
 <script setup>
 import { ref, onMounted } from "vue";
@@ -20,7 +34,8 @@ import L from "leaflet"
 import "leaflet/dist/leaflet.css";
 
 const layerControl = ref(null);
-const map = ref(null);
+const showModal = ref(false);
+const data = ref('');
 
 onMounted(() => {
   initMap();
@@ -47,6 +62,15 @@ function initMap() {
       layers: [osm]
     });
     layerControl.value = L.control.layers({'OpenStreetMap': osm}).addTo(map.value);
+}
+function onLayerClick(e){
+  const feature = e.target.feature;
+  data.value = feature.properties.Nm_Dat_Das;
+  showModal.value = true;
+}
+
+function onEachFeature(feature, layer) {
+    layer.on({click:onLayerClick});
 }
 
 async function loadRiver() {
@@ -107,7 +131,7 @@ async function loadBridge(){
       method: 'get',
       url: '/bridges/geoJson',
   });
-  const layerGroup = L.geoJSON(response.data);
+  const layerGroup = L.geoJSON(response.data, {onEachFeature: onEachFeature});
   layerControl.value.addOverlay(layerGroup, 'Jembatan');
 }
 function loadIrrigation(){
