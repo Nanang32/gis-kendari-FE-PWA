@@ -1,11 +1,10 @@
 <template>
-  <div class="py-5 md:py-0 ml-10 mr-10 mt-3 mb-3">
+  <div class="py-5 md:py-0 ml-10 mr-10 mt-0 mb-3">
     <DarkModeSwitcher />
-    <MainColorSwitcher />
     <MobileMenu />
-    <TopBar class="top-bar-boxed--top-menu" />
+    <TinySlider />
     <!-- BEGIN: Top Menu -->
-    <nav class="top-nav">
+    <nav class="top-nav" style="padding-top: 2rem;">
       <ul>
         <li v-for="(menu, menuKey) in formattedMenu" :key="menuKey">
           <a
@@ -120,6 +119,59 @@
       <router-view />
     </div>
     <!-- END: Content -->
+   
+<footer class="bg-white bg-amber-400">
+    <div class="grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
+        <div>
+            <h2 class="mb-6 text-lg font-semibold  uppercase text-amber-900">Alamat</h2>
+            <ul class="text-amber-900">
+                <li class="mb-4">
+                    <a class=" hover:underline font-semibold">DINAS SUMBER DAYA AIR DAN BINA MARGA PROVINSI SULAWESI TENGGARA <br> Jalan Haluoleo No. 05 Kompleks Perkantoran Bumi Praja Anduonohu, Kota Kendari </a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="mb-6 text-lg font-semibold uppercase text-amber-900">Social media</h2>
+            <ul class="text-amber-900">
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Youtuber</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Twitter</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Facebook</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+       
+        <div>
+            <h2 class="mb-6 text-lg font-semibold  uppercase text-amber-900">Situs terkait</h2>
+            <ul class="text-amber-900">
+                <li class="mb-4">
+                    <a href="https://www.sultraprov.go.id/" class="hover:underline" target="_blank">Pemerintah sulawesi tenggara</a>
+                </li>
+                <li class="mb-4">
+                    <a href="https://www.pu.go.id/" class="hover:underline" target="_blank">Kementrian PUPR</a>
+                </li>
+                <li class="mb-4">
+                    <a href="https://sda.pu.go.id/" class="hover:underline" target="_blank">Direktorat SDA</a>
+                </li>
+                <li class="mb-4">
+                    <a href="https://binamarga.pu.go.id/" class="hover:underline" target="_blank">Direktorat bina marga</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="py-6 px-4 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
+        <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2022 <a href="https://flowbite.com/">SISDJATAN (sistem informasi sumber daya air jalan jembatan)</a>
+        </span>
+    </div>
+</footer>
+
   </div>
 </template>
 
@@ -132,6 +184,7 @@ import TopBar from "@/components/top-bar/Main.vue";
 import MobileMenu from "@/components/mobile-menu/Main.vue";
 import DarkModeSwitcher from "@/components/dark-mode-switcher/Main.vue";
 import MainColorSwitcher from "@/components/main-color-switcher/Main.vue";
+import TinySlider from '@/components/tiny-slider/Main.vue'
 import {
   searchDropdown,
   showSearchDropdown,

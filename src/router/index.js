@@ -161,6 +161,22 @@ import AdminWeirEdit from "../views/admin/gis/weir/edit.vue";
 import AdminIrrigationIndex from "../views/admin/gis/irrigation/index.vue";
 import AdminIrrigationCreate from "../views/admin/gis/irrigation/create.vue";
 import AdminIrrigationEdit from "../views/admin/gis/irrigation/edit.vue";
+//jalan
+import AdminRoadIndex from "../views/admin/gis/road/index.vue";
+import AdminRoadCreate from "../views/admin/gis/road/create.vue";
+import AdminRoadEdit from "../views/admin/gis/road/edit.vue";
+//pengaman pantai
+import AdminBeachGuardIndex from "../views/admin/gis/beach_guard/index.vue";
+import AdminBeachGuardCreate from "../views/admin/gis/beach_guard/create.vue";
+import AdminBeachGuardEdit from "../views/admin/gis/beach_guard/edit.vue";
+//infrastruktur sungai
+import AdminRiverInfrastructureIndex from "../views/admin/gis/river_infrastructure/index.vue";
+import AdminRiverInfrastructureCreate from "../views/admin/gis/river_infrastructure/create.vue";
+import AdminRiverInfrastructureEdit from "../views/admin/gis/river_infrastructure/edit.vue";
+//jembatan
+import AdminBridgeIndex from "../views/admin/gis/bridge/index.vue";
+import AdminBridgeCreate from "../views/admin/gis/bridge/create.vue";
+import AdminBridgeEdit from "../views/admin/gis/bridge/edit.vue";
 // login
 import Login from "../views/login/Main.vue";
 // report
@@ -606,6 +622,74 @@ const routes = [{
                 path: "irrigation/:id",
                 name: "admin-irrigation-edit",
                 component: AdminIrrigationEdit,
+            },
+             // jalan
+            
+            {
+                path: "road",
+                name: "admin-road",
+                component: AdminRoadIndex,
+            },
+            {
+                path: "road/create",
+                name: "admin-road-create",
+                component: AdminRoadCreate,
+            },
+            {
+                path: "road/:id",
+                name: "admin-road-edit",
+                component: AdminRoadEdit,
+            },
+             // pengaman pantai
+            
+            {
+                path: "beachguard",
+                name: "admin-beachguard",
+                component: AdminBeachGuardIndex,
+            },
+            {
+                path: "beachguard/create",
+                name: "admin-beachguard-create",
+                component: AdminBeachGuardCreate,
+            },
+            {
+                path: "beachguard/:id",
+                name: "admin-beachguard-edit",
+                component: AdminBeachGuardEdit,
+            },
+             // infrastruktur sungai
+            
+            {
+                path: "riverinfrastructure",
+                name: "admin-riverinfrastructure",
+                component: AdminRiverInfrastructureIndex,
+            },
+            {
+                path: "riverinfrastructure/create",
+                name: "admin-riverinfrastructure-create",
+                component: AdminRiverInfrastructureCreate,
+            },
+            {
+                path: "riverinfrastructure/:id",
+                name: "admin-riverinfrastructure-edit",
+                component: AdminRiverInfrastructureEdit,
+            },
+              // jembatan
+            
+            {
+                path: "bridge",
+                name: "admin-bridge",
+                component: AdminBridgeIndex,
+            },
+            {
+                path: "bridge/create",
+                name: "admin-bridge-create",
+                component: AdminBridgeCreate,
+            },
+            {
+                path: "bridge/:id",
+                name: "admin-bridge-edit",
+                component: AdminBridgeEdit,
             },
 
         ],

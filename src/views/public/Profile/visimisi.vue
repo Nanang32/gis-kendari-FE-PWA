@@ -1,5 +1,10 @@
 <template>
   <div class="intro-y news  p-5 box m-3">
+     <div class="intro-y mt-3 mb-3">
+            <div class="news__preview image-fit">
+                <img alt="Enigma Tailwind HTML Admin Template" class="object-cover" src="@/assets/images/visimisi.png" />
+            </div>
+        </div>
     <div class="intro-y text-justify leading-relaxed" v-html="content">
     </div>
   </div>

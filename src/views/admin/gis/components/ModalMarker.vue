@@ -2,8 +2,9 @@
   <Modal
     :show="isShowModal"
     @hidden="submitLatlng"
+    size="modal-xl"
   >
-    <ModalBody class="p-0 w-96 h-96">
+    <ModalBody class="p-0">
       <div class="map h-80" id="map"></div>
     </ModalBody>
     <ModalFooter>
@@ -86,9 +87,11 @@ function initMap() {
       layer = e.layer;
 
     if (type === 'marker') {
-      latlngs.value = [layer.getLatLng()];
-    } else {
-      latlngs.value = layer.getLatLngs()[0];
+      latlngs.value = [layer.getLatLng().lat, layer.getLatLng().lng];
+    } else if(type === 'polyline') {
+      latlngs.value.push(layer.getLatLngs().map(point => [point.lat, point.lng]));
+    } else if(type === 'polygon') {
+      latlngs.value = layer.getLatLngs()[0].map(point => [point.lat, point.lng]);
     }
 
     editableLayers.addLayer(layer);
@@ -96,6 +99,6 @@ function initMap() {
 
 }
 function submitLatlng() {
-  emit('submit', JSON.stringify(latlngs.value.map(point => [point.lat, point.lng])));
+  emit('submit', JSON.stringify(latlngs.value));
 }
 </script>

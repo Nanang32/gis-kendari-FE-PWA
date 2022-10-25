@@ -4,27 +4,13 @@
             <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-red-800">
                 <h2 class="text-base text-white  uppercase">form isian data dasar infrastruktur</h2>
             </div>
-            <div class="p-5">
-                <div class="form-inline">
-                    <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">Unit eselon i</label>
-                    <input type="text" class="form-control" v-model="irrigation.unit_eselon_i" placeholder="ketik disini..." />
-                </div>
-                <div class="form-inline mt-5">
-                    <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">unit eselon II.A</label>
-                    <input type="text" class="form-control" v-model="irrigation.unit_eselon_iia" placeholder="ketik disini..." />
-                </div>
-                <div class="form-inline mt-5">
-                    <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">unit eselon II.B/III.A</label>
-                    <input type="text" class="form-control" v-model="irrigation.unit_eselon_iiia" placeholder="ketik disini..." />
-                </div>
-            </div>
             <div class="p-5 border">
                 <div class="form-inline">
-                    <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">kelompok data dasar</label>
+                    <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">kelompok data dasar infrastruktur</label>
                     <input type="text" class="form-control" v-model="irrigation.kelompok_data_dasar" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
-                    <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">nama data dasar</label>
+                    <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">nama data dasar infrastruktur</label>
                     <input type="text" class="form-control" v-model="irrigation.nama_data_dasar" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
@@ -43,7 +29,7 @@
             </div>
             <div class="p-5">
                 <div class="form-inline">
-                    <label class="form-label sm:w-20 capitalize">nama WS</label>
+                    <label class="form-label sm:w-20 capitalize">nama wilayah sungai</label>
                     <input type="text" class="form-control" v-model="irrigation.nama_wilayah_sungai" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
@@ -58,16 +44,24 @@
             </div>
             <div class="p-5">
                 <div class="form-inline">
-                    <label class="form-label sm:w-30 capitalize">kode bidang pekerjaan umum</label>
+                    <label class="form-label sm:w-30 capitalize">kode kementrian</label>
                     <input type="text" class="form-control" v-model="irrigation.kode_bidang_pekerjaan_umum" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30 capitalize">kode data dasar jenis infrastruktur</label>
+                    <label class="form-label sm:w-30 capitalize">kode unit organisasi</label>
                     <input type="text" class="form-control" v-model="irrigation.kode_data_dasar_jenis_infrastruktur" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30 capitalize">kode infrastruktur (sesuai ketentuan ditjen SDA)</label>
+                    <label class="form-label sm:w-30 capitalize">kode data dasar jenis infrastruktur</label>
                     <input type="text" class="form-control" v-model="irrigation.kode_infrastruktur" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">kode daerah irigasi</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">kode infrastruktur</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
                 </div>
             </div>
         </div>
@@ -77,7 +71,7 @@
             </div>
             <div class="p-5">
                 <div class="form-inline">
-                    <label class="form-label sm:w-20">propinsi</label>
+                    <label class="form-label sm:w-20">provinsi</label>
                     <input type="text" class="form-control" v-model="irrigation.propinsi" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
@@ -92,122 +86,239 @@
                     <label class="form-label sm:w-20 capitalize">kel./Desa</label>
                     <input type="text" class="form-control" v-model="irrigation.kelurahan" placeholder="ketik disini..." />
                 </div>
-                <div class="form-inline mt-5">
-                    <label class="form-label sm:w-20 capitalize">lokasi</label>
-                    <input type="text" class="form-control" v-model="irrigation.lokasi" placeholder="ketik disini..." />
-                </div>
             </div>
         </div>
-        <div class="box col-span-12 lg:col-span-6">
-            <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800">
-                <h2 class="text-base text-white  uppercase">iv.manfaat</h2>
-            </div>
-            <div class="p-5">
-                <div class="form-inline">
-                    <label class="form-label sm:w-30">irigasi (ha)</label>
-                    <input type="text" class="form-control" v-model="irrigation.irigasi" placeholder="ketik disini..." />
-                </div>
-                <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30">DMI (m<sup>2</sup>/detik)</label>
-                    <input type="text" class="form-control" v-model="irrigation.dmi" placeholder="ketik disini..." />
-                </div>
-                 <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30">PLTA (MWH)</label>
-                    <input type="text" class="form-control" v-model="irrigation.plta" placeholder="ketik disini..." />
-                </div>
-                <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30 capitalize">ternak (ekor)</label>
-                    <input type="text" class="form-control" v-model="irrigation.ternak" placeholder="ketik disini..." />
-                </div>
-                
-                <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30 capitalize">lain-lain</label>
-                    <input type="text" class="form-control" v-model="irrigation.lainnya" placeholder="ketik disini..." />
-                </div>
-            </div>
-        </div>
+        
         <div class="box col-span-12 lg:col-span-12">
             <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800">
-                <h2 class="text-base text-white  uppercase">v.data teknis</h2>
+                <h2 class="text-base text-white  uppercase">iv.data teknis</h2>
             </div>
         </div>
         <div class="box col-span-12 lg:col-span-6">
+            <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800">
+                <h2 class="text-base text-white  uppercase">iv.1 daerah irigasi</h2>
+            </div>
             <div class="p-5">
                 <div class="form-inline">
-                    <label class="form-label sm:w-20 capitalize">jenis</label>
+                    <label class="form-label sm:w-20 capitalize">jenis daerah irigasi</label>
                     <select class="form-select mt-5 sm:mr-2" aria-label="Default select example">
                         <option>--Pilih salah satu--</option>
-                        <option>Di permukaan</option>
-                        <option>Di rawa</option>
-                        <option>Di pompa</option>
-                        <option>Di tambak</option>
+                        <option>Permukaan</option>
+                        <option>Rawa</option>
+                        <option>Tambak</option>
+                        <option>Pompa</option>
+                        <option>Air tanah</option>
                     </select>
                 </div>
                 <div class="form-inline">
-                    <label class="form-label sm:w-20 capitalize">kewenangan</label>
+                    <label class="form-label sm:w-20 capitalize">bangunan utama</label>
+                    <select class="form-select mt-5 sm:mr-2" aria-label="Default select example">
+                        <option>--Pilih salah satu--</option>
+                        <option>Bendung</option>
+                        <option>Pompa</option>
+                        <option>Pengambilan bebas</option>
+                    </select>
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-20 capitalize">nama bangunan utama</label>
+                     <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-20 capitalize">sumber air</label>
+                     <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline">
+                    <label class="form-label sm:w-20 capitalize">Kewenangan</label>
                     <select class="form-select mt-5 sm:mr-2" aria-label="Default select example">
                         <option>--Pilih salah satu--</option>
                         <option>Pusat</option>
                         <option>Provinsi</option>
-                        <option>Kabupaten kota</option>
+                        <option>Kabupaten</option>
+                        <option>Kota</option>
                     </select>
                 </div>
                 <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30">tinggi (m)</label>
-                    <input type="text" class="form-control" v-model="irrigation.tinggi" placeholder="ketik disini..." />
+                    <label class="form-label sm:w-30">Luas potensial (Ha)</label>
+                    <input type="text" class="form-control"  placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30 capitalize">luas (m)</label>
-                    <input type="text" class="form-control" v-model="irrigation.lebar" placeholder="ketik disini..." />
+                    <label class="form-label sm:w-30">Luas funsional (Ha)</label>
+                    <input type="text" class="form-control"  placeholder="ketik disini..." />
                 </div>
-                <div class="form-inline">
-                    <label class="form-label sm:w-20">kondisi</label>
-                    <select class="form-select mt-2 sm:mr-2" aria-label="Default select example">
-                        <option>--Pilih salah satu--</option>
-                        <option>Baik</option>
-                        <option>Rusak ringan</option>
-                        <option>Rusak berat</option>
-                    </select>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30">Index pertanaman (IP) rencana</label>
+                    <input type="text" class="form-control"  placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">Pola tanam</label>
+                    <input type="text" class="form-control"  placeholder="ketik disini..." />
                 </div>
             </div>
         </div>
         <div class="box col-span-12 lg:col-span-6">
+            <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800">
+                <h2 class="text-base text-white  uppercase">iv.2 saluran irigasi terbangun</h2>
+            </div>
             <div class="p-5">
                 <div class="form-inline">
-                    <label class="form-label sm:w-30 capitalize">debit intake musim hujan (m<sup>2</sup>/detik)</label>
-                    <input type="text" class="form-control" v-model="irrigation.debit_intake_musim_hujan" placeholder="ketik disini..." />
+                    <label class="form-label sm:w-30 capitalize">panjang saluran induk (km)</label>
+                    <input type="text" class="form-control"  placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30 capitalize">debit intake musim kemarau (m<sup>2</sup>/detik)</label>
-                    <input type="text" class="form-control" v-model="irrigation.debit_intake_musim_kemarau" placeholder="ketik disini..." />
+                    <label class="form-label sm:w-30 capitalize">kondisi saluran induk</label>
+                    <input type="text" class="form-control"  placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30 capitalize">tahun pembuatan</label>
-                    <input type="text" class="form-control" v-model="irrigation.tahun_pembuatan" placeholder="ketik disini..." />
+                    <label class="form-label sm:w-30 capitalize">panjang saluran sekunder (km)</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30 capitalize">tahun rehab terakhir</label>
-                    <input type="text" class="form-control" v-model="irrigation.tahun_rehab_terakhir" placeholder="ketik disini..." />
+                    <label class="form-label sm:w-30 capitalize">kondisi saluran sekunder</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
-                    <label class="form-label sm:w-30 capitalize">keterangan</label>
-                    <input type="text" class="form-control" v-model="irrigation.keterangan" placeholder="ketik disini..." />
+                    <label class="form-label sm:w-30 capitalize">panjang saluran tersier (km)</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">kondisi saluran tersier</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">panjang saluran pembuang (km)</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">kondisi saluran pembuang</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">panjang saluran suplesi (km)</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">kondisi saluran suplesi</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">jumlah kolam pasang (buah)</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">kondisi kolam pasang</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
                 </div>
             </div>
         </div>
         <div class="box col-span-12 lg:col-span-6">
             <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800">
-                <h2 class="text-base text-white  uppercase">vi.koordinat (decimal degree)</h2>
+                <h2 class="text-base text-white  uppercase">iv.3 bangunan irigasi terbangun</h2>
             </div>
-            <div class="p-5 text-center">
-                <button type="button" class="btn btn-primary w-24" @click="isShowModal=true">
-                    Peta
-                </button>
+            <div class="p-5">
+                <div class="form-inline">
+                    <label class="form-label sm:w-30 capitalize">Jumlah bangunan bagi</label>
+                    <input type="text" class="form-control"  placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">kondisi bangunan bagi</label>
+                    <input type="text" class="form-control"  placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">jumlah bangunan bagi-sadap</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">kondisi bangunan bagi-sadap</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">jumlah bangunan sadap</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">kondisi bangunan sadap</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">jumlah bangunan pengatur</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">kondisi bangunan pengatur</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">jumlah siphon</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">kondisi siphon</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">jumlah talang</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">kondisi talang</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">jumlah jembatan</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">kondisi jembatan</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">jumlah bangunan pelengkap</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">kondisi bangunan pelengkap</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
             </div>
         </div>
         <div class="box col-span-12 lg:col-span-6">
             <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800">
-                <h2 class="text-base text-white  uppercase">vii.photo dan video</h2>
+                <h2 class="text-base text-white  uppercase">iv.4 kelembagaan</h2>
+            </div>
+            <div class="p-5">
+                <div class="form-inline">
+                    <label class="form-label sm:w-30 capitalize">Jumlah P3A (Perkumpulan petani pemakai air)</label>
+                    <input type="text" class="form-control"  placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">jumlah GP3A (gabungan perkumpulan petani pemakai air)</label>
+                    <input type="text" class="form-control"  placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">Jumlah IP3A (induk perkumpulan petani pemakai air)</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                
+            </div>
+        </div>
+        <div class="box col-span-12 lg:col-span-6">
+            <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800">
+                <h2 class="text-base text-white  uppercase">v.koordinat (decimal degree)</h2>
+            </div>
+            <div class="p-5">
+                <div class="form-inline">
+                    <label class="form-label sm:w-30 capitalize">kordinas x</label>
+                    <input type="text" class="form-control" />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">kordinas y</label>
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="box col-span-12 lg:col-span-6">
+            <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800">
+                <h2 class="text-base text-white  uppercase">vi.photo dan video</h2>
             </div>
             <div class="p-5">
                 <div class="form-inline">
@@ -218,6 +329,20 @@
                     <label class="form-label sm:w-30 capitalize">video</label>
                     <input type="file" class="form-control"/>
                 </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">peta</label>
+                    <input type="file" class="form-control"/>
+                </div>
+            </div>
+        </div>
+        <div class="box col-span-12 lg:col-span-12">
+            <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800">
+                <h2 class="text-base text-white  uppercase">vii.Digitasi</h2>
+            </div>
+            <div class="p-5 text-center">
+                <button type="button" class="btn btn-primary w-24" @click="isShowModal=true">
+                    Peta
+                </button>
             </div>
         </div>
     </div>
@@ -231,6 +356,7 @@
         </button>
     </div>
     <ModalMarker :isShowModal="isShowModal" @submit="getLatLngs" />
+
 </template>
 <script setup>
 import sendRequest from '@libs/http.js'

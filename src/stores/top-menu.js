@@ -8,7 +8,7 @@ export const useTopMenuStore = defineStore("topMenu", {
                 title: "Beranda",
             },
             {
-                icon: "HomeIcon",
+                icon: "TrelloIcon",
                 // pageName: "top-menu-profile",
                 title: "Profile",
                 subMenu: [{
@@ -76,7 +76,7 @@ export const useTopMenuStore = defineStore("topMenu", {
                 ],
             },
             {
-                icon: "HomeIcon",
+                icon: "BookIcon",
                 pageName: "publikasi",
                 title: "Publikasi",
                 subMenu: [{
@@ -97,18 +97,18 @@ export const useTopMenuStore = defineStore("topMenu", {
                 ],
             },
             {
-                icon: "HomeIcon",
+                icon: "SlackIcon",
                 pageName: "news",
                 title: "Berita",
             },
             {
-                icon: "HomeIcon",
+                icon: "MapIcon",
                 pageName: "webgis",
                 title: "WebGis",
             },
 
             {
-                icon: "HomeIcon",
+                icon: "UsersIcon",
                 pageName: "pelayanan",
                 title: "pelayanan",
                 subMenu: [{
