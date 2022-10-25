@@ -1,7 +1,16 @@
 <template>
-  <div class="row">
-    <div class="col-md-9">
-      <div class="map" id="map"></div>
+    <div class="row">
+        <div class="col-md-9">
+            <div class="map" id="map"></div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-check" v-for="layer in layers" :key="layer.id">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" v-model="layer.active" @change="layerChanged(layer.id, layer.active)" />
+                    {{ layer.name }}
+                </label>
+            </div>
+        </div>
     </div>
   </div>
 </template>
@@ -137,5 +146,7 @@ function loadPolygonLayer(data, label){
 }
 </script>
 <style>
-  .map { height: 600px }
+.map {
+    height: 600px
+}
 </style>
