@@ -4,7 +4,7 @@
     </div>
     <div class="grid grid-cols-12 gap-6 mt-5">
         <div class="intro-y col-span-12 lg:col-span-12">
-            <Form :loading="loading" :bridge="bridge" @submit="onSubmit"></Form>
+            <Form :loading="loading" :riverinfrastructure="riverinfrastructure" @submit="onSubmit"></Form>
         </div>
     </div>
 </template>

@@ -111,11 +111,26 @@ export const useSideMenuStore = defineStore("sideMenu", {
                         pageName: "admin-irrigation",
                         title: "Daerah irigasi",
                     },
-                    // {
-                    //     icon: "",
-                    //     pageName: "admin-uptdcontructionequipment",
-                    //     title: "Per. Konstruksi",
-                    // }
+                    {
+                        icon: "HomeIcon",
+                        pageName: "admin-road",
+                        title: "Jalan",
+                    },
+                    {
+                        icon: "HomeIcon",
+                        pageName: "admin-beachguard",
+                        title: "Pengaman pantai",
+                    },
+                    {
+                        icon: "HomeIcon",
+                        pageName: "admin-riverinfrastructure",
+                        title: "Infrastruktur sungai",
+                    },
+                    {
+                        icon: "HomeIcon",
+                        pageName: "admin-bridge",
+                        title: "Jembatan",
+                    }
 
                 ]
 
