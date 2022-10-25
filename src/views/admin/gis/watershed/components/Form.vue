@@ -4,20 +4,6 @@
             <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-red-800">
                 <h2 class="text-base text-white  uppercase">form isian data dasar infrastruktur</h2>
             </div>
-            <div class="p-5">
-                <div class="form-inline">
-                    <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">Unit eselon i</label>
-                    <input type="text" class="form-control" v-model="watershed.unit_eselon_i" placeholder="ketik disini..." />
-                </div>
-                <div class="form-inline mt-5">
-                    <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">unit eselon II.A</label>
-                    <input type="text" class="form-control" v-model="watershed.unit_eselon_iia" placeholder="ketik disini..." />
-                </div>
-                <div class="form-inline mt-5">
-                    <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">unit eselon II.B/III.A</label>
-                    <input type="text" class="form-control" v-model="watershed.unit_eselon_iiia" placeholder="ketik disini..." />
-                </div>
-            </div>
             <div class="p-5 border">
                 <div class="form-inline">
                     <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">kelompok data dasar</label>
@@ -238,12 +224,26 @@
             <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800">
                 <h2 class="text-base text-white  uppercase">vi.koordinat (decimal degree)</h2>
             </div>
-            <div class="p-5 text-center">
-                <button type="button" class="btn btn-primary w-24" @click="isShowModal=true">
-                    Peta
-                </button>
+            <div class="p-5">
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">Titik koord. 1</label>
+                    <input type="text" class="form-control"  placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">Titik koord. 2</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">Titik koord. 3</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">Titik koord. 4</label>
+                    <input type="text" class="form-control"  placeholder="ketik disini..." />
+                </div>
             </div>
         </div>
+        
         <div class="box col-span-12 lg:col-span-6">
             <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800">
                 <h2 class="text-base text-white  uppercase">vii.photo dan video</h2>
@@ -257,6 +257,16 @@
                     <label class="form-label sm:w-30 capitalize">video</label>
                     <input type="file" class="form-control"  placeholder="ketik disini..." />
                 </div>
+            </div>
+        </div>
+        <div class="box col-span-12 lg:col-span-12">
+            <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800">
+                <h2 class="text-base text-white  uppercase">viii.Digitasi (decimal degree)</h2>
+            </div>
+            <div class="p-5 text-center">
+                <button type="button" class="btn btn-primary w-24" @click="isShowModal=true">
+                    Peta
+                </button>
             </div>
         </div>
     </div>
