@@ -183,6 +183,7 @@ import Login from "../views/login/Main.vue";
 import AdminServiceIndex from "../views/admin/service/table-report.vue";
 
 import Public from "@layouts/public/Main.vue";
+import Publicpage from "@layouts/public/Page.vue";
 
 const routes = [{
         path: "/admin",
@@ -840,6 +841,10 @@ const routes = [{
     {
         path: "/site",
         component: Public,        
+    },
+    {
+        path: "/site/page",
+        component: Publicpage,        
     }
 ];
 
