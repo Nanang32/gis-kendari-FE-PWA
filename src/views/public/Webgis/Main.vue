@@ -18,7 +18,7 @@
     size="modal-xl"
   >
     <ModalBody class="p-4">
-      <div>{{ data }}</div>
+      <div v-html="content"></div>
     </ModalBody>
     <ModalFooter>
       <button type="button" class="btn btn-primary w-24" @click="showModal=false">
@@ -35,7 +35,7 @@ import "leaflet/dist/leaflet.css";
 
 const layerControl = ref(null);
 const showModal = ref(false);
-const data = ref('');
+const content = ref('');
 
 onMounted(() => {
   initMap();
@@ -48,6 +48,7 @@ onMounted(() => {
   loadIrrigation();
   loadRiverBasin();
   loadRoad();
+  window.onDetailClick = onDetailClick;
 });
 
 function initMap() {
@@ -63,14 +64,14 @@ function initMap() {
     });
     layerControl.value = L.control.layers({'OpenStreetMap': osm}).addTo(map.value);
 }
-function onLayerClick(e){
-  const feature = e.target.feature;
-  data.value = feature.properties.Nm_Dat_Das;
+function onDetailClick (e){
   showModal.value = true;
 }
 
 function onEachFeature(feature, layer) {
-    layer.on({click:onLayerClick});
+  const detailLink = `<div>${feature.properties.Nm_Dat_Das}</div> <button style="color:blue;" onclick="onDetailClick()">Detail</button>`;
+    if (feature.properties)
+        layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties.Nm_Dat_Das;});
 }
 
 async function loadRiver() {
