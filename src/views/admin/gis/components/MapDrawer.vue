@@ -1,18 +1,5 @@
 <template>
-  <Modal
-    :show="isShowModal"
-    @hidden="submitLatlng"
-    size="modal-xl"
-  >
-    <ModalBody class="p-0">
-      <div class="map h-80" id="map"></div>
-    </ModalBody>
-    <ModalFooter>
-      <button type="button" class="btn btn-primary w-24" @click="submitLatlng">
-        Simpan
-      </button>
-    </ModalFooter>
-  </Modal>
+  <div class="map h-80" id="map"></div>
 </template>
 
 <script setup>
@@ -86,10 +73,7 @@ function initMap() {
       layer = e.layer;
 
     editableLayers.addLayer(layer);
+    emit('submit', JSON.stringify(editableLayers.toGeoJSON()));
   });
-
-}
-function submitLatlng() {
-  emit('submit', editableLayers.toGeoJSON());
 }
 </script>

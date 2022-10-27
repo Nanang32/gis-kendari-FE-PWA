@@ -4,7 +4,11 @@
     </div>
     <div class="grid grid-cols-12 gap-6 mt-5">
         <div class="intro-y col-span-12 lg:col-span-12">
-            <Form :loading="loading" :bridge="bridge" @submit="onSubmit"></Form>
+            <Form
+                :loading="loading"
+                :bridge="bridge"
+                @submit="onSubmit">
+            </Form>
         </div>
     </div>
 </template>
@@ -15,7 +19,7 @@ import { useRouter } from "vue-router";
 import { ref, reactive } from "vue";
 const router = useRouter();
 const loading = ref(false);
-let irrigation = reactive({});
+let bridge = reactive({});
 const image = ref('');
 const onFileChange = (e) => {
     image.value = e.target.files[0];
@@ -25,44 +29,46 @@ const onFileChange = (e) => {
 async function onSubmit(data) {
     loading.value = true;
     const formdata = new FormData();
-    formdata.append('unit_eselon_i', irrigation.unit_eselon_i)
-    formdata.append('unit_eselon_iia', irrigation.unit_eselon_iia)
-    formdata.append('unit_eselon_iiia', irrigation.unit_eselon_iiia)
-    formdata.append('kelompok_data_dasar', irrigation.kelompok_data_dasar)
-    formdata.append('nama_data_dasar', irrigation.nama_data_dasar)
-    formdata.append('tahun', irrigation.tahun)
-    formdata.append('kondisi', irrigation.kondisi)
-    formdata.append('nama_wilayah_sungai', irrigation.nama_wilayah_sungai)
-    formdata.append('daerah_aliran_sungai', irrigation.daerah_aliran_sungai)
-    formdata.append('kode_bidang_pekerjaan_umum', irrigation.kode_bidang_pekerjaan_umum)
-    formdata.append('kode_data_dasar_jenis_infrastruktur', irrigation.kode_data_dasar_jenis_infrastruktur)
-    formdata.append('kode_infrastruktur', irrigation.kode_infrastruktur)
-    formdata.append('propinsi', irrigation.propinsi)
-    formdata.append('kota', irrigation.kota)
-    formdata.append('kecamatan', irrigation.kecamatan)
-    formdata.append('kelurahan', irrigation.kelurahan)
-    formdata.append('lokasi', irrigation.lokasi)
-    formdata.append('irigasi', irrigation.irigasi)
-    formdata.append('lainnya', irrigation.lainnya)
-    formdata.append('nama_sungai', irrigation.nama_sungai)
-    formdata.append('tinggi', irrigation.tinggi)
-    formdata.append('lebar', irrigation.lebar)
-    formdata.append('debit_intake_musim_hujan', irrigation.debit_intake_musim_hujan)
-    formdata.append('debit_intake_musim_kemarau', irrigation.debit_intake_musim_kemarau)
-    formdata.append('tahun_pembuatan', irrigation.tahun_pembuatan)
-    formdata.append('tahun_rehab_terakhir', irrigation.tahun_rehab_terakhir)
-    formdata.append('keterangan', irrigation.keterangan)
+    formdata.append('fid', bridge.fid)
+    formdata.append('unit_eselon_i', bridge.unit_eselon_i)
+    formdata.append('unit_eselon_iia', bridge.unit_eselon_iia)
+    formdata.append('unit_eselon_iiia', bridge.unit_eselon_iiia)
+    formdata.append('kelompok_data_dasar', bridge.kelompok_data_dasar)
+    formdata.append('nama_data_dasar', bridge.nama_data_dasar)
+    formdata.append('tahun', bridge.tahun)
+    formdata.append('kondisi', bridge.kondisi)
+    formdata.append('nama_wilayah_sungai', bridge.nama_wilayah_sungai)
+    formdata.append('daerah_aliran_sungai', bridge.daerah_aliran_sungai)
+    formdata.append('kode_bidang_pekerjaan_umum', bridge.kode_bidang_pekerjaan_umum)
+    formdata.append('kode_data_dasar_jenis_infrastruktur', bridge.kode_data_dasar_jenis_infrastruktur)
+    formdata.append('kode_infrastruktur', bridge.kode_infrastruktur)
+    formdata.append('propinsi', bridge.propinsi)
+    formdata.append('kota', bridge.kota)
+    formdata.append('kecamatan', bridge.kecamatan)
+    formdata.append('kelurahan', bridge.kelurahan)
+    formdata.append('lokasi', bridge.lokasi)
+    formdata.append('irigasi', bridge.irigasi)
+    formdata.append('lainnya', bridge.lainnya)
+    formdata.append('nama_sungai', bridge.nama_sungai)
+    formdata.append('tinggi', bridge.tinggi)
+    formdata.append('lebar', bridge.lebar)
+    formdata.append('debit_intake_musim_hujan', bridge.debit_intake_musim_hujan)
+    formdata.append('debit_intake_musim_kemarau', bridge.debit_intake_musim_kemarau)
+    formdata.append('tahun_pembuatan', bridge.tahun_pembuatan)
+    formdata.append('tahun_rehab_terakhir', bridge.tahun_rehab_terakhir)
+    formdata.append('keterangan', bridge.keterangan)
+    formdata.append('geo_json', bridge.geo_json)
 
     // formdata.append('featured_image_file', image.value)
 
     // formdata.append('file', image.value)
     const response = await sendRequest({
         method: 'post',
-        url: '/irrigations',
+        url: '/bridges',
         data: formdata
     });
     if ((response !== null) && (response.status === true)) {
-        router.push({ name: 'admin-irrigation' });
+        router.push({ name: 'admin-bridge' });
     }
     loading.value = false;
 }

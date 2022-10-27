@@ -6,6 +6,10 @@
             </div>
             <div class="p-5 border">
                 <div class="form-inline">
+                    <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">fid</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." v-model="bridge.fid" />
+                </div>
+                <div class="form-inline">
                     <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">kelompok data dasar infrastruktur</label>
                     <input type="text" class="form-control" placeholder="ketik disini..." />
                 </div>
@@ -62,11 +66,11 @@
             <div class="p-5">
                 <div class="form-inline">
                     <label class="form-label sm:w-30 capitalize">kode kementrian</label>
-                    <input type="text" class="form-control" v-model="road.kode_bidang_pekerjaan_umum" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">kode unit organisasi</label>
-                    <input type="text" class="form-control" v-model="road.kode_data_dasar_jenis_infrastruktur" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">kode data dasar infrastruktur</label>
@@ -281,10 +285,8 @@
             <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800">
                 <h2 class="text-base text-white  uppercase">vii.Digitasi</h2>
             </div>
-            <div class="p-5 text-center">
-                <button type="button" class="btn btn-primary w-24" @click="isShowModal=true">
-                    Peta
-                </button>
+            <div class="p-5">
+                <MapDrawer @submit="getLatLngs" />
             </div>
         </div>
     </div>
@@ -297,23 +299,20 @@
             Simpan
         </button>
     </div>
-    <ModalMarker :isShowModal="isShowModal" @submit="getLatLngs" />
 
 </template>
 <script setup>
 import sendRequest from '@libs/http.js'
-import ModalMarker from './../../components/ModalMarker.vue'
+import MapDrawer from '../../components/MapDrawer.vue'
 import { ref, onMounted } from "vue";
-const loading = ref(false);
 const emit = defineEmits(['submit', 'fileChange'])
-const isShowModal = ref(false);
 
 const props = defineProps({
     loading: {
         type: Boolean,
         default: false
     },
-    road: {
+    bridge: {
         type: Object,
         default: {}
     }
@@ -327,9 +326,8 @@ function submit() {
 //     emit('fileChange', e);
 // }
 
-function getLatLngs(latlngs) {
-    props.road.latlngs = latlngs;
-    isShowModal.value = false;
+function getLatLngs(geoJson) {
+    props.bridge.geo_json = geoJson;
 }
 
 
