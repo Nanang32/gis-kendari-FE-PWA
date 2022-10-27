@@ -186,6 +186,8 @@ import Public from "@layouts/public/Main.vue";
 import Publicpage from "@layouts/public/Page.vue";
 import Reporting from "@layouts/public/Reporting.vue";
 import UptdLab from "@layouts/public/Uptdlab.vue";
+import Visimisi from "@layouts/public/Visimisi.vue";
+
 
 
 const routes = [{
@@ -856,6 +858,10 @@ const routes = [{
     {
         path: "/site/uptdlab",
         component: UptdLab,        
+    },
+    {
+        path: "/site/visimisi",
+        component: Visimisi,        
     }
 ];
 
