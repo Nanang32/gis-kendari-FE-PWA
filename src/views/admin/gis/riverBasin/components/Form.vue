@@ -153,7 +153,7 @@
 
 <script setup>
 import sendRequest from '@libs/http.js'
-import ModalMarker from './../../components/ModalMarker.vue'
+import MapDrawer from '../../components/MapDrawer.vue'
 import { ref, onMounted } from "vue";
 const loading = ref(false);
 const emit = defineEmits(['submit', 'fileChange'])
