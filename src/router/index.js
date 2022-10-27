@@ -183,6 +183,13 @@ import Login from "../views/login/Main.vue";
 import AdminServiceIndex from "../views/admin/service/table-report.vue";
 
 import Public from "@layouts/public/Main.vue";
+import Publicpage from "@layouts/public/Page.vue";
+import Reporting from "@layouts/public/Reporting.vue";
+import UptdLab from "@layouts/public/Uptdlab.vue";
+import Visimisi from "@layouts/public/Visimisi.vue";
+import TasknFunction from "@layouts/public/TasknFunction.vue";
+
+
 
 const routes = [{
         path: "/admin",
@@ -840,6 +847,26 @@ const routes = [{
     {
         path: "/site",
         component: Public,        
+    },
+    {
+        path: "/site/page",
+        component: Publicpage,        
+    },
+    {
+        path: "/site/reporting",
+        component: Reporting,        
+    },
+    {
+        path: "/site/uptdlab",
+        component: UptdLab,        
+    },
+    {
+        path: "/site/visimisi",
+        component: Visimisi,        
+    },
+    {
+        path: "/site/tasknfunction",
+        component: TasknFunction,        
     }
 ];
 
