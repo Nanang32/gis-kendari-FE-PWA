@@ -185,6 +185,7 @@ import AdminServiceIndex from "../views/admin/service/table-report.vue";
 import Public from "@layouts/public/Main.vue";
 import Publicpage from "@layouts/public/Page.vue";
 import Reporting from "@layouts/public/Reporting.vue";
+import UptdLab from "@layouts/public/Uptdlab.vue";
 
 
 const routes = [{
@@ -851,6 +852,10 @@ const routes = [{
     {
         path: "/site/reporting",
         component: Reporting,        
+    },
+    {
+        path: "/site/uptdlab",
+        component: UptdLab,        
     }
 ];
 
