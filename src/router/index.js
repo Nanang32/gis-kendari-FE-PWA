@@ -188,7 +188,9 @@ import Reporting from "@layouts/public/Reporting.vue";
 import UptdLab from "@layouts/public/Uptdlab.vue";
 import Visimisi from "@layouts/public/Visimisi.vue";
 import TasknFunction from "@layouts/public/TasknFunction.vue";
-
+import StrukturOrg from "@layouts/public/StrukturOrg.vue";
+import ProdHukum from "@layouts/public/Prodhukum.vue";
+import Renstra from "@layouts/public/Renstra.vue";
 
 
 const routes = [{
@@ -867,6 +869,18 @@ const routes = [{
     {
         path: "/site/tasknfunction",
         component: TasknFunction,        
+    },
+    {
+        path: "/site/strukturorg",
+        component: StrukturOrg,        
+    },
+    {
+        path: "/site/prodhukum",
+        component: ProdHukum,        
+    },
+    {
+        path: "/site/renstra",
+        component: Renstra,        
     }
 ];
 
