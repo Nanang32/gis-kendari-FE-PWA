@@ -187,6 +187,7 @@ import Publicpage from "@layouts/public/Page.vue";
 import Reporting from "@layouts/public/Reporting.vue";
 import UptdLab from "@layouts/public/Uptdlab.vue";
 import Visimisi from "@layouts/public/Visimisi.vue";
+import TasknFunction from "@layouts/public/TasknFunction.vue";
 
 
 
@@ -862,6 +863,10 @@ const routes = [{
     {
         path: "/site/visimisi",
         component: Visimisi,        
+    },
+    {
+        path: "/site/tasknfunction",
+        component: TasknFunction,        
     }
 ];
 
