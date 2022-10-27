@@ -4,20 +4,21 @@
 
 <script setup>
 
-import L from "leaflet"
+import L, { featureGroup } from "leaflet"
 import 'leaflet-draw'
 import 'leaflet-draw/dist/leaflet.draw.css'
 import "leaflet/dist/leaflet.css";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 
-defineProps({
-  isShowModal: {
-    type: Boolean,
-    default: false
+const props = defineProps({
+  geo_json: {
+    type: Object,
+    default: null
   },
 })
 
 const map = ref(null);
+const editableLayers = ref(null);
 const tileLayer = ref(null);
 const emit = defineEmits(['submit'])
 
@@ -25,7 +26,11 @@ onMounted(() => {
   initMap();
 });
 
+watch(() => props.geo_json, (geoJSON) => {
+});
+
 function initMap() {
+  console.log(props.geo_json);
   map.value = L.map('map').setView([-4.144910, 122.174606], 12);
   tileLayer.value = L.tileLayer(
     'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -75,5 +80,19 @@ function initMap() {
     editableLayers.addLayer(layer);
     emit('submit', JSON.stringify(editableLayers.toGeoJSON()));
   });
+  map.value.on('draw:edited', function(e) {
+    // var type = e.layerType,
+    //   layer = e.layer;
+
+    // editableLayers.addLayer(layer);
+    emit('submit', JSON.stringify(editableLayers.toGeoJSON()));
+  });
+
+  L.geoJSON(props.geo_json, {
+    onEachFeature: function (feature, layer) {
+      editableLayers.addLayer(layer);
+    }
+  })
+  // .addTo(map.value)
 }
 </script>
