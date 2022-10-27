@@ -9,7 +9,7 @@
                     <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">fid</label>
                     <input type="text" class="form-control" placeholder="ketik disini..." v-model="bridge.fid" />
                 </div>
-                <div class="form-inline">
+                <div class="form-inline mt-5">
                     <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">kelompok data dasar infrastruktur</label>
                     <input type="text" class="form-control" placeholder="ketik disini..." />
                 </div>
