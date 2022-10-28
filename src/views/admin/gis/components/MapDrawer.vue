@@ -30,7 +30,6 @@ watch(() => props.geo_json, (geoJSON) => {
 });
 
 function initMap() {
-  console.log(props.geo_json);
   map.value = L.map('map').setView([-4.144910, 122.174606], 12);
   tileLayer.value = L.tileLayer(
     'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
