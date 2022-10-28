@@ -195,12 +195,41 @@ async function loadBridge(){
   layerControl.value.addOverlay(layerGroup, 'Jembatan');
 }
 
+const onEachIrrigation = function (feature, layer) {
+  const detailLink = `
+    <div>
+      Nama Daerah Irigasi: ${feature.properties.Nm_Dat_Das || ''}
+    </div>
+    <div>
+      Jenis Daerah Irigasi: ${feature.properties.Jns_DI || ''}
+    </div>
+    <div>
+      Bangunan Utama: ${feature.properties.Bang_Utama || ''}
+    </div>
+    <div>
+      Luas: ${feature.properties.Luas_Fungsi || ''}
+    </div>
+    <div style="text-align: center">
+      <button style="color:blue;" onclick="onDetailClick()">Detail</button>
+    </div>`;
+    if (feature.properties)
+        layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties.Nm_Dat_Das;});
+};
 async function loadIrrigation(){
   const response = await sendRequest({
       method: 'get',
       url: '/irrigations/geoJson',
   });
-  const layerGroup = L.geoJSON(response.data, {onEachFeature: onEachFeature});
+  const layerGroup = L.geoJSON(response.data, {
+    onEachFeature: onEachIrrigation,
+    style: {
+        "color": "#ffffff",
+        "dashArray": "10 5",
+        "fillOpacity": 0.5,
+        "fillColor": "#1aaa30",
+        "weight": 0.65,
+    }
+  });
   layerControl.value.addOverlay(layerGroup, 'Irigasi');
 }
 
