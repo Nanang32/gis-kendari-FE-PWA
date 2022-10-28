@@ -4,20 +4,6 @@
             <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-red-800">
                 <h2 class="text-base text-white  uppercase">form isian data dasar infrastruktur</h2>
             </div>
-            <div class="p-5">
-                <div class="form-inline">
-                    <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">Unit eselon i</label>
-                    <input type="text" class="form-control" v-model="watershed.unit_eselon_i" placeholder="ketik disini..." />
-                </div>
-                <div class="form-inline mt-5">
-                    <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">unit eselon II.A</label>
-                    <input type="text" class="form-control" v-model="watershed.unit_eselon_iia" placeholder="ketik disini..." />
-                </div>
-                <div class="form-inline mt-5">
-                    <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">unit eselon II.B/III.A</label>
-                    <input type="text" class="form-control" v-model="watershed.unit_eselon_iiia" placeholder="ketik disini..." />
-                </div>
-            </div>
             <div class="p-5 border">
                 <div class="form-inline">
                     <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">kelompok data dasar</label>
@@ -239,9 +225,7 @@
                 <h2 class="text-base text-white  uppercase">vi.koordinat (decimal degree)</h2>
             </div>
             <div class="p-5 text-center">
-                <button type="button" class="btn btn-primary w-24" @click="isShowModal=true">
-                    Peta
-                </button>
+                <MapDrawer @submit="getLatLngs" :geo_json="bridge.geo_json"/>
             </div>
         </div>
         <div class="box col-span-12 lg:col-span-6">
@@ -255,7 +239,7 @@
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">video</label>
-                    <input type="file" class="form-control"  placeholder="ketik disini..." />
+                    <input type="file" class="form-control" />
                 </div>
             </div>
         </div>
@@ -269,7 +253,6 @@
             Simpan
         </button>
     </div>
-    <ModalMarker :isShowModal="isShowModal" @submit="getLatLngs" />
 </template>
 <script setup>
 import sendRequest from '@libs/http.js'
@@ -277,7 +260,6 @@ import MapDrawer from '../../components/MapDrawer.vue'
 import { ref, onMounted } from "vue";
 const loading = ref(false);
 const emit = defineEmits(['submit', 'fileChange'])
-const isShowModal = ref(false);
 
 const props = defineProps({
     loading: {
@@ -296,7 +278,6 @@ function submit() {
 
 function getLatLngs(latlngs) {
     props.watershed.latlngs = latlngs;
-    isShowModal.value = false;
 }
 
 // function onFileChange(e) {
