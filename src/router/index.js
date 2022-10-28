@@ -183,9 +183,9 @@ import AdminRoadIndex from "../views/admin/gis/road/index.vue";
 import AdminRoadCreate from "../views/admin/gis/road/create.vue";
 import AdminRoadEdit from "../views/admin/gis/road/edit.vue";
 //pengaman pantai
-import AdminBeachGuardIndex from "../views/admin/gis/beach_guard/index.vue";
-import AdminBeachGuardCreate from "../views/admin/gis/beach_guard/create.vue";
-import AdminBeachGuardEdit from "../views/admin/gis/beach_guard/edit.vue";
+import AdminGroinIndex from "../views/admin/gis/beach_guard/index.vue";
+import AdminGroinCreate from "../views/admin/gis/beach_guard/create.vue";
+import AdminGroinEdit from "../views/admin/gis/beach_guard/edit.vue";
 //infrastruktur sungai
 import AdminRiverInfrastructureIndex from "../views/admin/gis/river_infrastructure/index.vue";
 import AdminRiverInfrastructureCreate from "../views/admin/gis/river_infrastructure/create.vue";
@@ -672,19 +672,19 @@ const routes = [{
              // pengaman pantai
             
             {
-                path: "beachguard",
-                name: "admin-beachguard",
-                component: AdminBeachGuardIndex,
+                path: "groin",
+                name: "admin-groin",
+                component: AdminGroinIndex,
             },
             {
-                path: "beachguard/create",
-                name: "admin-beachguard-create",
-                component: AdminBeachGuardCreate,
+                path: "groin/create",
+                name: "admin-groin-create",
+                component: AdminGroinCreate,
             },
             {
-                path: "beachguard/:id",
-                name: "admin-beachguard-edit",
-                component: AdminBeachGuardEdit,
+                path: "groin/:id",
+                name: "admin-groin-edit",
+                component: AdminGroinEdit,
             },
              // infrastruktur sungai
             

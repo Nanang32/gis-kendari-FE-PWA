@@ -1,69 +1,76 @@
 <template>
     <div class="flex items-center p-2 border-b border-slate-200/60 dark:border-darkmode-400 bg-red-800">
-        <h2 class="text-white  uppercase">kementerian pekerjaan umum dan perumahan rakyat</h2>
+        <h2 class="text-white  uppercase">Kementerian pekerjaan umum dan perumahan rakyat</h2>
     </div>
     <div class="grid grid-cols-12 gap-6 mt-5">
         <div class="intro-y col-span-12 lg:col-span-12">
-            <Form :loading="loading" :beach_guard="beach_guard" @submit="onSubmit"></Form>
+            <Form :loading="loading" :groin="groin" @submit="onSubmit"></Form>
         </div>
     </div>
 </template>
 <script setup>
-import sendRequest from '@libs/http.js'
-import Form from "./components/Form.vue";
-import { useRouter } from "vue-router";
-import { ref, reactive } from "vue";
-const router = useRouter();
-const loading = ref(false);
-let beach_guard = reactive({});
-const image = ref('');
-const onFileChange = (e) => {
-    image.value = e.target.files[0];
-};
+    import sendRequest from '@libs/http.js'
+    import Form from "./components/Form.vue";
+    import { useRouter } from "vue-router";
+    import { ref, reactive } from "vue";
+    const router = useRouter();
+    const loading = ref(false);
+    let groin = reactive({});
+    const image = ref('');
+    const onFileChange = (e) => {
+        image.value = e.target.files[0];
+    };
 
 
-// async function onSubmit(data) {
-//     loading.value = true;
-//     const formdata = new FormData();
-//     formdata.append('unit_eselon_i', beach_guard.unit_eselon_i)
-//     formdata.append('unit_eselon_iia', beach_guard.unit_eselon_iia)
-//     formdata.append('unit_eselon_iiia', beach_guard.unit_eselon_iiia)
-//     formdata.append('kelompok_data_dasar', beach_guard.kelompok_data_dasar)
-//     formdata.append('nama_data_dasar', beach_guard.nama_data_dasar)
-//     formdata.append('tahun', beach_guard.tahun)
-//     formdata.append('kondisi', beach_guard.kondisi)
-//     formdata.append('nama_wilayah_sungai', beach_guard.nama_wilayah_sungai)
-//     formdata.append('daerah_aliran_sungai', beach_guard.daerah_aliran_sungai)
-//     formdata.append('kode_bidang_pekerjaan_umum', beach_guard.kode_bidang_pekerjaan_umum)
-//     formdata.append('kode_data_dasar_jenis_infrastruktur', beach_guard.kode_data_dasar_jenis_infrastruktur)
-//     formdata.append('kode_infrastruktur', beach_guard.kode_infrastruktur)
-//     formdata.append('propinsi', beach_guard.propinsi)
-//     formdata.append('kota', beach_guard.kota)
-//     formdata.append('kecamatan', beach_guard.kecamatan)
-//     formdata.append('kelurahan', beach_guard.kelurahan)
-//     formdata.append('lokasi', beach_guard.lokasi)
-//     formdata.append('irigasi', beach_guard.irigasi)
-//     formdata.append('lainnya', beach_guard.lainnya)
-//     formdata.append('nama_sungai', beach_guard.nama_sungai)
-//     formdata.append('tinggi', beach_guard.tinggi)
-//     formdata.append('lebar', beach_guard.lebar)
-//     formdata.append('debit_intake_musim_hujan', beach_guard.debit_intake_musim_hujan)
-//     formdata.append('debit_intake_musim_kemarau', beach_guard.debit_intake_musim_kemarau)
-//     formdata.append('tahun_pembuatan', beach_guard.tahun_pembuatan)
-//     formdata.append('tahun_rehab_terakhir', beach_guard.tahun_rehab_terakhir)
-//     formdata.append('keterangan', beach_guard.keterangan)
+    async function onSubmit(data) {
+        loading.value = true;
+        const formdata = new FormData();
+        Object.keys(groin).forEach(key => {
+            formdata.append(key, groin[key]);
+        });
+        // formdata.append('fid', groin.fid)
+        // formdata.append('Kl_Dat_Das', groin.Kl_Dat_Das)
+        // formdata.append('Nm_Dat_Das', groin.Nm_Dat_Das)
+        // formdata.append('Thn_Data', groin.Thn_Data)
+        // formdata.append('Kondisi', groin.Kondisi)
+        // formdata.append('Nm_WS', groin.Nm_WS)
+        // formdata.append('Nm_DAS', groin.Nm_DAS)
+        // formdata.append('Kd_Kem', groin.Kd_Kem)
+        // formdata.append('Kd_Unor', groin.Kd_Unor)
+        // formdata.append('Kd_Dat_Das', groin.Kd_Dat_Das)
+        // formdata.append('Kd_WS', groin.Kd_WS)
+        // formdata.append('Kd_Inf', groin.Kd_Inf)
+        // formdata.append('Provinsi', groin.Provinsi)
+        // formdata.append('Kab_Kota', groin.Kab_Kota)
+        // formdata.append('Kecamatan', groin.Kecamatan)
+        // formdata.append('Kel_Desa', groin.Kel_Desa)
+        // formdata.append('Lokasi', groin.Lokasi)
+        // formdata.append('Pel_Pulau_Tdpn', groin.Pel_Pulau_Tdpn)
+        // formdata.append('Pel_Jln_Raya', groin.Pel_Jln_Raya)
+        // formdata.append('Pel_Permukiman', groin.Pel_Permukiman)
+        // formdata.append('Pel_Tmpt_Wisata', groin.Pel_Tmpt_Wisata)
+        // formdata.append('Pel_Fas_Umum', groin.Pel_Fas_Umum)
+        // formdata.append('Pel_Muara_Sungai', groin.Pel_Muara_Sungai)
+        // formdata.append('Lainnya', groin.Lainnya)
+        // formdata.append('Kewenangan', groin.Kewenangan)
+        // formdata.append('Jns_Bang', groin.Jns_Bang)
+        // formdata.append('Kep_Pantai', groin.Kep_Pantai)
+        // formdata.append('Thn_Pelaksanaan', groin.Thn_Pelaksanaan)
+        // formdata.append('Pjg', groin.Pjg)
+        // formdata.append('Struktur', groin.Struktur)
+        // formdata.append('Material', groin.Material)
+        // formdata.append('Koord_X', groin.Koord_X)
+        // formdata.append('Koord_Y', groin.Koord_Y)
 
-//     // formdata.append('featured_image_file', image.value)
-
-//     // formdata.append('file', image.value)
-//     const response = await sendRequest({
-//         method: 'post',
-//         url: '/beach_guards',
-//         data: formdata
-//     });
-//     if ((response !== null) && (response.status === true)) {
-//         router.push({ name: 'admin-beach_guard' });
-//     }
-//     loading.value = false;
-// }
+        // formdata.append('file', image.value)
+        const response = await sendRequest({
+            method: 'post',
+            url: '/groins',
+            data: formdata
+        });
+        if ((response !== null) && (response.status === true)) {
+            router.push({ name: 'admin-groin' });
+        }
+        loading.value = false;
+    }
 </script>

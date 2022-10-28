@@ -1,10 +1,10 @@
 <template>
     <div class="intro-y flex items-center mt-8">
-        <h2 class="text-lg font-medium capitalize mr-auto">Data list Kategori (pemberitaan & produk hukum)</h2>
+        <h2 class="text-lg font-medium capitalize mr-auto">Data Pelindung Pantai</h2>
     </div>
     <div class="grid grid-cols-12 gap-6 mt-5 mb-20">
         <div class="intro-y col-span-12">
-            <button class="btn btn-primary shadow-md mr-2" @click="router.push({name: 'admin-category-create'})">
+            <button class="btn btn-primary shadow-md mr-2" @click="router.push({name: 'admin-groin-create'})">
                 Tambah
             </button>
             <div class="intro-y col-span-12 overflow-x-auto">
@@ -16,17 +16,17 @@
                             <th class="text-center whitespace-nowrap">Action</th>
                         </tr>
                     </thead>
-                    <tbody v-for="(category, index) in categories" :key="index">
+                    <tbody v-for="(groin, index) in groins" :key="index">
                         <tr>
                             <td>{{ index + 1 }}</td>
-                            <td>{{ category.name }}</td>
+                            <td>{{ groin.Nm_Dat_Das }}</td>
                             <td>
                                 <div class="flex justify-center items-center">
-                                    <button class="flex items-center mr-3" @click="router.push({name: 'admin-category-edit', params: { id: category.id }})">
+                                    <button class="flex items-center mr-3" @click="router.push({name: 'admin-groin-edit', params: { id: groin.id }})">
                                         <EditIcon class="w-4 h-4 mr-1" />
                                         Edit
                                     </button>
-                                    <a class="flex items-center text-danger" href="javascript:;" @click="confirmDelete(category.id)">
+                                    <a class="flex items-center text-danger" href="javascript:;" @click="confirmDelete(groin.id)">
                                         <Trash2Icon class="w-4 h-4 mr-1" />
                                         Delete
                                     </a>
@@ -48,7 +48,7 @@ import sendRequest from '@libs/http.js'
 import { ref, watch, onMounted } from "vue";
 import { useRouter } from "vue-router";
 
-const categories = ref([]);
+const groins = ref([]);
 const page = ref(1);
 const perPage = ref(10);
 const lastPage = ref(1);
@@ -68,7 +68,7 @@ function confirmDelete(id) {
 async function onConfirmDelete() {
     const responseDelete = await sendRequest({
         method: 'delete',
-        url: `/categories/${deleteId.value}`,
+        url: `/groins/${deleteId.value}`,
     });
     showDeleteModal.value = false
     await loadData(page.value);
@@ -77,14 +77,14 @@ async function onConfirmDelete() {
 async function loadData(page = 1) {
     const response = await sendRequest({
         method: 'get',
-        url: '/categories',
+        url: '/groins',
         params: {
             page: page
         },
     });
     if ((response !== null) && (response.status === true)) {
-        categories.value = response.data.categories.data
-        lastPage.value = response.data.categories.last_page
+        groins.value = response.data.groin.data
+        lastPage.value = response.data.groin.last_page
     }
 }
 
