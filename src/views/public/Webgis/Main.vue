@@ -204,12 +204,34 @@ async function loadIrrigation(){
   layerControl.value.addOverlay(layerGroup, 'Irigasi');
 }
 
+const onEachRiverBasin = function (feature, layer) {
+  const detailLink = `
+    <div>
+      Nama Ruas: ${feature.properties.Nm_Dat_Das || ''}
+    </div>
+    <div>
+      Kode WS: ${feature.properties.Kd_WS_Permen || ''}
+    </div>
+    <div style="text-align: center">
+      <button style="color:blue;" onclick="onDetailClick()">Detail</button>
+    </div>`;
+    if (feature.properties)
+        layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties.Nm_Dat_Das;});
+};
 async function loadRiverBasin(){
   const response = await sendRequest({
       method: 'get',
       url: '/riverBasins/geoJson',
   });
-  const layerGroup = L.geoJSON(response.data, {onEachFeature: onEachFeature});
+  const layerGroup = L.geoJSON(response.data, {
+    onEachFeature: onEachRiverBasin, 
+    style: {
+        "color": "#36b30f",
+        "dashArray": "10 5",
+        "fillOpacity": 0,
+        "weight": 1,
+    }
+  });
   layerControl.value.addOverlay(layerGroup, 'Wilayah Sungai');
 }
 
