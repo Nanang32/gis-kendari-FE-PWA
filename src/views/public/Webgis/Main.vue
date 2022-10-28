@@ -213,12 +213,32 @@ async function loadRiverBasin(){
   layerControl.value.addOverlay(layerGroup, 'Wilayah Sungai');
 }
 
+const onEachRoad = function (feature, layer) {
+  const detailLink = `
+    <div>
+      Nama Ruas: ${feature.properties.Nm_Dat_Das || ''}
+    </div>
+    <div>
+      Nomor Ruas: ${feature.properties.Nmr_Ruas || ''}
+    </div>
+    <div style="text-align: center">
+      <button style="color:blue;" onclick="onDetailClick()">Detail</button>
+    </div>`;
+    if (feature.properties)
+        layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties.Nm_Dat_Das;});
+};
 async function loadRoad(){
   const response = await sendRequest({
       method: 'get',
       url: '/roads/geoJson',
   });
-  const layerGroup = L.geoJSON(response.data, {onEachFeature: onEachFeature});
+  const layerGroup = L.geoJSON(response.data, {
+    onEachFeature: onEachRoad, 
+    style: {
+        "color": "#1a69c9",
+        "weight": 1,
+    }
+  });
   layerControl.value.addOverlay(layerGroup, 'Jalan');
 }
 </script>
