@@ -40,10 +40,10 @@ const content = ref('');
 onMounted(() => {
   initMap();
 
-  loadWatershed();
-  loadRiver();
-  // loadWeirs();
-  loadBeachGuard();
+  // loadWatershed();
+  // loadRiver();
+  loadWeirs();
+  loadGroin();
   loadBridge();
   loadIrrigation();
   loadRiverBasin();
@@ -74,59 +74,50 @@ function onEachFeature(feature, layer) {
         layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties.Nm_Dat_Das;});
 }
 
-async function loadRiver() {
-  const response = await sendRequest({
-      method: 'get',
-      url: '/rivers/coords',
-  });
-  if ((response !== null) && (response.status === true)) {
-    let rivers = [];
-    response.data.river.forEach(river => {
-      rivers.push({
-        popup: river.nama_data_dasar,
-        coords: river.coords
-      });
-    });
-    loadPolylineLayer(rivers, 'Sungai');
-  }
-}
+// async function loadRiver() {
+//   const response = await sendRequest({
+//       method: 'get',
+//       url: '/rivers/geoJson',
+//   });
+//   const layerGroup = L.geoJSON(response.data, {onEachFeature: onEachFeature});
+//   layerControl.value.addOverlay(layerGroup, 'Sungai');
+// }
 
-async function loadWatershed() {
-  const response = await sendRequest({
-      method: 'get',
-      url: '/watersheds/coords',
-  });
-  if ((response !== null) && (response.status === true)) {
-    let watersheds = [];
-    response.data.watershed.forEach(watershed => {
-      watersheds.push({
-        popup: watershed.nama_data_dasar,
-        coords: watershed.coords
-      });
-    });
-    loadPolygonLayer(watersheds, 'Daerah Aliran Sungai');
-  }
-}
+// async function loadWatershed() {
+//   const response = await sendRequest({
+//       method: 'get',
+//       url: '/watersheds/coords',
+//   });
+//   if ((response !== null) && (response.status === true)) {
+//     let watersheds = [];
+//     response.data.watershed.forEach(watershed => {
+//       watersheds.push({
+//         popup: watershed.nama_data_dasar,
+//         coords: watershed.coords
+//       });
+//     });
+//     loadPolygonLayer(watersheds, 'Daerah Aliran Sungai');
+//   }
+// }
 
 async function loadWeirs(){
   const response = await sendRequest({
       method: 'get',
-      url: '/weirs/coords',
+      url: '/weirs/geoJson',
   });
-  if ((response !== null) && (response.status === true)) {
-    let weirs = [];
-    response.data.weirs.forEach(weir => {
-      weirs.push({
-        popup: weir.nama_data_dasar,
-        coords: weir.coords
-      });
-    });
-    loadMarkerLayer(weirs, 'Bendung');
-  }
+  const layerGroup = L.geoJSON(response.data, {onEachFeature: onEachFeature});
+  layerControl.value.addOverlay(layerGroup, 'Bendung');
 }
-function loadBeachGuard(){
-  loadMarkerLayer([], 'Pelindung pantai');
+
+async function loadGroin(){
+  const response = await sendRequest({
+      method: 'get',
+      url: '/groins/geoJson',
+  });
+  const layerGroup = L.geoJSON(response.data, {onEachFeature: onEachFeature});
+  layerControl.value.addOverlay(layerGroup, 'Pelindung pantai');
 }
+
 async function loadBridge(){
   const response = await sendRequest({
       method: 'get',
@@ -135,44 +126,32 @@ async function loadBridge(){
   const layerGroup = L.geoJSON(response.data, {onEachFeature: onEachFeature});
   layerControl.value.addOverlay(layerGroup, 'Jembatan');
 }
-function loadIrrigation(){
-  loadMarkerLayer([], 'Irigasi');
-}
-function loadRiverBasin(){
-  loadMarkerLayer([], 'Wilayah Sungai');
-}
-function loadRoad(){
-  loadMarkerLayer([], 'Jalan');
+
+async function loadIrrigation(){
+  const response = await sendRequest({
+      method: 'get',
+      url: '/irrigations/geoJson',
+  });
+  const layerGroup = L.geoJSON(response.data, {onEachFeature: onEachFeature});
+  layerControl.value.addOverlay(layerGroup, 'Irigasi');
 }
 
-function loadMarkerLayer(data, label){
-  var layerGroup = L.layerGroup();
-  data.forEach(row => {
-    L.marker(JSON.parse(row.coords))
-      .bindPopup(row.popup)
-      .addTo(layerGroup);
+async function loadRiverBasin(){
+  const response = await sendRequest({
+      method: 'get',
+      url: '/riverBasins/geoJson',
   });
-  layerControl.value.addOverlay(layerGroup, label);
+  const layerGroup = L.geoJSON(response.data, {onEachFeature: onEachFeature});
+  layerControl.value.addOverlay(layerGroup, 'Wilayah Sungai');
 }
 
-function loadPolylineLayer(data, label){
-  var layerGroup = L.layerGroup();
-  data.forEach(row => {
-    L.polyline(JSON.parse(row.coords))
-      .bindPopup(row.popup)
-      .addTo(layerGroup);
+async function loadRoad(){
+  const response = await sendRequest({
+      method: 'get',
+      url: '/roads/geoJson',
   });
-  layerControl.value.addOverlay(layerGroup, label);
-}
-
-function loadPolygonLayer(data, label){
-  var layerGroup = L.layerGroup();
-  data.forEach(row => {
-    L.polygon(JSON.parse(row.coords))
-      .bindPopup(row.popup)
-      .addTo(layerGroup);
-  });
-  layerControl.value.addOverlay(layerGroup, label);
+  const layerGroup = L.geoJSON(response.data, {onEachFeature: onEachFeature});
+  layerControl.value.addOverlay(layerGroup, 'Jalan');
 }
 </script>
 <style>
