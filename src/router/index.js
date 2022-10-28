@@ -208,6 +208,7 @@ import TasknFunction from "@layouts/public/TasknFunction.vue";
 import StrukturOrg from "@layouts/public/StrukturOrg.vue";
 import ProdHukum from "@layouts/public/Prodhukum.vue";
 import Renstra from "@layouts/public/Renstra.vue";
+import JobPerformance from "@layouts/public/JobPerformance.vue";
 
 
 const routes = [{
@@ -946,6 +947,10 @@ const routes = [{
     {
         path: "/site/renstra",
         component: Renstra,        
+    },
+    {
+        path: "/site/jobperformance",
+        component: JobPerformance,        
     }
 ];
 
