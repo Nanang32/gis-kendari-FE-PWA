@@ -1,30 +1,31 @@
 <template>
     <div class="intro-y flex items-center mt-8">
-        <h2 class="text-lg font-medium mr-auto">Data list posting</h2>
+        <h2 class="text-lg font-medium mr-auto capitalize">Data Kinerja pekerjaan Bidang pelaksanaan Jaringan pemanfaatan air</h2>
     </div>
     <div class="grid grid-cols-12 gap-6 mt-5 mb-20">
         <div class="intro-y col-span-12">
-            <button class="btn btn-primary shadow-md mr-2" @click="router.push({ name: 'admin-post-create'})">
-                Add new
+            <button class="btn btn-primary shadow-md mr-2" @click="router.push({ name: 'admin-jobperformwaterutilnetwork-create'})">
+                Tambah
             </button>
             <div class="intro-y box col-span-12 overflow-auto lg:overflow-visible">
                 <table class="table table-report mt-2">
                     <thead>
                         <tr>
                             <th class="whitespace-nowrap">#</th>
-                            <th class="whitespace-nowrap">Judul</th>
-                            <th class="whitespace-nowrap">Kategori</th>
-                            <th class="whitespace-nowrap">Tanggal</th>
+                            <th class="whitespace-nowrap">Tahun</th>
+                            <th class="whitespace-nowrap">Irigasi</th>
+                            <th class="whitespace-nowrap">Bendung</th>
+                            <th class="whitespace-nowrap">Air baku</th>
                             <th class="text-center whitespace-nowrap">Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td>Lorem</td>
-                            <td>Video, news</td>
-                            <td>Published
-                                2022/08/30 at 7:18 am</td>
+                            <td>2022</td>
+                            <td>4</td>
+                            <td>4</td>
+                            <td>4</td>
                             <td>
                                 <div class="flex justify-center items-center">
                                     <button class="flex items-center mr-3">

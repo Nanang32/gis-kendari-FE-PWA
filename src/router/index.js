@@ -22,6 +22,23 @@ import PublicationIndex from "../views/public/Publication/Main.vue";
 import ProductoflawIndex from "../views/public/Publication/prodhukum.vue";
 import StrategicplanIndex from "../views/public/Publication/renstra.vue";
 import JobperformanceIndex from "../views/public/Publication/kinpekerjaan.vue";
+
+// kinerja pekerjaan bidang pelaksanaan jaringan pemanfaatan air
+import AdminJobperformWaterUtilizationNetworkIndex from "../views/admin/publication/job_performance/office_waterutilizationnetwork/index.vue";
+import AdminJobperformWaterUtilizationNetworkCreate from "../views/admin/publication/job_performance/office_waterutilizationnetwork/create.vue";
+import AdminJobperformWaterUtilizationNetworkeEdit from "../views/admin/publication/job_performance/office_waterutilizationnetwork/edit.vue";
+
+// kinerja pekerjaan bidang pelaksanaan jaringan sumber air
+import AdminJobperformImplementationWaterNetworkIndex from "../views/admin/publication/job_performance/office_implementationwaternetwork/index.vue";
+import AdminJobperformImplementationWaterNetworkCreate from "../views/admin/publication/job_performance/office_implementationwaternetwork/create.vue";
+import AdminJobperformImplementationWaterNetworkeEdit from "../views/admin/publication/job_performance/office_implementationwaternetwork/edit.vue";
+
+// kinerja pekerjaan bina marga
+import AdminJobperformBinaMargaIndex from "../views/admin/publication/job_performance/office_binamarga/index.vue";
+import AdminJobperformBinaMargaCreate from "../views/admin/publication/job_performance/office_binamarga/create.vue";
+import AdminJobperformBinaMargaEdit from "../views/admin/publication/job_performance/office_binamarga/edit.vue";
+
+
 //gallery
 import GalleryIndex from "../views/public/Gallery/Main.vue";
 import GallerynewsIndex from "../views/public/Gallery/news.vue";
@@ -702,6 +719,54 @@ const routes = [{
                 path: "bridge/:id",
                 name: "admin-bridge-edit",
                 component: AdminBridgeEdit,
+            },
+            // kinerja pekerjaan bidang pelaksanaan jaringan pemanfaatan air
+            {
+                path: "jobperformwaterutilnetwork",
+                name: "admin-jobperformwaterutilnetwork",
+                component: AdminJobperformWaterUtilizationNetworkIndex,
+            },
+            {
+                path: "jobperformwaterutilnetwork/create",
+                name: "admin-jobperformwaterutilnetwork-create",
+                component: AdminJobperformWaterUtilizationNetworkCreate,
+            },
+            {
+                path: "jobperformwaterutilnetwork/edit/:id",
+                name: "admin-jobperformwaterutilnetwork-edit",
+                component: AdminJobperformWaterUtilizationNetworkeEdit,
+            },
+            // kinerja pekerjaan bidang pelaksanaan jaringan sumber air
+            {
+                path: "jobperformimpwaternetwork",
+                name: "admin-jobperformimpwaternetwork",
+                component: AdminJobperformImplementationWaterNetworkIndex,
+            },
+            {
+                path: "jobperformimpwaternetwork/create",
+                name: "admin-jobperformimpwaternetwork-create",
+                component: AdminJobperformImplementationWaterNetworkCreate,
+            },
+            {
+                path: "jobperformimpwaternetwork/edit/:id",
+                name: "admin-jobperformimpwaternetwork-edit",
+                component: AdminJobperformImplementationWaterNetworkeEdit,
+            },
+            // kinerja pekerjaan bina marga
+            {
+                path: "jobperformbinamarga",
+                name: "admin-jobperformbinamarga",
+                component: AdminJobperformBinaMargaIndex,
+            },
+            {
+                path: "jobperformbinamarga/create",
+                name: "admin-jobperformbinamarga-create",
+                component: AdminJobperformBinaMargaCreate,
+            },
+            {
+                path: "jobperformbinamarga/edit/:id",
+                name: "admin-jobperformbinamarga-edit",
+                component: AdminJobperformBinaMargaEdit,
             },
 
         ],
