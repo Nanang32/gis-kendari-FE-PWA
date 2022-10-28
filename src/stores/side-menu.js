@@ -118,7 +118,7 @@ export const useSideMenuStore = defineStore("sideMenu", {
                     },
                     {
                         icon: "HomeIcon",
-                        pageName: "admin-beachguard",
+                        pageName: "admin-groin",
                         title: "Pengaman pantai",
                     },
                     {
