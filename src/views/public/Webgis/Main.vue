@@ -28,6 +28,9 @@
   </Modal>
 </template>
 <script setup>
+import bridgeIcon from '@assets/images/icon/bridge.png'
+import groinIcon from '@assets/images/icon/groin.png'
+import riverInfrastructureIcon from '@assets/images/icon/river-infrastructure.png'
 import weirIcon from '@assets/images/icon/weir.png'
 import { ref, onMounted } from "vue";
 import sendRequest from '@libs/http.js'
@@ -127,21 +130,68 @@ async function loadWeirs(){
   layerControl.value.addOverlay(layerGroup, 'Bendung');
 }
 
+const onEachGroin = function (feature, layer) {
+  const detailLink = `
+    <div>
+      Nama: ${feature.properties.Nm_Dat_Das || ''}
+    </div>
+    <div>
+      Jenis Bangunan: ${feature.properties.Jns_Bang || ''}
+    </div>
+    <div>
+      Tahun Pelaksanaan: ${feature.properties.Thn_Pelaksanaan || ''}
+    </div>
+    <div style="text-align: center">
+      <button style="color:blue;" onclick="onDetailClick()">Detail</button>
+    </div>`;
+    if (feature.properties)
+        layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties.Nm_Dat_Das;});
+};
 async function loadGroin(){
   const response = await sendRequest({
       method: 'get',
       url: '/groins/geoJson',
   });
-  const layerGroup = L.geoJSON(response.data, {onEachFeature: onEachFeature});
+  const layerGroup = L.geoJSON(response.data, {
+    onEachFeature: onEachGroin, pointToLayer: (feature, latlng) => {
+      return L.marker(latlng, {
+        icon: L.icon({
+          iconUrl: groinIcon,
+        })
+      });
+    }
+  });
   layerControl.value.addOverlay(layerGroup, 'Pelindung pantai');
 }
 
+const onEachBridge = function (feature, layer) {
+  const detailLink = `
+    <div>
+      Nama Jembatan: ${feature.properties.Nm_Dat_Das || ''}
+    </div>
+    <div>
+      Nomor Jembatan: ${feature.properties.Nmr_Ruas_Tol || ''}
+    </div>
+    <div style="text-align: center">
+      <button style="color:blue;" onclick="onDetailClick()">Detail</button>
+    </div>`;
+    if (feature.properties)
+        layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties.Nm_Dat_Das;});
+};
 async function loadBridge(){
   const response = await sendRequest({
       method: 'get',
       url: '/bridges/geoJson',
   });
-  const layerGroup = L.geoJSON(response.data, {onEachFeature: onEachFeature});
+  const layerGroup = L.geoJSON(response.data, {
+    onEachFeature: onEachBridge, pointToLayer: (feature, latlng) => {
+      return L.marker(latlng, {
+        icon: L.icon({
+          iconUrl: bridgeIcon,
+        })
+      });
+    }
+  });
   layerControl.value.addOverlay(layerGroup, 'Jembatan');
 }
 
