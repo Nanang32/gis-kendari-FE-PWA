@@ -28,6 +28,7 @@
   </Modal>
 </template>
 <script setup>
+import weirIcon from '@assets/images/icon/weir.png'
 import { ref, onMounted } from "vue";
 import sendRequest from '@libs/http.js'
 import L from "leaflet"
@@ -86,26 +87,43 @@ function onEachFeature(feature, layer) {
 // async function loadWatershed() {
 //   const response = await sendRequest({
 //       method: 'get',
-//       url: '/watersheds/coords',
+//       url: '/watersheds/geoJson',
 //   });
-//   if ((response !== null) && (response.status === true)) {
-//     let watersheds = [];
-//     response.data.watershed.forEach(watershed => {
-//       watersheds.push({
-//         popup: watershed.nama_data_dasar,
-//         coords: watershed.coords
-//       });
-//     });
-//     loadPolygonLayer(watersheds, 'Daerah Aliran Sungai');
-//   }
+//   const layerGroup = L.geoJSON(response.data, {onEachFeature: onEachFeature});
+//   layerControl.value.addOverlay(layerGroup, 'Daerah Aliran Sungai');
 // }
 
+const onEachWeir = function (feature, layer) {
+  const detailLink = `
+    <div>
+      Nama Bendung: ${feature.properties.Nm_Dat_Das || ''}
+    </div>
+    <div>
+      Nama Sungai: ${feature.properties.Nm_Sungai || ''}
+    </div>
+    <div>
+      Jenis Bendung: ${feature.properties.Jns_Bdg || ''}
+    </div>
+    <div style="text-align: center">
+      <button style="color:blue;" onclick="onDetailClick()">Detail</button>
+    </div>`;
+    if (feature.properties)
+        layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties.Nm_Dat_Das;});
+};
 async function loadWeirs(){
   const response = await sendRequest({
       method: 'get',
       url: '/weirs/geoJson',
   });
-  const layerGroup = L.geoJSON(response.data, {onEachFeature: onEachFeature});
+  const layerGroup = L.geoJSON(response.data, {
+    onEachFeature: onEachWeir, pointToLayer: (feature, latlng) => {
+      return L.marker(latlng, {
+        icon: L.icon({
+          iconUrl: weirIcon,
+        })
+      });
+    }
+  });
   layerControl.value.addOverlay(layerGroup, 'Bendung');
 }
 
