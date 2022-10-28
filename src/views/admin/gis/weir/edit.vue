@@ -3,10 +3,10 @@
     <h2 class="text-lg font-medium mr-auto">Form Kategori</h2>
   </div>
   <div class="grid grid-cols-12 gap-6 mt-5">
-    <div class="intro-y col-span-12 lg:col-span-6">
+    <div class="intro-y col-span-12">
       <Form
         :loading="loading"
-        :category="category"
+        :weir="weir"
         @submit="onSubmit"
       ></Form>
     </div>
@@ -21,7 +21,7 @@ import { ref, reactive, onMounted } from "vue";
 const route = useRoute();
 const router = useRouter();
 const loading = ref(false);
-let category = reactive({
+let weir = reactive({
     name: null
 })
 
@@ -29,10 +29,10 @@ onMounted(async () => {
   loading.value = true;
   const response = await sendRequest({
       method: 'GET',
-      url: `/categories/${route.params.id}`
+      url: `/weirs/${route.params.id}`
   });
   if ((response !== null) && (response.status === true)) {
-    Object.assign(category, response.data.category);
+    Object.assign(weir, response.data.weir);
   }
   loading.value = false;
 })
@@ -41,12 +41,12 @@ async function onSubmit(){
   loading.value = true;
   const response = await sendRequest({
       method: 'PUT',
-      url: `/categories/${route.params.id}`,
-      data: category
+      url: `/weirs/${route.params.id}`,
+      data: weir
   });
   loading.value = false;
   if ((response !== null) && (response.status === true)) {
-    router.push({name: 'admin-category'});
+    router.push({name: 'admin-weir'});
   }
 }
 </script>
