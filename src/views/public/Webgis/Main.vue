@@ -52,6 +52,7 @@ onMounted(() => {
   loadIrrigation();
   loadRiverBasin();
   loadRoad();
+  loadRiverInfrastructure();
   window.onDetailClick = onDetailClick;
 });
 
@@ -76,6 +77,40 @@ function onEachFeature(feature, layer) {
   const detailLink = `<div>${feature.properties.Nm_Dat_Das}</div> <button style="color:blue;" onclick="onDetailClick()">Detail</button>`;
     if (feature.properties)
         layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties.Nm_Dat_Das;});
+}
+const onEachRiverInfrastructure = function (feature, layer) {
+  const detailLink = `
+    <div>
+      Nama: ${feature.properties['Nama Data Infrastruktur'] || ''}
+    </div>
+    <div>
+      Jenis Bangunan: ${feature.properties['Jenis Bangunan'] || ''}
+    </div>
+    <div>
+      Tahun Pelaksanaan: ${feature.properties['Tahun Pelaksanaan'] || ''}
+    </div>
+    <div style="text-align: center">
+      <button style="color:blue;" onclick="onDetailClick()">Detail</button>
+    </div>`;
+    if (feature.properties)
+        layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties['Nama Data Infrastruktur'];});
+};
+async function loadRiverInfrastructure() {
+  const response = await sendRequest({
+      method: 'get',
+      url: '/riverInfrastructures/geoJson',
+  });
+  const layerGroup = L.geoJSON(response.data, {
+    onEachFeature: onEachRiverInfrastructure,
+    pointToLayer: (feature, latlng) => {
+      return L.marker(latlng, {
+        icon: L.icon({
+          iconUrl: riverInfrastructureIcon,
+        })
+      });
+    }
+  });
+  layerControl.value.addOverlay(layerGroup, 'Infrastruktur Sungai');
 }
 
 const onEachRiver = function (feature, layer) {
