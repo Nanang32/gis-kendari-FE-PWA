@@ -41,11 +41,17 @@ import "leaflet/dist/leaflet.css";
 
 const layerControl = ref(null);
 const showModal = ref(false);
-const content = ref('');
 const modalData = ref(null);
 const modalType = ref(null);
+const typeWatershed = 'watershed';
 const typeRiver = 'river';
 const typeWeir = 'weir';
+const typeGroin = 'groin';
+const typeBridge = 'bridge';
+const typeIrrigation = 'irrigation';
+const typeRiverBasin = 'riverbasin';
+const typeRoad = 'road';
+const typeRiverInfrastructure = 'riverinfrastructure';
 
 onMounted(() => {
   initMap();
@@ -97,7 +103,10 @@ const onEachRiverInfrastructure = function (feature, layer) {
       <button style="color:blue;" onclick="onDetailClick()">Detail</button>
     </div>`;
     if (feature.properties)
-        layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties['Nama Data Infrastruktur'];});
+        layer.bindPopup(detailLink).on('popupopen', () => {
+          modalType.value = typeRiverInfrastructure;
+          modalData.value = feature.properties;
+        });
 };
 async function loadRiverInfrastructure() {
   const response = await sendRequest({
@@ -170,7 +179,10 @@ const onEachWatershed = function (feature, layer) {
       <button style="color:blue;" onclick="onDetailClick()">Detail</button>
     </div>`;
     if (feature.properties)
-        layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties.nama_data_dasar;});
+        layer.bindPopup(detailLink).on('popupopen', () => {
+          modalType.value = typeWatershed;
+          modalData.value = feature.properties;
+        });
 };
 async function loadWatershed() {
   const response = await sendRequest({
@@ -207,7 +219,10 @@ const onEachWeir = function (feature, layer) {
       <button style="color:blue;" onclick="onDetailClick()">Detail</button>
     </div>`;
     if (feature.properties)
-        layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties.Nm_Dat_Das;});
+        layer.bindPopup(detailLink).on('popupopen', () => {
+          modalType.value = typeWeir;
+          modalData.value = feature.properties;
+        });
 };
 async function loadWeirs(){
   const response = await sendRequest({
@@ -244,7 +259,10 @@ const onEachGroin = function (feature, layer) {
       <button style="color:blue;" onclick="onDetailClick()">Detail</button>
     </div>`;
     if (feature.properties)
-        layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties.Nm_Dat_Das;});
+        layer.bindPopup(detailLink).on('popupopen', () => {
+          modalType.value = typeGroin;
+          modalData.value = feature.properties;
+        });
 };
 async function loadGroin(){
   const response = await sendRequest({
@@ -278,7 +296,10 @@ const onEachBridge = function (feature, layer) {
       <button style="color:blue;" onclick="onDetailClick()">Detail</button>
     </div>`;
     if (feature.properties)
-        layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties.Nm_Dat_Das;});
+        layer.bindPopup(detailLink).on('popupopen', () => {
+          modalType.value = typeBridge;
+          modalData.value = feature.properties;
+        });
 };
 async function loadBridge(){
   const response = await sendRequest({
@@ -318,7 +339,10 @@ const onEachIrrigation = function (feature, layer) {
       <button style="color:blue;" onclick="onDetailClick()">Detail</button>
     </div>`;
     if (feature.properties)
-        layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties.Nm_Dat_Das;});
+        layer.bindPopup(detailLink).on('popupopen', () => {
+          modalType.value = typeIrrigation;
+          modalData.value = feature.properties;
+        });
 };
 async function loadIrrigation(){
   const response = await sendRequest({
@@ -353,7 +377,10 @@ const onEachRiverBasin = function (feature, layer) {
       <button style="color:blue;" onclick="onDetailClick()">Detail</button>
     </div>`;
     if (feature.properties)
-        layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties.Nm_Dat_Das;});
+        layer.bindPopup(detailLink).on('popupopen', () => {
+          modalType.value = typeRiverBasin;
+          modalData.value = feature.properties;
+        });
 };
 async function loadRiverBasin(){
   const response = await sendRequest({
@@ -387,7 +414,10 @@ const onEachRoad = function (feature, layer) {
       <button style="color:blue;" onclick="onDetailClick()">Detail</button>
     </div>`;
     if (feature.properties)
-        layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties.Nm_Dat_Das;});
+        layer.bindPopup(detailLink).on('popupopen', () => {
+          modalType.value = typeRoad;
+          modalData.value = feature.properties;
+        });
 };
 async function loadRoad(){
   const response = await sendRequest({
