@@ -73,11 +73,11 @@ function onDetailClick (e){
   showModal.value = true;
 }
 
-function onEachFeature(feature, layer) {
-  const detailLink = `<div>${feature.properties.Nm_Dat_Das}</div> <button style="color:blue;" onclick="onDetailClick()">Detail</button>`;
-    if (feature.properties)
-        layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties.Nm_Dat_Das;});
-}
+// function onEachFeature(feature, layer) {
+//   const detailLink = `<div>${feature.properties.Nm_Dat_Das}</div> <button style="color:blue;" onclick="onDetailClick()">Detail</button>`;
+//     if (feature.properties)
+//         layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties.Nm_Dat_Das;});
+// }
 const onEachRiverInfrastructure = function (feature, layer) {
   const detailLink = `
     <div>
@@ -88,6 +88,9 @@ const onEachRiverInfrastructure = function (feature, layer) {
     </div>
     <div>
       Tahun Pelaksanaan: ${feature.properties['Tahun Pelaksanaan'] || ''}
+    </div>
+    <div>
+      <image src="${feature.properties.Foto}" width="400px" height="400px"
     </div>
     <div style="text-align: center">
       <button style="color:blue;" onclick="onDetailClick()">Detail</button>
@@ -124,6 +127,9 @@ const onEachRiver = function (feature, layer) {
     <div>
       Panjang Sungai: ${feature.properties['Panjang Sungai (km)'] || ''}
     </div>
+    <div>
+      <image src="${feature.properties.Foto}" width="400px" height="400px"
+    </div>
     <div style="text-align: center">
       <button style="color:blue;" onclick="onDetailClick()">Detail</button>
     </div>`;
@@ -152,6 +158,9 @@ const onEachWatershed = function (feature, layer) {
     </div>
     <div>
       LUAS (KM2): ${feature.properties.luas || ''}
+    </div>
+    <div>
+      <image src="${feature.properties.Foto}" width="400px" height="400px"
     </div>
     <div style="text-align: center">
       <button style="color:blue;" onclick="onDetailClick()">Detail</button>
@@ -187,6 +196,9 @@ const onEachWeir = function (feature, layer) {
     <div>
       Jenis Bendung: ${feature.properties.Jns_Bdg || ''}
     </div>
+    <div>
+      <image src="${feature.properties.Foto}" width="400px" height="400px"
+    </div>
     <div style="text-align: center">
       <button style="color:blue;" onclick="onDetailClick()">Detail</button>
     </div>`;
@@ -221,6 +233,9 @@ const onEachGroin = function (feature, layer) {
     <div>
       Tahun Pelaksanaan: ${feature.properties.Thn_Pelaksanaan || ''}
     </div>
+    <div>
+      <image src="${feature.properties.Foto}" width="400px" height="400px"
+    </div>
     <div style="text-align: center">
       <button style="color:blue;" onclick="onDetailClick()">Detail</button>
     </div>`;
@@ -251,6 +266,9 @@ const onEachBridge = function (feature, layer) {
     </div>
     <div>
       Nomor Jembatan: ${feature.properties.Nmr_Ruas_Tol || ''}
+    </div>
+    <div>
+      <image src="${feature.properties.Foto}" width="400px" height="400px"
     </div>
     <div style="text-align: center">
       <button style="color:blue;" onclick="onDetailClick()">Detail</button>
@@ -289,6 +307,9 @@ const onEachIrrigation = function (feature, layer) {
     <div>
       Luas: ${feature.properties.Luas_Fungsi || ''}
     </div>
+    <div>
+      <image src="${feature.properties.Foto}" width="400px" height="400px"
+    </div>
     <div style="text-align: center">
       <button style="color:blue;" onclick="onDetailClick()">Detail</button>
     </div>`;
@@ -321,6 +342,9 @@ const onEachRiverBasin = function (feature, layer) {
     <div>
       Kode WS: ${feature.properties.Kd_WS_Permen || ''}
     </div>
+    <div>
+      <image src="${feature.properties.Foto}" width="400px" height="400px"
+    </div>
     <div style="text-align: center">
       <button style="color:blue;" onclick="onDetailClick()">Detail</button>
     </div>`;
@@ -351,6 +375,9 @@ const onEachRoad = function (feature, layer) {
     </div>
     <div>
       Nomor Ruas: ${feature.properties.Nmr_Ruas || ''}
+    </div>
+    <div>
+      <image src="${feature.properties.Foto}" width="400px" height="400px"
     </div>
     <div style="text-align: center">
       <button style="color:blue;" onclick="onDetailClick()">Detail</button>
