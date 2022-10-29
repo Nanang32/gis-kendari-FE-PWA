@@ -29,9 +29,6 @@ async function onSubmit(data) {
         formdata.append(key, irrigation[key]);
     });
 
-    // formdata.append('featured_image_file', image.value)
-
-    // formdata.append('file', image.value)
     const response = await sendRequest({
         method: 'post',
         url: '/irrigations',

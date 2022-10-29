@@ -16,10 +16,6 @@ import { ref, reactive } from "vue";
 const router = useRouter();
 const loading = ref(false);
 let riverBasin = reactive({});
-const image = ref('');
-const onFileChange = (e) => {
-    image.value = e.target.files[0];
-};
 
 async function onSubmit(data) {
     loading.value = true;
