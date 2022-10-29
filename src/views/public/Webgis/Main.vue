@@ -18,7 +18,7 @@
     size="modal-xl"
   >
     <ModalBody class="p-4">
-      <div v-html="content"></div>
+      <RiverDetail v-if="modalType == typeRiver" :river="modalData" />
     </ModalBody>
     <ModalFooter>
       <button type="button" class="btn btn-primary w-24" @click="showModal=false">
@@ -32,6 +32,8 @@ import bridgeIcon from '@assets/images/icon/bridge.png'
 import groinIcon from '@assets/images/icon/groin.png'
 import riverInfrastructureIcon from '@assets/images/icon/river-infrastructure.png'
 import weirIcon from '@assets/images/icon/weir.png'
+
+import RiverDetail from './components/river.vue'
 import { ref, onMounted } from "vue";
 import sendRequest from '@libs/http.js'
 import L from "leaflet"
@@ -40,6 +42,10 @@ import "leaflet/dist/leaflet.css";
 const layerControl = ref(null);
 const showModal = ref(false);
 const content = ref('');
+const modalData = ref(null);
+const modalType = ref(null);
+const typeRiver = 'river';
+const typeWeir = 'weir';
 
 onMounted(() => {
   initMap();
@@ -73,11 +79,6 @@ function onDetailClick (e){
   showModal.value = true;
 }
 
-// function onEachFeature(feature, layer) {
-//   const detailLink = `<div>${feature.properties.Nm_Dat_Das}</div> <button style="color:blue;" onclick="onDetailClick()">Detail</button>`;
-//     if (feature.properties)
-//         layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties.Nm_Dat_Das;});
-// }
 const onEachRiverInfrastructure = function (feature, layer) {
   const detailLink = `
     <div>
@@ -134,7 +135,10 @@ const onEachRiver = function (feature, layer) {
       <button style="color:blue;" onclick="onDetailClick()">Detail</button>
     </div>`;
     if (feature.properties)
-        layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties['Nama Data Dasar'];});
+        layer.bindPopup(detailLink).on('popupopen', () => {
+          modalType.value = typeRiver;
+          modalData.value = feature.properties;
+        });
 };
 async function loadRiver() {
   const response = await sendRequest({
