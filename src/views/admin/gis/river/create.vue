@@ -25,36 +25,9 @@ const onFileChange = (e) => {
 async function onSubmit(data) {
     loading.value = true;
     const formdata = new FormData();
-    formdata.append('unit_eselon_i', river.unit_eselon_i)
-    formdata.append('unit_eselon_iia', river.unit_eselon_iia)
-    formdata.append('unit_eselon_iiia', river.unit_eselon_iiia)
-    formdata.append('kelompok_data_dasar', river.kelompok_data_dasar)
-    formdata.append('nama_data_dasar', river.nama_data_dasar)
-    formdata.append('tahun', river.tahun)
-    formdata.append('kondisi', river.kondisi)
-    formdata.append('nama_wilayah_sungai', river.nama_wilayah_sungai)
-    formdata.append('daerah_aliran_sungai', river.daerah_aliran_sungai)
-    formdata.append('kode_bidang_pekerjaan_umum', river.kode_bidang_pekerjaan_umum)
-    formdata.append('kode_data_dasar_jenis_infrastruktur', river.kode_data_dasar_jenis_infrastruktur)
-    formdata.append('kode_infrastruktur', river.kode_infrastruktur)
-    formdata.append('propinsi', river.propinsi)
-    formdata.append('kota', river.kota)
-    formdata.append('kecamatan', river.kecamatan)
-    formdata.append('kelurahan', river.kelurahan)
-    formdata.append('lokasi', river.lokasi)
-    formdata.append('irigasi', river.irigasi)
-    formdata.append('dmi', river.dmi)
-    formdata.append('plta', river.plta)
-    formdata.append('ternak', river.ternak)
-    formdata.append('lainnya', river.lainnya)
-    formdata.append('luas_das', river.luas_das)
-    formdata.append('panjang_sungai', river.panjang_sungai)
-    formdata.append('lebar_maximum', river.lebar_maximum)
-    formdata.append('kelerengan_rata2', river.kelerengan_rata2)
-    formdata.append('q_max', river.q_max)
-    formdata.append('keterangan', river.keterangan)
-
-    formdata.append('coords_file', new File([new Blob([river.latlngs])], "coords.txt"));
+    Object.keys(river).forEach(key => {
+        formdata.append(key, river[key]);
+    });
 
     // formdata.append('file', image.value)
     const response = await sendRequest({

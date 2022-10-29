@@ -1,6 +1,6 @@
 <template>
     <div class="intro-y flex items-center mt-8">
-        <h2 class="text-lg font-medium capitalize mr-auto">Data list Kategori (pemberitaan & produk hukum)</h2>
+        <h2 class="text-lg font-medium capitalize mr-auto">Data irigasi</h2>
     </div>
     <div class="grid grid-cols-12 gap-6 mt-5 mb-20">
         <div class="intro-y col-span-12">
@@ -42,57 +42,57 @@
     </div>
 </template>
 <script setup>
-import Paginator from "@/components/paginator/Main.vue";
-import ModalConfirmDelete from "@/components/modal-confirm-delete/Main.vue";
-import sendRequest from '@libs/http.js'
-import { ref, watch, onMounted } from "vue";
-import { useRouter } from "vue-router";
+    import Paginator from "@/components/paginator/Main.vue";
+    import ModalConfirmDelete from "@/components/modal-confirm-delete/Main.vue";
+    import sendRequest from '@libs/http.js'
+    import { ref, watch, onMounted } from "vue";
+    import { useRouter } from "vue-router";
 
-const irrigations = ref([]);
-const page = ref(1);
-const perPage = ref(10);
-const lastPage = ref(1);
-const showDeleteModal = ref(false);
-const deleteId = ref(null);
-const router = useRouter();
+    const irrigations = ref([]);
+    const page = ref(1);
+    const perPage = ref(10);
+    const lastPage = ref(1);
+    const showDeleteModal = ref(false);
+    const deleteId = ref(null);
+    const router = useRouter();
 
-function setPage(newPage) {
-    page.value = newPage
-}
-
-function confirmDelete(id) {
-    showDeleteModal.value = true
-    deleteId.value = id;
-}
-
-async function onConfirmDelete() {
-    const responseDelete = await sendRequest({
-        method: 'delete',
-        url: `/irrigations/${deleteId.value}`,
-    });
-    showDeleteModal.value = false
-    await loadData(page.value);
-}
-
-async function loadData(page = 1) {
-    const response = await sendRequest({
-        method: 'get',
-        url: '/irrigations',
-        params: {
-            page: page
-        },
-    });
-    if ((response !== null) && (response.status === true)) {
-        irrigations.value = response.data.irrigation.data
-        lastPage.value = response.data.irrigation.last_page
+    function setPage(newPage) {
+        page.value = newPage
     }
-}
 
-watch(page, async (newPage) => {
-    await loadData(newPage)
-})
+    function confirmDelete(id) {
+        showDeleteModal.value = true
+        deleteId.value = id;
+    }
 
-onMounted(async () => {
-    await loadData()
-});
+    async function onConfirmDelete() {
+        const responseDelete = await sendRequest({
+            method: 'delete',
+            url: `/irrigations/${deleteId.value}`,
+        });
+        showDeleteModal.value = false
+        await loadData(page.value);
+    }
+
+    async function loadData(page = 1) {
+        const response = await sendRequest({
+            method: 'get',
+            url: '/irrigations',
+            params: {
+                page: page
+            },
+        });
+        if ((response !== null) && (response.status === true)) {
+            irrigations.value = response.data.irrigation.data
+            lastPage.value = response.data.irrigation.last_page
+        }
+    }
+
+    watch(page, async (newPage) => {
+        await loadData(newPage)
+    })
+
+    onMounted(async () => {
+        await loadData()
+    });
 </script>
