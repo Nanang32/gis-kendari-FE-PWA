@@ -130,60 +130,60 @@
                     <label class="form-label sm:w-20 capitalize">Kondisi umum jembatan</label>
                     <select class="form-select mt-2 sm:mr-2" v-model="bridge.Kds_Umum_Jemb">
                         <option>--Pilih salah satu--</option>
-                        <option>Baik</option>
-                        <option>Sedang</option>
-                        <option>Rusak ringan</option>
-                        <option>Rusak berat</option>
-                        <option>Kritis</option>
-                        <option>Runtuh</option>
+                        <option value="Baik">Baik</option>
+                        <option value="Sedang">Sedang</option>
+                        <option value="Rusak ringan">Rusak ringan</option>
+                        <option value="Rusak berat">Rusak berat</option>
+                        <option value="Kritis">Kritis</option>
+                        <option value="Runtuh">Runtuh</option>
                     </select>
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-20 capitalize">Kondisi bangunan atas</label>
                     <select class="form-select mt-2 sm:mr-2" v-model="bridge.Kds_Bang_Atas">
                         <option>--Pilih salah satu--</option>
-                        <option>Baik</option>
-                        <option>Sedang</option>
-                        <option>Rusak ringan</option>
-                        <option>Rusak berat</option>
-                        <option>Kritis</option>
-                        <option>Runtuh</option>
+                        <option value="Baik">Baik</option>
+                        <option value="Sedang">Sedang</option>
+                        <option value="Rusak ringan">Rusak ringan</option>
+                        <option value="Rusak berat">Rusak berat</option>
+                        <option value="Kritis">Kritis</option>
+                        <option value="Runtuh">Runtuh</option>
                     </select>
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-20 capitalize">kondisi lantai</label>
                     <select class="form-select mt-2 sm:mr-2" v-model="bridge.Kds_Lantai">
                         <option>--Pilih salah satu--</option>
-                        <option>Baik</option>
-                        <option>Sedang</option>
-                        <option>Rusak ringan</option>
-                        <option>Rusak berat</option>
-                        <option>Kritis</option>
-                        <option>Runtuh</option>
+                        <option value="Baik">Baik</option>
+                        <option value="Sedang">Sedang</option>
+                        <option value="Rusak ringan">Rusak ringan</option>
+                        <option value="Rusak berat">Rusak berat</option>
+                        <option value="Kritis">Kritis</option>
+                        <option value="Runtuh">Runtuh</option>
                     </select>>
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-20 capitalize">kondisi bangunan bawah</label>
                     <select class="form-select mt-2 sm:mr-2" v-model="bridge.Kds_Bang_Bawah">
                         <option>--Pilih salah satu--</option>
-                        <option>Baik</option>
-                        <option>Sedang</option>
-                        <option>Rusak ringan</option>
-                        <option>Rusak berat</option>
-                        <option>Kritis</option>
-                        <option>Runtuh</option>
+                        <option value="Baik">Baik</option>
+                        <option value="Sedang">Sedang</option>
+                        <option value="Rusak ringan">Rusak ringan</option>
+                        <option value="Rusak berat">Rusak berat</option>
+                        <option value="Kritis">Kritis</option>
+                        <option value="Runtuh">Runtuh</option>
                     </select>
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-20 capitalize">kondisi daerah aliran sungai</label>
                   <select class="form-select mt-2 sm:mr-2" v-model="bridge.Kds_DAS">
                         <option>--Pilih salah satu--</option>
-                        <option>Baik</option>
-                        <option>Sedang</option>
-                        <option>Rusak ringan</option>
-                        <option>Rusak berat</option>
-                        <option>Kritis</option>
-                        <option>Runtuh</option>
+                        <option value="Baik">Baik</option>
+                        <option value="Sedang">Sedang</option>
+                        <option value="Rusak ringan">Rusak ringan</option>
+                        <option value="Rusak berat">Rusak berat</option>
+                        <option value="Kritis">Kritis</option>
+                        <option value="Runtuh">Runtuh</option>
                     </select>
                 </div>
                 <div class="form-inline mt-5">
