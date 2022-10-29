@@ -18,7 +18,14 @@
     size="modal-xl"
   >
     <ModalBody class="p-4">
+      <BridgeDetail v-if="modalType == typeRiver" :river="modalData" />
+      <GroinDetail v-if="modalType == typeGroin" :river="modalData" />
+      <IrrigationDetail v-if="modalType == typeIrrigation" :river="modalData" />
       <RiverDetail v-if="modalType == typeRiver" :river="modalData" />
+      <RiverBasinDetail v-if="modalType == typeRiverBasin" :river="modalData" />
+      <RiverInfrastructureDetail v-if="modalType == typeRiverInfrastructure" :river="modalData" />
+      <RoadDetail v-if="modalType == typeRoad" :river="modalData" />
+      <WeirDetail v-if="modalType == typeWeir" :river="modalData" />
     </ModalBody>
     <ModalFooter>
       <button type="button" class="btn btn-primary w-24" @click="showModal=false">
@@ -33,7 +40,14 @@ import groinIcon from '@assets/images/icon/groin.png'
 import riverInfrastructureIcon from '@assets/images/icon/river-infrastructure.png'
 import weirIcon from '@assets/images/icon/weir.png'
 
+import BridgeDetail from './components/bridge.vue'
+import GroinDetail from './components/groin.vue'
+import IrrigationDetail from './components/irrigation.vue'
 import RiverDetail from './components/river.vue'
+import RiverBasinDetail from './components/riverBasin.vue'
+import RiverInfrastructureDetail from './components/riverInfrastructure.vue'
+import RoadDetail from './components/river.vue'
+import WeirDetail from './components/weir.vue'
 import { ref, onMounted } from "vue";
 import sendRequest from '@libs/http.js'
 import L from "leaflet"
