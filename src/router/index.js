@@ -210,8 +210,7 @@ import ProdHukum from "@layouts/public/Prodhukum.vue";
 import Renstra from "@layouts/public/Renstra.vue";
 import JobPerformance from "@layouts/public/JobPerformance.vue";
 import InfPJPA from "@layouts/public/InfPJPA.vue";
-
-
+import InfPJSA from "@layouts/public/InfPJSA.vue";
 
 const routes = [{
         path: "/admin",
@@ -957,6 +956,10 @@ const routes = [{
     {
         path: "/site/infpjpa",
         component: InfPJPA,        
+    },
+    {
+        path: "/site/infpjsa",
+        component: InfPJSA,        
     }
 ];
 
