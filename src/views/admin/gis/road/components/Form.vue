@@ -279,15 +279,15 @@
             <div class="p-5">
                 <div class="form-inline">
                     <label class="form-label sm:w-30">photo</label>
-                    <input type="file" class="form-control" />
+                    <input type="file" class="form-control" @change="onPhotoChange"/>
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">video</label>
-                    <input type="file" class="form-control"/>
+                    <input type="file" class="form-control" @change="onVideoChange"/>
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">peta</label>
-                    <input type="file" class="form-control"/>
+                    <input type="file" class="form-control" @change="onMapChange"/>
                 </div>
             </div>
         </div>
@@ -327,6 +327,18 @@
 
     function submit() {
         emit('submit');
+    }
+
+    function onPhotoChange(e) {
+        props.road.Foto = e.target.files[0];
+    }
+
+    function onVideoChange(e) {
+        props.road.Video = e.target.files[0];
+    }
+
+    function onMapChange(e) {
+        props.road.Peta = e.target.files[0];
     }
 
     function getLatLngs(geoJson) {
