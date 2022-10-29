@@ -6,24 +6,28 @@
             </div>
             <div class="p-5 border">
                 <div class="form-inline">
+                    <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">fid</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." v-model="riverInfrastructure.fid" />
+                </div>
+                <div class="form-inline mt-5">
                     <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">Nama data Infrastruktur</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" placeholder="ketik disini..." v-model="riverInfrastructure['Nama Data Infrastruktur']" />
                 </div>
                 <div class="form-inline mt-5">
                     <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">tahun data</label>
-                    <input type="text" class="form-control"  placeholder="ketik disini..." />
+                    <input type="text" class="form-control"  placeholder="ketik disini..." v-model="riverInfrastructure['Tahun Data']" />
                 </div>
                 <div class="form-inline mt-5">
                     <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">kondisi</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" placeholder="ketik disini..." v-model="riverInfrastructure['Kondisi']" />
                 </div>
                 <div class="form-inline mt-5">
                     <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">nama wilayah sungai</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" placeholder="ketik disini..." v-model="riverInfrastructure['Nama Wilayah Sungai']" />
                 </div>
                 <div class="form-inline mt-5">
                     <label for="horizontal-form-2" class="form-label sm:w-30 capitalize">Nama DAS</label>
-                    <input type="text" class="form-control"  placeholder="ketik disini..." />
+                    <input type="text" class="form-control"  placeholder="ketik disini..." v-model="riverInfrastructure['Nama DAS']" />
                 </div>
                 
                 
@@ -38,19 +42,19 @@
             <div class="p-5">
                 <div class="form-inline">
                     <label class="form-label sm:w-20">provinsi</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" placeholder="ketik disini..." v-model="riverInfrastructure['Provinsi']" />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-20 capitalize">kota/kab.</label>
-                    <input type="text" class="form-control"  placeholder="ketik disini..." />
+                    <input type="text" class="form-control"  placeholder="ketik disini..." v-model="riverInfrastructure['KotaKab']" />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-20 capitalize">kecamatan</label>
-                    <input type="text" class="form-control"  placeholder="ketik disini..." />
+                    <input type="text" class="form-control"  placeholder="ketik disini..." v-model="riverInfrastructure['Kecamatan']" />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-20 capitalize">kelurahan/Desa</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" placeholder="ketik disini..." v-model="riverInfrastructure['KelDesa']" />
                 </div>
                 
                 
@@ -63,23 +67,23 @@
             <div class="p-5">
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">Jenis bangunan</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" placeholder="ketik disini..." v-model="riverInfrastructure['Jenis Bangunan']" />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">tahun pelaksanaan</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" placeholder="ketik disini..." v-model="riverInfrastructure['Tahun Pelaksanaan']" />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">volume</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" placeholder="ketik disini..." v-model="riverInfrastructure['Volume']" />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">satuan</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" placeholder="ketik disini..." v-model="riverInfrastructure['Satuan']" />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">material</label>
-                    <input type="text" class="form-control" placeholder="ketik disini..." />
+                    <input type="text" class="form-control" placeholder="ketik disini..." v-model="riverInfrastructure['Material']" />
                 </div>
                 
                 
@@ -93,11 +97,11 @@
             <div class="p-5">
                 <div class="form-inline">
                     <label class="form-label sm:w-30 capitalize">koordinat x</label>
-                    <input type="text" class="form-control" />
+                    <input type="text" class="form-control" v-model="riverInfrastructure['Koordinat X']" />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">koordinat y</label>
-                    <input type="text" class="form-control" />
+                    <input type="text" class="form-control" v-model="riverInfrastructure['Koordinat Y']" />
                 </div>
                 
             </div>
@@ -121,14 +125,12 @@
                 </div>
             </div>
         </div>
-        <div class="box col-span-12 lg:col-span-12">
+        <div class="box col-span-12 lg:col-span-12" v-if="!loading">
             <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800">
                 <h2 class="text-base text-white  uppercase">vii.Digitasi</h2>
             </div>
             <div class="p-5 text-center">
-                <button type="button" class="btn btn-primary w-24" @click="isShowModal=true">
-                    Peta
-                </button>
+                <MapDrawer @submit="getLatLngs" :geo_json="riverInfrastructure.geo_json"/>
             </div>
         </div>
     </div>
@@ -141,23 +143,18 @@
             Simpan
         </button>
     </div>
-    <ModalMarker :isShowModal="isShowModal" @submit="getLatLngs" />
-
 </template>
 <script setup>
-import sendRequest from '@libs/http.js'
 import MapDrawer from '../../components/MapDrawer.vue'
 import { ref, onMounted } from "vue";
-const loading = ref(false);
 const emit = defineEmits(['submit', 'fileChange'])
-const isShowModal = ref(false);
 
 const props = defineProps({
     loading: {
         type: Boolean,
         default: false
     },
-    road: {
+    riverInfrastructure: {
         type: Object,
         default: {}
     }
@@ -171,9 +168,8 @@ function submit() {
 //     emit('fileChange', e);
 // }
 
-function getLatLngs(latlngs) {
-    props.road.latlngs = latlngs;
-    isShowModal.value = false;
+function getLatLngs(geoJson) {
+    props.riverInfrastructure.geo_json = geoJson;
 }
 
 
