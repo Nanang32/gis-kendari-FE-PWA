@@ -245,15 +245,15 @@
             <div class="p-5">
                 <div class="form-inline">
                     <label class="form-label sm:w-30">photo</label>
-                    <input type="file" class="form-control" />
+                    <input type="file" class="form-control" @change="onPhotoChange"/>
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">video</label>
-                    <input type="file" class="form-control"/>
+                    <input type="file" class="form-control" @change="onVideoChange"/>
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">peta</label>
-                    <input type="file" class="form-control"/>
+                    <input type="file" class="form-control" @change="onMapChange"/>
                 </div>
             </div>
         </div>
@@ -278,9 +278,7 @@
 </template>
 <script setup>
 import MapDrawer from '../../components/MapDrawer.vue'
-import { ref, onMounted } from "vue";
-const emit = defineEmits(['submit', 'fileChange'])
-const isShowModal = ref(false);
+const emit = defineEmits(['submit'])
 
 const props = defineProps({
     loading: {
@@ -297,9 +295,17 @@ function submit() {
     emit('submit');
 }
 
-// function onFileChange(e) {
-//     emit('fileChange', e);
-// }
+function onPhotoChange(e) {
+    props.groin.Foto = e.target.files[0];
+}
+
+function onVideoChange(e) {
+    props.groin.Video = e.target.files[0];
+}
+
+function onMapChange(e) {
+    props.groin.Peta = e.target.files[0];
+}
 
 function getLatLngs(geoJson) {
     props.groin.geo_json = geoJson;
