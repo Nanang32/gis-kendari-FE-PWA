@@ -150,8 +150,7 @@
 
 <script setup>
 import MapDrawer from '../../components/MapDrawer.vue'
-import { ref, onMounted } from "vue";
-const emit = defineEmits(['submit', 'fileChange'])
+const emit = defineEmits(['submit'])
 
 const props = defineProps({
     loading: {
@@ -169,13 +168,6 @@ function submit() {
 }
 
 function getLatLngs(geoJson) {
-    console.log(props.riverBasin.geo_json);
     props.riverBasin.geo_json = geoJson;
 }
-
-// function onFileChange(e) {
-//     emit('fileChange', e);
-// }
-
-
 </script>

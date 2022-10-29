@@ -230,10 +230,4 @@ function submit() {
 function getLatLngs(geoJson) {
     props.river.geo_json = geoJson;
 }
-
-// function onFileChange(e) {
-//     emit('fileChange', e);
-// }
-
-
 </script>
