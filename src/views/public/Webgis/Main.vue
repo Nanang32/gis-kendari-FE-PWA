@@ -44,7 +44,7 @@ const content = ref('');
 onMounted(() => {
   initMap();
 
-  // loadWatershed();
+  loadWatershed();
   loadRiver();
   loadWeirs();
   loadGroin();
@@ -110,12 +110,34 @@ async function loadRiver() {
   layerControl.value.addOverlay(layerGroup, 'Sungai');
 }
 
+const onEachWatershed = function (feature, layer) {
+  const detailLink = `
+    <div>
+      Nama DAS: ${feature.properties.nama_data_dasar || ''}
+    </div>
+    <div>
+      LUAS (KM2): ${feature.properties.luas || ''}
+    </div>
+    <div style="text-align: center">
+      <button style="color:blue;" onclick="onDetailClick()">Detail</button>
+    </div>`;
+    if (feature.properties)
+        layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties.nama_data_dasar;});
+};
 async function loadWatershed() {
   const response = await sendRequest({
       method: 'get',
       url: '/watersheds/geoJson',
   });
-  const layerGroup = L.geoJSON(response.data, {onEachFeature: onEachFeature});
+  const layerGroup = L.geoJSON(response.data, {
+    onEachFeature: onEachWatershed,
+    style: {
+        "color": "#17901d",
+        "fillOpacity": 0.25,
+        "fillColor": "#21cc29",
+        "weight": 0.8,
+      }
+    });
   layerControl.value.addOverlay(layerGroup, 'Daerah Aliran Sungai');
 }
 
