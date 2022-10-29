@@ -45,7 +45,7 @@ onMounted(() => {
   initMap();
 
   // loadWatershed();
-  // loadRiver();
+  loadRiver();
   loadWeirs();
   loadGroin();
   loadBridge();
@@ -78,23 +78,46 @@ function onEachFeature(feature, layer) {
         layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties.Nm_Dat_Das;});
 }
 
-// async function loadRiver() {
-//   const response = await sendRequest({
-//       method: 'get',
-//       url: '/rivers/geoJson',
-//   });
-//   const layerGroup = L.geoJSON(response.data, {onEachFeature: onEachFeature});
-//   layerControl.value.addOverlay(layerGroup, 'Sungai');
-// }
+const onEachRiver = function (feature, layer) {
+  const detailLink = `
+    <div>
+      Nama Sungai: ${feature.properties['Nama Data Dasar'] || ''}
+    </div>
+    <div>
+      Orde: ${feature.properties.Orde || ''}
+    </div>
+    <div>
+      Panjang Sungai: ${feature.properties['Panjang Sungai (km)'] || ''}
+    </div>
+    <div style="text-align: center">
+      <button style="color:blue;" onclick="onDetailClick()">Detail</button>
+    </div>`;
+    if (feature.properties)
+        layer.bindPopup(detailLink).on('popupopen', () => {content.value = feature.properties['Nama Data Dasar'];});
+};
+async function loadRiver() {
+  const response = await sendRequest({
+      method: 'get',
+      url: '/rivers/geoJson',
+  });
+  const layerGroup = L.geoJSON(response.data, {
+    onEachFeature: onEachRiver,
+    style: {
+        "color": "#67d9ff",
+        "weight": 0.8,
+    }
+  });
+  layerControl.value.addOverlay(layerGroup, 'Sungai');
+}
 
-// async function loadWatershed() {
-//   const response = await sendRequest({
-//       method: 'get',
-//       url: '/watersheds/geoJson',
-//   });
-//   const layerGroup = L.geoJSON(response.data, {onEachFeature: onEachFeature});
-//   layerControl.value.addOverlay(layerGroup, 'Daerah Aliran Sungai');
-// }
+async function loadWatershed() {
+  const response = await sendRequest({
+      method: 'get',
+      url: '/watersheds/geoJson',
+  });
+  const layerGroup = L.geoJSON(response.data, {onEachFeature: onEachFeature});
+  layerControl.value.addOverlay(layerGroup, 'Daerah Aliran Sungai');
+}
 
 const onEachWeir = function (feature, layer) {
   const detailLink = `

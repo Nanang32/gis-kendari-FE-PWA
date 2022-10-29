@@ -6,6 +6,10 @@
             </div>
             <div class="p-5 border">
                 <div class="form-inline">
+                    <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">fid</label>
+                    <input type="text" class="form-control" placeholder="ketik disini..." v-model="watershed.fid" />
+                </div>
+                <div class="form-inline mt-5">
                     <label for="horizontal-form-1" class="form-label sm:w-30 capitalize">kelompok data dasar</label>
                     <input type="text" class="form-control" v-model="watershed.kelompok_data_dasar" placeholder="ketik disini..." />
                 </div>
@@ -220,12 +224,12 @@
                 </div>
             </div>
         </div>
-        <div class="box col-span-12 lg:col-span-6">
+        <div class="box col-span-12 lg:col-span-12" v-if="!loading">
             <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800">
                 <h2 class="text-base text-white  uppercase">vi.koordinat (decimal degree)</h2>
             </div>
             <div class="p-5 text-center">
-                <MapDrawer @submit="getLatLngs" :geo_json="bridge.geo_json"/>
+                <MapDrawer @submit="getLatLngs" :geo_json="river.geo_json"/>
             </div>
         </div>
         <div class="box col-span-12 lg:col-span-6">
@@ -255,10 +259,8 @@
     </div>
 </template>
 <script setup>
-import sendRequest from '@libs/http.js'
 import MapDrawer from '../../components/MapDrawer.vue'
 import { ref, onMounted } from "vue";
-const loading = ref(false);
 const emit = defineEmits(['submit', 'fileChange'])
 
 const props = defineProps({
@@ -276,8 +278,8 @@ function submit() {
     emit('submit');
 }
 
-function getLatLngs(latlngs) {
-    props.watershed.latlngs = latlngs;
+function getLatLngs(geoJson) {
+    props.watershed.geo_json = geoJson;
 }
 
 // function onFileChange(e) {
