@@ -4,7 +4,7 @@
             <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
                 <div class="flex justify-between">
                     <div class="mx-w-10 text-2xl font-bold capitalize text-black flex items-center">
-                        <img class="max-w-full w-full mx-auto h-10 w-10 mr-2" src="@/assets/images/logosultra.png" alt="Image description">
+                        <img class="mx-auto h-10 w-10 mr-2" src="@/assets/images/logosultra.png" alt="Image description">
                         SISDJATAN
                     </div>
                     <div class="flex flex-row">
@@ -220,3 +220,6 @@ export default {
     },
 };
 </script>
+<style scoped>
+    @import "./style.css";
+</style>

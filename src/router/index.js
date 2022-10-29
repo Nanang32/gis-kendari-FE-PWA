@@ -199,18 +199,18 @@ import Login from "../views/login/Main.vue";
 // report
 import AdminServiceIndex from "../views/admin/service/table-report.vue";
 
-import Public from "@layouts/public/Main.vue";
-import Publicpage from "@layouts/public/Page.vue";
-import Reporting from "@layouts/public/Reporting.vue";
-import UptdLab from "@layouts/public/Uptdlab.vue";
-import Visimisi from "@layouts/public/Visimisi.vue";
-import TasknFunction from "@layouts/public/TasknFunction.vue";
-import StrukturOrg from "@layouts/public/StrukturOrg.vue";
-import ProdHukum from "@layouts/public/Prodhukum.vue";
-import Renstra from "@layouts/public/Renstra.vue";
-import JobPerformance from "@layouts/public/JobPerformance.vue";
-import InfPJPA from "@layouts/public/InfPJPA.vue";
-import InfPJSA from "@layouts/public/InfPJSA.vue";
+import Public from "../views/site/Main.vue";
+import Publicpage from "../views/site/Page.vue";
+import Reporting from "../views/site/Reporting.vue";
+import UptdLab from "../views/site/Uptdlab.vue";
+import Visimisi from "../views/site/Visimisi.vue";
+import TasknFunction from "../views/site/TasknFunction.vue";
+import StrukturOrg from "../views/site/StrukturOrg.vue";
+import ProdHukum from "../views/site/Prodhukum.vue";
+import Renstra from "../views/site/Renstra.vue";
+import JobPerformance from "../views/site/JobPerformance.vue";
+import InfPJPA from "../views/site/InfPJPA.vue";
+import InfPJSA from "../views/site/InfPJSA.vue";
 
 const routes = [{
         path: "/admin",

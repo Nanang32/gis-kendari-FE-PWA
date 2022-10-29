@@ -1,6 +1,6 @@
 <template>
 <div class="text-gray-700 pt-9 sm:pt-10">
-    <Navbar/>
+    <Navbar> </Navbar>
     <main id="content">
         <!-- advertisement -->
         <div class="bg-gray-50 py-4 hidden">
@@ -342,22 +342,16 @@
             </div>
         </div>
     </main>
-        <Footer/>
+    <Footer></Footer>
         
     </div>
 </template>
 
 <script setup>
-    import "./theme.js";
-    import "./scripts.js";
     import Navbar from "../../components/navbar-menu/Main.vue";
     import Footer from "../../components/footer-public/Main.vue";
-    import hcSticky from "hc-sticky";
-    import glightbox from "glightbox";
-    import splide from "@splidejs/splide";
-    // import splideExtensionVideo from "@splidejs/splide-extension-video";
 </script>
 
-<style>
+<style scoped>
     @import "./style.css";
 </style>

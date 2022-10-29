@@ -85,16 +85,10 @@
 </template>
 
 <script setup>
-    import "./theme.js";
-    import "./scripts.js";
     import Navbar from "../../components/navbar-menu/Main.vue";
     import Footer from "../../components/footer-public/Main.vue";
-    import hcSticky from "hc-sticky";
-    import glightbox from "glightbox";
-    import splide from "@splidejs/splide";
-    // import splideExtensionVideo from "@splidejs/splide-extension-video";
 </script>
 
-<style>
+<style scoped>
     @import "./style.css";
 </style>
