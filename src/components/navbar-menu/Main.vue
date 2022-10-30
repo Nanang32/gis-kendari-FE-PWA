@@ -52,7 +52,7 @@
           <div class="relative">
             <!-- Dropdown toggle button -->
             <button
-              @click="show = !show"
+              @click="showProfile = !showProfile"
               class="
                 flex
                 items-center
@@ -77,7 +77,7 @@
 
             <!-- Dropdown menu -->
             <div
-              v-show="show"
+              v-show="showProfile"
               class="
                 py-2
                 mt-2
@@ -212,19 +212,166 @@
             </div>
           </div>
         </li>
-        <li class="border-ember-800 cursor-pointer">Product</li>
+        <li class="border-ember-800 cursor-pointer">
+          <div class="relative">
+            <!-- Dropdown toggle button -->
+            <button
+              @click="showPublication = !showPublication"
+              class="
+                flex
+                items-center
+                rounded-md
+                focus:outline-none
+              "
+            >
+              <span class="mr-4">Publikasi</span>
+              <svg
+                class="w-5 h-5 text-indigo-100"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+
+            <!-- Dropdown menu -->
+            <div
+              v-show="showPublication"
+              class="
+                py-2
+                mt-2
+                bg-[#fff103]
+                rounded-md
+                shadow-xl
+                lg:absolute lg:right-0
+                w-44
+                z-10
+              "
+            >
+              <router-link
+                to="/"
+                class="
+                  block
+                  px-4
+                  py-2
+                  text-sm text-black
+                  hover:text-black
+                "
+              >
+                Publikasi Hukum
+              </router-link>
+              <router-link
+                to="/"
+                class="
+                  block
+                  px-4
+                  py-2
+                  text-sm text-black
+                  hover:text-black
+                "
+              >
+                Publikasi Strategis
+              </router-link>
+              <router-link
+                to="/"
+                class="
+                  block
+                  px-4
+                  py-2
+                  text-sm text-black
+                  hover:text-black
+                "
+              >
+                Kinerja Pekerjaan
+              </router-link>
+            </div>
+          </div>
+        </li>
+        <li class="border-ember-800 cursor-pointer">Berita</li>
+        <li class="border-ember-800 cursor-pointer">GIS</li>
+        <li class="border-ember-800 cursor-pointer">
+          <div class="relative">
+            <!-- Dropdown toggle button -->
+            <button
+              @click="showService = !showService"
+              class="
+                flex
+                items-center
+                rounded-md
+                focus:outline-none
+              "
+            >
+              <span class="mr-4">Pelayanan</span>
+              <svg
+                class="w-5 h-5 text-indigo-100"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+
+            <!-- Dropdown menu -->
+            <div
+              v-show="showService"
+              class="
+                py-2
+                mt-2
+                bg-[#fff103]
+                rounded-md
+                shadow-xl
+                lg:absolute lg:right-0
+                w-44
+                z-10
+              "
+            >
+              <router-link
+                to="/"
+                class="
+                  block
+                  px-4
+                  py-2
+                  text-sm text-black
+                  hover:text-black
+                "
+              >
+                Peng. Masyarakat
+              </router-link>
+              <router-link
+                to="/"
+                class="
+                  block
+                  px-4
+                  py-2
+                  text-sm text-black
+                  hover:text-black
+                "
+              >
+                UPTD Lab
+              </router-link>
+            </div>
+          </div>
+        </li>
       </ul>
     </nav>
   </div>
 </template>
-<script>
+<script setup>
   import { ref } from 'vue';
-  export default {
-    setup() {
-      let showMenu = ref(false);
-      let show = ref(false);
-      const toggleNav = () => (showMenu.value = !showMenu.value);
-      return { showMenu, show, toggleNav };
-    },
-  };
+  
+  let showMenu = ref(false);
+  let showProfile = ref(false);
+  let showPublication = ref(false);
+  let showService = ref(false);
+  const toggleNav = () => (showMenu.value = !showMenu.value);
 </script>
