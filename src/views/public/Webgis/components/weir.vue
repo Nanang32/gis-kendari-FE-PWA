@@ -101,15 +101,15 @@
                 <tbody>
                     <tr>
                         <td class="font-semibold">irigasi (ha)</td>
-                        <td>{{ groin['Irigasi'] }}</td>
+                        <td>{{ weir['Irigasi'] }}</td>
                     </tr>
                     <tr>
                         <td class="font-semibold">DMI (M<sup>3</sup>/Detik)</td>
-                        <td>{{ groin['DMI'] }}</td>
+                        <td>{{ weir['DMI'] }}</td>
                     </tr>
                     <tr>
                         <td class="font-semibold">lain-lain</td>
-                        <td>{{ groin['Lainnya'] }}</td>
+                        <td>{{ weir['Lainnya'] }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -120,43 +120,43 @@
                 <tbody>
                     <tr>
                         <td class="font-semibold">nama sungai</td>
-                        <td>{{ groin['Nm_Sungai'] }}</td>
+                        <td>{{ weir['Nm_Sungai'] }}</td>
                     </tr>
                     <tr>
                         <td class="font-semibold">jenis bendung</td>
-                        <td>{{ groin['Jns_Bdg'] }}</td>
+                        <td>{{ weir['Jns_Bdg'] }}</td>
                     </tr>
                     <tr>
                         <td class="font-semibold">tinggi (m)</td>
-                        <td>{{ groin['Tinggi'] }}</td>
+                        <td>{{ weir['Tinggi'] }}</td>
                     </tr>
                     <tr>
                         <td class="font-semibold">Lebar (M)</td>
-                        <td>{{ groin['Lebar'] }}</td>
+                        <td>{{ weir['Lebar'] }}</td>
                     </tr>
                     <tr>
                         <td class="font-semibold">kondisi</td>
-                        <td>{{ groin['Kondisi'] }}</td>
+                        <td>{{ weir['Kondisi'] }}</td>
                     </tr>
                     <tr>
                         <td class="font-semibold">debit intake musim hujan (m<sup>2</sup>/detik)</td>
-                        <td>{{ groin['Deb_Int_Hjn'] }}</td>
+                        <td>{{ weir['Deb_Int_Hjn'] }}</td>
                     </tr>
                     <tr>
                         <td class="font-semibold">debit intake musim kemarau (m<sup>2</sup>/detik)</td>
-                        <td>{{ groin['Deb_Int_Kemarau'] }}</td>
+                        <td>{{ weir['Deb_Int_Kemarau'] }}</td>
                     </tr>
                      <tr>
                         <td class="font-semibold">tahun pembuatan</td>
-                        <td>{{ groin['Thn_Buat'] }}</td>
+                        <td>{{ weir['Thn_Buat'] }}</td>
                     </tr>
                     <tr>
                         <td class="font-semibold">tahun rehab terakhir</td>
-                        <td>{{ groin['Thn_Rebah'] }}</td>
+                        <td>{{ weir['Thn_Rebah'] }}</td>
                     </tr>
                     <tr>
                         <td class="font-semibold">keterangan</td>
-                        <td>{{ groin['Ket'] }}</td>
+                        <td>{{ weir['Ket'] }}</td>
                     </tr>
                 </tbody>
             </table>

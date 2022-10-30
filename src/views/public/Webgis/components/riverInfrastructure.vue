@@ -66,8 +66,7 @@
                             <td>{{ riverInfrastructure['Jenis Bangunan'] }}</td>
                         </tr>
                         <tr>
-                            <td class="font-semibold">Tahun Pelaksanaan
-</td>
+                            <td class="font-semibold">Tahun Pelaksanaan</td>
                             <td>{{ riverInfrastructure['Tahun Pelaksanaan'] }}</td>
                         </tr>
                         <tr>

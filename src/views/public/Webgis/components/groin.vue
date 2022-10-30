@@ -125,7 +125,7 @@
                     </tr>
                     <tr>
                         <td class="font-semibold">Nama Data Dasar</td>
-                        <td>{{ groin['Nm_Dat_Da'] }}</td>
+                        <td>{{ groin['Nm_Dat_Das'] }}</td>
                     </tr>
                     <tr>
                         <td class="font-semibold">Tahun Data</td>

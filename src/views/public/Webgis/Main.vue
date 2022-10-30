@@ -18,15 +18,15 @@
     size="modal-xl"
   >
     <ModalBody class="p-4">
-      <BridgeDetail v-if="modalType == typeBridge" :river="modalData" />
-      <GroinDetail v-if="modalType == typeGroin" :river="modalData" />
-      <IrrigationDetail v-if="modalType == typeIrrigation" :river="modalData" />
+      <BridgeDetail v-if="modalType == typeBridge" :bridge="modalData" />
+      <GroinDetail v-if="modalType == typeGroin" :groin="modalData" />
+      <IrrigationDetail v-if="modalType == typeIrrigation" :irrigation="modalData" />
       <RiverDetail v-if="modalType == typeRiver" :river="modalData" />
-      <RiverBasinDetail v-if="modalType == typeRiverBasin" :river="modalData" />
-      <RiverInfrastructureDetail v-if="modalType == typeRiverInfrastructure" :river="modalData" />
-      <RoadDetail v-if="modalType == typeRoad" :river="modalData" />
-      <WatershedDetail v-if="modalType == typeWatershed" :river="modalData" />
-      <WeirDetail v-if="modalType == typeWeir" :river="modalData" />
+      <RiverBasinDetail v-if="modalType == typeRiverBasin" :riverBasin="modalData" />
+      <RiverInfrastructureDetail v-if="modalType == typeRiverInfrastructure" :riverInfrastructure="modalData" />
+      <RoadDetail v-if="modalType == typeRoad" :road="modalData" />
+      <WatershedDetail v-if="modalType == typeWatershed" :watershed="modalData" />
+      <WeirDetail v-if="modalType == typeWeir" :weir="modalData" />
     </ModalBody>
     <ModalFooter>
       <button type="button" class="btn btn-primary w-24" @click="showModal=false">
