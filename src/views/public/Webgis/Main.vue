@@ -54,6 +54,7 @@ import { ref, onMounted } from "vue";
 import sendRequest from '@libs/http.js'
 import L from "leaflet"
 import "leaflet/dist/leaflet.css";
+import 'leaflet-groupedlayercontrol';
 
 const layerControl = ref(null);
 const showModal = ref(false);
@@ -70,32 +71,38 @@ const typeRoad = 'road';
 const typeRiverInfrastructure = 'riverinfrastructure';
 
 onMounted(() => {
-  initMap();
-
+  loadRiverBasin();
   loadWatershed();
   loadRiver();
-  loadWeirs();
   loadGroin();
-  loadBridge();
-  loadIrrigation();
-  loadRiverBasin();
-  loadRoad();
   loadRiverInfrastructure();
+  loadIrrigation();
+  loadWeirs();
+  loadRoad();
+  loadBridge();
+  initMap();
   window.onDetailClick = onDetailClick;
 });
 
 function initMap() {
-  var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     });
 
-    map.value = L.map('map', {
-      center: [-4.144910, 122.174606],
-      zoom: 10,
-      layers: [osm]
-    });
-    layerControl.value = L.control.layers({'OpenStreetMap': osm}).addTo(map.value);
+  const mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
+  const mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2lzZGphdGFuc2RhIiwiYSI6ImNsOXYwbWprOTA0c3MzdW9jNTV5YTZpY2MifQ.ndkiiALi17ejWDQ9c7sY7w';
+  const mb = L.tileLayer(mbUrl, {id: 'mapbox/satellite-v9', tileSize: 512, zoomOffset: -1, attribution: mbAttr});
+
+  map.value = L.map('map', {
+    center: [-4.144910, 122.174606],
+    zoom: 10,
+    layers: [osm, mb]
+  });
+
+  const baseLayers = {'OpenStreetMap': osm, 'MapBox Satelite': mb};
+  const groupedOverlays  = {"PJSA": {}, "PJPA": {}, "Bina Marga": {} };
+  layerControl.value = L.control.groupedLayers(baseLayers).addTo(map.value);
 }
 function onDetailClick (e){
   showModal.value = true;
@@ -139,7 +146,7 @@ async function loadRiverInfrastructure() {
       });
     }
   });
-  layerControl.value.addOverlay(layerGroup, 'Infrastruktur Sungai');
+  layerControl.value.addOverlay(layerGroup, 'Infrastruktur Sungai', 'PJSA');
 }
 
 const onEachRiver = function (feature, layer) {
@@ -177,7 +184,7 @@ async function loadRiver() {
         "weight": 0.8,
     }
   });
-  layerControl.value.addOverlay(layerGroup, 'Sungai');
+  layerControl.value.addOverlay(layerGroup, 'Sungai', 'PJSA');
 }
 
 const onEachWatershed = function (feature, layer) {
@@ -214,7 +221,7 @@ async function loadWatershed() {
         "weight": 0.8,
       }
     });
-  layerControl.value.addOverlay(layerGroup, 'Daerah Aliran Sungai');
+  layerControl.value.addOverlay(layerGroup, 'Daerah Aliran Sungai', 'PJSA');
 }
 
 const onEachWeir = function (feature, layer) {
@@ -254,7 +261,7 @@ async function loadWeirs(){
       });
     }
   });
-  layerControl.value.addOverlay(layerGroup, 'Bendung');
+  layerControl.value.addOverlay(layerGroup, 'Bendung', 'PJSA');
 }
 
 const onEachGroin = function (feature, layer) {
@@ -294,7 +301,7 @@ async function loadGroin(){
       });
     }
   });
-  layerControl.value.addOverlay(layerGroup, 'Pelindung pantai');
+  layerControl.value.addOverlay(layerGroup, 'Pelindung pantai', 'PJSA');
 }
 
 const onEachBridge = function (feature, layer) {
@@ -331,7 +338,7 @@ async function loadBridge(){
       });
     }
   });
-  layerControl.value.addOverlay(layerGroup, 'Jembatan');
+  layerControl.value.addOverlay(layerGroup, 'Jembatan', 'Bina Marga');
 }
 
 const onEachIrrigation = function (feature, layer) {
@@ -375,7 +382,7 @@ async function loadIrrigation(){
         "weight": 0.65,
     }
   });
-  layerControl.value.addOverlay(layerGroup, 'Irigasi');
+  layerControl.value.addOverlay(layerGroup, 'Irigasi', 'PJPA');
 }
 
 const onEachRiverBasin = function (feature, layer) {
@@ -412,7 +419,7 @@ async function loadRiverBasin(){
         "weight": 1,
     }
   });
-  layerControl.value.addOverlay(layerGroup, 'Wilayah Sungai');
+  layerControl.value.addOverlay(layerGroup, 'Wilayah Sungai', 'PJSA');
 }
 
 const onEachRoad = function (feature, layer) {
@@ -447,11 +454,18 @@ async function loadRoad(){
         "weight": 1,
     }
   });
-  layerControl.value.addOverlay(layerGroup, 'Jalan');
+  layerControl.value.addOverlay(layerGroup, 'Jalan', 'Bina Marga');
 }
 </script>
 <style>
 .map {
     height: 600px
+}
+
+.leaflet-control-layers-group-name {
+  font-weight: bold;
+  margin-top: .3em;
+  margin-bottom: .2em;
+  display: block;
 }
 </style>
