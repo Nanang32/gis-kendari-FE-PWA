@@ -18,13 +18,14 @@
     size="modal-xl"
   >
     <ModalBody class="p-4">
-      <BridgeDetail v-if="modalType == typeRiver" :river="modalData" />
+      <BridgeDetail v-if="modalType == typeBridge" :river="modalData" />
       <GroinDetail v-if="modalType == typeGroin" :river="modalData" />
       <IrrigationDetail v-if="modalType == typeIrrigation" :river="modalData" />
       <RiverDetail v-if="modalType == typeRiver" :river="modalData" />
       <RiverBasinDetail v-if="modalType == typeRiverBasin" :river="modalData" />
       <RiverInfrastructureDetail v-if="modalType == typeRiverInfrastructure" :river="modalData" />
       <RoadDetail v-if="modalType == typeRoad" :river="modalData" />
+      <WatershedDetail v-if="modalType == typeWatershed" :river="modalData" />
       <WeirDetail v-if="modalType == typeWeir" :river="modalData" />
     </ModalBody>
     <ModalFooter>
@@ -47,6 +48,7 @@ import RiverDetail from './components/river.vue'
 import RiverBasinDetail from './components/riverBasin.vue'
 import RiverInfrastructureDetail from './components/riverInfrastructure.vue'
 import RoadDetail from './components/river.vue'
+import WatershedDetail from './components/watershed.vue'
 import WeirDetail from './components/weir.vue'
 import { ref, onMounted } from "vue";
 import sendRequest from '@libs/http.js'
