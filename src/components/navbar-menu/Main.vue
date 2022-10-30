@@ -1,225 +1,148 @@
 <template>
-    <header class="fixed top-0 left-0 right-0 z-50">
-        <nav class="bg-[#fff103]">
-            <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
-                <div class="flex justify-between">
-                    <div class="mx-w-10 text-2xl font-bold capitalize text-black flex items-center">
-                        <img class="mx-auto h-10 w-10 mr-2" src="@/assets/images/logosultra.png" alt="Image description">
-                        SISDJATAN
-                    </div>
-                    <div class="flex flex-row">
-                        <!-- nav menu -->
-                        <ul class="navbar hidden lg:flex lg:flex-row text-black text-sm items-center font-bold">
-                            <li class="active relative border-l border-ember-800 hover:bg-stone-200">
-                                <a class="block py-3 px-6 border-b-2 border-transparent" href="index.html">Beranda</a>
-                            </li>
-                            <li class="dropdown relative border-l border-ember-300 hover:bg-stone-200">
-                                <a class="block py-3 px-6 border-b-2 border-transparent" href="#">Profil</a>
-                                <ul class="dropdown-menu font-normal absolute left-0 right-auto top-full z-50 border-b-0 text-left bg-white text-gray-700 border border-gray-100" style="min-width: 12rem;">
-                                    <li class=" relative hover:bg-gray-50">
-                                        <a class="block py-2 px-6 border-b border-gray-100" href="#">
-                                            Visi & Misi
-                                        </a>
-                                    </li>
-                                    <li class=" relative hover:bg-gray-50">
-                                        <a class="block py-2 px-6 border-b border-gray-100" href="#">
-                                            Tugas & Fungsi
-                                        </a>
-                                    </li>
-                                    <li class=" relative hover:bg-gray-50">
-                                        <a class="block py-2 px-6 border-b border-gray-100" href="#">
-                                            Struktur Organisasi
-                                        </a>
-                                    </li>
-                                    <li class="subdropdown relative hover:bg-gray-50">
-                                        <a class="block py-2 px-6 border-b border-gray-100" href="#">
-                                            Profil dinas
-                                        </a>
-                                        <!--dropdown submenu-->
-                                        <ul class="dropdown-menu absolute left-full right-auto transform top-full z-50 border-b-0 text-left -mt-10 ml-0 mr-0 bg-white border border-gray-100" style="min-width: 12rem;">
-                                            <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="index.html">Sekertariat</a></li>
-                                            <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="index-2.html">Bidang PJPA</a></li>
-                                            <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="index-2.html">Bidang PJSA</a></li>
-                                            <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="index-2.html">Bidang Binamarga</a></li>
-                                            <li class="subdropdown relative hover:bg-gray-50">
-                                                <a class="block py-2 px-6 border-b border-gray-100" href="index-2.html">
-                                                    UPTD
-                                                </a>
-                                                <!--dropdown submenu-->
-                                                <ul class="dropdown-menu absolute left-full right-auto transform top-full z-50 border-b-0 text-left -mt-10 ml-0 mr-0 bg-white border border-gray-100" style="min-width: 12rem;">
-                                                    <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="404.html">UPTD Wilayah</a></li>
-                                                    <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="author.html">UPTD LAB</a></li>
-                                                    <li class="relative hover:bg-gray-50"><a class="block py-2 px-6 border-b border-gray-100" href="category.html">UPTD Lab Konstruksi</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown relative border-l border-ember-300 hover:bg-stone-200">
-                                <a class="block py-3 px-6 border-b-2 border-transparent" href="#">Publikasi</a>
-                                <ul class="dropdown-menu font-normal absolute left-0 right-auto top-full z-50 border-b-0 text-left bg-white text-gray-700 border border-gray-100" style="min-width: 12rem;">
-                                    <li class=" relative hover:bg-gray-50">
-                                        <a class="block py-2 px-6 border-b border-gray-100" href="#">
-                                            Publikasi hukum
-                                        </a>
-                                    </li>
-                                    <li class=" relative hover:bg-gray-50">
-                                        <a class="block py-2 px-6 border-b border-gray-100" href="#">
-                                            Publikasi strategis
-                                        </a>
-                                    </li>
-                                    <li class=" relative hover:bg-gray-50">
-                                        <a class="block py-2 px-6 border-b border-gray-100" href="#">
-                                            Kinerja pekerjaan
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="relative border-l border-ember-300 hover:bg-stone-200">
-                                <a class="block py-3 px-6 border-b-2 border-transparent" href="#">Galeri</a>
-                            </li>
-                            <li class="relative border-l border-ember-300 hover:bg-stone-200">
-                                <a class="block py-3 px-6 border-b-2 border-transparent" href="#">GIS</a>
-                            </li>
-                            <li class="dropdown relative border-l border-ember-300 hover:bg-stone-200">
-                                <a class="block py-3 px-6 border-b-2 border-transparent" href="#">Pelayanan</a>
-                                <ul class="dropdown-menu font-normal absolute left-0 right-auto top-full z-50 border-b-0 text-left bg-white text-gray-700 border border-gray-100" style="min-width: 12rem;">
-                                    <li class=" relative hover:bg-gray-50">
-                                        <a class="block py-2 px-6 border-b border-gray-100" href="#">
-                                            Peng.masyarakat
-                                        </a>
-                                    </li>
-                                    <li class=" relative hover:bg-gray-50">
-                                        <a class="block py-2 px-6 border-b border-gray-100" href="#">
-                                            UPTD LAB
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- search form & mobile nav -->
-                        <div class="flex flex-row items-center text-gray-300">
-                            <div class="search-dropdown relative border-r lg:border-l border-ember-300 hover:bg-stone-200">
-                                <button class="block py-3 px-6 border-b-2 border-transparent">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="open bi bi-search" viewBox="0 0 16 16">
-                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
-                                    </svg>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="close bi bi-x-lg" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z" />
-                                        <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z" />
-                                    </svg>
-                                </button>
-                                <div class="dropdown-menu absolute left-auto right-0 top-full z-50 text-left bg-white text-gray-700 border border-gray-100 mt-1 p-3" style="min-width: 15rem;">
-                                    <div class="flex flex-wrap items-stretch w-full relative">
-                                        <input type="text" class="flex-shrink flex-grow flex-shrink max-w-full leading-5 w-px flex-1 relative py-2 px-5 text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" name="text" placeholder="Search..." aria-label="search">
-                                        <div class="flex -mr-px">
-                                            <button class="flex items-center py-2 px-5 -ml-1 leading-5 text-gray-100 bg-black hover:text-white hover:bg-stone-200 hover:ring-0 focus:outline-none focus:ring-0" type="submit">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="relative hover:bg-gray-800 block lg:hidden">
-                                <button type="button" class="menu-mobile block py-3 px-6 border-b-2 border-transparent">
-                                    <span class="sr-only">Mobile menu</span>
-                                    <svg class="inline-block h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                                    </svg> Menu
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header><!-- end header -->
-    <!-- Mobile menu -->
-    <div class="side-area fixed w-full h-full inset-0 z-50">
-        <!-- bg open -->
-        <div class="back-menu fixed bg-gray-900 bg-opacity-70 w-full h-full inset-x-0 top-0">
-            <div class="cursor-pointer text-white absolute right-64 p-2">
-                <svg class="bi bi-x" width="2rem" height="2rem" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z" clip-rule="evenodd"></path>
-                    <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z" clip-rule="evenodd"></path>
-                </svg>
-            </div>
-        </div>
-        <!-- Mobile navbar -->
-        <nav id="mobile-nav" class="side-menu flex flex-col right-0 w-64 fixed top-0 bg-white dark:bg-gray-800 h-full overflow-auto z-40">
-            <div class="mb-auto">
-                <!--navigation-->
-                <nav class="relative flex flex-wrap">
-                    <div class="text-center py-4 w-full font-bold border-b border-gray-100">TAILNEWS</div>
-                    <ul id="side-menu" class="w-full float-none flex flex-col">
-                        <li class="relative">
-                            <a href="#" class="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Beranda</a>
-                        </li>
-                        <!-- dropdown with submenu-->
-                        <li class="dropdown relative">
-                            <a class="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50" href="javascript:;">
-                                Profil
-                            </a>
-                            <!-- dropdown menu -->
-                            <ul class="dropdown-menu block rounded rounded-t-none top-full z-50 ml-4 py-0.5 text-left bg-white dark:bg-gray-800 mb-4" style="min-width: 12rem">
-                                <!--submenu-->
-                                <li class="subdropdown relative">
-                                    <a class="block w-full py-2 px-5 border-b border-gray-100 hover:bg-gray-50" href="javascript:;">
-                                        Dropdown item
-                                    </a>
-                                    <!--dropdown submenu-->
-                                    <ul class="dropdown-menu block rounded rounded-t-none top-full z-50 ml-4 py-0.5 text-left bg-white dark:bg-gray-800" style="min-width: 12rem">
-                                        <li><a class="block w-full py-2 px-5 border-b border-gray-100 hover:bg-gray-50" href="#">Dropdown sub item</a></li>
-                                        <li><a class="block w-full py-2 px-5 border-b border-gray-100 hover:bg-gray-50" href="#">Dropdown sub item</a></li>
-                                        <li><a class="block w-full py-2 px-5 border-b border-gray-100 hover:bg-gray-50" href="#">Dropdown sub item</a></li>
-                                        <li><a class="block w-full py-2 px-5 border-b border-gray-100 hover:bg-gray-50" href="#">Dropdown sub item</a></li>
-                                    </ul>
-                                </li>
-                                <!--end submenu-->
-                                <li class="relative"><a class="block w-full py-2 px-5 border-b border-gray-100 hover:bg-gray-50" href="#">Dropdown item</a></li>
-                                <li class="relative"><a class="block w-full py-2 px-5 border-b border-gray-100 hover:bg-gray-50" href="#">Dropdown item</a></li>
-                            </ul>
-                        </li>
-                        <li class="relative">
-                            <a href="#" class="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Sport</a>
-                        </li>
-                        <li class="relative">
-                            <a href="#" class="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Travel</a>
-                        </li>
-                        <li class="relative">
-                            <a href="#" class="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Techno</a>
-                        </li>
-                        <li class="relative">
-                            <a href="#" class="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Worklife</a>
-                        </li>
-                        <li class="relative">
-                            <a href="#" class="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Future</a>
-                        </li>
-                        <li class="relative">
-                            <a href="#" class="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">More</a>
-                        </li>
+    <div class="py-5 md:py-0 ml-10 mr-10 mt-0">
+      <MobileMenu />
+      <!-- BEGIN: Top Menu -->
+      <nav class="top-nav" style="padding-top: 1rem;">
+        <ul>
+          <li v-for="(menu, menuKey) in formattedMenu" :key="menuKey">
+            <a
+              :href="
+                menu.subMenu
+                  ? 'javascript:;'
+                  : router.resolve({ name: menu.pageName }).path
+              "
+              class="top-menu"
+              @click="linkTo(menu, router, $event)"
+            >
+              <div class="top-menu__icon">
+                <component :is="menu.icon" />
+              </div>
+              <div class="top-menu__title">
+                {{ menu.title }}
+                <ChevronDownIcon v-if="menu.subMenu" class="top-menu__sub-icon" />
+              </div>
+            </a>
+            <!-- BEGIN: Second Child -->
+            <ul v-if="menu.subMenu">
+              <li v-for="(subMenu, subMenuKey) in menu.subMenu" :key="subMenuKey">
+                <a
+                  :href="
+                    subMenu.subMenu
+                      ? 'javascript:;'
+                      : router.resolve({ name: subMenu.pageName }).path
+                  "
+                  class="top-menu"
+                  @click="linkTo(subMenu, router, $event)"
+                >
+                  <div class="top-menu__icon">
+                    <ActivityIcon />
+                  </div>
+                  <div class="top-menu__title">
+                    {{ subMenu.title }}
+                    <ChevronDownIcon
+                      v-if="subMenu.subMenu"
+                      class="top-menu__sub-icon"
+                    />
+                  </div>
+                </a>
+                <!-- BEGIN: Third Child -->
+                <ul v-if="subMenu.subMenu">
+                  <li
+                    v-for="(lastSubMenu, lastSubMenuKey) in subMenu.subMenu"
+                    :key="lastSubMenuKey"
+                  >
+                    <a
+                      :href="
+                        lastSubMenu.subMenu
+                          ? 'javascript:;'
+                          : router.resolve({ name: lastSubMenu.pageName }).path
+                      "
+                      class="top-menu"
+                      @click="linkTo(lastSubMenu, router, $event)"
+                    >
+                      <div class="top-menu__icon">
+                        <component :is="'zap-icon'" />
+                      </div>
+                      <div class="top-menu__title">
+                        {{ lastSubMenu.title }}
+                        <ChevronDownIcon
+                          v-if="subMenu.subMenu"
+                          class="top-menu__sub-icon"
+                        />
+                      </div>
+                    </a>
+                    <!-- BEGIN: Third Child -->
+                    <ul v-if="subMenu.subMenu">
+                      <li
+                        v-for="(lastSubMenu, lastSubMenuKey) in subMenu.subMenu"
+                        :key="lastSubMenuKey"
+                      >
+                        <a
+                          :href="
+                            lastSubMenu.subMenu
+                              ? 'javascript:;'
+                              : router.resolve({ name: lastSubMenu.pageName }).path
+                          "
+                          class="top-menu"
+                          @click="linkTo(lastSubMenu, router, $event)"
+                        >
+                          <div class="top-menu__icon">
+                            <component :is="'zap-icon'" />
+                          </div>
+                          <div class="top-menu__title">
+                            {{ lastSubMenu.title }}
+                            <ChevronDownIcon
+                              v-if="subMenu.subMenu"
+                              class="top-menu__sub-icon"
+                            />
+                          </div>
+                        </a>
+                      </li>
                     </ul>
-                </nav>
-            </div>
-            <!-- copyright -->
-            <div class="py-4 px-6 text-sm mt-6 text-center">
-                <p>Copyright <a href="#">Tailnews</a> - All right reserved</p>
-            </div>
-        </nav>
-    </div><!-- End Mobile menu -->
-</template>
-<script>
-export default {
-    data() {
-        return {
-            showMenu: false,
-        };
-    },
-};
-</script>
-<style scoped>
-    @import "./style.css";
-</style>
+                  </li>
+                </ul>
+                <!-- END: Third Child -->
+              </li>
+            </ul>
+            <!-- END: Second Child -->
+          </li>
+        </ul>
+      </nav>
+      <!-- END: Top Menu -->
+    </div>
+  </template>
+  
+  <script setup>
+  import { computed, onMounted, provide, ref, watch } from "vue";
+  import { useRoute, useRouter } from "vue-router";
+  import { useTopMenuStore } from "@/stores/top-menu";
+  import { helper as $h } from "@/utils/helper";
+  import MobileMenu from "@/components/mobile-menu/Main.vue";
+  import { nestedMenu, linkTo } from "@/layouts/side-menu";
+  import dom from "@left4code/tw-starter/dist/js/dom";
+  
+  const route = useRoute();
+  const router = useRouter();
+  const formattedMenu = ref([]);
+  const topMenuStore = useTopMenuStore();
+  const topMenu = computed(() => nestedMenu(topMenuStore.menu, route));
+  
+  provide("forceActiveMenu", (pageName) => {
+    route.forceActiveMenu = pageName;
+    formattedMenu.value = $h.toRaw(topMenu.value);
+  });
+  
+  watch(
+    computed(() => route.path),
+    () => {
+      delete route.forceActiveMenu;
+      formattedMenu.value = $h.toRaw(topMenu.value);
+    }
+  );
+  
+  onMounted(() => {
+    dom("body").removeClass("error-page").removeClass("login").addClass("main");
+    formattedMenu.value = $h.toRaw(topMenu.value);
+  });
+  </script>
+  

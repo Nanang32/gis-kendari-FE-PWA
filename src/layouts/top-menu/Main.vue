@@ -120,57 +120,57 @@
     </div>
     <!-- END: Content -->
    
-<footer class="bg-white bg-amber-400">
-    <div class="grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
-        <div>
-            <h2 class="mb-6 text-lg font-semibold  uppercase text-amber-900">Alamat</h2>
-            <ul class="text-amber-900">
-                <li class="mb-4">
-                    <a class=" hover:underline font-semibold">DINAS SUMBER DAYA AIR DAN BINA MARGA PROVINSI SULAWESI TENGGARA <br> Jalan Haluoleo No. 05 Kompleks Perkantoran Bumi Praja Anduonohu, Kota Kendari </a>
-                </li>
-            </ul>
+    <footer class="bg-white bg-amber-400">
+        <div class="grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
+            <div>
+                <h2 class="mb-6 text-lg font-semibold  uppercase text-amber-900">Alamat</h2>
+                <ul class="text-amber-900">
+                    <li class="mb-4">
+                        <a class=" hover:underline font-semibold">DINAS SUMBER DAYA AIR DAN BINA MARGA PROVINSI SULAWESI TENGGARA <br> Jalan Haluoleo No. 05 Kompleks Perkantoran Bumi Praja Anduonohu, Kota Kendari </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="mb-6 text-lg font-semibold uppercase text-amber-900">Social media</h2>
+                <ul class="text-amber-900">
+                    <li class="mb-4">
+                        <a href="#" class="hover:underline">Youtuber</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#" class="hover:underline">Twitter</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#" class="hover:underline">Facebook</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="#" class="hover:underline">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+          
+            <div>
+                <h2 class="mb-6 text-lg font-semibold  uppercase text-amber-900">Situs terkait</h2>
+                <ul class="text-amber-900">
+                    <li class="mb-4">
+                        <a href="https://www.sultraprov.go.id/" class="hover:underline" target="_blank">Pemerintah sulawesi tenggara</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="https://www.pu.go.id/" class="hover:underline" target="_blank">Kementrian PUPR</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="https://sda.pu.go.id/" class="hover:underline" target="_blank">Direktorat SDA</a>
+                    </li>
+                    <li class="mb-4">
+                        <a href="https://binamarga.pu.go.id/" class="hover:underline" target="_blank">Direktorat bina marga</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div>
-            <h2 class="mb-6 text-lg font-semibold uppercase text-amber-900">Social media</h2>
-            <ul class="text-amber-900">
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Youtuber</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Twitter</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Facebook</a>
-                </li>
-                <li class="mb-4">
-                    <a href="#" class="hover:underline">Contact Us</a>
-                </li>
-            </ul>
+        <div class="py-6 px-4 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
+            <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2022 <a href="https://flowbite.com/">SISDJATAN (sistem informasi sumber daya air jalan jembatan)</a>
+            </span>
         </div>
-       
-        <div>
-            <h2 class="mb-6 text-lg font-semibold  uppercase text-amber-900">Situs terkait</h2>
-            <ul class="text-amber-900">
-                <li class="mb-4">
-                    <a href="https://www.sultraprov.go.id/" class="hover:underline" target="_blank">Pemerintah sulawesi tenggara</a>
-                </li>
-                <li class="mb-4">
-                    <a href="https://www.pu.go.id/" class="hover:underline" target="_blank">Kementrian PUPR</a>
-                </li>
-                <li class="mb-4">
-                    <a href="https://sda.pu.go.id/" class="hover:underline" target="_blank">Direktorat SDA</a>
-                </li>
-                <li class="mb-4">
-                    <a href="https://binamarga.pu.go.id/" class="hover:underline" target="_blank">Direktorat bina marga</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="py-6 px-4 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
-        <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2022 <a href="https://flowbite.com/">SISDJATAN (sistem informasi sumber daya air jalan jembatan)</a>
-        </span>
-    </div>
-</footer>
+    </footer>
 
   </div>
 </template>

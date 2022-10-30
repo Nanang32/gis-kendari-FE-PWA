@@ -1,5 +1,5 @@
 <template>
-<div class="text-gray-700 pt-9 sm:pt-10">
+<div class="text-gray-700">
     <Navbar/>
     <main id="content">
         
