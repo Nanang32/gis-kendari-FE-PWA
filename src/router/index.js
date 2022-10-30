@@ -915,50 +915,62 @@ const routes = [{
     },
     {
         path: "/site",
+        name: "site",
         component: Public,        
     },
     {
         path: "/site/page",
+        name: "site-page",
         component: Publicpage,        
     },
     {
         path: "/site/reporting",
+        name: "site-reporting",
         component: Reporting,        
     },
     {
         path: "/site/uptdlab",
+        name: "site-uptdlab",
         component: UptdLab,        
     },
     {
         path: "/site/visimisi",
+        name: "site-visimisi",
         component: Visimisi,        
     },
     {
         path: "/site/tasknfunction",
+        name: "site-tasknfunction",
         component: TasknFunction,        
     },
     {
         path: "/site/strukturorg",
+        name: "site-strukturorg",
         component: StrukturOrg,        
     },
     {
         path: "/site/prodhukum",
+        name: "site-prodhukum",
         component: ProdHukum,        
     },
     {
         path: "/site/renstra",
+        name: "site-renstra",
         component: Renstra,        
     },
     {
         path: "/site/jobperformance",
+        name: "site-jobperformance",
         component: JobPerformance,        
     },
     {
         path: "/site/infpjpa",
+        name: "site-infpjpa",
         component: InfPJPA,        
     },
     {
         path: "/site/infpjsa",
+        name: "site-infpjsa",
         component: InfPJSA,        
     }
 ];

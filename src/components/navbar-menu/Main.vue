@@ -90,7 +90,7 @@
               "
             >
               <router-link
-                to="/"
+                :to="{name: 'site-visimisi'}"
                 class="
                   block
                   px-4
@@ -102,7 +102,7 @@
                 Visi Misi
               </router-link>
               <router-link
-                to="/"
+                :to="{name: 'site-tasknfunction'}"
                 class="
                   block
                   px-4
@@ -114,7 +114,7 @@
                 Tugas &amp; Fungsi
               </router-link>
               <router-link
-                to="/"
+                :to="{name: 'site-strukturorg'}"
                 class="
                   block
                   px-4
@@ -138,7 +138,7 @@
                 Sekretariat
               </router-link>
               <router-link
-                to="/"
+                :to="{name: 'site-infpjpa'}"
                 class="
                   block
                   px-4
@@ -150,7 +150,7 @@
                 Bidang PJPA
               </router-link>
               <router-link
-                to="/"
+                :to="{name: 'site-infpjsa'}"
                 class="
                   block
                   px-4
@@ -254,7 +254,7 @@
               "
             >
               <router-link
-                to="/"
+                :to="{name: 'site-prodhukum'}"
                 class="
                   block
                   px-4
@@ -266,7 +266,7 @@
                 Publikasi Hukum
               </router-link>
               <router-link
-                to="/"
+                :to="{name: 'site-renstra'}"
                 class="
                   block
                   px-4
@@ -278,7 +278,7 @@
                 Publikasi Strategis
               </router-link>
               <router-link
-                to="/"
+                :to="{name: 'site-jobperformance'}"
                 class="
                   block
                   px-4
@@ -336,7 +336,7 @@
               "
             >
               <router-link
-                to="/"
+                :to="{name: 'site-reporting'}"
                 class="
                   block
                   px-4
@@ -348,7 +348,7 @@
                 Peng. Masyarakat
               </router-link>
               <router-link
-                to="/"
+                :to="{name: 'site-uptdlab'}"
                 class="
                   block
                   px-4
@@ -368,10 +368,13 @@
 </template>
 <script setup>
   import { ref } from 'vue';
+  import { useRouter } from "vue-router";
   
   let showMenu = ref(false);
   let showProfile = ref(false);
   let showPublication = ref(false);
   let showService = ref(false);
+  const router = useRouter();
+
   const toggleNav = () => (showMenu.value = !showMenu.value);
 </script>
