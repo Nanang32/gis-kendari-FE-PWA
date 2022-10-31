@@ -33,9 +33,10 @@
           md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0
         ">
                 <li class="border-ember-800 cursor-pointer">
-                  <router-link :to="{name: 'site'}" class=" block px-4 py-2 text-sm text-black hover:text-black">
-                    Beranda
-                  </router-link></li>
+                    <router-link :to="{name: 'site'}" class=" block px-4 py-2 text-sm text-black hover:text-black">
+                        Beranda
+                    </router-link>
+                </li>
                 <li class="border-ember-800 cursor-pointer">
                     <div class="relative">
                         <!-- Dropdown toggle button -->
@@ -110,9 +111,9 @@
                     </div>
                 </li>
                 <li class="border-ember-800 cursor-pointer">
-                  <router-link :to="{name: 'site-all'}" class="block px-4 py-2 text-sm text-black hover:text-black">
-                                Galeri
-                            </router-link>
+                    <router-link :to="{name: 'site-all'}" class="block px-4 py-2 text-sm text-black hover:text-black">
+                        Galeri
+                    </router-link>
                 </li>
                 <li class="border-ember-800 cursor-pointer">GIS</li>
                 <li class="border-ember-800 cursor-pointer">
@@ -164,11 +165,12 @@
             </ul>
         </nav>
     </div>
+    <TinySlider />
 </template>
 <script setup>
+import TinySlider from '@/components/tiny-slider/Main.vue'
 import { ref } from 'vue';
 import { useRouter } from "vue-router";
-
 let showMenu = ref(false);
 let showProfile = ref(false);
 let showPublication = ref(false);
