@@ -149,6 +149,10 @@ import AdminLawDocumentIndex from "@views/admin/publication/law_document/Index.v
 import AdminLawDocumentCreate from "@views/admin/publication/law_document/create.vue";
 import AdminLawDocumentEdit from "@views/admin/publication/law_document/edit.vue";
 
+import AdminStrategicPlanIndex from "@views/admin/publication/strategic_plan/Index.vue";
+import AdminStrategicPlanCreate from "@views/admin/publication/strategic_plan/create.vue";
+import AdminStrategicPlanEdit from "@views/admin/publication/strategic_plan/edit.vue";
+
 //struktur organisasi dinas
 import AdminStructureIndex from "../views/admin/profile/office_structure/index.vue";
 import AdminStructureCreate from "../views/admin/profile/office_structure/create.vue";
@@ -594,6 +598,21 @@ const routes = [{
                 path: "law-document/:id",
                 name: "admin-law-document-edit",
                 component: AdminLawDocumentEdit,
+            },
+            {
+                path: "strategic-plan",
+                name: "admin-strategic-plan",
+                component: AdminStrategicPlanIndex,
+            },
+            {
+                path: "strategic-plan/create",
+                name: "admin-strategic-plan-create",
+                component: AdminStrategicPlanCreate,
+            },
+            {
+                path: "strategic-plan/:id",
+                name: "admin-strategic-plan-edit",
+                component: AdminStrategicPlanEdit,
             },
             // laporan warga
             {

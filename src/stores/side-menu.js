@@ -85,8 +85,18 @@ export const useSideMenuStore = defineStore("sideMenu", {
             },
             {
                 icon: "HomeIcon",
-                pageName: "admin-law-document",
-                title: "Produk Hukum",
+                title: "Publikasi",
+                subMenu: [{
+                        icon: "HomeIcon",
+                        pageName: "admin-law-document",
+                        title: "Produk Hukum",
+                    },
+                    {
+                        icon: "HomeIcon",
+                        pageName: "admin-strategic-plan",
+                        title: "Rencana Strategis",
+                    },
+                ]
             },
             {
                 icon: "HomeIcon",
