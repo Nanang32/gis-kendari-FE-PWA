@@ -223,6 +223,8 @@ import ProfBinaMarga from "../views/site/Profbinamarga.vue";
 import ProfUPTDWilayah from "../views/site/ProfuptdWilayah.vue";
 import ProfUPTDLkonstruksi from "../views/site/Profuptdlkonstruksi.vue";
 import ProfUPTDPkonstruksi from "../views/site/Profuptdpkonstruksi.vue";
+import MapGIS from "../views/site/Webgis/Main.vue";
+
 
 
 
@@ -1042,6 +1044,11 @@ const routes = [{
         path: "/site/profuptdpkonstruksi",
         name: "site-profuptdpkonstruksi",
         component: ProfUPTDPkonstruksi,        
+    },
+    {
+        path: "/site/mapgis",
+        name: "site-mapgis",
+        component: MapGIS,        
     },
     
 ];

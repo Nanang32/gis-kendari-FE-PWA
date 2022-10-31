@@ -1,6 +1,8 @@
 <template>
     <div class="bg-gray-50 py-6">
         <Navbar />
+    <TinySlider />
+
         <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
             <div class="flex flex-row flex-wrap">
                 <!-- Left -->
@@ -218,6 +220,7 @@
     <Footer />
 </template>
 <script setup>
+import TinySlider from '@/components/tiny-slider/Main.vue';
 import Navbar from "../../components/navbar-menu/Main.vue";
 import Footer from "../../components/footer-public/Main.vue";
 </script>

@@ -1,6 +1,7 @@
 <template>
 <div class="text-gray-700">
     <Navbar> </Navbar>
+    <TinySlider />
     <main id="content">
         <!-- advertisement -->
         <div class="bg-gray-50 py-4 hidden">
@@ -348,8 +349,9 @@
 </template>
 
 <script setup>
-    import Navbar from "../../components/navbar-menu/Main.vue";
-    import Footer from "../../components/footer-public/Main.vue";
+import TinySlider from '@/components/tiny-slider/Main.vue';
+import Navbar from "../../components/navbar-menu/Main.vue";
+import Footer from "../../components/footer-public/Main.vue";
 </script>
 
 <style scoped>

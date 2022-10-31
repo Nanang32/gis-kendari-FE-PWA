@@ -1,6 +1,7 @@
 <template>
 <div class="text-gray-700">
     <Navbar/>
+    <TinySlider />
     <main id="content">
         
         <!-- hero big grid -->
@@ -85,8 +86,9 @@
 </template>
 
 <script setup>
-    import Navbar from "../../components/navbar-menu/Main.vue";
-    import Footer from "../../components/footer-public/Main.vue";
+import TinySlider from '@/components/tiny-slider/Main.vue';
+import Navbar from "../../components/navbar-menu/Main.vue";
+import Footer from "../../components/footer-public/Main.vue";
 </script>
 
 <style scoped>
