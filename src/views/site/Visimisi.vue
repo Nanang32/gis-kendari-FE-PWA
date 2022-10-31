@@ -25,12 +25,7 @@
                                         <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
                                             <div class="md:7/12 lg:w-3/3">
                                                 <h2 class="text-2xl text-gray-900 font-bold md:text-4xl"><span class="inline-block h-5 border-l-3 border-red-600 mr-2"></span>Visi & Misi</h2>
-                                                <p class="mt-6 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                                <p class="mt-6 text-gray-600" v-html="content"></p>
                                             </div>
                                         </div>
                                     </div>
@@ -49,6 +44,20 @@
 <script setup>
 import Navbar from "../../components/navbar-menu/Main.vue";
 import Footer from "../../components/footer-public/Main.vue";
+import sendRequest from '@libs/http.js'
+  import { ref, onMounted } from "vue";
+  const loading = ref(false);
+  const content = ref('');
+
+  onMounted(async () => {
+    const response = await sendRequest({
+        method: 'get',
+        url: '/public/departmentVisions',
+    });
+    if ((response !== null) && (response.status === true)) {
+        content.value = response.data.departmentVision.content
+    }
+  });
 </script>
 <style scoped>
     @import "./style.css";
