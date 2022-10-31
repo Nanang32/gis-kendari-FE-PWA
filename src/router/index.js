@@ -211,7 +211,7 @@ import Renstra from "../views/site/Renstra.vue";
 import JobPerformance from "../views/site/JobPerformance.vue";
 import InfPJPA from "../views/site/InfPJPA.vue";
 import InfPJSA from "../views/site/InfPJSA.vue";
-
+import Profsekret from "../views/site/Profsekret.vue"
 const routes = [{
         path: "/admin",
         component: SideMenu,
@@ -972,6 +972,11 @@ const routes = [{
         path: "/site/infpjsa",
         name: "site-infpjsa",
         component: InfPJSA,        
+    },
+    {
+        path: "/site/profsekret",
+        name: "site-profsekret",
+        component: Profsekret,        
     }
 ];
 
