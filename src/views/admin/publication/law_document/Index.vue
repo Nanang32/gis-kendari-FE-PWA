@@ -52,58 +52,58 @@
         </div>
     </div>
 </template>
-<!-- <script setup>
-import Paginator from "@/components/paginator/Main.vue";
-import ModalConfirmDelete from "@/components/modal-confirm-delete/Main.vue";
-import sendRequest from '@libs/http.js'
-import { ref, watch , onMounted } from "vue";
-import { useRouter } from "vue-router";
+<script setup>
+  import Paginator from "@/components/paginator/Main.vue";
+  import ModalConfirmDelete from "@/components/modal-confirm-delete/Main.vue";
+  import sendRequest from '@libs/http.js'
+  import { ref, watch , onMounted } from "vue";
+  import { useRouter } from "vue-router";
 
-const facilities = ref([]);
-const page = ref(1);
-const perPage = ref(10);
-const lastPage = ref(1);
-const showDeleteModal = ref(false);
-const deleteId = ref(null);
-const router = useRouter();
+  const facilities = ref([]);
+  const page = ref(1);
+  const perPage = ref(10);
+  const lastPage = ref(1);
+  const showDeleteModal = ref(false);
+  const deleteId = ref(null);
+  const router = useRouter();
 
-function setPage(newPage){
-  page.value = newPage
-} 
+  function setPage(newPage){
+    page.value = newPage
+  } 
 
-function confirmDelete(id){
-  showDeleteModal.value = true
-  deleteId.value = id;
-}
-
-async function onConfirmDelete(){
-  const responseDelete = await sendRequest({
-    method: 'delete',
-    url: `/facilities/${deleteId.value}`,
-  });
-  showDeleteModal.value=false
-  await loadData(page.value);
-}
-
-async function loadData(page=1){
-  const response = await sendRequest({
-      method: 'get',
-      url: '/facilities',
-      params: {
-        page: page
-      },
-  });
-  if ((response !== null) && (response.status === true)) {
-    facilities.value = response.data.facilities.data
-    lastPage.value = response.data.facilities.last_page
+  function confirmDelete(id){
+    showDeleteModal.value = true
+    deleteId.value = id;
   }
-}
 
-watch(page, async (newPage) => {
-  await loadData(newPage)
-})
+  async function onConfirmDelete(){
+    const responseDelete = await sendRequest({
+      method: 'delete',
+      url: `/facilities/${deleteId.value}`,
+    });
+    showDeleteModal.value=false
+    await loadData(page.value);
+  }
 
-onMounted(async()=>{
-  await loadData()
-});
-</script> -->
+  async function loadData(page=1){
+    const response = await sendRequest({
+        method: 'get',
+        url: '/facilities',
+        params: {
+          page: page
+        },
+    });
+    if ((response !== null) && (response.status === true)) {
+      facilities.value = response.data.facilities.data
+      lastPage.value = response.data.facilities.last_page
+    }
+  }
+
+  watch(page, async (newPage) => {
+    await loadData(newPage)
+  })
+
+  onMounted(async()=>{
+    await loadData()
+  });
+</script>
