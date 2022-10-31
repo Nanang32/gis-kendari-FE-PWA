@@ -116,7 +116,11 @@
                         Galeri
                     </router-link>
                 </li>
-                <li class="border-ember-800 cursor-pointer">GIS</li>
+                <li class="border-ember-800 cursor-pointer">
+                    <router-link :to="{name: 'site-mapgis'}" class="block px-4 py-2 text-sm text-black hover:text-black">
+                        GIS
+                    </router-link>
+                </li>
                 <li class="border-ember-800 cursor-pointer">
                     <div class="relative">
                         <!-- Dropdown toggle button -->
