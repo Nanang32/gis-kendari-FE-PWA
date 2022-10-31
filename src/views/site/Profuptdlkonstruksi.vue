@@ -13,7 +13,7 @@
                                     <div class="p-4 border border-gray-100 bg-white mb-4">
                                         <div class="flex flex-row items-center">
                                             <div class="rounded-md object-cover overflow-hidden">
-                                                <a href="#"><img class="border max-w-full sm:w-full" src="@/assets/images/profsekret.png" alt="author"></a>
+                                                <a href="#"><img class="border max-w-full sm:w-full" src="@/assets/images/lkonstruksi.png" alt="author"></a>
                                             </div>
                                         </div>
                                     </div>
@@ -27,9 +27,9 @@
                                     <Tab class="w-full py-2" tag="button">Struktur</Tab>
                                 </TabList>
                                 <TabPanels class="mt-5">
-                                    <TabPanelText url="/public/taskFunction/sekretariat-dinas" dataProp="taskFunction" />
-                                    <TabPanelText url="/public/workingProgram/sekretariat-dinas" dataProp="workingProgram" />
-                                    <TabPanelImage url="/public/organizationDiagram/sekretariat-dinas" dataProp="organizationDiagram" />
+                                    <TabPanelText url="/public/taskFunction/lab-konstruksi" dataProp="taskFunction" />
+                                    <TabPanelText url="/public/workingProgram/lab-konstruksi" dataProp="workingProgram" />
+                                    <TabPanelImage url="/public/organizationDiagram/lab-konstruksi" dataProp="organizationDiagram" />
                                 </TabPanels>
                             </TabGroup>
                             </div>
