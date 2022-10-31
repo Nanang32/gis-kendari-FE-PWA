@@ -28,8 +28,8 @@
                                 </TabList>
                                 <TabPanels class="mt-5">
                                     <TabPanelText url="/public/taskFunction/sekretariat-dinas" dataProp="taskFunction" />
-                                    <TabPanelText url="/public/workingProgram/sekretariat-dinas" dataProp="workingProgram" />
-                                    <TabPanelImage url="/public/organizationDiagram/sekretariat-dinas" dataProp="organizationDiagram" />
+                                    <TabPanelText url="/public/workingProgram/pjpa" dataProp="workingProgram" />
+                                    <TabPanelImage url="/public/organizationDiagram/pjpa" dataProp="organizationDiagram" />
                                 </TabPanels>
                             </TabGroup>
                             </div>
