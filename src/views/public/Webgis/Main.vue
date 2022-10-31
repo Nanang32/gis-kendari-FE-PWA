@@ -261,7 +261,7 @@ async function loadWeirs(){
       });
     }
   });
-  layerControl.value.addOverlay(layerGroup, 'Bendung', 'PJSA');
+  layerControl.value.addOverlay(layerGroup, 'Bendung', 'PJPA');
 }
 
 const onEachGroin = function (feature, layer) {
