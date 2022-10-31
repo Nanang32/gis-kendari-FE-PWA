@@ -1,6 +1,8 @@
 <template>
     <div class="text-gray-700">
         <Navbar />
+    <TinySlider />
+
         <main id="content">
             <!-- block news -->
             <div class="bg-gray-50 py-6">
@@ -40,6 +42,7 @@
     </div>
 </template>
 <script setup>
+import TinySlider from '@/components/tiny-slider/Main.vue';
 import Navbar from "../../components/navbar-menu/Main.vue";
 import Footer from "../../components/footer-public/Main.vue";
 </script>

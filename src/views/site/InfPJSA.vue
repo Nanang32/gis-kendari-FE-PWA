@@ -1,6 +1,8 @@
 <template>
     <div class="text-gray-700">
         <Navbar />
+    <TinySlider />
+
         <main id="content">
             <!-- component -->
             <div class="flex items-center justify-center mt-16 mb-16">
@@ -104,6 +106,7 @@
     </div>
 </template>
 <script setup>
+import TinySlider from '@/components/tiny-slider/Main.vue';
 import Navbar from "../../components/navbar-menu/Main.vue";
 import Footer from "../../components/footer-public/Main.vue";
 </script>
