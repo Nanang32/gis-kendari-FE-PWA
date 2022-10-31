@@ -85,6 +85,11 @@ export const useSideMenuStore = defineStore("sideMenu", {
             },
             {
                 icon: "HomeIcon",
+                pageName: "admin-law-document",
+                title: "Produk Hukum",
+            },
+            {
+                icon: "HomeIcon",
                 title: "GIS Menejemen",
                 subMenu: [{
                         icon: "HomeIcon",

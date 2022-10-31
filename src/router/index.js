@@ -145,6 +145,10 @@ import AdminuptdconstructionequipmentprogrammeEdit from "../views/admin/profile/
 import AdminuptdconstructionequipmentstructureCreate from "../views/admin/profile/office_subuptdconstructionequipment/structure/create.vue";
 import AdminuptdconstructionequipmentstructureEdit from "../views/admin/profile/office_subuptdconstructionequipment/structure/edit.vue";
 
+import AdminLawDocumentIndex from "@views/admin/publication/law_document/create.vue";
+import AdminLawDocumentCreate from "@views/admin/publication/law_document/edit.vue";
+import AdminLawDocumentEdit from "@views/admin/publication/law_document/Index.vue";
+
 //struktur organisasi dinas
 import AdminStructureIndex from "../views/admin/profile/office_structure/index.vue";
 import AdminStructureCreate from "../views/admin/profile/office_structure/create.vue";
@@ -564,6 +568,12 @@ const routes = [{
                 path: "uptdcontructionequipment/structure/:id",
                 name: "admin-uptdcontructionequipment-structure-edit",
                 component: AdminuptdconstructionequipmentstructureEdit,
+            },
+            // produk hukum
+            {
+                path: "law-document",
+                name: "admin-law-document",
+                component: AdminLawDocumentIndex,
             },
             // laporan warga
             {
