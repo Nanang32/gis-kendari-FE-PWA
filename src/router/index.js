@@ -214,6 +214,9 @@ import InfPJSA from "../views/site/InfPJSA.vue";
 import Profsekret from "../views/site/Profsekret.vue"
 import ProfPJPA from "../views/site/ProfPJPA.vue";
 import ProfPJSA from "../views/site/ProfPJSA.vue";
+import ProfBinaMarga from "../views/site/Profbinamarga.vue";
+import ProfUPTDWilayah from "../views/site/ProfuptdWilayah.vue";
+
 
 
 const routes = [{
@@ -991,6 +994,16 @@ const routes = [{
         path: "/site/profpjsa",
         name: "site-profpjsa",
         component: ProfPJSA,        
+    },
+    {
+        path: "/site/profbinamarga",
+        name: "site-profbinamarga",
+        component: ProfBinaMarga,        
+    },
+    {
+        path: "/site/profuptdwilayah",
+        name: "site-profuptdwilayah",
+        component: ProfUPTDWilayah,        
     }
 ];
 
