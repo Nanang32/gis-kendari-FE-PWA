@@ -68,7 +68,7 @@
                                 Bidang PJSA
                             </router-link>
                             <router-link :to="{name: 'site-profbinamarga'}" class="block px-4 py-2 text-sm text-black hover:text-black">
-                                Bina Marga
+                                Bidang Bina Marga
                             </router-link>
                             <router-link :to="{name: 'site-profuptdwilayah'}" class="block px-4 py-2 text-sm text-black hover:text-black">
                                 UPTD Wilayah I s/d IV
@@ -77,7 +77,7 @@
                                 UPTD Lab Konstruksi
                             </router-link>
                             <router-link :to="{name:'site-profuptdpkonstruksi'}" class="block px-4 py-2 text-sm text-black hover:text-black ">
-                                UPTD Peralatan Konstruksi
+                                UPTD Peralatan
                             </router-link>
                         </div>
                     </div>
