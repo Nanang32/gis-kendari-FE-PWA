@@ -212,6 +212,8 @@ import JobPerformance from "../views/site/JobPerformance.vue";
 import InfPJPA from "../views/site/InfPJPA.vue";
 import InfPJSA from "../views/site/InfPJSA.vue";
 import Profsekret from "../views/site/Profsekret.vue"
+import ProfPJPA from "../views/site/ProfPJPA.vue"
+
 const routes = [{
         path: "/admin",
         component: SideMenu,
@@ -977,6 +979,11 @@ const routes = [{
         path: "/site/profsekret",
         name: "site-profsekret",
         component: Profsekret,        
+    },
+    {
+        path: "/site/profpjpa",
+        name: "site-profpjpa",
+        component: ProfPJPA,        
     }
 ];
 
