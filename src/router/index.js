@@ -212,7 +212,9 @@ import JobPerformance from "../views/site/JobPerformance.vue";
 import InfPJPA from "../views/site/InfPJPA.vue";
 import InfPJSA from "../views/site/InfPJSA.vue";
 import Profsekret from "../views/site/Profsekret.vue"
-import ProfPJPA from "../views/site/ProfPJPA.vue"
+import ProfPJPA from "../views/site/ProfPJPA.vue";
+import ProfPJSA from "../views/site/ProfPJSA.vue";
+
 
 const routes = [{
         path: "/admin",
@@ -984,6 +986,11 @@ const routes = [{
         path: "/site/profpjpa",
         name: "site-profpjpa",
         component: ProfPJPA,        
+    },
+    {
+        path: "/site/profpjsa",
+        name: "site-profpjsa",
+        component: ProfPJSA,        
     }
 ];
 
