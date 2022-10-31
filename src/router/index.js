@@ -204,6 +204,7 @@ import Login from "../views/login/Main.vue";
 import AdminServiceIndex from "../views/admin/service/table-report.vue";
 
 import Public from "../views/site/Main.vue";
+import PublicAll from "../views/site/Allnews.vue";
 import Publicpage from "../views/site/Page.vue";
 import Reporting from "../views/site/Reporting.vue";
 import UptdLab from "../views/site/Uptdlab.vue";
@@ -936,6 +937,11 @@ const routes = [{
         path: "/site",
         name: "site",
         component: Public,        
+    },
+    {
+        path: "/site/all",
+        name: "site-all",
+        component: PublicAll,        
     },
     {
         path: "/site/page",
