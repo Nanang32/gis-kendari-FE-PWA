@@ -4,7 +4,7 @@
     </div>
     <div class="grid grid-cols-12 gap-6 mt-5 mb-20">
         <div class="intro-y col-span-12">
-            <button class="btn btn-primary shadow-md mr-2" @click="router.push({ name: 'admin-post-create'})">
+            <button class="btn btn-primary shadow-md mr-2" @click="router.push({ name: 'admin-law-document-create'})">
                 Add new
             </button>
             <div class="intro-y box col-span-12 overflow-auto lg:overflow-visible">
@@ -13,21 +13,18 @@
                         <tr>
                             <th class="whitespace-nowrap">#</th>
                             <th class="whitespace-nowrap">Judul</th>
-                            <th class="whitespace-nowrap">Kategori</th>
-                            <th class="whitespace-nowrap">Tanggal</th>
+                            <th class="whitespace-nowrap">Tahun</th>
                             <th class="text-center whitespace-nowrap">Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody v-for="(lawDocument, index) in lawDocuments" :key="index">
                         <tr>
-                            <td>1</td>
-                            <td>Lorem</td>
-                            <td>Video, news</td>
-                            <td>Published
-                                2022/08/30 at 7:18 am</td>
+                            <td>{{ index +1 }}</td>
+                            <td>{{ lawDocument.title }}</td>
+                            <td>{{ lawDocument.year }}</td>
                             <td>
                                 <div class="flex justify-center items-center">
-                                    <button class="flex items-center mr-3">
+                                    <button class="flex items-center mr-3" @click="router.push({name: 'admin-law-document-edit', params: { id: lawDocument.id }})" >
                                         <EditIcon class="w-4 h-4 mr-1" /> Edit
                                     </button>
                                     <a class="flex items-center text-danger">
@@ -39,16 +36,16 @@
                     </tbody>
                 </table>
             </div>
-            <!-- <Paginator
-        :page="page"
-        :perPage="perPage"
-        :lastPage="lastPage"
-        @goToPage="setPage"
-      />
-      <ModalConfirmDelete 
-        :isShowModal="showDeleteModal"
-        @confirm="onConfirmDelete"
-      /> -->
+            <Paginator
+              :page="page"
+              :perPage="perPage"
+              :lastPage="lastPage"
+              @goToPage="setPage"
+            />
+            <ModalConfirmDelete 
+              :isShowModal="showDeleteModal"
+              @confirm="onConfirmDelete"
+            />
         </div>
     </div>
 </template>
@@ -59,7 +56,7 @@
   import { ref, watch , onMounted } from "vue";
   import { useRouter } from "vue-router";
 
-  const facilities = ref([]);
+  const lawDocuments = ref([]);
   const page = ref(1);
   const perPage = ref(10);
   const lastPage = ref(1);
@@ -79,7 +76,7 @@
   async function onConfirmDelete(){
     const responseDelete = await sendRequest({
       method: 'delete',
-      url: `/facilities/${deleteId.value}`,
+      url: `/laws/${deleteId.value}`,
     });
     showDeleteModal.value=false
     await loadData(page.value);
@@ -88,14 +85,14 @@
   async function loadData(page=1){
     const response = await sendRequest({
         method: 'get',
-        url: '/facilities',
+        url: '/laws',
         params: {
           page: page
         },
     });
     if ((response !== null) && (response.status === true)) {
-      facilities.value = response.data.facilities.data
-      lastPage.value = response.data.facilities.last_page
+      lawDocuments.value = response.data.lawDocuments.data
+      lastPage.value = response.data.lawDocuments.last_page
     }
   }
 
