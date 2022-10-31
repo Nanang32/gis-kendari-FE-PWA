@@ -13,9 +13,7 @@
                         <tr>
                             <th class="whitespace-nowrap">#</th>
                             <th class="whitespace-nowrap">Judul</th>
-                            <th class="whitespace-nowrap">berkas</th>
                             <th class="whitespace-nowrap">Tgl. publish</th>
-                            <th class="whitespace-nowrap">status</th>
                             <th class="text-center whitespace-nowrap">Action</th>
                         </tr>
                     </thead>
@@ -23,7 +21,6 @@
                         <tr>
                             <td>{{ index + 1 }}</td>
                             <td>{{ departmentOrganization.title }}</td>
-                            <td>{{ departmentOrganization.file }}</td>
                             <td>{{departmentOrganization.created_at}}</td>
                             <td>
                                 <div class="flex justify-center items-center">
