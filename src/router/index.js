@@ -165,6 +165,10 @@ import AdminPostEdit from "../views/admin/news/post/edit.vue";
 import AdminImageIndex from "../views/admin/news/image/index.vue";
 import AdminImageCreate from "../views/admin/news/image/create.vue";
 import AdminImageEdit from "../views/admin/news/image/edit.vue";
+// video
+import AdminVideoIndex from "../views/admin/news/video/index.vue";
+import AdminVideoCreate from "../views/admin/news/video/create.vue";
+import AdminVideoEdit from "../views/admin/news/video/edit.vue";
 //categories
 import AdminCategoryIndex from "../views/admin/news/category/index.vue";
 import AdminCategoryCreate from "../views/admin/news/category/create.vue";
@@ -276,6 +280,22 @@ const routes = [{
                 name: "admin-image-edit",
                 component: AdminImageEdit,
             },
+            {
+                path: "video",
+                name: "admin-video",
+                component: AdminVideoIndex,
+            },
+            {
+                path: "video/create",
+                name: "admin-video-create",
+                component: AdminVideoCreate,
+            },
+            {
+                path: "video/edit/:id",
+                name: "admin-video-edit",
+                component: AdminVideoEdit,
+            },
+            {
                 path: "category",
                 name: "admin-category",
                 component: AdminCategoryIndex,
