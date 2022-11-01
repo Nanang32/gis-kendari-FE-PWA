@@ -15,151 +15,25 @@
                     <div class="flex flex-row flex-wrap -mx-3">
                         <div class="flex-shrink max-w-full w-full px-3 pb-5">
                             <div class="relative hover-img max-h-full overflow-scroll">
-                                <div class="intro-y block sm:flex items-center h-10">
-                                    <div class="sm:ml-auto mt-3 sm:mt-0 relative text-slate-500 rounded-lg border">
-                                        <SearchIcon class="w-4 h-4 z-10 absolute my-auto inset-y-0 ml-3 left-0" />
-                                        <input type="text" class="form-control sm:w-56 box pl-10" placeholder="Ketik disini..." />
-                                    </div>
-                                </div>
                                 <div class="intro-y box p-5 mt-5">
                                     <div class="overflow-y-auto rounded-lg border shadow-2xl">
                                         <table class="table table-hover">
                                             <thead class="table-dark">
                                                 <tr>
                                                     <th class="whitespace-nowrap">Nama berkas</th>
-                                                    <th class="whitespace-nowrap">Tanggal upload</th>
+                                                    <th class="whitespace-nowrap">Tahun</th>
                                                     <th class="whitespace-nowrap text-center">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td class="whitespace-nowrap">Undang-Undang Nomor 3 Tahun 2022 tentang Ibu Kota Negara
-                                                    </td>
-                                                    <td class="whitespace-nowrap">1 jan 2022</td>
+                                                <tr v-for="lawDocument in lawDocuments">
+                                                    <td class="whitespace-nowrap"> {{ lawDocument.title }}</td>
+                                                    <td class="whitespace-nowrap"> {{ lawDocument.year }}</td>
                                                     <td class="whitespace-nowrap">
-                                                        <button class="btn btn-sm btn-primary w-24 m-2">
-                                                            <EyeIcon class="w-4 h-4 mr-2" /> Lihat
-                                                        </button>
-                                                        <button class="btn btn-sm btn-success w-24 text-white">
-                                                            <DownloadIcon class="w-4 h-4 mr-2" /> Unduh
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="whitespace-nowrap">Undang-Undang Nomor 3 Tahun 2022 tentang Ibu Kota Negara
-                                                    </td>
-                                                    <td class="whitespace-nowrap">1 jan 2022</td>
-                                                    <td class="whitespace-nowrap">
-                                                        <button class="btn btn-sm btn-primary w-24 m-2">
-                                                            <EyeIcon class="w-4 h-4 mr-2" /> Lihat
-                                                        </button>
-                                                        <button class="btn btn-sm btn-success w-24 text-white">
-                                                            <DownloadIcon class="w-4 h-4 mr-2" /> Unduh
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="whitespace-nowrap">Undang-Undang Nomor 3 Tahun 2022 tentang Ibu Kota Negara
-                                                    </td>
-                                                    <td class="whitespace-nowrap">1 jan 2022</td>
-                                                    <td class="whitespace-nowrap">
-                                                        <button class="btn btn-sm btn-primary w-24 m-2">
-                                                            <EyeIcon class="w-4 h-4 mr-2" /> Lihat
-                                                        </button>
-                                                        <button class="btn btn-sm btn-success w-24 text-white">
-                                                            <DownloadIcon class="w-4 h-4 mr-2" /> Unduh
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="whitespace-nowrap">Undang-Undang Nomor 3 Tahun 2022 tentang Ibu Kota Negara
-                                                    </td>
-                                                    <td class="whitespace-nowrap">1 jan 2022</td>
-                                                    <td class="whitespace-nowrap">
-                                                        <button class="btn btn-sm btn-primary w-24 m-2">
-                                                            <EyeIcon class="w-4 h-4 mr-2" /> Lihat
-                                                        </button>
-                                                        <button class="btn btn-sm btn-success w-24 text-white">
-                                                            <DownloadIcon class="w-4 h-4 mr-2" /> Unduh
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="whitespace-nowrap">Undang-Undang Nomor 3 Tahun 2022 tentang Ibu Kota Negara
-                                                    </td>
-                                                    <td class="whitespace-nowrap">1 jan 2022</td>
-                                                    <td class="whitespace-nowrap">
-                                                        <button class="btn btn-sm btn-primary w-24 m-2">
-                                                            <EyeIcon class="w-4 h-4 mr-2" /> Lihat
-                                                        </button>
-                                                        <button class="btn btn-sm btn-success w-24 text-white">
-                                                            <DownloadIcon class="w-4 h-4 mr-2" /> Unduh
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="whitespace-nowrap">Undang-Undang Nomor 3 Tahun 2022 tentang Ibu Kota Negara
-                                                    </td>
-                                                    <td class="whitespace-nowrap">1 jan 2022</td>
-                                                    <td class="whitespace-nowrap">
-                                                        <button class="btn btn-sm btn-primary w-24 m-2">
-                                                            <EyeIcon class="w-4 h-4 mr-2" /> Lihat
-                                                        </button>
-                                                        <button class="btn btn-sm btn-success w-24 text-white">
-                                                            <DownloadIcon class="w-4 h-4 mr-2" /> Unduh
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="whitespace-nowrap">Undang-Undang Nomor 3 Tahun 2022 tentang Ibu Kota Negara
-                                                    </td>
-                                                    <td class="whitespace-nowrap">1 jan 2022</td>
-                                                    <td class="whitespace-nowrap">
-                                                        <button class="btn btn-sm btn-primary w-24 m-2">
-                                                            <EyeIcon class="w-4 h-4 mr-2" /> Lihat
-                                                        </button>
-                                                        <button class="btn btn-sm btn-success w-24 text-white">
-                                                            <DownloadIcon class="w-4 h-4 mr-2" /> Unduh
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="whitespace-nowrap">Undang-Undang Nomor 3 Tahun 2022 tentang Ibu Kota Negara
-                                                    </td>
-                                                    <td class="whitespace-nowrap">1 jan 2022</td>
-                                                    <td class="whitespace-nowrap">
-                                                        <button class="btn btn-sm btn-primary w-24 m-2">
-                                                            <EyeIcon class="w-4 h-4 mr-2" /> Lihat
-                                                        </button>
-                                                        <button class="btn btn-sm btn-success w-24 text-white">
-                                                            <DownloadIcon class="w-4 h-4 mr-2" /> Unduh
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="whitespace-nowrap">Undang-Undang Nomor 3 Tahun 2022 tentang Ibu Kota Negara
-                                                    </td>
-                                                    <td class="whitespace-nowrap">1 jan 2022</td>
-                                                    <td class="whitespace-nowrap">
-                                                        <button class="btn btn-sm btn-primary w-24 m-2">
-                                                            <EyeIcon class="w-4 h-4 mr-2" /> Lihat
-                                                        </button>
-                                                        <button class="btn btn-sm btn-success w-24 text-white">
-                                                            <DownloadIcon class="w-4 h-4 mr-2" /> Unduh
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="whitespace-nowrap">Undang-Undang Nomor 3 Tahun 2022 tentang Ibu Kota Negara
-                                                    </td>
-                                                    <td class="whitespace-nowrap">1 jan 2022</td>
-                                                    <td class="whitespace-nowrap">
-                                                        <button class="btn btn-sm btn-primary w-24 m-2">
-                                                            <EyeIcon class="w-4 h-4 mr-2" /> Lihat
-                                                        </button>
-                                                        <button class="btn btn-sm btn-success w-24 text-white">
-                                                            <DownloadIcon class="w-4 h-4 mr-2" /> Unduh
-                                                        </button>
+                                                        <a class="btn btn-sm btn-white w-24 m-2"
+                                                            :href="lawDocument.file_url">
+                                                            <DownloadIcon class="w-4 h-4 mr-2" /> Lihat
+                                                        </a>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -182,29 +56,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="whitespace-nowrap">
-                                                <FileTextIcon class="w-4 h-4 mr-2 inline" />Undang-Undang Nomor 3 Tahun 2022
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="whitespace-nowrap">
-                                                <FileTextIcon class="w-4 h-4 mr-2 inline" />Undang-Undang Nomor 3 Tahun 2022
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="whitespace-nowrap">
-                                                <FileTextIcon class="w-4 h-4 mr-2 inline" />Undang-Undang Nomor 3 Tahun 2022
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="whitespace-nowrap">
-                                                <FileTextIcon class="w-4 h-4 mr-2 inline" />Undang-Undang Nomor 3 Tahun 2022
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="whitespace-nowrap">
-                                                <FileTextIcon class="w-4 h-4 mr-2 inline" />Undang-Undang Nomor 3 Tahun 2022
+                                        <tr v-for="category in categories">
+                                            <td class="whitespace-nowrap" @click="loadLaw(category.id)">
+                                                <FileTextIcon class="w-4 h-4 mr-2 inline" /> {{ category.name }}
                                             </td>
                                         </tr>
                                     </tbody>
@@ -223,6 +77,40 @@
 import TinySlider from '@/components/tiny-slider/Main.vue';
 import Navbar from "../../components/navbar-menu/Main.vue";
 import Footer from "../../components/footer-public/Main.vue";
+import sendRequest from '@libs/http.js'
+import { ref, onMounted } from "vue";
+const categories = ref([]);
+const lawDocuments = ref([]);
+const loading = ref(true);
+
+async function loadCategory(){
+    loading.value = true;
+    const response = await sendRequest({
+        method: 'get',
+        url: '/laws/category',
+    });
+    if ((response !== null) && (response.status === true)) {
+        categories.value = response.data.categories
+    }
+    loading.value = false;
+}
+
+async function loadLaw(categoryId){
+    loading.value = true;
+    const response = await sendRequest({
+        method: 'get',
+        url: `/laws/category/${categoryId}`,
+    });
+    if ((response !== null) && (response.status === true)) {
+        lawDocuments.value = response.data.lawDocuments
+    }
+    loading.value = false;
+}
+
+onMounted(async () => {
+    loadCategory()
+});
+
 </script>
 <style scoped>
     @import "./style.css";
