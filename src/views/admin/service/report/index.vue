@@ -19,6 +19,10 @@
                           <td> {{ report.title }} </td>
                           <td>
                               <div class="flex justify-center items-center">
+                                  <!-- <button class="flex items-center mr-3"
+                                    @click="lihat(report.id)">
+                                      <EditIcon class="w-4 h-4 mr-1" /> Lihat
+                                  </button> -->
                                   <button class="flex items-center mr-3"
                                     @click="onClick('Tolak', report.id)">
                                       <EditIcon class="w-4 h-4 mr-1" /> Tolak
