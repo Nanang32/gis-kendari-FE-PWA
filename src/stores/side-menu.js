@@ -155,7 +155,11 @@ export const useSideMenuStore = defineStore("sideMenu", {
                 pageName: "admin-reports",
                 title: "Laporan warga",
             },
-
+            {
+                icon: "HomeIcon",
+                pageName: "admin-uptdlabs",
+                title: "UPTD Labs",
+            },
         ],
     }),
 });

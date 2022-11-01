@@ -206,6 +206,8 @@ import AdminBridgeEdit from "../views/admin/gis/bridge/edit.vue";
 import Login from "../views/login/Main.vue";
 // report
 import AdminReportIndex from "../views/admin/service/report/index.vue";
+import AdminUptdLabIndex from "../views/admin/service/uptdLab/index.vue";
+import AdminUptdLabEdit from "../views/admin/service/uptdLab/edit.vue";
 
 import Public from "../views/site/Main.vue";
 import PublicAll from "../views/site/Allnews.vue";
@@ -620,8 +622,17 @@ const routes = [{
                 name: "admin-reports",
                 component: AdminReportIndex,
             },
+            {
+                path: "uptdlabs",
+                name: "admin-uptdlabs",
+                component: AdminUptdLabIndex,
+            },
+            {
+                path: "uptdlabs/:id",
+                name: "admin-uptdlab-edit",
+                component: AdminUptdLabEdit,
+            },
             // wilayah sungai
-            
             {
                 path: "riverbasin",
                 name: "admin-riverbasin",
