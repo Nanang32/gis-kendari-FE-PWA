@@ -9,6 +9,7 @@
             </button>
             <div class="intro-y col-span-12 overflow-x-auto">
                 <Export segment="bridges" />
+                <Import segment="bridges" />
                 <table class="table table-report -mt-2">
                     <thead>
                         <tr>
@@ -47,6 +48,7 @@ import Paginator from "@/components/paginator/Main.vue";
 import ModalConfirmDelete from "@/components/modal-confirm-delete/Main.vue";
 import sendRequest from '@libs/http.js'
 import Export from '../components/Export.vue'
+import Import from '../components/Import.vue'
 import { ref, watch, onMounted } from "vue";
 import { useRouter } from "vue-router";
 
