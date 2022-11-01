@@ -1019,7 +1019,7 @@ const routes = [{
         component: Login
     },
     {
-        path: "/site",
+        path: "/",
         name: "site",
         component: Public,        
     },
