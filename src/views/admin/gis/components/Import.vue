@@ -1,5 +1,5 @@
 <template>
-  <button @click="onButtonClick">Import</button>
+  <button class="btn btn-primary shadow-md mr-2 mt-2" @click="onButtonClick">Import</button>
   <!-- BEGIN: Delete Confirmation Modal -->
   <Modal
     :show="isShowModal"
@@ -11,7 +11,7 @@
       </div>
     </ModalBody>
     <ModalFooter>
-      <button @click="submit">Import</button>
+      <button class="btn btn-primary shadow-md mr-2 mt-2"  @click="submit">Import</button>
     </ModalFooter>
   </Modal>
   <!-- END: Delete Confirmation Modal -->
@@ -40,6 +40,7 @@ async function submit() {
     const response = await sendRequest({
         method: 'post',
         url: `${props.segment}/import`,
+        data: JSON.parse(geoJson.value)
     });
     if ((response !== null) && (response.status === true)) {
       isShowModal.value = false

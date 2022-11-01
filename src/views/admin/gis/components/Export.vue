@@ -1,5 +1,5 @@
 <template>
-  <button @click="onButtonClick">Export</button>
+  <button class="btn btn-primary shadow-md mr-2  mt-2" @click="onButtonClick">Export</button>
   <!-- BEGIN: Delete Confirmation Modal -->
   <Modal
     :show="isShowModal"
