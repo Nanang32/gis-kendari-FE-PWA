@@ -143,9 +143,9 @@
                                         </TabPanels>
                                     </TabGroup>
                                 </div>
-                                <div class="w-full   bg-green-600 shadow-xl shadow-green-200 py-10 px-20 flex justify-between items-center">
+                                <div class="w-full   bg-green-600 shadow-xl shadow-green-200 py-10 px-20 flex justify-between items-center mt-3">
                                     <p class=" text-white capitalize"> <span class="text-4xl font-medium">info</span> <br> <span class="text-lg ">Tarif pengujian di UPTD laborotorium SDABM</span></p>
-                                    <a class="px-5 py-3  font-medium text-slate-700 shadow-xl  hover:bg-white duration-150  bg-yellow-400"
+                                    <a class="px-5 py-3  font-medium text-slate-700 shadow-xl  hover:bg-white duration-150  bg-yellow-400" target="_blank" 
                                     :href="uptd.attachment_url">CEK DISINI </a>
                                 </div>
                             </div>
