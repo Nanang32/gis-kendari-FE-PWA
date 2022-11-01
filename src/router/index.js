@@ -24,17 +24,17 @@ import StrategicplanIndex from "../views/public/Publication/renstra.vue";
 import JobperformanceIndex from "../views/public/Publication/kinpekerjaan.vue";
 
 // kinerja pekerjaan bidang pelaksanaan jaringan pemanfaatan air
-import AdminJobperformWaterUtilizationNetworkIndex from "../views/admin/publication/job_performance/office_waterutilizationnetwork/index.vue";
+import AdminJobperformWaterUtilizationNetworkIndex from "../views/admin/publication/job_performance/office_waterutilizationnetwork/Index.vue";
 import AdminJobperformWaterUtilizationNetworkCreate from "../views/admin/publication/job_performance/office_waterutilizationnetwork/create.vue";
 import AdminJobperformWaterUtilizationNetworkeEdit from "../views/admin/publication/job_performance/office_waterutilizationnetwork/edit.vue";
 
 // kinerja pekerjaan bidang pelaksanaan jaringan sumber air
-import AdminJobperformImplementationWaterNetworkIndex from "../views/admin/publication/job_performance/office_implementationwaternetwork/index.vue";
+import AdminJobperformImplementationWaterNetworkIndex from "../views/admin/publication/job_performance/office_implementationwaternetwork/Index.vue";
 import AdminJobperformImplementationWaterNetworkCreate from "../views/admin/publication/job_performance/office_implementationwaternetwork/create.vue";
 import AdminJobperformImplementationWaterNetworkeEdit from "../views/admin/publication/job_performance/office_implementationwaternetwork/edit.vue";
 
 // kinerja pekerjaan bina marga
-import AdminJobperformBinaMargaIndex from "../views/admin/publication/job_performance/office_binamarga/index.vue";
+import AdminJobperformBinaMargaIndex from "../views/admin/publication/job_performance/office_binamarga/Index.vue";
 import AdminJobperformBinaMargaCreate from "../views/admin/publication/job_performance/office_binamarga/create.vue";
 import AdminJobperformBinaMargaEdit from "../views/admin/publication/job_performance/office_binamarga/edit.vue";
 
@@ -53,11 +53,11 @@ import ServicesreportIndex from "../views/public/Services/report.vue";
 import AdminNewsIndex from "../views/admin/blog.vue";
 // profile
 //tugas dan fungsi dinas
-import AdminTaskNFunctionIndex from "../views/admin/profile/office_taskfunction/index.vue";
+import AdminTaskNFunctionIndex from "../views/admin/profile/office_taskfunction/Index.vue";
 import AdminTaskNFunctionCreate from "../views/admin/profile/office_taskfunction/create.vue";
 import AdminTaskNFunctionEdit from "../views/admin/profile/office_taskfunction/edit.vue";
 //visi dan misi dinas
-import AdminVissionmissionIndex from "../views/admin/profile/office_vissionmission/index.vue";
+import AdminVissionmissionIndex from "../views/admin/profile/office_vissionmission/Index.vue";
 import AdminVissionmissionCreate from "../views/admin/profile/office_vissionmission/create.vue";
 import AdminVissionmissionEdit from "../views/admin/profile/office_vissionmission/edit.vue";
 
@@ -154,52 +154,52 @@ import AdminStrategicPlanCreate from "@views/admin/publication/strategic_plan/cr
 import AdminStrategicPlanEdit from "@views/admin/publication/strategic_plan/edit.vue";
 
 //struktur organisasi dinas
-import AdminStructureIndex from "../views/admin/profile/office_structure/index.vue";
+import AdminStructureIndex from "../views/admin/profile/office_structure/Index.vue";
 import AdminStructureCreate from "../views/admin/profile/office_structure/create.vue";
 import AdminStructureEdit from "../views/admin/profile/office_structure/edit.vue";
 //news
-import AdminPostIndex from "../views/admin/news/post/index.vue";
+import AdminPostIndex from "../views/admin/news/post/Index.vue";
 import AdminPostCreate from "../views/admin/news/post/create.vue";
 import AdminPostEdit from "../views/admin/news/post/edit.vue";
 //categories
-import AdminCategoryIndex from "../views/admin/news/category/index.vue";
+import AdminCategoryIndex from "../views/admin/news/category/Index.vue";
 import AdminCategoryCreate from "../views/admin/news/category/create.vue";
 import AdminCategoryEdit from "../views/admin/news/category/edit.vue";
 //GIS MASTER DATA
 //river area
-import AdminRiverBasinIndex from "../views/admin/gis/riverBasin/index.vue";
+import AdminRiverBasinIndex from "../views/admin/gis/riverBasin/Index.vue";
 import AdminRiverBasinCreate from "../views/admin/gis/riverBasin/create.vue";
 import AdminRiverBasinEdit from "../views/admin/gis/riverBasin/edit.vue";
 //watershed
-import AdminWatershedIndex from "../views/admin/gis/watershed/index.vue";
+import AdminWatershedIndex from "../views/admin/gis/watershed/Index.vue";
 import AdminWatershedCreate from "../views/admin/gis/watershed/create.vue";
 import AdminWatershedEdit from "../views/admin/gis/watershed/edit.vue";
 //river
-import AdminRiverIndex from "../views/admin/gis/river/index.vue";
+import AdminRiverIndex from "../views/admin/gis/river/Index.vue";
 import AdminRiverCreate from "../views/admin/gis/river/create.vue";
 import AdminRiverEdit from "../views/admin/gis/river/edit.vue";
 //bendung
-import AdminWeirIndex from "../views/admin/gis/weir/index.vue";
+import AdminWeirIndex from "../views/admin/gis/weir/Index.vue";
 import AdminWeirCreate from "../views/admin/gis/weir/create.vue";
 import AdminWeirEdit from "../views/admin/gis/weir/edit.vue";
 //daerah irigasi
-import AdminIrrigationIndex from "../views/admin/gis/irrigation/index.vue";
+import AdminIrrigationIndex from "../views/admin/gis/irrigation/Index.vue";
 import AdminIrrigationCreate from "../views/admin/gis/irrigation/create.vue";
 import AdminIrrigationEdit from "../views/admin/gis/irrigation/edit.vue";
 //jalan
-import AdminRoadIndex from "../views/admin/gis/road/index.vue";
+import AdminRoadIndex from "../views/admin/gis/road/Index.vue";
 import AdminRoadCreate from "../views/admin/gis/road/create.vue";
 import AdminRoadEdit from "../views/admin/gis/road/edit.vue";
 //pengaman pantai
-import AdminGroinIndex from "../views/admin/gis/beach_guard/index.vue";
+import AdminGroinIndex from "../views/admin/gis/beach_guard/Index.vue";
 import AdminGroinCreate from "../views/admin/gis/beach_guard/create.vue";
 import AdminGroinEdit from "../views/admin/gis/beach_guard/edit.vue";
 //infrastruktur sungai
-import AdminRiverInfrastructureIndex from "../views/admin/gis/river_infrastructure/index.vue";
+import AdminRiverInfrastructureIndex from "../views/admin/gis/river_infrastructure/Index.vue";
 import AdminRiverInfrastructureCreate from "../views/admin/gis/river_infrastructure/create.vue";
 import AdminRiverInfrastructureEdit from "../views/admin/gis/river_infrastructure/edit.vue";
 //jembatan
-import AdminBridgeIndex from "../views/admin/gis/bridge/index.vue";
+import AdminBridgeIndex from "../views/admin/gis/bridge/Index.vue";
 import AdminBridgeCreate from "../views/admin/gis/bridge/create.vue";
 import AdminBridgeEdit from "../views/admin/gis/bridge/edit.vue";
 // login
