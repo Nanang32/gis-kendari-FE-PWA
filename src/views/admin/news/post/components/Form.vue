@@ -59,21 +59,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="mt-5">
-                                <div class="mt-3">
-                                    <label for="post-form-2" class="form-label">Tgl. publish</label>
-                                    <Litepicker id="post-form-2" v-model="salesReportFilter" :options="{
-                                      autoApply: false,
-                                      showWeekNumbers: true,
-                                      dropdowns: {
-                                        minYear: 1990,
-                                        maxYear: null,
-                                        months: true,
-                                        years: true,
-                                      },
-                                    }" class="form-control" />
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -95,14 +80,11 @@
 import sendRequest from '@libs/http.js'
 import { ref, onMounted } from "vue";
 import Editor from '@tinymce/tinymce-vue'
-const tags = ref(["1", "2"]);
-const salesReportFilter = ref("");
-const editorData = ref("<p>Content of the editor.</p>");
 const categories = ref([])
 const loading = ref(false);
 const emit = defineEmits(['submit', 'fileChange'])
 
-defineProps({
+const props = defineProps({
     loading: {
         type: Boolean,
         default: false
@@ -118,7 +100,7 @@ function submit() {
 }
 
 function onFileChange(e) {
-    emit('fileChange', e);
+    props.post.featured_image_file = e.target.files[0];
 }
 
 async function loadData(){

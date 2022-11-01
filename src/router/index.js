@@ -253,6 +253,11 @@ const routes = [{
                 component: AdminPostCreate,
             },
             {
+                path: "post/edit/:id",
+                name: "admin-post-edit",
+                component: AdminPostEdit,
+            },
+            {
                 path: "category",
                 name: "admin-category",
                 component: AdminCategoryIndex,

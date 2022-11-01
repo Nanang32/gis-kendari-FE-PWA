@@ -22,7 +22,8 @@
                           <td> {{ post.title }} </td>
                           <td>
                               <div class="flex justify-center items-center">
-                                  <button class="flex items-center mr-3">
+                                  <button class="flex items-center mr-3"
+                                    @click="router.push({name: 'admin-post-edit', params: { id: post.id }})">
                                       <EditIcon class="w-4 h-4 mr-1" /> Edit
                                   </button>
                                   <a class="flex items-center text-danger">

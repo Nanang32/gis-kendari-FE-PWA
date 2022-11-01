@@ -5,7 +5,6 @@
         :loading="loading"
         :post="post"
         @submit="onSubmit"
-        @fileChange="onFileChange"
       ></Form>
     </div>
   </div>
@@ -19,22 +18,16 @@ import { ref, reactive } from "vue";
 const router = useRouter();
 const loading = ref(false);
 let post = reactive({});
-const image = ref('');
-const onFileChange = (e) => {
-  image.value = e.target.files[0];
-};
 
 async function onSubmit(data){
   loading.value = true;
   const formdata = new FormData();
   formdata.append('title', post.title)
   formdata.append('content', post.content)
-  formdata.append('featured_image_file', image.value)
+  formdata.append('featured_image_file', post.featured_image_file)
   post.categories.forEach(category_id => {
     formdata.append('category_ids[]', category_id)
   });
-  formdata.append('file', image.value)
-  formdata.append('publish', 1)
   const response = await sendRequest({
       method: 'post',
       url: '/posts',
