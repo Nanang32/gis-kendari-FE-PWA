@@ -167,39 +167,39 @@ import AdminCategoryCreate from "../views/admin/news/category/create.vue";
 import AdminCategoryEdit from "../views/admin/news/category/edit.vue";
 //GIS MASTER DATA
 //river area
-import AdminRiverBasinIndex from "../views/admin/gis/riverBasin/Index.vue";
+import AdminRiverBasinIndex from "../views/admin/gis/riverBasin/index.vue";
 import AdminRiverBasinCreate from "../views/admin/gis/riverBasin/create.vue";
 import AdminRiverBasinEdit from "../views/admin/gis/riverBasin/edit.vue";
 //watershed
-import AdminWatershedIndex from "../views/admin/gis/watershed/Index.vue";
+import AdminWatershedIndex from "../views/admin/gis/watershed/index.vue";
 import AdminWatershedCreate from "../views/admin/gis/watershed/create.vue";
 import AdminWatershedEdit from "../views/admin/gis/watershed/edit.vue";
 //river
-import AdminRiverIndex from "../views/admin/gis/river/Index.vue";
+import AdminRiverIndex from "../views/admin/gis/river/index.vue";
 import AdminRiverCreate from "../views/admin/gis/river/create.vue";
 import AdminRiverEdit from "../views/admin/gis/river/edit.vue";
 //bendung
-import AdminWeirIndex from "../views/admin/gis/weir/Index.vue";
+import AdminWeirIndex from "../views/admin/gis/weir/index.vue";
 import AdminWeirCreate from "../views/admin/gis/weir/create.vue";
 import AdminWeirEdit from "../views/admin/gis/weir/edit.vue";
 //daerah irigasi
-import AdminIrrigationIndex from "../views/admin/gis/irrigation/Index.vue";
+import AdminIrrigationIndex from "../views/admin/gis/irrigation/index.vue";
 import AdminIrrigationCreate from "../views/admin/gis/irrigation/create.vue";
 import AdminIrrigationEdit from "../views/admin/gis/irrigation/edit.vue";
 //jalan
-import AdminRoadIndex from "../views/admin/gis/road/Index.vue";
+import AdminRoadIndex from "../views/admin/gis/road/index.vue";
 import AdminRoadCreate from "../views/admin/gis/road/create.vue";
 import AdminRoadEdit from "../views/admin/gis/road/edit.vue";
 //pengaman pantai
-import AdminGroinIndex from "../views/admin/gis/beach_guard/Index.vue";
+import AdminGroinIndex from "../views/admin/gis/beach_guard/index.vue";
 import AdminGroinCreate from "../views/admin/gis/beach_guard/create.vue";
 import AdminGroinEdit from "../views/admin/gis/beach_guard/edit.vue";
 //infrastruktur sungai
-import AdminRiverInfrastructureIndex from "../views/admin/gis/river_infrastructure/Index.vue";
+import AdminRiverInfrastructureIndex from "../views/admin/gis/river_infrastructure/index.vue";
 import AdminRiverInfrastructureCreate from "../views/admin/gis/river_infrastructure/create.vue";
 import AdminRiverInfrastructureEdit from "../views/admin/gis/river_infrastructure/edit.vue";
 //jembatan
-import AdminBridgeIndex from "../views/admin/gis/bridge/Index.vue";
+import AdminBridgeIndex from "../views/admin/gis/bridge/index.vue";
 import AdminBridgeCreate from "../views/admin/gis/bridge/create.vue";
 import AdminBridgeEdit from "../views/admin/gis/bridge/edit.vue";
 // login
