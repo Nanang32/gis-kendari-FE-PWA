@@ -14,7 +14,7 @@
                 </div>
             </div>
         </div>
-        <AllArticleList/>
+        <AllImageList/>
         <!-- block news -->
         <div class="bg-white">
             <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
@@ -253,7 +253,7 @@
     import TinySlider from '@/components/tiny-slider/Main.vue'
     import Navbar from "../../components/navbar-menu/Main.vue";
     import Footer from "../../components/footer-public/Main.vue";
-    import AllArticleList from './components/AllArticleList.vue';
+    import AllImageList from './components/AllImageList.vue';
 </script>
 
 <style scoped>
