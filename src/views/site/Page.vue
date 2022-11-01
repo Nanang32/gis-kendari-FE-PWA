@@ -1,8 +1,7 @@
 <template>
     <div class="text-gray-700">
         <Navbar />
-    <TinySlider />
-
+        <TinySlider />
         <main id="content">
             <!-- block news -->
             <div class="bg-gray-50 py-6">
@@ -18,18 +17,13 @@
                             <div class="flex flex-row flex-wrap -mx-3">
                                 <div class="max-w-full w-full px-4">
                                     <!-- Post content -->
-                                    <div class="leading-relaxed pb-4">
+                                    <div class="leading-relaxed pb-4" >
                                         <h2 class="w-full float-left text-xl leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100">Judul Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                            tempor incididunt ut labore et dolore</h2>
+                                            {{ title }}</h2>
                                         <figure class="text-center mb-6">
-                                            <img class="max-w-full w-full lg:w-3/3 h-52" src="@/assets/img/dummy/post1.jpg" alt="Image description">
-                                            <figcaption> Type here your description</figcaption>
+                                            <img class="max-w-full w-full lg:w-3/3 h-52" :src="image_url">
                                         </figure>
-                                        <h3 class="text-2xl leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100">Ordered and unordered list</h3>
-                                        <p class="mb-5"><a class="font-bold"> Sultra </a> - Cras justo velit, ultrices vel vehicula eu, viverra in turpis. Donec lobortis at lorem ac semper. Mauris malesuada ligula in interdum pharetra. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-                                        <p class="mb-5">Integer egestas ipsum eget metus sodales consectetur. Nullam ultricies posuere cursus. Duis vitae lorem porta, venenatis nibh ac, laoreet massa. Nam risus lacus, porta eu diam id, fringilla porta risus. Aenean sit amet malesuada diam.</p>
-                                        <p class="mb-5">Vivamus purus orci, molestie vel erat sed, consectetur posuere ligula. Vestibulum <br> iaculis dignissim laoreet. Cras tincidunt always have Paris, at lobortis ligula laoreet. Etiam eu sapien sit amet neque aliquam consequat nec in velit. Aliquam sit amet erat sed augue bibendum vehicula non at lacus. Phasellus scelerisque in elit a els.</p>
-                                        <p class="mb-5">Cras justo velit, ultrices vel vehicula eu, viverra in turpis. Donec lobortis at lorem ac semper. Mauris malesuada ligula in interdum pharetra. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                                        <div v-html="content"></div>
                                     </div>
                                 </div>
                             </div>
@@ -42,9 +36,51 @@
     </div>
 </template>
 <script setup>
+import sendRequest from '@libs/http.js'
 import TinySlider from '@/components/tiny-slider/Main.vue';
 import Navbar from "../../components/navbar-menu/Main.vue";
 import Footer from "../../components/footer-public/Main.vue";
+import { useRoute } from "vue-router";
+import { ref, onMounted } from "vue";
+const route = useRoute();
+const loading = ref(false);
+const title = ref(null);
+const image_url = ref(null);
+const content = ref(null);
+
+onMounted(async () => {
+  loading.value = true;
+  if(route.name === 'site-post')
+    loadPost();
+  if(route.name === 'site-image')
+    loadImage();
+  loading.value = false;
+})
+
+
+async function loadPost(){
+  const response = await sendRequest({
+      method: 'GET',
+      url: `/posts/${route.params.id}`
+  });
+  if ((response !== null) && (response.status === true)) {
+    title.value = response.data.post.title
+    image_url.value = response.data.post.featured_image_url
+    content.value = response.data.post.content
+  }
+}
+async function loadImage(){
+  const response = await sendRequest({
+      method: 'get',
+      url: `/images/${route.params.id}`
+  });
+  if ((response !== null) && (response.status === true)) {
+    title.value = response.data.image.title
+    image_url.value = response.data.image.image_url
+    content.value = response.data.image.description
+  }
+}
+
 </script>
 <style scoped>
     @import "./style.css";

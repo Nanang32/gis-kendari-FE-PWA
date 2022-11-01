@@ -1029,8 +1029,13 @@ const routes = [{
         component: PublicAll,        
     },
     {
-        path: "/site/page",
-        name: "site-page",
+        path: "/site/post/:id",
+        name: "site-post",
+        component: Publicpage,        
+    },
+    {
+        path: "/site/image/:id",
+        name: "site-image",
         component: Publicpage,        
     },
     {
