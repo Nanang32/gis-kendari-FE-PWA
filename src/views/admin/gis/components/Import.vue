@@ -4,6 +4,7 @@
   <Modal
     :show="isShowModal"
     @hidden="isShowModal = false"
+    size="modal-xl"
   >
     <ModalBody class="p-0">
       <div class="p-5 text-center">
