@@ -97,6 +97,7 @@ async function loadCategory(){
 
 async function loadLaw(categoryId){
     loading.value = true;
+    lawDocuments.value = [];
     const response = await sendRequest({
         method: 'get',
         url: `/laws/category/${categoryId}`,
