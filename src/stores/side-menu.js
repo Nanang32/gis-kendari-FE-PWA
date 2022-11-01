@@ -152,7 +152,7 @@ export const useSideMenuStore = defineStore("sideMenu", {
             },
             {
                 icon: "HomeIcon",
-                pageName: "admin-services",
+                pageName: "admin-reports",
                 title: "Laporan warga",
             },
 

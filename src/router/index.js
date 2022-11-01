@@ -205,7 +205,7 @@ import AdminBridgeEdit from "../views/admin/gis/bridge/edit.vue";
 // login
 import Login from "../views/login/Main.vue";
 // report
-import AdminServiceIndex from "../views/admin/service/table-report.vue";
+import AdminReportIndex from "../views/admin/service/report/index.vue";
 
 import Public from "../views/site/Main.vue";
 import PublicAll from "../views/site/Allnews.vue";
@@ -616,9 +616,9 @@ const routes = [{
             },
             // laporan warga
             {
-                path: "services",
-                name: "admin-services",
-                component: AdminServiceIndex,
+                path: "reports",
+                name: "admin-reports",
+                component: AdminReportIndex,
             },
             // wilayah sungai
             
