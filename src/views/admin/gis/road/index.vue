@@ -7,6 +7,7 @@
             <button class="btn btn-primary shadow-md mr-2" @click="router.push({name: 'admin-road-create'})">
                 Tambah
             </button>
+            <Export segment="roads" />
             <div class="intro-y col-span-12 overflow-x-auto">
                 <table class="table table-report -mt-2">
                     <thead>
@@ -45,6 +46,7 @@
 import Paginator from "@/components/paginator/Main.vue";
 import ModalConfirmDelete from "@/components/modal-confirm-delete/Main.vue";
 import sendRequest from '@libs/http.js'
+import Export from '../components/Export.vue'
 import { ref, watch, onMounted } from "vue";
 import { useRouter } from "vue-router";
 
