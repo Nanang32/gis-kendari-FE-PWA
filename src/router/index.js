@@ -161,6 +161,10 @@ import AdminStructureEdit from "../views/admin/profile/office_structure/edit.vue
 import AdminPostIndex from "../views/admin/news/post/Index.vue";
 import AdminPostCreate from "../views/admin/news/post/create.vue";
 import AdminPostEdit from "../views/admin/news/post/edit.vue";
+// image
+import AdminImageIndex from "../views/admin/news/image/index.vue";
+import AdminImageCreate from "../views/admin/news/image/create.vue";
+import AdminImageEdit from "../views/admin/news/image/edit.vue";
 //categories
 import AdminCategoryIndex from "../views/admin/news/category/index.vue";
 import AdminCategoryCreate from "../views/admin/news/category/create.vue";
@@ -258,6 +262,20 @@ const routes = [{
                 component: AdminPostEdit,
             },
             {
+                path: "image",
+                name: "admin-image",
+                component: AdminImageIndex,
+            },
+            {
+                path: "image/create",
+                name: "admin-image-create",
+                component: AdminImageCreate,
+            },
+            {
+                path: "image/edit/:id",
+                name: "admin-image-edit",
+                component: AdminImageEdit,
+            },
                 path: "category",
                 name: "admin-category",
                 component: AdminCategoryIndex,

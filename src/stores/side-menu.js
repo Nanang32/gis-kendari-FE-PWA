@@ -14,6 +14,11 @@ export const useSideMenuStore = defineStore("sideMenu", {
             },
             {
                 icon: "HomeIcon",
+                pageName: "admin-image",
+                title: "Gambar",
+            },
+            {
+                icon: "HomeIcon",
                 title: "Dinas Pu pusat",
                 subMenu: [{
                         icon: "HomeIcon",
