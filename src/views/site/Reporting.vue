@@ -110,49 +110,19 @@
                                                     <th class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left bg-pink-800 text-pink-300 border-pink-700"></th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
+                                            <tbody v-for="(report, index) in reports" :key="index">
                                                 <tr>
                                                     <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
-                                                        1</th>
-                                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">Jembatan retak</td>
+                                                        {{ index +1 }}</th>
+                                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{{ report.title }}</td>
                                                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                        Jembatan</td>
+                                                        {{ report.infrastructure }}</td>
                                                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                        <a href="">-1312312312,213213123</a>
+                                                        {{ report.latlng }}
                                                     </td>
                                                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                                         <div class="flex items-center">
-                                                            <span class="mr-2 bg-blue-400 text-white">Diterima</span>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
-                                                        2</th>
-                                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">Jembatan retak</td>
-                                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                        Jembatan</td>
-                                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                        <a href="">-1312312312,213213123</a>
-                                                    </td>
-                                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                        <div class="flex items-center">
-                                                            <span class="mr-2 bg-yellow-400 text-white">Diproses</span>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
-                                                        3</th>
-                                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">Jembatan retak</td>
-                                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                        Jembatan</td>
-                                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                        <a href="">-1312312312,213213123</a>
-                                                    </td>
-                                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                        <div class="flex items-center">
-                                                            <span class="mr-2 bg-green-400 text-white">Selesai</span>
+                                                            <span class="mr-2 bg-blue-400 text-white"> {{ report.status }}</span>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -176,10 +146,11 @@
 
     import sendRequest from '@libs/http.js'
     import { useRouter } from "vue-router";
-    import { ref, reactive } from "vue";
+    import { ref, reactive, onMounted } from "vue";
     const router = useRouter();
     const loading = ref(false);
     let report = reactive({});
+    let reports = ref([]);
 
     async function onSubmit(data){
         loading.value = true;
@@ -213,6 +184,17 @@
     function showPosition(position) {
         report.latlng = position.coords.latitude + ',' + position.coords.longitude;
     }
+
+    onMounted(async () => {
+        const response = await sendRequest({
+            method: 'get',
+            url: '/reports/confirmed',
+        });
+        if ((response !== null) && (response.status === true)) {
+            reports.value = response.data.reports.data
+            console.log(reports.value);
+        }
+    });
 </script>
 <style scoped>
     @import "./style.css";
