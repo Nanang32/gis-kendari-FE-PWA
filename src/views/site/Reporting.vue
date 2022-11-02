@@ -117,8 +117,11 @@
                                                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">{{ report.title }}</td>
                                                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                                         {{ report.infrastructure }}</td>
-                                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                                                        {{ report.latlng }}
+                                                    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-yellow-900 font-semibold">
+                                                        
+                                                     
+
+                                                        <a :href="'https://maps.google.com/?q=' + report.latlng" target="_blank">Klik disini  {{ report.latlng }}</a>
                                                     </td>
                                                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                                         <div class="flex items-center">
