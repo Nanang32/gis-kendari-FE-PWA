@@ -1,7 +1,4 @@
 <template>
-  <div class="intro-y flex flex-col sm:flex-row items-center mt-8">
-    <h2 class="text-lg font-medium mr-auto">Produk Hukum Baru</h2>
-  </div>
   <div class="grid grid-cols-12 gap-6 mt-5">
     <div class="intro-y col-span-12 lg:col-span-12">
       <Form
@@ -42,17 +39,11 @@ async function onSubmit(data){
   const formdata = new FormData();
   formdata.append("_method", "PUT");
   Object.keys(strategicPlan).forEach(key => {
-      if(key === 'category_ids'){
-        strategicPlan['category_ids'].forEach(function(categoryId){
-          formdata.append('category_ids[]', categoryId);
-        });
-      }
-      else
-        formdata.append(key, strategicPlan[key]);
+    formdata.append(key, strategicPlan[key]);
   });
   const response = await sendRequest({
       method: 'POST',
-      url: `/strategic-plan/${route.params.id}`,
+      url: `/strategicPlans/${route.params.id}`,
       data: formdata
   });
   if ((response !== null) && (response.status === true)) {

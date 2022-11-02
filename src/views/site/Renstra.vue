@@ -13,24 +13,19 @@
                         </h2>
                     </div>
                     <div class="flex flex-row flex-wrap -mx-3">
-                        <div class="flex-shrink max-w-full w-full px-3 pb-5">
+                        <div class="flex-shrink max-w-full w-full px-3 pb-5" v-if="strategicPlan !== null">
                             <div class="relative hover-img max-h-full overflow-scroll">
-                                <div class="intro-y block sm:flex items-center h-10">
-                                    <div class="sm:ml-auto mt-3 sm:mt-0 relative text-slate-500 rounded-lg border">
-                                        <SearchIcon class="w-4 h-4 z-10 absolute my-auto inset-y-0 ml-3 left-0" />
-                                        <input type="text" class="form-control sm:w-56 box pl-10" placeholder="Ketik disini..." />
-                                    </div>
-                                </div>
                                 <div class="intro-y box p-5 mt-5">
                                     <!-- component -->
                                     <div class="py-16 bg-white">
                                         <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
                                             <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
                                                 <div class="md:7/12 lg:w-12/12">
-                                                    <h2 class="text-4xl text-gray-900 font-bold md:text-4xl mb-2">Rencana strategis 2020 - 2022</h2>
+                                                    <h2 class="text-4xl text-gray-900 font-bold md:text-4xl mb-2"> {{ strategicPlan.title }}</h2>
                                                     <div class="border-t border-gray-200 border-opacity-100 mb-2"></div>
-                                                    <p class="mt-6 text-gray-600 text-justify"> Renstra Direktorat Jenderal Sumber Daya Air 2020-2024 disusun dengan memperhatikan tuntutan dan dinamika perkembangan lingkungan strategis yang terjadi begitu cepat, melalui Surat Edaran Direktur Jenderal Sumber Daya Air, berisi target kinerja Direktorat Jenderal Sumber Daya Air 5 (lima) tahun ke depan, yang diwujudkan melalui sasaran strategis, sasaran program, dan sasaran kegiatan di lingkungan Direktorat Jenderal SDA, sebagai penerjemahan pengintegrasian sistem perencanaan, pemrograman dan informasi kinerja sebagaimana diamanatkan pada Redesain Sistem Perencanaan dan Penganggaran (RSPP) Nasional. Pencapaian outcome dan output diharapkan dapat mencapai kinerja yang lebih baik dan memenuhi aspek akuntabilitas berlandaskan kepada sistem akuntansi dan barang milik negara, sistem akuntabilitas kinerja instansi pemerintah serta sistem penganggaraan berbasis kinerja.
-                                                    </p>
+                                                    <div class="mt-6 text-gray-600 text-justify" v-html="strategicPlan.content">
+                                                        
+                                                    </div>
                                                     <div class="border-t border-gray-200 border-opacity-100 mt-2"></div>
                                                 </div>
                                             </div>
@@ -44,14 +39,16 @@
                                 </div>
                                 <div class="p-5">
                                     <div class="flex items-center mt-5">
-                                        <div class="file">
-                                            <a href="" class="w-12 file__icon file__icon--file">
-                                                <div class="file__icon__file-name text-xs">PDF</div>
-                                            </a>
-                                        </div>
-                                        <div class="ml-4">
-                                            <a class="font-medium" href="">Renstra 2020-2022</a>
-                                        </div>
+                                        <a :href="strategicPlan.file_url">
+                                            <div class="file">
+                                                <div class="w-12 file__icon file__icon--file">
+                                                    <div class="file__icon__file-name text-xs">FILE</div>
+                                                </div>
+                                            </div>
+                                            <div class="ml-4">
+                                                <div class="font-medium">{{ strategicPlan.title }}</div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -70,29 +67,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="whitespace-nowrap">
-                                                <FileTextIcon class="w-4 h-4 mr-2 inline" />Undang-Undang Nomor 3 Tahun 2022
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="whitespace-nowrap">
-                                                <FileTextIcon class="w-4 h-4 mr-2 inline" />Undang-Undang Nomor 3 Tahun 2022
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="whitespace-nowrap">
-                                                <FileTextIcon class="w-4 h-4 mr-2 inline" />Undang-Undang Nomor 3 Tahun 2022
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="whitespace-nowrap">
-                                                <FileTextIcon class="w-4 h-4 mr-2 inline" />Undang-Undang Nomor 3 Tahun 2022
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="whitespace-nowrap">
-                                                <FileTextIcon class="w-4 h-4 mr-2 inline" />Undang-Undang Nomor 3 Tahun 2022
+                                        <tr v-for="strategicPlan in rpjmd">
+                                            <td class="whitespace-nowrap" @click="loadStrategicPlan(strategicPlan.id)">
+                                                <FileTextIcon class="w-4 h-4 mr-2 inline" /> {{ strategicPlan.title }}
                                             </td>
                                         </tr>
                                     </tbody>
@@ -108,29 +85,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td class="whitespace-nowrap">
-                                                <FileTextIcon class="w-4 h-4 mr-2 inline" />Undang-Undang Nomor 3 Tahun 2022
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="whitespace-nowrap">
-                                                <FileTextIcon class="w-4 h-4 mr-2 inline" />Undang-Undang Nomor 3 Tahun 2022
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="whitespace-nowrap">
-                                                <FileTextIcon class="w-4 h-4 mr-2 inline" />Undang-Undang Nomor 3 Tahun 2022
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="whitespace-nowrap">
-                                                <FileTextIcon class="w-4 h-4 mr-2 inline" />Undang-Undang Nomor 3 Tahun 2022
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="whitespace-nowrap">
-                                                <FileTextIcon class="w-4 h-4 mr-2 inline" />Undang-Undang Nomor 3 Tahun 2022
+                                        <tr v-for="strategicPlan in sdabm">
+                                            <td class="whitespace-nowrap" @click="loadStrategicPlan(strategicPlan.id)">
+                                                <FileTextIcon class="w-4 h-4 mr-2 inline" /> {{ strategicPlan.title }}
                                             </td>
                                         </tr>
                                     </tbody>
@@ -148,6 +105,36 @@
 import TinySlider from '@/components/tiny-slider/Main.vue';
 import Navbar from "../../components/navbar-menu/Main.vue";
 import Footer from "../../components/footer-public/Main.vue";
+import sendRequest from '@libs/http.js'
+import { ref, onMounted } from "vue";
+const rpjmd = ref([])
+const sdabm = ref([])
+const strategicPlan = ref(null)
+
+async function loadStrategicPlan(id){
+    const response = await sendRequest({
+        method: 'get',
+        url: `/strategicPlans/${id}`
+    });
+    if ((response !== null) && (response.status === true)) {
+        strategicPlan.value = response.data.strategicPlan;
+    }
+}
+onMounted(async () => {
+    const response = await sendRequest({
+        method: 'get',
+        url: '/strategicPlans/all',
+    });
+    if ((response !== null) && (response.status === true)) {
+        const strategicPlans = response.data.strategicPlans;
+        strategicPlans.forEach(strategicPlan => {
+            if(strategicPlan.category === "RPJMD")
+                rpjmd.value.push(strategicPlan)
+            else if(strategicPlan.category === "SDABM")
+                sdabm.value.push(strategicPlan)
+        });
+    }
+})
 </script>
 <style scoped>
     @import "./style.css";

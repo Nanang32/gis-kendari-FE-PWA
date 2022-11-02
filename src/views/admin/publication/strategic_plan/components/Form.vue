@@ -38,14 +38,14 @@
                           <div class="mt-5">
                               <div class="mt-3">
                                   <label for="post-form-3" class="form-label">Kategori</label>
-                                  <TomSelect id="post-form-3" v-model="strategicPlan.category_ids" class="w-full" multiple>
-                                      <option
-                                          v-for="category in categories"
-                                          :key="category.id"
-                                          :value="category.id">
-                                          {{ category.name}}
-                                      </option>
-                                  </TomSelect>
+                                    <div>
+                                        <input type="radio" v-model="strategicPlan.category" value="RPJMD" id="RPJMD" />
+                                        <label for="RPJMD"> RPJMD PROV.SULTRA</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" v-model="strategicPlan.category" value="SDABM" id="SDABM" />
+                                        <label for="SDABM"> RENSTRA SDABM</label>
+                                    </div>
                               </div>
                           </div>
                           <div class="mt-5">
