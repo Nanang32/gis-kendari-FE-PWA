@@ -4,7 +4,7 @@
             <!-- big grid 1 -->
             <div class="flex flex-row flex-wrap">
                 <div class="w-full py-3">
-                    <h2 class="text-gray-800 text-2xl font-bold">
+                    <h2 class="text-gray-800 text-2xl font-bold capitalize">
                         <span class="inline-block h-5 border-l-8 border-red-600 mr-2"></span>Berita terkini
                     </h2>
                 </div>

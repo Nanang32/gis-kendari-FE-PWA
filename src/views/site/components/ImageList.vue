@@ -2,7 +2,7 @@
     <div class="bg-white py-6" v-if="!loading">
         <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
             <div class="w-full py-3">
-                <h2 class="text-gray-800 text-2xl font-bold">
+                <h2 class="text-gray-800 text-2xl font-bold capitalize">
                     <span class="inline-block h-5 border-l-8 border-red-600 mr-2"></span>Dokumentasi foto
                 </h2>
             </div>
@@ -23,7 +23,7 @@
                 <div class="flex-shrink max-w-full w-full lg:w-1/2">
                     <div class="box-one flex flex-row flex-wrap">
                         <article class="flex-shrink max-w-full w-full sm:w-1/2" v-if="images[1]" @click="router.push({name: 'site-image', params: { id: images[1].id }})">
-                            <div class="relative hover-img max-h-48 overflow-hidden">
+                            <div class="relative hover-img max-h-48 overflow-hidden m-1">
                                 <a href="#">
                                     <img class="max-w-full w-full mx-auto h-auto" :src="images[1]['image_url']">
                                 </a>
@@ -33,7 +33,7 @@
                             </div>
                         </article>
                         <article class="flex-shrink max-w-full w-full sm:w-1/2" v-if="images[2]" @click="router.push({name: 'site-image', params: { id: images[2].id }})">
-                            <div class="relative hover-img max-h-48 overflow-hidden">
+                            <div class="relative hover-img max-h-48 overflow-hidden m-1">
                                 <a href="#">
                                     <img class="max-w-full w-full mx-auto h-auto" :src="images[2]['image_url']">
                                 </a>
@@ -43,7 +43,7 @@
                             </div>
                         </article>
                         <article class="flex-shrink max-w-full w-full sm:w-1/2" v-if="images[3]" @click="router.push({name: 'site-image', params: { id: images[3].id }})">
-                            <div class="relative hover-img max-h-48 overflow-hidden">
+                            <div class="relative hover-img max-h-48 overflow-hidden m-1">
                                 <a href="#">
                                     <img class="max-w-full w-full mx-auto h-auto" :src="images[3]['image_url']">
                                 </a>
@@ -53,7 +53,7 @@
                             </div>
                         </article>
                         <article class="flex-shrink max-w-full w-full sm:w-1/2" v-if="images[4]" @click="router.push({name: 'site-image', params: { id: images[4].id }})">
-                            <div class="relative hover-img max-h-48 overflow-hidden">
+                            <div class="relative hover-img max-h-48 overflow-hidden m-1">
                                 <a href="#">
                                     <img class="max-w-full w-full mx-auto h-auto" :src="images[4]['image_url']">
                                 </a>
