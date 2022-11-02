@@ -12,32 +12,48 @@
                         <p class="text-white">DINAS SUMBER DAYA AIR DAN BINA MARGA PROVINSI SULAWESI TENGGARA <br> Jalan Haluoleo No. 05 Kompleks Perkantoran Bumi Praja Anduonohu, Kota Kendari </p>
                         <ul class="space-x-3 mt-6 mb-6 Lg:mb-0">
                             <!--facebook-->
-                            <li class="inline-block bg-white">
+                            <li class="inline-block">
                                 <a target="_blank" class="hover:text-blue-300" rel="noopener noreferrer" href="https://facebook.com" title="Facebook">
                                     <!-- <i class="fab fa-facebook fa-2x"></i> -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 512 512">
-                                        <path fill="currentColor" d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z"></path>
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0 0 48 48" style=" fill:#000000;">
+                                        <path fill="#eee" d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5    V37z"></path>
+                                        <path fill="#3f51b5" d="M34.368,25H31v17h-5V25h-3v-4h3v-2.41c0.002-3.508,1.459-5.59,5.592-5.59H35v4h-2.287 C31.104,17,31,17.6,31,18.723V21h4L34.368,25z"></path>
                                     </svg>
                                 </a>
                             </li>
-                            
                             <!--youtube-->
-                            <li class="inline-block bg-white">
+                            <li class="inline-block">
                                 <a target="_blank" class="hover:text-blue-300" rel="noopener noreferrer" href="https://youtube.com" title="Youtube">
                                     <!-- <i class="fab fa-youtube fa-2x"></i> -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 512 512">
-                                        <path fill="currentColor" d="M508.64,148.79c0-45-33.1-81.2-74-81.2C379.24,65,322.74,64,265,64H247c-57.6,0-114.2,1-169.6,3.6-40.8,0-73.9,36.4-73.9,81.4C1,184.59-.06,220.19,0,255.79q-.15,53.4,3.4,106.9c0,45,33.1,81.5,73.9,81.5,58.2,2.7,117.9,3.9,178.6,3.8q91.2.3,178.6-3.8c40.9,0,74-36.5,74-81.5,2.4-35.7,3.5-71.3,3.4-107Q512.24,202.29,508.64,148.79ZM207,353.89V157.39l145,98.2Z"></path>
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0 0 48 48" style=" fill:#000000;">
+                                        <path fill="#FF3D00" d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z"></path>
+                                        <path fill="#FFF" d="M20 31L20 17 32 24z"></path>
                                     </svg>
                                 </a>
                             </li>
                             <!--instagram-->
-                            <li class="inline-block bg-white">
+                            <li class="inline-block">
                                 <a target="_blank" class="hover:text-blue-300" rel="noopener noreferrer" href="https://instagram.com" title="Instagram">
                                     <!-- <i class="fab fa-instagram fa-2x"></i> -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="2rem" height="2rem" viewBox="0 0 512 512">
-                                        <path fill="currentColor" d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z"></path>
-                                        <path fill="currentColor" d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z"></path>
-                                        <path fill="currentColor" d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z"></path>
+                                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="35" height="35" viewBox="0 0 48 48" style=" fill:#40C057;">
+                                        <radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" stop-color="#fd5"></stop>
+                                            <stop offset=".328" stop-color="#ff543f"></stop>
+                                            <stop offset=".348" stop-color="#fc5245"></stop>
+                                            <stop offset=".504" stop-color="#e64771"></stop>
+                                            <stop offset=".643" stop-color="#d53e91"></stop>
+                                            <stop offset=".761" stop-color="#cc39a4"></stop>
+                                            <stop offset=".841" stop-color="#c837ab"></stop>
+                                        </radialGradient>
+                                        <path fill="url(#undefined)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20 c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20 C42.014,38.383,38.417,41.986,34.017,41.99z"></path>
+                                        <radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse">
+                                            <stop offset="0" stop-color="#4168c9"></stop>
+                                            <stop offset=".999" stop-color="#4168c9" stop-opacity="0"></stop>
+                                        </radialGradient>
+                                        <path fill="url(#undefined)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20  c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20 C42.014,38.383,38.417,41.986,34.017,41.99z"></path>
+                                        <path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5  s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"></path>
+                                        <circle cx="31.5" cy="16.5" r="1.5" fill="#fff"></circle>
+                                        <path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12    C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"></path>
                                     </svg>
                                 </a>
                             </li>
@@ -51,8 +67,10 @@
                                 <ul class="text-white">
                                     <li class="py-1 hover:text-blue-300 capitalize">
                                         <MapIcon class="w-4 h-4 mr-1 inline-block" />Jalan Haluoleo No. 05 Kompleks Perkantoran Bumi Praja Anduonohu, Kota Kendari</li>
-                                    <li class="py-1 hover:text-blue-300"><PhoneIcon class="w-4 h-4 mr-1 inline-block"/>0402 (000000)</li>
-                                    <li class="py-1 hover:text-blue-300"><MailIcon class="w-4 h-4 mr-1 inline-block"/> sisdjatan.sdabmsultra@gmail.com</li>
+                                    <li class="py-1 hover:text-blue-300">
+                                        <PhoneIcon class="w-4 h-4 mr-1 inline-block" />0402 (000000)</li>
+                                    <li class="py-1 hover:text-blue-300">
+                                        <MailIcon class="w-4 h-4 mr-1 inline-block" /> sisdjatan.sdabmsultra@gmail.com</li>
                                 </ul>
                             </div>
                             <div class="flex-shrink max-w-full w-1/3 md:w-2/4 mb-6 lg:mb-0 ml-10">
