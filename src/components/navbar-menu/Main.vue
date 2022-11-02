@@ -1,9 +1,9 @@
 <template>
     <div>
-        <nav class="px-6 py-4 bg-[#fff103] md:flex md:justify-between md:items-center">
+        <nav class="px-6 py-4 bg-[#08276e] md:flex md:justify-between md:items-center">
             <div class="flex items-center justify-between">
                 <img class="mx-auto h-11 w-10 mr-2" src="@/assets/images/logosultra.png" />
-                <div class="mx-w-10 text-2xl font-bold capitalize text-black flex items-center pt-3">SISDJATAN</div>
+                <div class="mx-w-10 text-2xl font-bold capitalize text-white flex items-center pt-3">SISDJATAN</div>
                 <router-link to="/" class="
             text-xl
             font-bold
@@ -34,49 +34,49 @@
           md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0
         ">
                 <li class="border-ember-800 cursor-pointer">
-                    <router-link :to="{name: 'site'}" class=" block px-4 py-2 text-sm text-black hover:text-black">
+                    <router-link :to="{name: 'site'}" class=" block px-4 py-2 text-sm text-white hover:text-blue-300 uppercase">
                         Beranda
                     </router-link>
                 </li>
-                <li class="border-ember-800 cursor-pointer">
+                <li class="border-ember-100 cursor-pointer uppercase">
                     <div class="relative">
                         <!-- Dropdown toggle button -->
                         <button @click="showProfile = !showProfile" class="flex items-center rounded-md focus:outline-none">
-                            <span class="mr-4">Profil</span>
-                            <svg class="w-5 h-5 text-indigo-900" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <span class="mr-4 text-white uppercase">Profil</span>
+                            <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
                         </button>
                         <!-- Dropdown menu -->
-                        <div v-show="showProfile" class="py-2 mt-2 bg-[#fff103] rounded-md shadow-xl lg:absolute lg:right-0 w-44 z-10">
-                            <router-link :to="{name: 'site-visimisi'}" class="block px-4 py-2 text-sm text-black hover:text-black ">
+                        <div v-show="showProfile" class="py-2 mt-2 bg-[#08276e] rounded-md shadow-xl lg:absolute lg:right-0 w-44 z-10">
+                            <router-link :to="{name: 'site-visimisi'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300 ">
                                 Visi Misi
                             </router-link>
-                            <router-link :to="{name: 'site-tasknfunction'}" class="block px-4 py-2 text-sm text-black hover:text-black ">
+                            <router-link :to="{name: 'site-tasknfunction'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300 ">
                                 Tugas &amp; Fungsi
                             </router-link>
-                            <router-link :to="{name: 'site-strukturorg'}" class="block px-4 py-2 text-sm text-black hover:text-black">
+                            <router-link :to="{name: 'site-strukturorg'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300">
                                 Struktur Organisasi
                             </router-link>
-                            <router-link :to="{name:'site-profsekret'}" class="block px-4 py-2 text-sm text-black hover:text-black ">
+                            <router-link :to="{name:'site-profsekret'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300 ">
                                 Sekretariat
                             </router-link>
-                            <router-link :to="{name: 'site-profpjpa'}" class=" block px-4 py-2 text-sm text-black hover:text-black ">
+                            <router-link :to="{name: 'site-profpjpa'}" class=" block px-4 py-2 text-xs text-white hover:text-blue-300 ">
                                 Bidang PJPA
                             </router-link>
-                            <router-link :to="{name: 'site-profpjsa'}" class="block px-4 py-2 text-sm text-black hover:text-black">
+                            <router-link :to="{name: 'site-profpjsa'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300">
                                 Bidang PJSA
                             </router-link>
-                            <router-link :to="{name: 'site-profbinamarga'}" class="block px-4 py-2 text-sm text-black hover:text-black">
+                            <router-link :to="{name: 'site-profbinamarga'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300">
                                 Bidang Bina Marga
                             </router-link>
-                            <router-link :to="{name: 'site-profuptdwilayah'}" class="block px-4 py-2 text-sm text-black hover:text-black">
+                            <router-link :to="{name: 'site-profuptdwilayah'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300">
                                 UPTD Wilayah I s/d IV
                             </router-link>
-                            <router-link :to="{name:'site-profuptdlkonstruksi'}" class=" block px-4 py-2 text-sm text-black hover:text-black">
+                            <router-link :to="{name:'site-profuptdlkonstruksi'}" class=" block px-4 py-2 text-xs text-white hover:text-blue-300">
                                 UPTD Lab Konstruksi
                             </router-link>
-                            <router-link :to="{name:'site-profuptdpkonstruksi'}" class="block px-4 py-2 text-sm text-black hover:text-black ">
+                            <router-link :to="{name:'site-profuptdpkonstruksi'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300 ">
                                 UPTD Peralatan
                             </router-link>
                         </div>
@@ -86,39 +86,39 @@
                     <div class="relative">
                         <!-- Dropdown toggle button -->
                         <button @click="showPublication = !showPublication" class="flex items-center rounded-md focus:outline-none ">
-                            <span class="mr-4">Publikasi</span>
-                            <svg class="w-5 h-5 text-indigo-900" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <span class="mr-4 uppercase text-white">Publikasi</span>
+                            <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
                         </button>
                         <!-- Dropdown menu -->
-                        <div v-show="showPublication" class="py-2 mt-2 bg-[#fff103] rounded-md shadow-xl lg:absolute lg:right-0 w-44 z-10 ">
-                            <router-link :to="{name: 'site-prodhukum'}" class="block px-4 py-2 text-sm text-black hover:text-black ">
+                        <div v-show="showPublication" class="py-2 mt-2 bg-[#08276e] rounded-md shadow-xl lg:absolute lg:right-0 w-44 z-10 ">
+                            <router-link :to="{name: 'site-prodhukum'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300 ">
                                 Publikasi Hukum
                             </router-link>
-                            <router-link :to="{name: 'site-renstra'}" class=" block px-4 py-2 text-sm text-black hover:text-black ">
+                            <router-link :to="{name: 'site-renstra'}" class=" block px-4 py-2 text-xs text-white hover:text-blue-300 ">
                                 Publikasi Strategis
                             </router-link>
-                            <router-link :to="{name: 'site-jobperformance'}" class="block px-4 py-2 text-sm text-black hover:text-black">
+                            <router-link :to="{name: 'site-jobperformance'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300">
                                 Kinerja Pekerjaan
                             </router-link>
-                            <router-link :to="{name: 'site-infpjpa'}" class="block px-4 py-2 text-sm text-black hover:text-black">
+                            <router-link :to="{name: 'site-infpjpa'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300">
                                 Informasi PJPA
                             </router-link>
-                            <router-link :to="{name: 'site-infpjsa'}" class="block px-4 py-2 text-sm text-black hover:text-black">
+                            <router-link :to="{name: 'site-infpjsa'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300">
                                 Informasi PJSA
                             </router-link>
                         </div>
                     </div>
                 </li>
                 <li class="border-ember-800 cursor-pointer">
-                    <router-link :to="{name: 'site-all'}" class="block px-4 py-2 text-sm text-black hover:text-black">
+                    <router-link :to="{name: 'site-all'}" class="block px-4 py-2 text-sm text-white hover:text-blue-300 uppercase">
                         Galeri
                     </router-link>
                 </li>
                 <li class="border-ember-800 cursor-pointer">
-                    <router-link :to="{name: 'site-mapgis'}" class="block px-4 py-2 text-sm text-black hover:text-black">
-                        GIS
+                    <router-link :to="{name: 'site-mapgis'}" class="block px-4 py-2 text-sm text-white hover:text-blue-300 uppercase">
+                        webGIS
                     </router-link>
                 </li>
                 <li class="border-ember-800 cursor-pointer">
@@ -129,9 +129,10 @@
                 items-center
                 rounded-md
                 focus:outline-none
+                uppercase
               ">
-                            <span class="mr-4">Pelayanan</span>
-                            <svg class="w-5 h-5 text-indigo-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                            <span class="mr-4 text-white">Pelayanan</span>
+                            <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
                         </button>
@@ -139,7 +140,7 @@
                         <div v-show="showService" class="
                 py-2
                 mt-2
-                bg-[#fff103]
+                bg-[#08276e]
                 rounded-md
                 shadow-xl
                 lg:absolute lg:right-0
@@ -150,8 +151,8 @@
                   block
                   px-4
                   py-2
-                  text-sm text-black
-                  hover:text-black
+                  text-xs text-white
+                  hover:text-blue-300
                 ">
                                 Peng. Masyarakat
                             </router-link>
@@ -159,8 +160,8 @@
                   block
                   px-4
                   py-2
-                  text-sm text-black
-                  hover:text-black
+                  text-xs text-white
+                  hover:text-blue-300
                 ">
                                 UPTD Lab
                             </router-link>
