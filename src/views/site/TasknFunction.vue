@@ -1,8 +1,7 @@
 <template>
     <div class="text-gray-700">
         <Navbar />
-    <TinySlider />
-
+        <TinySlider />
         <main id="content">
             <!-- block news -->
             <div class="bg-gray-50 py-6">
@@ -25,7 +24,6 @@
                                     <div class="container m-auto px-6 text-gray-600 md:px-12 xl:px-6">
                                         <div class="space-y-6 md:space-y-0 md:flex md:gap-6 lg:items-center lg:gap-12">
                                             <div class="md:7/12 lg:w-3/3">
-                                                <h2 class="text-2xl text-gray-900 font-bold md:text-4xl"><span class="inline-block h-5 border-l-3 border-red-600 mr-2"></span>Tugas & Fungsi</h2>
                                                 <p class="mt-6 text-gray-600" v-html="content"></p>
                                             </div>
                                         </div>
@@ -43,7 +41,7 @@
 </template>
 <script setup>
 import TinySlider from '@/components/tiny-slider/Main.vue';
-    
+
 import Navbar from "../../components/navbar-menu/Main.vue";
 import Footer from "../../components/footer-public/Main.vue";
 import sendRequest from '@libs/http.js'
