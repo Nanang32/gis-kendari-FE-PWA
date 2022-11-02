@@ -10,8 +10,8 @@
                 </div>
                 <!--Start left cover-->
                 <div class="flex-shrink max-w-full w-full lg:w-1/2 pb-1 lg:pb-0 lg:pr-1">
-                    <div class="relative hover-img max-h-98 overflow-hidden">
-                        <a href="#" v-if="posts[0]">
+                    <div class="relative hover-img max-h-98 overflow-hidden"  v-if="posts[0]" @click="router.push({name: 'site-post', params: { id: posts[0].id }})">
+                        <a href="#">
                             <img class="max-w-full w-full mx-auto h-auto" :src="posts[0]['featured_image_url']">
                         </a>
                         <div class="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
@@ -22,9 +22,9 @@
                 <!--Start box news-->
                 <div class="flex-shrink max-w-full w-full lg:w-1/2">
                     <div class="box-one flex flex-row flex-wrap">
-                        <article class="flex-shrink max-w-full w-full sm:w-1/2">
+                        <article class="flex-shrink max-w-full w-full sm:w-1/2" v-if="posts[1]" @click="router.push({name: 'site-post', params: { id: posts[1].id }})">
                             <div class="relative hover-img max-h-48 overflow-hidden m-1">
-                                <a href="#" v-if="posts[1]">
+                                <a href="#">
                                     <img class="max-w-full w-full mx-auto h-auto" :src="posts[1]['featured_image_url']">
                                 </a>
                                 <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
@@ -32,9 +32,9 @@
                                 </div>
                             </div>
                         </article>
-                        <article class="flex-shrink max-w-full w-full sm:w-1/2">
+                        <article class="flex-shrink max-w-full w-full sm:w-1/2" v-if="posts[2]" @click="router.push({name: 'site-post', params: { id: posts[2].id }})">
                             <div class="relative hover-img max-h-48 overflow-hidden m-1">
-                                <a href="#" v-if="posts[2]">
+                                <a href="#">
                                     <img class="max-w-full w-full mx-auto h-auto" :src="posts[2]['featured_image_url']">
                                 </a>
                                 <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
@@ -42,9 +42,9 @@
                                 </div>
                             </div>
                         </article>
-                        <article class="flex-shrink max-w-full w-full sm:w-1/2">
+                        <article class="flex-shrink max-w-full w-full sm:w-1/2" v-if="posts[3]" @click="router.push({name: 'site-post', params: { id: posts[3].id }})">
                             <div class="relative hover-img max-h-48 overflow-hidden m-1">
-                                <a href="#" v-if="posts[3]">
+                                <a href="#">
                                     <img class="max-w-full w-full mx-auto h-auto" :src="posts[3]['featured_image_url']">
                                 </a>
                                 <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
@@ -52,9 +52,9 @@
                                 </div>
                             </div>
                         </article>
-                        <article class="flex-shrink max-w-full w-full sm:w-1/2">
+                        <article class="flex-shrink max-w-full w-full sm:w-1/2" v-if="posts[4]" @click="router.push({name: 'site-post', params: { id: posts[4].id }})">
                             <div class="relative hover-img max-h-48 overflow-hidden m-1">
-                                <a href="#" v-if="posts[4]">
+                                <a href="#">
                                     <img class="max-w-full w-full mx-auto h-auto" :src="posts[4]['featured_image_url']">
                                 </a>
                                 <div class="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
@@ -71,10 +71,12 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import sendRequest from '@libs/http.js'
+import { useRouter } from "vue-router";
 
 const posts = ref([]);
 const loading = ref(true);
 const lastPage = ref(1);
+const router = useRouter();
 
 async function loadData(page = 1) {
     loading.value = true;
