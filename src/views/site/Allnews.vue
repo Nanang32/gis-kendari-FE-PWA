@@ -14,8 +14,8 @@
                 </div>
             </div>
         </div>
-        <AllImageList />
         <AllPostList />
+        <AllImageList />
         <AllVideoList />
         <!-- block news -->
     </main>
