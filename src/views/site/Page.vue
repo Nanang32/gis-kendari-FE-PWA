@@ -11,14 +11,14 @@
                         <div class="flex-shrink max-w-full w-full lg:w-3/3  overflow-hidden">
                             <div class="w-full py-3 mb-3">
                                 <h2 class="text-gray-800 text-3xl font-bold">
-                                    <span class="inline-block h-5 border-l-3 border-red-600 mr-2"></span> Berita terkini
+                                    <span class="inline-block h-5 border-l-3 border-red-600 mr-2"></span> Detail informasi
                                 </h2>
                             </div>
                             <div class="flex flex-row flex-wrap -mx-3">
                                 <div class="max-w-full w-full px-4">
                                     <!-- Post content -->
                                     <div class="leading-relaxed pb-4" >
-                                        <h2 class="w-full float-left text-xl leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100">Judul Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        <h2 class="w-full float-left text-xl leading-normal mb-2 font-semibold text-gray-800 dark:text-gray-100">
                                             {{ title }}</h2>
                                         <figure class="text-center mb-6">
                                             <img class="max-w-full w-full lg:w-3/3 h-52" :src="image_url">
