@@ -31,7 +31,7 @@
                                                     <td class="whitespace-nowrap"> {{ lawDocument.year }}</td>
                                                     <td class="whitespace-nowrap">
                                                         <a class="btn btn-sm btn-white w-24 m-2"
-                                                            :href="lawDocument.file_url">
+                                                            :href="lawDocument.file_url" target="_blank">
                                                             <DownloadIcon class="w-4 h-4 mr-2" /> Lihat
                                                         </a>
                                                     </td>
