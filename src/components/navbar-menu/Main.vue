@@ -2,8 +2,8 @@
     <div>
         <nav class="px-6 py-4 bg-[#08276e] md:flex md:justify-between md:items-center">
             <div class="flex items-center justify-between">
-                <img class="mx-auto h-11 w-10 mr-2" src="@/assets/images/logosultra.png" />
-                <div class="mx-w-10 text-2xl font-bold capitalize text-white flex items-center pt-3">SISDJATAN</div>
+                <img class="mx-auto h-16 w-72 mr-2" src="@/assets/images/logosultra.png" />
+                
                 <router-link to="/" class="
             text-xl
             font-bold
