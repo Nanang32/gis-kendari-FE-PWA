@@ -5,7 +5,7 @@
             <div class="flex flex-row flex-wrap mb-3">
                 <div class="w-full py-3">
                     <h2 class="text-gray-800 text-2xl font-bold">
-                        <span class="inline-block h-5 border-l-3 border-red-600 mr-2"></span> Dokumentasi Foto
+                        <span class="inline-block h-5 border-l-8 border-red-600 mr-2"></span> Dokumentasi Foto
                     </h2>
                 </div>
                 <!--Start box news-->
