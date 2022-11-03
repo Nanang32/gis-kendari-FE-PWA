@@ -1,9 +1,12 @@
 <template>
     <div class="text-gray-700">
         <Navbar />
-    <TinySlider />
-
         <main id="content">
+            <div class="flex flex-row items-center">
+                <div class="rounded-md object-cover overflow-hidden">
+                    <a href="#"><img class="border max-w-full sm:w-full" src="@/assets/images/prodpjsa.png" alt="author"></a>
+                </div>
+            </div>
             <!-- component -->
             <div class="flex items-center justify-center mt-16 mb-16">
                 <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
@@ -40,8 +43,6 @@
                             <div class="flex space-x-2 text-gray-600 font-bold text-4xl text-center pl-28">
                                 <p class="">10.930</p>
                             </div>
-                            
-                            
                         </div>
                     </div>
                     <!-- 3 card -->
@@ -59,8 +60,6 @@
                             <div class="flex space-x-2 text-gray-600 font-bold text-4xl text-center pl-32">
                                 <p class="">3.471</p>
                             </div>
-                            
-                            
                         </div>
                     </div>
                     <!-- 4 card -->
@@ -78,8 +77,6 @@
                             <div class="flex space-x-2 text-gray-600 font-bold text-4xl text-center pl-28">
                                 <p class="">26.948</p>
                             </div>
-                            
-                            
                         </div>
                     </div>
                     <!-- 5 card -->
@@ -106,10 +103,9 @@
     </div>
 </template>
 <script setup>
-import TinySlider from '@/components/tiny-slider/Main.vue';
 import Navbar from "../../components/navbar-menu/Main.vue";
 import Footer from "../../components/footer-public/Main.vue";
 </script>
 <style scoped>
-    @import "./style.css";
+@import "./style.css";
 </style>

@@ -1,9 +1,12 @@
 <template>
     <div class="text-gray-700">
         <Navbar />
-    <TinySlider />
-
         <main id="content">
+            <div class="flex flex-row items-center">
+                <div class="rounded-md object-cover overflow-hidden">
+                    <a href="#"><img class="border max-w-full sm:w-full" src="@/assets/images/strukturORG.png" alt="author"></a>
+                </div>
+            </div>
             <!-- block news -->
             <div class="bg-gray-50 py-6">
                 <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
@@ -13,11 +16,6 @@
                             <div class="flex flex-row flex-wrap -mx-3">
                                 <div class="flex-shrink max-w-full w-full px-3">
                                     <div class="p-4 border border-gray-100 bg-white mb-4">
-                                        <div class="flex flex-row items-center">
-                                            <div class="rounded-md object-cover overflow-hidden">
-                                                <a href="#"><img class="border max-w-full sm:w-full" src="@/assets/images/strukturORG.png" alt="author"></a>
-                                            </div>
-                                        </div>
                                         <div class="rounded-md object-cover overflow-hidden transition duration-200 ease-out transform hover:scale-110 shadow-2xl mt-5">
                                             <a href="#"><img class="border max-w-full sm:w-full" :src="image" alt="author"></a>
                                         </div>
@@ -34,8 +32,6 @@
     </div>
 </template>
 <script setup>
-import TinySlider from '@/components/tiny-slider/Main.vue';
-    
 import Navbar from "../../components/navbar-menu/Main.vue";
 import Footer from "../../components/footer-public/Main.vue";
 import sendRequest from '@libs/http.js'

@@ -1,9 +1,12 @@
 <template>
     <div class="text-gray-700">
         <Navbar />
-    <TinySlider />
-
         <main id="content">
+            <div class="flex flex-row items-center">
+                <div class="rounded-md object-cover overflow-hidden">
+                    <a href="#"><img class="border max-w-full sm:w-full" src="@/assets/images/pelulab.png" alt="author"></a>
+                </div>
+            </div>
             <!-- block news -->
             <div class="bg-gray-50 py-6">
                 <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
@@ -16,20 +19,12 @@
                                 </h2>
                             </div>
                             <div class="flex flex-row flex-wrap -mx-3">
-                                <div class="flex-shrink max-w-full w-full px-3">
-                                    <div class="p-4 border border-gray-100 bg-white mb-4">
-                                        <div class="flex flex-row items-center">
-                                            <div class="rounded-md object-cover overflow-hidden">
-                                                <a href="#"><img class="border max-w-full sm:w-full" src="@/assets/images/back2.png" alt="author"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                                 <div class="flex-shrink max-w-full w-full px-3">
                                     <div class="p-4 border border-gray-100 bg-white mb-4">
                                         <div class="flex flex-row items-center">
                                             <div class="rounded-full overflow-hidden">
-                                                <a href="#"><img class="border max-w-full w-20 sm:w-32" src="@/assets/images/logosultra.png" alt="author"></a>
+                                                <a href="#"><img class="border max-w-full w-20 sm:w-32" src="@/assets/images/lsultra.png" alt="author"></a>
                                             </div>
                                             <div class="ml-8">
                                                 <!--name-->
@@ -37,11 +32,11 @@
                                                     <span class="font-bold">UPTD LABOROTORIUM SDABM</span>
                                                 </h4>
                                                 <p class="hidden sm:block font-medium">
-                                                HUBUNGI KAMI <br>
-                                                No. Tlp : <br>
-                                                022 7562049 <br>
-                                                Email : <br>
-                                                admin-esdm@jabarprov.go.id</p>
+                                                    HUBUNGI KAMI <br>
+                                                    No. Tlp : <br>
+                                                    022 7562049 <br>
+                                                    Email : <br>
+                                                    admin-esdm@jabarprov.go.id</p>
                                             </div>
                                         </div>
                                     </div>
@@ -145,8 +140,7 @@
                                 </div>
                                 <div class="w-full   bg-green-600 shadow-xl shadow-green-200 py-10 px-20 flex justify-between items-center mt-3">
                                     <p class=" text-white capitalize"> <span class="text-4xl font-medium">info</span> <br> <span class="text-lg ">Tarif pengujian di UPTD laborotorium SDABM</span></p>
-                                    <a class="px-5 py-3  font-medium text-slate-700 shadow-xl  hover:bg-white duration-150  bg-yellow-400" target="_blank" 
-                                    :href="uptd.attachment_url">CEK DISINI </a>
+                                    <a class="px-5 py-3  font-medium text-slate-700 shadow-xl  hover:bg-white duration-150  bg-yellow-400" target="_blank" :href="uptd.attachment_url">CEK DISINI </a>
                                 </div>
                             </div>
                         </div>
@@ -159,43 +153,42 @@
     </div>
 </template>
 <script setup>
-    import TinySlider from '@/components/tiny-slider/Main.vue';
-    import Navbar from "../../components/navbar-menu/Main.vue";
-    import Footer from "../../components/footer-public/Main.vue";
-    import sendRequest from '@libs/http.js'
-    import { ref, onMounted } from "vue";
+import Navbar from "../../components/navbar-menu/Main.vue";
+import Footer from "../../components/footer-public/Main.vue";
+import sendRequest from '@libs/http.js'
+import { ref, onMounted } from "vue";
 
-    const uptdLabs = ref([]);
-    const uptd = ref({});
-    const aspal = ref({});
-    const beton = ref({});
-    const agregat = ref({});
-    const tanah = ref({});
-    const penyewaan = ref({});
-    const KEY_UPTD = 'UPTD';
-    const KEY_ASPAL = 'ASPAL';
-    const KEY_BETON = 'BETON';
-    const KEY_AGREGAT = 'AGREGAT';
-    const KEY_TANAH = 'TANAH';
-    const KEY_PENYEWAAN = 'PENYEWAAN';
+const uptdLabs = ref([]);
+const uptd = ref({});
+const aspal = ref({});
+const beton = ref({});
+const agregat = ref({});
+const tanah = ref({});
+const penyewaan = ref({});
+const KEY_UPTD = 'UPTD';
+const KEY_ASPAL = 'ASPAL';
+const KEY_BETON = 'BETON';
+const KEY_AGREGAT = 'AGREGAT';
+const KEY_TANAH = 'TANAH';
+const KEY_PENYEWAAN = 'PENYEWAAN';
 
 
-    onMounted(async () => {
-        const response = await sendRequest({
-            method: 'get',
-            url: '/uptdLabs',
-        });
-        if ((response !== null) && (response.status === true)) {
-            uptdLabs.value = response.data.uptdlabs
-        }
-        uptd.value = uptdLabs.value.find(item => item.key === KEY_UPTD)
-        aspal.value = uptdLabs.value.find(item => item.key === KEY_ASPAL)
-        beton.value = uptdLabs.value.find(item => item.key === KEY_BETON)
-        agregat.value = uptdLabs.value.find(item => item.key === KEY_AGREGAT)
-        tanah.value = uptdLabs.value.find(item => item.key === KEY_TANAH)
-        penyewaan.value = uptdLabs.value.find(item => item.key === KEY_PENYEWAAN)
+onMounted(async () => {
+    const response = await sendRequest({
+        method: 'get',
+        url: '/uptdLabs',
     });
+    if ((response !== null) && (response.status === true)) {
+        uptdLabs.value = response.data.uptdlabs
+    }
+    uptd.value = uptdLabs.value.find(item => item.key === KEY_UPTD)
+    aspal.value = uptdLabs.value.find(item => item.key === KEY_ASPAL)
+    beton.value = uptdLabs.value.find(item => item.key === KEY_BETON)
+    agregat.value = uptdLabs.value.find(item => item.key === KEY_AGREGAT)
+    tanah.value = uptdLabs.value.find(item => item.key === KEY_TANAH)
+    penyewaan.value = uptdLabs.value.find(item => item.key === KEY_PENYEWAAN)
+});
 </script>
 <style scoped>
-    @import "./style.css";
+@import "./style.css";
 </style>

@@ -1,7 +1,11 @@
 <template>
     <div class="bg-gray-50 py-6">
         <Navbar />
-    <TinySlider />
+    <div class="flex flex-row items-center">
+            <div class="rounded-md object-cover overflow-hidden">
+                <a href="#"><img class="border max-w-full sm:w-full" src="@/assets/images/prodrenstra.png" alt="author"></a>
+            </div>
+        </div>
 
         <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
             <div class="flex flex-row flex-wrap">
@@ -102,7 +106,6 @@
     <Footer />
 </template>
 <script setup>
-import TinySlider from '@/components/tiny-slider/Main.vue';
 import Navbar from "../../components/navbar-menu/Main.vue";
 import Footer from "../../components/footer-public/Main.vue";
 import sendRequest from '@libs/http.js'

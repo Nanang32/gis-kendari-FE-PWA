@@ -1,8 +1,11 @@
 <template>
     <div class="bg-gray-50 py-6">
         <Navbar />
-    <TinySlider />
-
+        <div class="flex flex-row items-center">
+            <div class="rounded-md object-cover overflow-hidden">
+                <a href="#"><img class="border max-w-full sm:w-full" src="@/assets/images/prodhukum.png" alt="author"></a>
+            </div>
+        </div>
         <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
             <div class="flex flex-row flex-wrap">
                 <!-- Left -->
@@ -30,8 +33,7 @@
                                                     <td class="whitespace-nowrap"> {{ lawDocument.title }}</td>
                                                     <td class="whitespace-nowrap"> {{ lawDocument.year }}</td>
                                                     <td class="whitespace-nowrap">
-                                                        <a class="btn btn-sm btn-white w-24 m-2"
-                                                            :href="lawDocument.file_url" target="_blank">
+                                                        <a class="btn btn-sm btn-white w-24 m-2" :href="lawDocument.file_url" target="_blank">
                                                             <DownloadIcon class="w-4 h-4 mr-2" /> Lihat
                                                         </a>
                                                     </td>
@@ -66,7 +68,6 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -74,7 +75,6 @@
     <Footer />
 </template>
 <script setup>
-import TinySlider from '@/components/tiny-slider/Main.vue';
 import Navbar from "../../components/navbar-menu/Main.vue";
 import Footer from "../../components/footer-public/Main.vue";
 import sendRequest from '@libs/http.js'
@@ -83,7 +83,7 @@ const categories = ref([]);
 const lawDocuments = ref([]);
 const loading = ref(true);
 
-async function loadCategory(){
+async function loadCategory() {
     loading.value = true;
     const response = await sendRequest({
         method: 'get',
@@ -95,7 +95,7 @@ async function loadCategory(){
     loading.value = false;
 }
 
-async function loadLaw(categoryId){
+async function loadLaw(categoryId) {
     loading.value = true;
     lawDocuments.value = [];
     const response = await sendRequest({
@@ -111,8 +111,7 @@ async function loadLaw(categoryId){
 onMounted(async () => {
     loadCategory()
 });
-
 </script>
 <style scoped>
-    @import "./style.css";
+@import "./style.css";
 </style>
