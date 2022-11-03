@@ -15,11 +15,10 @@
                         <div class="flex-shrink max-w-full w-full lg:w-3/3 overflow-hidden">
                             <div class="w-full py-3">
                                 <h2 class="text-gray-800 text-2xl font-bold">
-                                    <span class="inline-block h-5 border-l-3 border-red-600 mr-2"></span> UPTD LABORATORIUM
+                                    <span class="inline-block h-5 border-l-3 border-red-600 mr-2"></span>  UPTD LABORATORIUM KONSTRUKSI SDABM
                                 </h2>
                             </div>
                             <div class="flex flex-row flex-wrap -mx-3">
-                                
                                 <div class="flex-shrink max-w-full w-full px-3">
                                     <div class="p-4 border border-gray-100 bg-white mb-4">
                                         <div class="flex flex-row items-center">
@@ -29,14 +28,14 @@
                                             <div class="ml-8">
                                                 <!--name-->
                                                 <h4 class="text-2xl">
-                                                    <span class="font-bold">UPTD LABOROTORIUM SDABM</span>
+                                                    <span class="font-bold uppercase"> UPTD LABORATORIUM KONSTRUKSI SDABM</span>
                                                 </h4>
                                                 <p class="hidden sm:block font-medium">
                                                     HUBUNGI KAMI <br>
-                                                    No. Tlp : <br>
-                                                    022 7562049 <br>
-                                                    Email : <br>
-                                                    admin-esdm@jabarprov.go.id</p>
+                                                    Alamat : Jalan Mayjen S. Parman No. 1A Kota Kendari <br>
+                                                    No. Telp : (0401) 3124046 <br>
+                                                    Email : labpusultrakdi@yahoo.com
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
@@ -49,8 +48,8 @@
                                                 <h2 class="text-2xl text-gray-900 font-bold md:text-4xl"><span class="inline-block h-5 border-l-3 border-red-600 mr-2"></span> {{ uptd.title }}</h2>
                                                 <div class="mt-6 text-gray-600" v-html="uptd.content"></div>
                                             </div>
-                                            <div class="md:5/12 lg:w-5/12" v-if="uptd.image_url !== ''">
-                                                <img :src="uptd.image_url" alt="image" loading="lazy" width="" height="">
+                                            <div class="md:5/12 lg:w-5/12 py-10" v-if="uptd.image_url !== ''">
+                                                <img :src="uptd.image_url" alt="image" loading="lazy" >
                                             </div>
                                         </div>
                                     </div>
