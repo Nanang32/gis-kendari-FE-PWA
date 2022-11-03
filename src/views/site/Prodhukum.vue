@@ -29,12 +29,15 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr v-for="lawDocument in lawDocuments">
+                                                <tr class="text-center" v-for="lawDocument in lawDocuments">
                                                     <td class="whitespace-nowrap"> {{ lawDocument.title }}</td>
                                                     <td class="whitespace-nowrap"> {{ lawDocument.year }}</td>
                                                     <td class="whitespace-nowrap">
                                                         <a class="btn btn-sm btn-white w-24 m-2" :href="lawDocument.file_url" target="_blank">
                                                             <DownloadIcon class="w-4 h-4 mr-2" /> Lihat
+                                                        </a>
+                                                        <a class="btn btn-sm btn-white w-24 " :href="lawDocument.file_url">
+                                                            <DownloadIcon class="w-4 h-4 mr-2" /> Unduh
                                                         </a>
                                                     </td>
                                                 </tr>
