@@ -71,7 +71,7 @@
                             </div>
                             <div class="flex-shrink max-w-full w-1/3 md:w-2/4 mb-6 lg:mb-0 ml-10">
                                 <h4 class="text-base leading-normal mb-3 capitalize text-white">Situs terkait</h4>
-                                <ul class="text-white">
+                                <ul class="text-white capitalize">
                                     <li class="py-1 hover:text-blue-300"><a href="https://www.sultraprov.go.id/" target="_blank">Pemerintah sulawesi tenggara</a></li>
                                     <li class="py-1 hover:text-blue-300"><a href="https://www.pu.go.id/" target="_blank">Kementrian PUPR</a></li>
                                     <li class="py-1 hover:text-blue-30"><a href="https://sda.pu.go.id/" target="_blank">Direktorat SDA</a></li>
