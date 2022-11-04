@@ -41,7 +41,7 @@ import IrrigationDetail from './components/irrigation.vue'
 import RiverDetail from './components/river.vue'
 import RiverBasinDetail from './components/riverBasin.vue'
 import RiverInfrastructureDetail from './components/riverInfrastructure.vue'
-import RoadDetail from './components/river.vue'
+import RoadDetail from './components/road.vue'
 import WatershedDetail from './components/watershed.vue'
 import WeirDetail from './components/weir.vue'
 import { ref, onMounted } from "vue";
