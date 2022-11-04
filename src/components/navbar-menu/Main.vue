@@ -82,7 +82,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="border-ember-800 cursor-pointer">
+                <li class="border-ember-800 cursor-pointer uppercase">
                     <div class="relative">
                         <!-- Dropdown toggle button -->
                         <button @click="showPublication = !showPublication" class="flex items-center rounded-md focus:outline-none ">
