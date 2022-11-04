@@ -111,31 +111,31 @@ function onDetailClick(e) {
 
 const onEachRiverInfrastructure = function(feature, layer) {
     const detailLink = `
-    <table class='border-2 table table-striped'>
-                <tbody class='border-2'>
+    <table>
+                <tbody class='border-2 border-sky-600'>
                     <tr>
-                        <td class='border-2 font-bold'>Nama</td>
-                        <td class='border-2'>${feature.properties['Nama Data Infrastruktur'] || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Nama</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties['Nama Data Infrastruktur'] || ''}</td>
                     </tr>
                     <tr>
-                        <td class='border-2 font-bold'>Jenis Bangunan</td>
-                        <td class='border-2'>${feature.properties['Jenis Bangunan'] || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2 text-blue-800 border-blue-100'>Jenis Bangunan</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties['Jenis Bangunan'] || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2 font-bold'>Tahun Pelaksanaan</td>
-                        <td>${feature.properties['Tahun Pelaksanaan'] || ''}</td>
+                        <td  class='border-2 font-bold pl-2 pr-2 text-blue-800 border-blue-100'>Tahun</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties['Tahun Pelaksanaan'] || ''}</td>
                     </tr>
                     <tr>
-                        <td class='border-2 font-bold'>Volume</td>
-                        <td class='border-2'>${feature.properties['Volume'] || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2 text-blue-800 border-blue-100'>Volume</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties['Volume'] || ''}</td>
                     </tr>
                     <tr>
-                        <td class='border-2 font-bold'>Satuan</td>
-                        <td class='border-2'>${feature.properties['Satuan'] || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2 text-blue-800 border-blue-100'>Satuan</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties['Satuan'] || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2 font-bold'>Kondisi</td>
-                        <td>${feature.properties['Kondisi'] || ''}</td>
+                        <td  class='border-2 font-bold pl-2 pr-2 text-blue-800 border-blue-100'>Kondisi</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties['Kondisi'] || ''}</td>
                     </tr>
                 </tbody>
     </table>
@@ -169,19 +169,19 @@ async function loadRiverInfrastructure() {
 
 const onEachRiver = function(feature, layer) {
     const detailLink = `
-    <table class='border-2 table table-striped' style="width:300px;">
+    <table class='border-2' style="width:300px;">
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2 font-bold'>Nama Sungai</td>
-                        <td class='border-2'>${feature.properties['Nama Data Dasar'] || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Nama Sungai</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties['Nama Data Dasar'] || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2 font-bold'>Orde</td>
-                        <td class='border-2'>${feature.properties.Orde || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Orde</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Orde || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2 font-bold'>Panjang Sungai (KM2)</td>
-                        <td>${feature.properties['Panjang Sungai (km)'] || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Panjang Sungai (KM2)</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties['Panjang Sungai (km)'] || ''}</td>
                     </tr>
                 </tbody>
     </table>
@@ -212,15 +212,15 @@ async function loadRiver() {
 
 const onEachWatershed = function(feature, layer) {
     const detailLink = `
-<table class='border-2 table table-striped' style="width:300px;">
+<table class='border-2' style="width:300px;">
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2 font-bold'>Nama DAS</td>
-                        <td class='border-2'>${feature.properties.nama_data_dasar || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Nama DAS</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.nama_data_dasar || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2 font-bold'>LUAS (KM2)</td>
-                        <td class='border-2'>${feature.properties.luas || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>LUAS (KM2)</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.luas || ''}</td>
                     </tr>
                 </tbody>
     </table>
@@ -252,19 +252,19 @@ async function loadWatershed() {
 
 const onEachWeir = function(feature, layer) {
     const detailLink = `
-<table class='border-2 table table-striped' style="width:300px;">
+<table class='border-2' style="width:300px;">
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2 font-bold'>Nama Bendung</td>
-                        <td class='border-2'>${feature.properties.Nm_Dat_Das || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Nama Bendung</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Nm_Dat_Das || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2 font-bold'>Nama Sungai</td>
-                        <td class='border-2'>${feature.properties.Nm_Sungai || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Nama Sungai</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Nm_Sungai || ''}</td>
                     </tr>
                      <tr>
-                        <td  class='border-2 font-bold'>Jenis Bendung</td>
-                        <td class='border-2'>${feature.properties.Jns_Bdg || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Jenis Bendung</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Jns_Bdg || ''}</td>
                     </tr>
                 </tbody>
     </table>
@@ -298,23 +298,23 @@ async function loadWeirs() {
 
 const onEachGroin = function(feature, layer) {
     const detailLink = `
-    <table class='border-2 table table-striped' style="width:300px;">
+    <table class='border-2' style="width:300px;">
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2 font-bold'>Nama</td>
-                        <td class='border-2'>${feature.properties.Nm_Dat_Das || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Nama</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Nm_Dat_Das || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2 font-bold'>Jenis Bangunan</td>
-                        <td class='border-2'>${feature.properties.Jns_Bang || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Jenis Bangunan</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Jns_Bang || ''}</td>
                     </tr>
                     <tr>
-                        <td class='border-2 font-bold'>Tahun Pelaksanaan</td>
-                        <td class='border-2'>${feature.properties.Thn_Pelaksanaan || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Tahun Pelaksanaan</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Thn_Pelaksanaan || ''}</td>
                     </tr>
                     <tr>
-                        <td class='border-2 font-bold'>Panjang</td>
-                        <td class='border-2'>${feature.properties.Pjg || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Panjang</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Pjg || ''}</td>
                     </tr>
                     
                 </tbody>
@@ -349,23 +349,23 @@ async function loadGroin() {
 
 const onEachBridge = function(feature, layer) {
     const detailLink = `
-  <table class='border-2 table table-striped'>
+  <table class='border-2'>
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2 font-bold'>Nama Jembatan</td>
-                        <td class='border-2'>${feature.properties.Nm_Dat_Das || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Nama Jembatan</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Nm_Dat_Das || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2 font-bold'>Nomor Jembatan</td>
-                        <td class='border-2'>${feature.properties.Nmr_Ruas_Tol || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Nomor Jembatan</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Nmr_Ruas_Tol || ''}</td>
                     </tr>
                     <tr>
-                        <td class='border-2 font-bold'>Panjang (m)</td>
-                        <td class='border-2'>${feature.properties.Pjg_Jemb || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Panjang (m)</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Pjg_Jemb || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2 font-bold'>Kondisi</td>
-                        <td class='border-2'>${feature.properties.Kds_Umum_Jemb || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Kondisi</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Kds_Umum_Jemb || ''}</td>
                     </tr>
                 </tbody>
     </table>
@@ -399,23 +399,23 @@ async function loadBridge() {
 
 const onEachIrrigation = function(feature, layer) {
     const detailLink = `
-  <table class='border-2 table table-striped' style="width:300px;">
+  <table class='border-2' style="width:300px;">
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2 font-bold'>Nama Daerah Irigasi</td>
-                        <td class='border-2'>${feature.properties.Nm_Dat_Das || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Nama Daerah Irigasi</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Nm_Dat_Das || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2 font-bold'>Jenis Daerah Irigasi</td>
-                        <td class='border-2'>${feature.properties.Jns_DI || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Jenis Daerah Irigasi</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Jns_DI || ''}</td>
                     </tr>
                     <tr>
-                        <td class='border-2 font-bold'>Bangunan Utama</td>
-                        <td class='border-2'>${feature.properties.Bang_Utama || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Bangunan Utama</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Bang_Utama || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2 font-bold'>Luas (Ha)</td>
-                        <td class='border-2'>${feature.properties.Luas_Fungsi || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Luas (Ha)</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Luas_Fungsi || ''}</td>
                     </tr>
                     
                 </tbody>
@@ -450,20 +450,20 @@ async function loadIrrigation() {
 
 const onEachRiverBasin = function(feature, layer) {
     const detailLink = `
-<table class='border-2 table table-striped' style="width:300px;">
+<table class='border-2' style="width:300px;">
         
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2 font-bold'>Nama WS</td>
-                        <td class='border-2'>${feature.properties.Nm_Dat_Das || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Nama WS</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Nm_Dat_Das || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2 font-bold'>Kode WS</td>
-                        <td class='border-2'>${feature.properties.Kd_WS_Permen || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Kode WS</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Kd_WS_Permen || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2 font-bold'>Jumlah DAS</td>
-                        <td class='border-2'>${feature.properties.Jml_DAS || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Jumlah DAS</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Jml_DAS || ''}</td>
                     </tr>
                     
                 </tbody>
@@ -497,27 +497,27 @@ async function loadRiverBasin() {
 
 const onEachRoad = function(feature, layer) {
     const detailLink = `  
-<table class='border-2 table table-striped' style="width:300px;">
+<table class='border-2' style="width:300px;">
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2 font-bold'>Nama Ruas</td>
-                        <td class='border-2'>${feature.properties.Nm_Dat_Das || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Nama Ruas</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Nm_Dat_Das || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2 font-bold'>Nomor Ruas</td>
-                        <td class='border-2'>${feature.properties.Nmr_Ruas || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Nomor Ruas</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Nmr_Ruas || ''}</td>
                     </tr>
                     <tr>
-                        <td class='border-2 font-bold'>Panjang</td>
-                        <td class='border-2'>${feature.properties.Pjg_Datar || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Panjang</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Pjg_Datar || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2 font-bold'>Kondisi Mantap</td>
-                        <td class='border-2'>${feature.properties.Kds_Mantap || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Kondisi Mantap</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Kds_Mantap || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2 font-bold'>Kondisi Tidak Mantap</td>
-                        <td class='border-2'>${feature.properties.Kds_Tdk_Mantap || ''}</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Kondisi Tidak Mantap</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Kds_Tdk_Mantap || ''}</td>
                     </tr>
                     
                 </tbody>
