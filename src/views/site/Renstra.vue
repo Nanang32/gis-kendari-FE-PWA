@@ -1,12 +1,11 @@
 <template>
     <div class="bg-gray-50 py-6">
         <Navbar />
-    <div class="flex flex-row items-center">
+        <div class="flex flex-row items-center">
             <div class="rounded-md object-cover overflow-hidden">
                 <a href="#"><img class="border max-w-full sm:w-full" src="@/assets/images/prodrenstra.png" alt="author"></a>
             </div>
         </div>
-
         <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
             <div class="flex flex-row flex-wrap">
                 <!-- Left -->
@@ -28,7 +27,6 @@
                                                     <h2 class="text-4xl text-gray-900 font-bold md:text-4xl mb-2"> {{ strategicPlan.title }}</h2>
                                                     <div class="border-t border-gray-200 border-opacity-100 mb-2"></div>
                                                     <div class="mt-6 text-gray-600 text-justify" v-html="strategicPlan.content">
-                                                        
                                                     </div>
                                                     <div class="border-t border-gray-200 border-opacity-100 mt-2"></div>
                                                 </div>
@@ -43,16 +41,14 @@
                                 </div>
                                 <div class="p-5">
                                     <div class="flex items-center mt-5">
-                                        <a :href="strategicPlan.file_url">
-                                            <div class="file">
-                                                <div class="w-12 file__icon file__icon--file">
-                                                    <div class="file__icon__file-name text-xs">FILE</div>
-                                                </div>
-                                            </div>
-                                            <div class="ml-4">
-                                                <div class="font-medium">{{ strategicPlan.title }}</div>
-                                            </div>
-                                        </a>
+                                        <div class="file">
+                                            <a href="#" class="w-12 file__icon file__icon--file">
+                                                <div class="file__icon__file-name text-xs">FILE</div>
+                                            </a>
+                                        </div>
+                                        <div class="ml-4">
+                                            <a class="font-medium font-bold text-blue-500 no-underline hover:underline" :href="strategicPlan.file_url" target="_blank">{{ strategicPlan.title }}</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -114,7 +110,7 @@ const rpjmd = ref([])
 const sdabm = ref([])
 const strategicPlan = ref(null)
 
-async function loadStrategicPlan(id){
+async function loadStrategicPlan(id) {
     const response = await sendRequest({
         method: 'get',
         url: `/strategicPlans/${id}`
@@ -131,14 +127,14 @@ onMounted(async () => {
     if ((response !== null) && (response.status === true)) {
         const strategicPlans = response.data.strategicPlans;
         strategicPlans.forEach(strategicPlan => {
-            if(strategicPlan.category === "RPJMD")
+            if (strategicPlan.category === "RPJMD")
                 rpjmd.value.push(strategicPlan)
-            else if(strategicPlan.category === "SDABM")
+            else if (strategicPlan.category === "SDABM")
                 sdabm.value.push(strategicPlan)
         });
     }
 })
 </script>
 <style scoped>
-    @import "./style.css";
+@import "./style.css";
 </style>
