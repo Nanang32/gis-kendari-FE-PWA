@@ -14,11 +14,11 @@
 
                     'advlist autolink  link image charmap print preview anchor',
                     'searchreplace visualblocks code fullscreen',
-                    'insertdatetime media table paste code help wordcount'
+                    'insertdatetime media table paste code help wordcount','lists advlist'
                   ],
                 toolbar: 'undo redo | formatselect | ' +
                   'bold italic backcolor | alignleft aligncenter ' +
-                  'alignright alignjustify | outdent indent | ' +
+                  'alignright alignjustify| bullist  | outdent indent | ' +
                   'removeformat | help',
                       }" />
         </div>
