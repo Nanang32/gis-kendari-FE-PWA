@@ -3,7 +3,6 @@
         <nav class="px-6 py-4 bg-[#08276e] md:flex md:justify-between md:items-center">
             <div class="flex items-center justify-between">
                 <img class="mx-auto h-16 w-72 mr-2" src="@/assets/images/logosultra.png" />
-                
                 <router-link to="/" class="
             text-xl
             font-bold
@@ -38,78 +37,105 @@
                         Beranda
                     </router-link>
                 </li>
-                <li class="border-ember-100 cursor-pointer uppercase">
-                    <div class="relative">
-                        <!-- Dropdown toggle button -->
-                        <button @click="showProfile = !showProfile" class="flex items-center rounded-md focus:outline-none">
-                            <span class="mr-4 text-white uppercase">Profil</span>
-                            <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                        </button>
-                        <!-- Dropdown menu -->
-                        <div v-show="showProfile" class="py-2 mt-2 bg-[#08276e] rounded-md shadow-xl lg:absolute lg:right-0 w-44 z-10">
+                <li class="flex relative group uppercase">
+                    <a href="#" class="mr-1 text-white">Profil</a>
+                    <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                    <!-- Submenu starts -->
+                    <ul class="absolute bg-[#08276e] e p-3 w-52 top-6 transform scale-0 group-hover:scale-100 transition duration-150 ease-in-out origin-top shadow-lg">
+                        <li class="text-sm hover:bg-slate-100 leading-8">
                             <router-link :to="{name: 'site-visimisi'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300 ">
                                 Visi Misi
                             </router-link>
+                        </li>
+                        <li class="text-sm hover:bg-slate-100 leading-8">
                             <router-link :to="{name: 'site-tasknfunction'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300 ">
                                 Tugas &amp; Fungsi
                             </router-link>
+                        </li>
+                        <li class="text-sm hover:bg-slate-100 leading-8">
                             <router-link :to="{name: 'site-strukturorg'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300">
                                 Struktur Organisasi
                             </router-link>
+                        </li>
+                        <li class="text-sm hover:bg-slate-100 leading-8">
                             <router-link :to="{name:'site-profsekret'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300 ">
                                 Sekretariat
                             </router-link>
+                        </li>
+                        <li class="text-sm hover:bg-slate-100 leading-8">
                             <router-link :to="{name: 'site-profpjpa'}" class=" block px-4 py-2 text-xs text-white hover:text-blue-300 ">
                                 Bidang PJPA
                             </router-link>
+                        </li>
+                        <li class="text-sm hover:bg-slate-100 leading-8">
                             <router-link :to="{name: 'site-profpjsa'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300">
                                 Bidang PJSA
                             </router-link>
+                        </li>
+                        <li class="text-sm hover:bg-slate-100 leading-8">
                             <router-link :to="{name: 'site-profbinamarga'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300">
                                 Bidang Bina Marga
                             </router-link>
+                        </li>
+                        <li class="text-sm hover:bg-slate-100 leading-8">
                             <router-link :to="{name: 'site-profuptdwilayah'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300">
                                 UPTD Wilayah I s/d IV
                             </router-link>
+                        </li>
+                        <li class="text-sm hover:bg-slate-100 leading-8">
                             <router-link :to="{name:'site-profuptdlkonstruksi'}" class=" block px-4 py-2 text-xs text-white hover:text-blue-300">
                                 UPTD Lab Konstruksi
                             </router-link>
+                        </li>
+                        <li class="text-sm hover:bg-slate-100 leading-8">
                             <router-link :to="{name:'site-profuptdpkonstruksi'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300 ">
                                 UPTD Peralatan
                             </router-link>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
+                    <!-- Submenu ends -->
                 </li>
-                <li class="border-ember-800 cursor-pointer uppercase">
-                    <div class="relative">
-                        <!-- Dropdown toggle button -->
-                        <button @click="showPublication = !showPublication" class="flex items-center rounded-md focus:outline-none ">
-                            <span class="mr-4 uppercase text-white">Publikasi</span>
-                            <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                        </button>
-                        <!-- Dropdown menu -->
-                        <div v-show="showPublication" class="py-2 mt-2 bg-[#08276e] rounded-md shadow-xl lg:absolute lg:right-0 w-44 z-10 ">
+                <li class="flex relative group uppercase">
+                    <a href="#" class="mr-1 text-white">publikasi</a>
+                    <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                    <!-- Submenu starts -->
+                    <ul class="absolute bg-[#08276e] e p-3 w-52 top-6 transform scale-0 group-hover:scale-100 transition duration-150 ease-in-out origin-top shadow-lg">
+                        <li class="text-sm hover:bg-slate-100 leading-8">
                             <router-link :to="{name: 'site-prodhukum'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300 ">
                                 Publikasi Hukum
                             </router-link>
+                        </li>
+                        <li class="text-sm hover:bg-slate-100 leading-8">
                             <router-link :to="{name: 'site-renstra'}" class=" block px-4 py-2 text-xs text-white hover:text-blue-300 ">
                                 Publikasi Strategis
                             </router-link>
+                        </li>
+                        <li class="text-sm hover:bg-slate-100 leading-8">
                             <router-link :to="{name: 'site-jobperformance'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300">
                                 Kinerja Pekerjaan
                             </router-link>
+                        </li>
+                        <li class="text-sm hover:bg-slate-100 leading-8">
                             <router-link :to="{name: 'site-infpjpa'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300">
                                 Informasi PJPA
                             </router-link>
+                        </li>
+                        <li class="text-sm hover:bg-slate-100 leading-8">
+                            <router-link :to="{name: 'site-profpjpa'}" class=" block px-4 py-2 text-xs text-white hover:text-blue-300 ">
+                                Bidang PJPA
+                            </router-link>
+                        </li>
+                        <li class="text-sm hover:bg-slate-100 leading-8">
                             <router-link :to="{name: 'site-infpjsa'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300">
                                 Informasi PJSA
                             </router-link>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
+                    <!-- Submenu ends -->
                 </li>
                 <li class="border-ember-800 cursor-pointer">
                     <router-link :to="{name: 'site-all'}" class="block px-4 py-2 text-sm text-white hover:text-blue-300 uppercase">
@@ -121,56 +147,28 @@
                         webGIS
                     </router-link>
                 </li>
-                <li class="border-ember-800 cursor-pointer">
-                    <div class="relative">
-                        <!-- Dropdown toggle button -->
-                        <button @click="showService = !showService" class="
-                flex
-                items-center
-                rounded-md
-                focus:outline-none
-                uppercase
-              ">
-                            <span class="mr-4 text-white">Pelayanan</span>
-                            <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                            </svg>
-                        </button>
-                        <!-- Dropdown menu -->
-                        <div v-show="showService" class="
-                py-2
-                mt-2
-                bg-[#08276e]
-                rounded-md
-                shadow-xl
-                lg:absolute lg:right-0
-                w-44
-                z-10
-              ">
-                            <router-link :to="{name: 'site-reporting'}" class="
-                  block
-                  px-4
-                  py-2
-                  text-xs text-white
-                  hover:text-blue-300
-                ">
+                <li class="flex relative group uppercase">
+                    <a href="#" class="mr-1 text-white">pelayanan</a>
+                    <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                    <!-- Submenu starts -->
+                    <ul class="absolute bg-[#08276e] e  w-52 top-6 transform scale-0 group-hover:scale-100 transition duration-150 ease-in-out origin-top shadow-lg">
+                        <li class="text-sm hover:bg-slate-100 leading-8">
+                            <router-link :to="{name: 'site-reporting'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300">
                                 Peng. Masyarakat
                             </router-link>
-                            <router-link :to="{name: 'site-uptdlab'}" class="
-                  block
-                  px-4
-                  py-2
-                  text-xs text-white
-                  hover:text-blue-300
-                ">
+                        </li>
+                        <li class="text-sm hover:bg-slate-100 leading-8">
+                            <router-link :to="{name: 'site-uptdlab'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300">
                                 UPTD Lab
                             </router-link>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
+                    <!-- Submenu ends -->
                 </li>
             </ul>
         </nav>
-        
     </div>
 </template>
 <script setup>
