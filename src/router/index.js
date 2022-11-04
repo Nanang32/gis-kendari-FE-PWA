@@ -158,7 +158,7 @@ import AdminStructureIndex from "../views/admin/profile/office_structure/Index.v
 import AdminStructureCreate from "../views/admin/profile/office_structure/create.vue";
 import AdminStructureEdit from "../views/admin/profile/office_structure/edit.vue";
 //news
-import AdminPostIndex from "../views/admin/news/post/Index.vue";
+import AdminPostIndex from "../views/admin/news/post/index.vue";
 import AdminPostCreate from "../views/admin/news/post/create.vue";
 import AdminPostEdit from "../views/admin/news/post/edit.vue";
 // image
