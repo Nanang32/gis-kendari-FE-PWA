@@ -15,6 +15,8 @@
                             <span class="inline-block h-5 border-l-3 border-red-600 mr-2"></span>Produk Hukum
                         </h2>
                     </div>
+                    <input type="text" v-model="query" />
+                    <button @click="search">cari</button>
                     <div class="flex flex-row flex-wrap -mx-3">
                         <div class="flex-shrink max-w-full w-full px-3 pb-5">
                             <div class="relative hover-img max-h-full overflow-scroll">
@@ -85,6 +87,24 @@ import { ref, onMounted } from "vue";
 const categories = ref([]);
 const lawDocuments = ref([]);
 const loading = ref(true);
+const query = ref('');
+
+async function search() {
+    if(query == '')
+        return;
+    loading.value = true;
+    lawDocuments.value = [];
+    const response = await sendRequest({
+        method: 'get',
+        url: '/laws',
+        params: {search: query.value}
+    });
+    if ((response !== null) && (response.status === true)) {
+        lawDocuments.value = response.data.lawDocuments.data
+        console.log(lawDocuments.value)
+    }
+    loading.value = false;
+}
 
 async function loadCategory() {
     loading.value = true;
