@@ -1,12 +1,13 @@
 <template>
     <Navbar />
-    <div class="map" id="map"></div>
-    <div class="form-check" v-for="layer in layers" :key="layer.id">
-        <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" v-model="layer.active" @change="layerChanged(layer.id, layer.active)" />
-            {{ layer.name }}
-        </label>
+    <div
+      v-show="loadedData < 9"
+      class="col-span-6 sm:col-span-3 xl:col-span-2 flex flex-col justify-end items-center"
+    >
+      <LoadingIcon icon="spinning-circles" class="w-8 h-8" />
+      <div class="text-center text-xs mt-2">Data sedang disiapkan.</div>
     </div>
+    <div v-show="loadedData == 9" class="map" id="map"></div>
     <Modal :show="showModal" @hidden="showModal=false" size="modal-xl">
         <ModalBody class="p-4">
             <BridgeDetail v-if="modalType == typeBridge" :bridge="modalData" />
@@ -26,12 +27,6 @@
         </ModalFooter>
     </Modal>
     <Footer />
-    <div
-      class="col-span-6 sm:col-span-3 xl:col-span-2 flex flex-col justify-end items-center"
-    >
-      <LoadingIcon icon="spinning-circles" class="w-8 h-8" />
-      <div class="text-center text-xs mt-2">Data sedang disiapkan.</div>
-    </div>
 </template>
 <script setup>
 import Navbar from "../../../components/navbar-menu/Main.vue";
@@ -56,6 +51,7 @@ import L from "leaflet"
 import "leaflet/dist/leaflet.css";
 import 'leaflet-groupedlayercontrol';
 
+const loadedData = ref(0);
 const layerControl = ref(null);
 const showModal = ref(false);
 const modalData = ref(null);
@@ -71,6 +67,7 @@ const typeRoad = 'road';
 const typeRiverInfrastructure = 'riverinfrastructure';
 
 onMounted(() => {
+    loadedData.value = 0;
     loadRiverBasin();
     loadWatershed();
     loadRiver();
@@ -165,6 +162,7 @@ async function loadRiverInfrastructure() {
         }
     });
     layerControl.value.addOverlay(layerGroup, 'Infrastruktur Sungai', 'PJSA');
+    loadedData.value += 1;
 }
 
 const onEachRiver = function(feature, layer) {
@@ -208,6 +206,7 @@ async function loadRiver() {
         }
     });
     layerControl.value.addOverlay(layerGroup, 'Sungai', 'PJSA');
+    loadedData.value += 1;
 }
 
 const onEachWatershed = function(feature, layer) {
@@ -248,6 +247,7 @@ async function loadWatershed() {
         }
     });
     layerControl.value.addOverlay(layerGroup, 'Daerah Aliran Sungai', 'PJSA');
+    loadedData.value += 1;
 }
 
 const onEachWeir = function(feature, layer) {
@@ -294,6 +294,7 @@ async function loadWeirs() {
         }
     });
     layerControl.value.addOverlay(layerGroup, 'Bendung', 'PJPA');
+    loadedData.value += 1;
 }
 
 const onEachGroin = function(feature, layer) {
@@ -345,6 +346,7 @@ async function loadGroin() {
         }
     });
     layerControl.value.addOverlay(layerGroup, 'Pelindung pantai', 'PJSA');
+    loadedData.value += 1;
 }
 
 const onEachBridge = function(feature, layer) {
@@ -395,6 +397,7 @@ async function loadBridge() {
         }
     });
     layerControl.value.addOverlay(layerGroup, 'Jembatan', 'Bina Marga');
+    loadedData.value += 1;
 }
 
 const onEachIrrigation = function(feature, layer) {
@@ -446,6 +449,7 @@ async function loadIrrigation() {
         }
     });
     layerControl.value.addOverlay(layerGroup, 'Irigasi', 'PJPA');
+    loadedData.value += 1;
 }
 
 const onEachRiverBasin = function(feature, layer) {
@@ -493,6 +497,7 @@ async function loadRiverBasin() {
         }
     });
     layerControl.value.addOverlay(layerGroup, 'Wilayah Sungai', 'PJSA');
+    loadedData.value += 1;
 }
 
 const onEachRoad = function(feature, layer) {
@@ -545,6 +550,7 @@ async function loadRoad() {
         }
     });
     layerControl.value.addOverlay(layerGroup, 'Jalan', 'Bina Marga');
+    loadedData.value += 1;
 }
 </script>
 <style>
