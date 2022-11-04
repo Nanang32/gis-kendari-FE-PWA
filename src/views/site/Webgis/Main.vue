@@ -125,6 +125,18 @@ const onEachRiverInfrastructure = function(feature, layer) {
                         <td  class='border-2 font-bold'>Tahun Pelaksanaan</td>
                         <td>${feature.properties['Tahun Pelaksanaan'] || ''}</td>
                     </tr>
+                    <tr>
+                        <td class='border-2 font-bold'>Volume</td>
+                        <td class='border-2'>${feature.properties['Volume'] || ''}</td>
+                    </tr>
+                    <tr>
+                        <td class='border-2 font-bold'>Satuan</td>
+                        <td class='border-2'>${feature.properties['Satuan'] || ''}</td>
+                    </tr>
+                    <tr>
+                        <td  class='border-2 font-bold'>Kondisi</td>
+                        <td>${feature.properties['Kondisi'] || ''}</td>
+                    </tr>
                 </tbody>
     </table>
     <image src="${feature.properties.Foto}" class='m-2' alt='none' style='width:10%;height:10%;'>
@@ -168,7 +180,7 @@ const onEachRiver = function(feature, layer) {
                         <td class='border-2'>${feature.properties.Orde || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2 font-bold'>Panjang Sungai</td>
+                        <td  class='border-2 font-bold'>Panjang Sungai (KM2)</td>
                         <td>${feature.properties['Panjang Sungai (km)'] || ''}</td>
                     </tr>
                 </tbody>
@@ -300,6 +312,10 @@ const onEachGroin = function(feature, layer) {
                         <td class='border-2 font-bold'>Tahun Pelaksanaan</td>
                         <td class='border-2'>${feature.properties.Thn_Pelaksanaan || ''}</td>
                     </tr>
+                    <tr>
+                        <td class='border-2 font-bold'>Panjang</td>
+                        <td class='border-2'>${feature.properties.Pjg || ''}</td>
+                    </tr>
                     
                 </tbody>
     </table>
@@ -333,15 +349,23 @@ async function loadGroin() {
 
 const onEachBridge = function(feature, layer) {
     const detailLink = `
-  <table class='border-2 table table-striped' style="width:300px;">
+  <table class='border-2 table table-striped'>
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2 font-bold'>Nama</td>
+                        <td class='border-2 font-bold'>Nama Jembatan</td>
                         <td class='border-2'>${feature.properties.Nm_Dat_Das || ''}</td>
                     </tr>
                     <tr>
                         <td  class='border-2 font-bold'>Nomor Jembatan</td>
                         <td class='border-2'>${feature.properties.Nmr_Ruas_Tol || ''}</td>
+                    </tr>
+                    <tr>
+                        <td class='border-2 font-bold'>Panjang (m)</td>
+                        <td class='border-2'>${feature.properties.Pjg_Jemb || ''}</td>
+                    </tr>
+                    <tr>
+                        <td  class='border-2 font-bold'>Kondisi</td>
+                        <td class='border-2'>${feature.properties.Kds_Umum_Jemb || ''}</td>
                     </tr>
                 </tbody>
     </table>
@@ -430,12 +454,16 @@ const onEachRiverBasin = function(feature, layer) {
         
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2 font-bold'>Nama Ruas</td>
+                        <td class='border-2 font-bold'>Nama WS</td>
                         <td class='border-2'>${feature.properties.Nm_Dat_Das || ''}</td>
                     </tr>
                     <tr>
                         <td  class='border-2 font-bold'>Kode WS</td>
                         <td class='border-2'>${feature.properties.Kd_WS_Permen || ''}</td>
+                    </tr>
+                    <tr>
+                        <td  class='border-2 font-bold'>Jumlah DAS</td>
+                        <td class='border-2'>${feature.properties.Jml_DAS || ''}</td>
                     </tr>
                     
                 </tbody>
@@ -478,6 +506,18 @@ const onEachRoad = function(feature, layer) {
                     <tr>
                         <td  class='border-2 font-bold'>Nomor Ruas</td>
                         <td class='border-2'>${feature.properties.Nmr_Ruas || ''}</td>
+                    </tr>
+                    <tr>
+                        <td class='border-2 font-bold'>Panjang</td>
+                        <td class='border-2'>${feature.properties.Pjg_Datar || ''}</td>
+                    </tr>
+                    <tr>
+                        <td  class='border-2 font-bold'>Kondisi Mantap</td>
+                        <td class='border-2'>${feature.properties.Kds_Mantap || ''}</td>
+                    </tr>
+                    <tr>
+                        <td  class='border-2 font-bold'>Kondisi Tidak Mantap</td>
+                        <td class='border-2'>${feature.properties.Kds_Tdk_Mantap || ''}</td>
                     </tr>
                     
                 </tbody>
