@@ -186,7 +186,7 @@ async function loadRiver() {
         onEachFeature: onEachRiver,
         style: {
             "color": "#67d9ff",
-            "weight": 0.8,
+            "weight": 1,
         }
     });
     layerControl.value.addOverlay(layerGroup, 'Sungai', 'PJSA');
@@ -224,10 +224,9 @@ async function loadWatershed() {
     const layerGroup = L.geoJSON(response.data, {
         onEachFeature: onEachWatershed,
         style: {
-            "color": "#17901d",
-            "fillOpacity": 0.25,
-            "fillColor": "#21cc29",
-            "weight": 0.8,
+            "color": "#ddf7ff",
+            "fillOpacity": 0,
+            "weight": 1.5,
         }
     });
     layerControl.value.addOverlay(layerGroup, 'Daerah Aliran Sungai', 'PJSA');
@@ -411,9 +410,9 @@ async function loadIrrigation() {
         style: {
             "color": "#ffffff",
             "dashArray": "10 5",
-            "fillOpacity": 0.5,
-            "fillColor": "#1aaa30",
-            "weight": 0.65,
+            "fillOpacity": 0.75,
+            "fillColor": "#7cbef1",
+            "weight": 1,
         }
     });
     layerControl.value.addOverlay(layerGroup, 'Irigasi', 'PJPA');
@@ -453,10 +452,10 @@ async function loadRiverBasin() {
     const layerGroup = L.geoJSON(response.data, {
         onEachFeature: onEachRiverBasin,
         style: {
-            "color": "#36b30f",
+            "color": "#67d9ff",
             "dashArray": "10 5",
             "fillOpacity": 0,
-            "weight": 1,
+            "weight": 2,
         }
     });
     layerControl.value.addOverlay(layerGroup, 'Wilayah Sungai', 'PJSA');
@@ -495,8 +494,8 @@ async function loadRoad() {
     const layerGroup = L.geoJSON(response.data, {
         onEachFeature: onEachRoad,
         style: {
-            "color": "#1a69c9",
-            "weight": 1,
+            "color": "#46e59a",
+            "weight": 3,
         }
     });
     layerControl.value.addOverlay(layerGroup, 'Jalan', 'Bina Marga');
