@@ -21,7 +21,7 @@
                 </tbody>
             </table>
             <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800 mt-3">
-                <h2 class="text-base text-white  uppercase">I. informasi wialayah sungai</h2>
+                <h2 class="text-base text-white  uppercase">I. informasi wilayah sungai</h2>
             </div>
             <table class="table table-bordered table-hover capitalize">
                 <tbody>
@@ -161,7 +161,7 @@
                 </tbody>
             </table>
              <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800 mt-3">
-                <h2 class="text-base text-white  uppercase capitalize">Vi. KOORDINAT (DECIMAL DEGREE)</h2>
+                <h2 class="text-base text-white  uppercase uppercase">VI. KOORDINAT (DECIMAL DEGREE)</h2>
             </div>
             <table class="table table-bordered table-hover capitalize">
                 <tbody>
@@ -176,7 +176,7 @@
                 </tbody>
             </table>
             <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800 mt-3">
-                <h2 class="text-base text-white  uppercase capitalize">Vi. photo dan video</h2>
+                <h2 class="text-base text-white  uppercase uppercase">VII. photo dan video</h2>
             </div>
             <table class="table table-bordered table-hover capitalize">
                 <tbody>
