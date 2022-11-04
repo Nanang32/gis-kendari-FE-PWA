@@ -134,6 +134,11 @@
                                 Informasi PJSA
                             </router-link>
                         </li>
+                        <li class="text-sm hover:bg-slate-100 leading-8">
+                            <router-link :to="{name: 'site-infbinamarga'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300">
+                                Informasi Bina Marga
+                            </router-link>
+                        </li>
                     </ul>
                     <!-- Submenu ends -->
                 </li>

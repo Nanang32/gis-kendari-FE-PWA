@@ -15,8 +15,14 @@
                             <span class="inline-block h-5 border-l-3 border-red-600 mr-2"></span>Produk Hukum
                         </h2>
                     </div>
-                    <input type="text" v-model="query" />
-                    <button @click="search">cari</button>
+                    <div class="px-2 py-2 border border-gray-100 bg-white">
+                        <div class="flex items-center py-2">
+                            <input type="text" class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" v-model="query" placeholder="Ketik pencarian disini...">
+                            <button class="flex items-center py-3 px-5 leading-5 text-gray-100 bg-black hover:text-white hover:bg-gray-900 hover:ring-0 focus:outline-none focus:ring-0" type="button" @click="search">
+                                Cari
+                            </button>
+                        </div>
+                    </div>
                     <div class="flex flex-row flex-wrap -mx-3">
                         <div class="flex-shrink max-w-full w-full px-3 pb-5">
                             <div class="relative hover-img max-h-full overflow-scroll">
@@ -90,14 +96,14 @@ const loading = ref(true);
 const query = ref('');
 
 async function search() {
-    if(query == '')
+    if (query == '')
         return;
     loading.value = true;
     lawDocuments.value = [];
     const response = await sendRequest({
         method: 'get',
         url: '/laws',
-        params: {search: query.value}
+        params: { search: query.value }
     });
     if ((response !== null) && (response.status === true)) {
         lawDocuments.value = response.data.lawDocuments.data
