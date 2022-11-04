@@ -6,21 +6,23 @@
     <nav class="w-full sm:w-auto sm:mr-auto">
       <ul class="pagination">
         <li class="page-item" v-if="page > 1"> <!-- goto first item -->
-          <a class="page-link">
+          <a class="page-link" @click="$emit('goToPage', 1)">
             <ChevronsLeftIcon class="w-4 h-4" />
           </a>
         </li>
         <li class="page-item"  v-if="page > 1"> <!-- goto prev item -->
-          <a class="page-link">
+          <a class="page-link" @click="$emit('goToPage', page - 1)">
             <ChevronLeftIcon class="w-4 h-4" />
           </a>
         </li>
         <li
-          v-for="currentPage in lastPage"
+          v-for="currentPage in endPagination - beginPagination"
           v-bind:key="currentPage"
           class="page-item"
         >
-          <a class="page-link" @click="$emit('goToPage', currentPage)">{{ currentPage }}</a>
+          <a class="page-link" @click="$emit('goToPage', currentPage + beginPagination - 1)">
+            {{ currentPage + beginPagination - 1 }}
+          </a>
         </li>
         <!-- <li class="page-item active">
           <a class="page-link">2</a>
@@ -50,7 +52,8 @@
 </template>
 
 <script setup>
-defineProps({
+import { computed } from "vue";
+const props = defineProps({
   perPage: {
     type: Number,
     default: 10
@@ -64,4 +67,7 @@ defineProps({
     default: 1
   }
 })
+
+const endPagination = computed(() => (props.lastPage - props.page) <= 10 ? props.lastPage : props.page+ 5);
+const beginPagination = computed(() => (props.page <= 5) ? props.page : props.page - 5);
 </script>
