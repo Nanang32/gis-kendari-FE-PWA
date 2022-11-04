@@ -24,12 +24,14 @@
                             <td>{{ lawDocument.year }}</td>
                             <td>
                                 <div class="flex justify-center items-center">
-                                    <button class="flex items-center mr-3" @click="router.push({name: 'admin-law-document-edit', params: { id: lawDocument.id }})" >
+                                    <button class="flex items-center mr-3"
+                                      @click="router.push({name: 'admin-law-document-edit', params: { id: lawDocument.id }})" >
                                         <EditIcon class="w-4 h-4 mr-1" /> Edit
                                     </button>
-                                    <a class="flex items-center text-danger">
-                                        <Trash2Icon class="w-4 h-4 mr-1" /> Delete
-                                    </a>
+                                    <ButtonDelete
+                                      :url="`/laws/${lawDocument.id}`"
+                                      @onDelete="loadData"
+                                    />
                                 </div>
                             </td>
                         </tr>
@@ -42,16 +44,12 @@
               :lastPage="lastPage"
               @goToPage="setPage"
             />
-            <ModalConfirmDelete 
-              :isShowModal="showDeleteModal"
-              @confirm="onConfirmDelete"
-            />
         </div>
     </div>
 </template>
 <script setup>
   import Paginator from "@/components/paginator/Main.vue";
-  import ModalConfirmDelete from "@/components/modal-confirm-delete/Main.vue";
+  import ButtonDelete from "@/components/button-delete/Main.vue"
   import sendRequest from '@libs/http.js'
   import { ref, watch , onMounted } from "vue";
   import { useRouter } from "vue-router";
@@ -60,27 +58,11 @@
   const page = ref(1);
   const perPage = ref(10);
   const lastPage = ref(1);
-  const showDeleteModal = ref(false);
-  const deleteId = ref(null);
   const router = useRouter();
 
   function setPage(newPage){
     page.value = newPage
   } 
-
-  function confirmDelete(id){
-    showDeleteModal.value = true
-    deleteId.value = id;
-  }
-
-  async function onConfirmDelete(){
-    const responseDelete = await sendRequest({
-      method: 'delete',
-      url: `/laws/${deleteId.value}`,
-    });
-    showDeleteModal.value=false
-    await loadData(page.value);
-  }
 
   async function loadData(page=1){
     const response = await sendRequest({
