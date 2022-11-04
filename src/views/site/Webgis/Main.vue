@@ -106,28 +106,27 @@ function onDetailClick(e) {
 const onEachRiverInfrastructure = function(feature, layer) {
     const detailLink = `
     <table class='border-2 table table-striped'>
-        <div class='font-bold font-medium text-yellow-700 mb-1'>${feature.properties['Nama Data Infrastruktur'] || ''}</div>
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2'>Nama</td>
+                        <td class='border-2 font-bold'>Nama</td>
                         <td class='border-2'>${feature.properties['Nama Data Infrastruktur'] || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2'>Jenis Bangunan</td>
+                        <td class='border-2 font-bold'>Jenis Bangunan</td>
                         <td class='border-2'>${feature.properties['Jenis Bangunan'] || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2'>Tahun Pelaksanaan</td>
+                        <td  class='border-2 font-bold'>Tahun Pelaksanaan</td>
                         <td>${feature.properties['Tahun Pelaksanaan'] || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2'>Gambar</td>
-                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none'></td>
+                        <td class='border-2 font-bold'>Gambar</td>
+                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none' style='width:10%;height:10%;'></td>
                     </tr>
                 </tbody>
     </table>
     <div style="text-align: center">
-        <button style="color:blue;" onclick="onDetailClick()">Detail</button>
+        <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
     if (feature.properties)
         layer.bindPopup(detailLink).on('popupopen', () => {
@@ -156,28 +155,27 @@ async function loadRiverInfrastructure() {
 const onEachRiver = function(feature, layer) {
     const detailLink = `
     <table class='border-2 table table-striped' style="width:300px;">
-        <div class='font-bold font-medium text-yellow-700 mb-1'>${feature.properties['Nama Data Dasar'] || ''}</div>
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2'>Nama Sungai</td>
+                        <td class='border-2 font-bold'>Nama Sungai</td>
                         <td class='border-2'>${feature.properties['Nama Data Dasar'] || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2'>Orde</td>
+                        <td  class='border-2 font-bold'>Orde</td>
                         <td class='border-2'>${feature.properties.Orde || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2'>Panjang Sungai</td>
+                        <td  class='border-2 font-bold'>Panjang Sungai</td>
                         <td>${feature.properties['Panjang Sungai (km)'] || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2'>Gambar</td>
-                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none'></td>
+                        <td  class='border-2 font-bold'>Gambar</td>
+                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none' style='width:10%;height:10%;'></td>
                     </tr>
                 </tbody>
     </table>
     <div style="text-align: center">
-        <button style="color:blue;" onclick="onDetailClick()">Detail</button>
+        <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
     if (feature.properties)
         layer.bindPopup(detailLink).on('popupopen', () => {
@@ -203,27 +201,24 @@ async function loadRiver() {
 const onEachWatershed = function(feature, layer) {
     const detailLink = `
 <table class='border-2 table table-striped' style="width:300px;">
-        <div class='font-bold font-medium text-yellow-700 mb-1'>${feature.properties.nama_data_dasar || ''}</div>
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2'>Nama DAS</td>
+                        <td class='border-2 font-bold'>Nama DAS</td>
                         <td class='border-2'>${feature.properties.nama_data_dasar || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2'>LUAS (KM2)</td>
+                        <td  class='border-2 font-bold'>LUAS (KM2)</td>
                         <td class='border-2'>${feature.properties.luas || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2'>Gambar</td>
-                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none'></td>
+                        <td  class='border-2 font-bold'>Gambar</td>
+                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none' style='width:10%;height:10%;'></td>
                     </tr>
                 </tbody>
     </table>
     <div style="text-align: center">
-        <button style="color:blue;" onclick="onDetailClick()">Detail</button>
-    </div>
-
-    `;
+        <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
+    </div>`;
     if (feature.properties)
         layer.bindPopup(detailLink).on('popupopen', () => {
             modalType.value = typeWatershed;
@@ -250,31 +245,28 @@ async function loadWatershed() {
 const onEachWeir = function(feature, layer) {
     const detailLink = `
 <table class='border-2 table table-striped' style="width:300px;">
-        <div class='font-bold font-medium text-yellow-700 mb-1'>${feature.properties.Nm_Dat_Das || ''}</div>
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2'>Nama Bendung</td>
+                        <td class='border-2 font-bold'>Nama Bendung</td>
                         <td class='border-2'>${feature.properties.Nm_Dat_Das || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2'>Nama Sungai</td>
+                        <td  class='border-2 font-bold'>Nama Sungai</td>
                         <td class='border-2'>${feature.properties.Nm_Sungai || ''}</td>
                     </tr>
                      <tr>
-                        <td  class='border-2'>Jenis Bendung</td>
+                        <td  class='border-2 font-bold'>Jenis Bendung</td>
                         <td class='border-2'>${feature.properties.Jns_Bdg || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2'>Gambar</td>
-                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none'></td>
+                        <td  class='border-2 font-bold'>Gambar</td>
+                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none' style='width:10%;height:10%;'></td>
                     </tr>
                 </tbody>
     </table>
     <div style="text-align: center">
-        <button style="color:blue;" onclick="onDetailClick()">Detail</button>
-    </div>
-
-    `;
+        <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
+    </div>`;
     if (feature.properties)
         layer.bindPopup(detailLink).on('popupopen', () => {
             modalType.value = typeWeir;
@@ -302,28 +294,27 @@ async function loadWeirs() {
 const onEachGroin = function(feature, layer) {
     const detailLink = `
     <table class='border-2 table table-striped' style="width:300px;">
-        <div class='font-bold font-medium text-yellow-700 mb-1'>${feature.properties.Nm_Dat_Das || ''}</div>
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2'>Nama</td>
+                        <td class='border-2 font-bold'>Nama</td>
                         <td class='border-2'>${feature.properties.Nm_Dat_Das || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2'>Jenis Bangunan</td>
+                        <td  class='border-2 font-bold'>Jenis Bangunan</td>
                         <td class='border-2'>${feature.properties.Jns_Bang || ''}</td>
                     </tr>
                     <tr>
-                        <td class='border-2'>Tahun Pelaksanaan</td>
+                        <td class='border-2 font-bold'>Tahun Pelaksanaan</td>
                         <td class='border-2'>${feature.properties.Thn_Pelaksanaan || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2'>Gambar</td>
-                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none'></td>
+                        <td  class='border-2 font-bold'>Gambar</td>
+                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none' style='width:10%;height:10%;'></td>
                     </tr>
                 </tbody>
     </table>
     <div style="text-align: center">
-        <button style="color:blue;" onclick="onDetailClick()">Detail</button>
+        <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
     if (feature.properties)
         layer.bindPopup(detailLink).on('popupopen', () => {
@@ -352,27 +343,24 @@ async function loadGroin() {
 const onEachBridge = function(feature, layer) {
     const detailLink = `
   <table class='border-2 table table-striped' style="width:300px;">
-        <div class='font-bold font-medium text-yellow-700 mb-1'>${feature.properties.Nm_Dat_Das || ''}</div>
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2'>Nama</td>
+                        <td class='border-2 font-bold'>Nama</td>
                         <td class='border-2'>${feature.properties.Nm_Dat_Das || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2'>Nomor Jembatan</td>
+                        <td  class='border-2 font-bold'>Nomor Jembatan</td>
                         <td class='border-2'>${feature.properties.Nmr_Ruas_Tol || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2'>Gambar</td>
-                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none'></td>
+                        <td  class='border-2 font-bold'>Gambar</td>
+                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none' style='width:10%;height:10%;'></td>
                     </tr>
                 </tbody>
     </table>
     <div style="text-align: center">
-        <button style="color:blue;" onclick="onDetailClick()">Detail</button>
-    </div>
-
-    `;
+        <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
+    </div>`;
     if (feature.properties)
         layer.bindPopup(detailLink).on('popupopen', () => {
             modalType.value = typeBridge;
@@ -400,32 +388,31 @@ async function loadBridge() {
 const onEachIrrigation = function(feature, layer) {
     const detailLink = `
   <table class='border-2 table table-striped' style="width:300px;">
-        <div class='font-bold font-medium text-yellow-700 mb-1'>${feature.properties.Nm_Dat_Das || ''}</div>
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2'>Nama Daerah Irigasi</td>
+                        <td class='border-2 font-bold'>Nama Daerah Irigasi</td>
                         <td class='border-2'>${feature.properties.Nm_Dat_Das || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2'>Jenis Daerah Irigasi</td>
+                        <td  class='border-2 font-bold'>Jenis Daerah Irigasi</td>
                         <td class='border-2'>${feature.properties.Jns_DI || ''}</td>
                     </tr>
                     <tr>
-                        <td class='border-2'>Bangunan Utama</td>
+                        <td class='border-2 font-bold'>Bangunan Utama</td>
                         <td class='border-2'>${feature.properties.Bang_Utama || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2'>Luas</td>
+                        <td  class='border-2 font-bold'>Luas</td>
                         <td class='border-2'>${feature.properties.Luas_Fungsi || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2'>Gambar</td>
-                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none'></td>
+                        <td  class='border-2 font-bold'>Gambar</td>
+                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none' style='width:10%;height:10%;'></td>
                     </tr>
                 </tbody>
     </table>
     <div style="text-align: center">
-        <button style="color:blue;" onclick="onDetailClick()">Detail</button>
+        <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
     if (feature.properties)
         layer.bindPopup(detailLink).on('popupopen', () => {
@@ -454,24 +441,24 @@ async function loadIrrigation() {
 const onEachRiverBasin = function(feature, layer) {
     const detailLink = `
 <table class='border-2 table table-striped' style="width:300px;">
-        <div class='font-bold font-medium text-yellow-700 mb-1'>${feature.properties.Nm_Dat_Das || ''}</div>
+        
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2'>Nama Ruas</td>
+                        <td class='border-2 font-bold'>Nama Ruas</td>
                         <td class='border-2'>${feature.properties.Nm_Dat_Das || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2'>Kode WS</td>
+                        <td  class='border-2 font-bold'>Kode WS</td>
                         <td class='border-2'>${feature.properties.Kd_WS_Permen || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2'>Gambar</td>
-                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none'></td>
+                        <td  class='border-2 font-bold'>Gambar</td>
+                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none' style='width:10%;height:10%;'></td>
                     </tr>
                 </tbody>
     </table>
     <div style="text-align: center">
-        <button style="color:blue;" onclick="onDetailClick()">Detail</button>
+        <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
     if (feature.properties)
         layer.bindPopup(detailLink).on('popupopen', () => {
@@ -499,24 +486,23 @@ async function loadRiverBasin() {
 const onEachRoad = function(feature, layer) {
     const detailLink = `  
 <table class='border-2 table table-striped' style="width:300px;">
-        <div class='font-bold font-medium text-yellow-700 mb-1'>${feature.properties.Nm_Dat_Das || ''}</div>
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2'>Nama Ruas</td>
+                        <td class='border-2 font-bold'>Nama Ruas</td>
                         <td class='border-2'>${feature.properties.Nm_Dat_Das || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2'>Nomor Ruas</td>
+                        <td  class='border-2 font-bold'>Nomor Ruas</td>
                         <td class='border-2'>${feature.properties.Nmr_Ruas || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2'>Gambar</td>
-                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none'></td>
+                        <td  class='border-2 font-bold'>Gambar</td>
+                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none' style='width:10%;height:10%;'></td>
                     </tr>
                 </tbody>
     </table>
     <div style="text-align: center">
-        <button style="color:blue;" onclick="onDetailClick()">Detail</button>
+        <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
     if (feature.properties)
         layer.bindPopup(detailLink).on('popupopen', () => {
