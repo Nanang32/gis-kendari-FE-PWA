@@ -119,12 +119,9 @@ const onEachRiverInfrastructure = function(feature, layer) {
                         <td  class='border-2 font-bold'>Tahun Pelaksanaan</td>
                         <td>${feature.properties['Tahun Pelaksanaan'] || ''}</td>
                     </tr>
-                    <tr>
-                        <td class='border-2 font-bold'>Gambar</td>
-                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none' style='width:10%;height:10%;'></td>
-                    </tr>
                 </tbody>
     </table>
+    <image src="${feature.properties.Foto}" class='m-2' alt='none' style='width:10%;height:10%;'>
     <div style="text-align: center">
         <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
@@ -168,12 +165,9 @@ const onEachRiver = function(feature, layer) {
                         <td  class='border-2 font-bold'>Panjang Sungai</td>
                         <td>${feature.properties['Panjang Sungai (km)'] || ''}</td>
                     </tr>
-                    <tr>
-                        <td  class='border-2 font-bold'>Gambar</td>
-                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none' style='width:10%;height:10%;'></td>
-                    </tr>
                 </tbody>
     </table>
+    <image src="${feature.properties.Foto}"alt='none' class='m-2' style='width:10%;height:10%;'>
     <div style="text-align: center">
         <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
@@ -210,12 +204,9 @@ const onEachWatershed = function(feature, layer) {
                         <td  class='border-2 font-bold'>LUAS (KM2)</td>
                         <td class='border-2'>${feature.properties.luas || ''}</td>
                     </tr>
-                    <tr>
-                        <td  class='border-2 font-bold'>Gambar</td>
-                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none' style='width:10%;height:10%;'></td>
-                    </tr>
                 </tbody>
     </table>
+    <image src="${feature.properties.Foto}"alt='none' class='m-2' style='width:10%;height:10%;'>
     <div style="text-align: center">
         <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
@@ -258,12 +249,9 @@ const onEachWeir = function(feature, layer) {
                         <td  class='border-2 font-bold'>Jenis Bendung</td>
                         <td class='border-2'>${feature.properties.Jns_Bdg || ''}</td>
                     </tr>
-                    <tr>
-                        <td  class='border-2 font-bold'>Gambar</td>
-                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none' style='width:10%;height:10%;'></td>
-                    </tr>
                 </tbody>
     </table>
+    <image src="${feature.properties.Foto}"alt='none' class='m-2' style='width:10%;height:10%;'>
     <div style="text-align: center">
         <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
@@ -307,12 +295,10 @@ const onEachGroin = function(feature, layer) {
                         <td class='border-2 font-bold'>Tahun Pelaksanaan</td>
                         <td class='border-2'>${feature.properties.Thn_Pelaksanaan || ''}</td>
                     </tr>
-                    <tr>
-                        <td  class='border-2 font-bold'>Gambar</td>
-                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none' style='width:10%;height:10%;'></td>
-                    </tr>
+                    
                 </tbody>
     </table>
+    <image src="${feature.properties.Foto}"alt='none' class='m-2' style='width:10%;height:10%;'>
     <div style="text-align: center">
         <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
@@ -352,12 +338,9 @@ const onEachBridge = function(feature, layer) {
                         <td  class='border-2 font-bold'>Nomor Jembatan</td>
                         <td class='border-2'>${feature.properties.Nmr_Ruas_Tol || ''}</td>
                     </tr>
-                    <tr>
-                        <td  class='border-2 font-bold'>Gambar</td>
-                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none' style='width:10%;height:10%;'></td>
-                    </tr>
                 </tbody>
     </table>
+    <image src="${feature.properties.Foto}"alt='none' class='m-2' style='width:10%;height:10%;'>
     <div style="text-align: center">
         <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
@@ -405,12 +388,10 @@ const onEachIrrigation = function(feature, layer) {
                         <td  class='border-2 font-bold'>Luas</td>
                         <td class='border-2'>${feature.properties.Luas_Fungsi || ''}</td>
                     </tr>
-                    <tr>
-                        <td  class='border-2 font-bold'>Gambar</td>
-                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none' style='width:10%;height:10%;'></td>
-                    </tr>
+                    
                 </tbody>
     </table>
+    <image src="${feature.properties.Foto}"alt='none' class='m-2' style='width:10%;height:10%;'>
     <div style="text-align: center">
         <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
@@ -451,12 +432,10 @@ const onEachRiverBasin = function(feature, layer) {
                         <td  class='border-2 font-bold'>Kode WS</td>
                         <td class='border-2'>${feature.properties.Kd_WS_Permen || ''}</td>
                     </tr>
-                    <tr>
-                        <td  class='border-2 font-bold'>Gambar</td>
-                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none' style='width:10%;height:10%;'></td>
-                    </tr>
+                    
                 </tbody>
     </table>
+    <image src="${feature.properties.Foto}"alt='none' class='m-2' style='width:10%;height:10%;'>
     <div style="text-align: center">
         <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
@@ -495,12 +474,10 @@ const onEachRoad = function(feature, layer) {
                         <td  class='border-2 font-bold'>Nomor Ruas</td>
                         <td class='border-2'>${feature.properties.Nmr_Ruas || ''}</td>
                     </tr>
-                    <tr>
-                        <td  class='border-2 font-bold'>Gambar</td>
-                        <td class='border-2'><image src="${feature.properties.Foto}"alt='none' style='width:10%;height:10%;'></td>
-                    </tr>
+                    
                 </tbody>
     </table>
+    <image src="${feature.properties.Foto}"alt='none' class='m-2' style='width:10%;height:10%;'>
     <div style="text-align: center">
         <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
