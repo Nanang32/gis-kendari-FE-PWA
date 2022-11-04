@@ -385,7 +385,7 @@ const onEachIrrigation = function(feature, layer) {
                         <td class='border-2'>${feature.properties.Bang_Utama || ''}</td>
                     </tr>
                     <tr>
-                        <td  class='border-2 font-bold'>Luas</td>
+                        <td  class='border-2 font-bold'>Luas (Ha)</td>
                         <td class='border-2'>${feature.properties.Luas_Fungsi || ''}</td>
                     </tr>
                     
