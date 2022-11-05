@@ -33,16 +33,23 @@ onMounted(async () => {
   });
   if ((response !== null) && (response.status === true)) {
     Object.assign(weir, response.data.weir);
+    weir.geo_json = JSON.stringify(weir.geo_json);
   }
   loading.value = false;
 })
 
 async function onSubmit(){
   loading.value = true;
+  const formdata = new FormData();
+  formdata.append('_method', 'PUT')
+  Object.keys(weir).forEach(key => {
+    if(weir[key])
+      formdata.append(key, weir[key]);
+  });
   const response = await sendRequest({
       method: 'PUT',
       url: `/weirs/${route.params.id}`,
-      data: weir
+      data: formdata
   });
   loading.value = false;
   if ((response !== null) && (response.status === true)) {

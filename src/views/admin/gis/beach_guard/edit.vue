@@ -33,6 +33,7 @@ onMounted(async () => {
   });
   if ((response !== null) && (response.status === true)) {
     Object.assign(groin, response.data.groin);
+    groin.geo_json = JSON.stringify(groin.geo_json);
   }
   loading.value = false;
 })
@@ -42,6 +43,7 @@ async function onSubmit(){
   const formdata = new FormData();
   formdata.append('_method', 'PUT')
   Object.keys(groin).forEach(key => {
+    if(groin[key])
       formdata.append(key, groin[key]);
   });
   const response = await sendRequest({

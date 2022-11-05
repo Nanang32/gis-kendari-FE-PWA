@@ -33,6 +33,7 @@ onMounted(async () => {
   });
   if ((response !== null) && (response.status === true)) {
     Object.assign(road, response.data.road);
+    road.geo_json = JSON.stringify(road.geo_json);
   }
   loading.value = false;
 })
@@ -42,6 +43,7 @@ async function onSubmit(){
   const formdata = new FormData();
   formdata.append('_method', 'PUT')
   Object.keys(road).forEach(key => {
+    if(road[key])
       formdata.append(key, road[key]);
   });
   const response = await sendRequest({

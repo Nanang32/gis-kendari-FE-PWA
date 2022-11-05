@@ -33,6 +33,7 @@ onMounted(async () => {
   });
   if ((response !== null) && (response.status === true)) {
     Object.assign(irrigation, response.data.irrigation);
+    irrigation.geo_json = JSON.stringify(irrigation.geo_json);
   }
   loading.value = false;
 })
@@ -42,6 +43,7 @@ async function onSubmit(){
   const formdata = new FormData();
   formdata.append('_method', 'PUT')
   Object.keys(irrigation).forEach(key => {
+    if(irrigation[key])
       formdata.append(key, irrigation[key]);
   });
   const response = await sendRequest({

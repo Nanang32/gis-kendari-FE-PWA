@@ -33,6 +33,7 @@ onMounted(async () => {
   });
   if ((response !== null) && (response.status === true)) {
     Object.assign(river, response.data.river);
+    river.geo_json = JSON.stringify(river.geo_json);
   }
   loading.value = false;
 })
@@ -42,6 +43,7 @@ async function onSubmit(){
   const formdata = new FormData();
   formdata.append('_method', 'PUT')
   Object.keys(river).forEach(key => {
+    if(river[key])
       formdata.append(key, river[key]);
   });
   const response = await sendRequest({
