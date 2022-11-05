@@ -106,12 +106,12 @@
                     <ul class="absolute bg-[#08276e] e p-3 w-52 top-6 transform scale-0 group-hover:scale-100 transition duration-150 ease-in-out origin-top shadow-lg">
                         <li class="text-sm hover:bg-slate-100 leading-8">
                             <router-link :to="{name: 'site-prodhukum'}" class="block px-4 py-2 text-xs text-white hover:text-blue-300 ">
-                                Publikasi Hukum
+                                produk Hukum
                             </router-link>
                         </li>
                         <li class="text-sm hover:bg-slate-100 leading-8">
                             <router-link :to="{name: 'site-renstra'}" class=" block px-4 py-2 text-xs text-white hover:text-blue-300 ">
-                                Publikasi Strategis
+                                rencana strategis
                             </router-link>
                         </li>
                         <li class="text-sm hover:bg-slate-100 leading-8">

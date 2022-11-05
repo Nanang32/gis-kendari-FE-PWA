@@ -41,11 +41,14 @@
                                                     <td class="whitespace-nowrap"> {{ lawDocument.title }}</td>
                                                     <td class="whitespace-nowrap"> {{ lawDocument.year }}</td>
                                                     <td class="whitespace-nowrap">
-                                                        <a class="btn btn-sm btn-white w-24 m-2" :href="lawDocument.file_url" target="_blank">
+                                                        <a class="btn btn-sm btn-white w-24 " :href="lawDocument.file_url" target="_blank">
                                                             <DownloadIcon class="w-4 h-4 mr-2" /> Lihat
                                                         </a>
-                                                        <a class="btn btn-sm btn-white w-24 " :href="lawDocument.file_url">
+                                                        <a class="btn btn-sm btn-white w-24 m-2" :href="lawDocument.file_url">
                                                             <DownloadIcon class="w-4 h-4 mr-2" /> Unduh
+                                                        </a>
+                                                        <a class="btn btn-sm btn-white w-24 ">
+                                                            <FolderIcon class="w-4 h-4 mr-2" /> ZIP
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -71,7 +74,7 @@
                                     <tbody>
                                         <tr v-for="category in categories">
                                             <td class="whitespace-nowrap" @click="loadLaw(category.id)">
-                                                <FileTextIcon class="w-4 h-4 mr-2 inline" /> {{ category.name }}
+                                                <FileTextIcon class="w-4 h-4 mr-2 inline-block" /> {{ category.name }}
                                             </td>
                                         </tr>
                                     </tbody>

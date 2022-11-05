@@ -51,6 +51,19 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="border-b border-black shadow"></div>
+                                <div class="p-5">
+                                    <div class="flex items-center mt-5">
+                                        <div class="file">
+                                            <a href="#" class="w-12 file__icon file__icon--directory">
+                                                <div class="file__icon__file-name text-xs">ZIP</div>
+                                            </a>
+                                        </div>
+                                        <div class="ml-4">
+                                            <a class="font-medium font-bold text-blue-500 no-underline hover:underline" target="_blank">nama judul</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -69,7 +82,7 @@
                                     <tbody>
                                         <tr v-for="strategicPlan in rpjmd">
                                             <td class="whitespace-nowrap" @click="loadStrategicPlan(strategicPlan.id)">
-                                                <FileTextIcon class="w-4 h-4 mr-2 inline" /> {{ strategicPlan.title }}
+                                                <FileTextIcon class="w-4 h-4 mr-2 inline-block" /> {{ strategicPlan.title }}
                                             </td>
                                         </tr>
                                     </tbody>
@@ -87,7 +100,7 @@
                                     <tbody>
                                         <tr v-for="strategicPlan in sdabm">
                                             <td class="whitespace-nowrap" @click="loadStrategicPlan(strategicPlan.id)">
-                                                <FileTextIcon class="w-4 h-4 mr-2 inline" /> {{ strategicPlan.title }}
+                                                <FileTextIcon class="w-4 h-4 mr-2 inline-block" /> {{ strategicPlan.title }}
                                             </td>
                                         </tr>
                                     </tbody>
