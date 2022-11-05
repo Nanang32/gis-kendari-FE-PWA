@@ -229,7 +229,7 @@
                 <h2 class="text-base text-white  uppercase">vi.koordinat (decimal degree)</h2>
             </div>
             <div class="p-5 text-center">
-                <MapDrawer @submit="getLatLngs" :geo_json="watershed.geo_json"/>
+                <MapDrawer @submit="getLatLngs" :geo_json="watershed.geo_json? JSON.parse(watershed.geo_json):null"/>
             </div>
         </div>
         <div class="box col-span-12 lg:col-span-6">

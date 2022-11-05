@@ -133,7 +133,7 @@
                 <h2 class="text-base text-white  uppercase">vi.Digitasi</h2>
             </div>
             <div class="p-5 text-center">
-                <MapDrawer @submit="getLatLngs" :geo_json="riverBasin.geo_json"/>
+                <MapDrawer @submit="getLatLngs" :geo_json="riverBasin.geo_json? JSON.parse(riverBasin.geo_json):null"/>
             </div>
         </div>
     </div>

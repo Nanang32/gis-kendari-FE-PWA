@@ -286,7 +286,7 @@
                 <h2 class="text-base text-white  uppercase">vii.Digitasi</h2>
             </div>
             <div class="p-5">
-                <MapDrawer @submit="getLatLngs" :geo_json="bridge.geo_json"/>
+                <MapDrawer @submit="getLatLngs" :geo_json="bridge.geo_json? JSON.parse(bridge.geo_json):null"/>
             </div>
         </div>
     </div>

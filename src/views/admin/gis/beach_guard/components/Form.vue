@@ -262,7 +262,7 @@
                 <h2 class="text-base text-white  uppercase">vii.Digitasi</h2>
             </div>
             <div class="p-5 text-center">
-                <MapDrawer @submit="getLatLngs" :geo_json="groin.geo_json"/>
+                <MapDrawer @submit="getLatLngs" :geo_json="groin.geo_json? JSON.parse(groin.geo_json):null"/>
             </div>
         </div>
     </div>

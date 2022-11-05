@@ -216,7 +216,7 @@
                 <h2 class="text-base text-white  uppercase">viii.Digitasi</h2>
             </div>
             <div class="p-5 text-center">
-                <MapDrawer @submit="getLatLngs" :geo_json="weir.geo_json"/>
+                <MapDrawer @submit="getLatLngs" :geo_json="weir.geo_json? JSON.parse(weir.geo_json):null"/>
             </div>
         </div>
     </div>
