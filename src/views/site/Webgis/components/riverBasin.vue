@@ -111,12 +111,16 @@
                         <td>---</td>
                     </tr>
                     <tr>
-                        <td class="font-semibold">Video</td>
-                        <td>----</td>
+                        <td class="font-semibold" colspan="2">
+                            Video
+                            <iframe class="max-w-full w-full mx-auto" :src="getEmbedLink(riverBasin['Video'])" frameborder="0" allowfullscreen></iframe>
+                        </td>
                     </tr>
                     <tr>
-                        <td class="font-semibold">File</td>
-                        <td>----</td>
+                        <td class="font-semibold" colspan="2">
+                            File
+                            <a v-if="riverBasin['Peta']" :href="riverBasin['Peta']">Download</a>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -131,4 +135,9 @@
           default: {}
       }
   })
+  
+  function getEmbedLink(youtubeLink){
+      var res = youtubeLink.split("=");
+      return "https://www.youtube.com/embed/"+res[1];
+  }
 </script>

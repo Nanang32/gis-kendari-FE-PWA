@@ -187,8 +187,16 @@
                         <td>{{ river['Foto_file_path'] }}</td>
                     </tr>
                     <tr>
-                        <td class="font-semibold">Video</td>
-                        <td>{{ river['Video_file_path'] }}</td>
+                        <td class="font-semibold" colspan="2">
+                            Video
+                            <iframe class="max-w-full w-full mx-auto" :src="getEmbedLink(river['Video'])" frameborder="0" allowfullscreen></iframe>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="font-semibold" colspan="2">
+                            File
+                            <a v-if="river['Peta']" :href="river['Peta']">Download</a>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -202,4 +210,9 @@ const props = defineProps({
         default: {}
     }
 })
+
+function getEmbedLink(youtubeLink){
+    var res = youtubeLink.split("=");
+    return "https://www.youtube.com/embed/"+res[1];
+}
 </script>
