@@ -47,7 +47,9 @@
                                                         <a class="btn btn-sm btn-white w-24 m-2" :href="lawDocument.file_url">
                                                             <DownloadIcon class="w-4 h-4 mr-2" /> Unduh
                                                         </a>
-                                                        <a class="btn btn-sm btn-white w-24 ">
+                                                        <a v-if="lawDocument.additional_link"
+                                                            class="btn btn-sm btn-white w-24 "
+                                                            :href="lawDocument.additional_link">
                                                             <FolderIcon class="w-4 h-4 mr-2" /> ZIP
                                                         </a>
                                                     </td>

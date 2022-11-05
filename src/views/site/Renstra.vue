@@ -60,7 +60,12 @@
                                             </a>
                                         </div>
                                         <div class="ml-4">
-                                            <a class="font-medium font-bold text-blue-500 no-underline hover:underline" target="_blank">nama judul</a>
+                                            <a v-if="strategicPlan.additional_link"
+                                                :href="strategicPlan.additional_link"
+                                                class="font-medium font-bold text-blue-500 no-underline hover:underline" 
+                                                target="_blank">
+                                                nama judul
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

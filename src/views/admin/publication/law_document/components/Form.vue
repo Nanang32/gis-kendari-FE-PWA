@@ -28,6 +28,15 @@
                               </div>
                           </div>
                         </div>
+                        <div class="mt-5">
+                          <label class="form-label">Link (Optional)</label>
+                          <div class="border-2 border-dashed dark:border-darkmode-400 rounded-md pt-4">
+                              <div class="px-4 pb-4 flex items-center cursor-pointer relative">
+                                  <ImageIcon class="w-4 h-4 mr-2" />
+                                  <input class="w-full h-full top-0 left-0 absolute" v-model="lawDocument.additional_link" />
+                              </div>
+                          </div>
+                        </div>
                     </div>
                 </div>
             </div>
