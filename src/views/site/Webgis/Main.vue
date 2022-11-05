@@ -26,12 +26,6 @@
         </ModalFooter>
     </Modal>
     <Footer />
-    <div
-      class="col-span-6 sm:col-span-3 xl:col-span-2 flex flex-col justify-end items-center"
-    >
-      <LoadingIcon icon="spinning-circles" class="w-8 h-8" />
-      <div class="text-center text-xs mt-2">Data sedang disiapkan.</div>
-    </div>
 </template>
 <script setup>
 import Navbar from "../../../components/navbar-menu/Main.vue";
