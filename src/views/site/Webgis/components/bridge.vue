@@ -205,12 +205,16 @@
                         <td>---</td>
                     </tr>
                     <tr>
-                        <td class="font-semibold">Video</td>
-                        <td>----</td>
+                        <td class="font-semibold" colspan="2">
+                            Video
+                            <iframe v-if="bridge['Video']" class="max-w-full w-full mx-auto" :src="getEmbedLink(bridge['Video'])" frameborder="0" allowfullscreen></iframe>
+                        </td>
                     </tr>
                     <tr>
-                        <td class="font-semibold">File</td>
-                        <td>----</td>
+                        <td class="font-semibold" colspan="2">
+                            File
+                            <a v-if="bridge['Peta']" :href="bridge['Peta']">Download</a>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -224,4 +228,9 @@ const props = defineProps({
         default: {}
     }
 })
+
+function getEmbedLink(youtubeLink){
+    var res = youtubeLink.split("=");
+    return "https://www.youtube.com/embed/"+res[1];
+}
 </script>

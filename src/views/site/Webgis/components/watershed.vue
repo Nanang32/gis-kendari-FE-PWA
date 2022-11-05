@@ -197,7 +197,7 @@
                     <tr>
                         <td class="font-semibold" colspan="2">
                             Video
-                            <iframe class="max-w-full w-full mx-auto" :src="getEmbedLink(watershed['Video'])" frameborder="0" allowfullscreen></iframe>
+                            <iframe v-if="watershed['Video']" class="max-w-full w-full mx-auto" :src="getEmbedLink(watershed['Video'])" frameborder="0" allowfullscreen></iframe>
                         </td>
                     </tr>
                     <tr>

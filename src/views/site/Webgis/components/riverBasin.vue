@@ -113,7 +113,7 @@
                     <tr>
                         <td class="font-semibold" colspan="2">
                             Video
-                            <iframe class="max-w-full w-full mx-auto" :src="getEmbedLink(riverBasin['Video'])" frameborder="0" allowfullscreen></iframe>
+                            <iframe v-if="riverBasin['Video']" class="max-w-full w-full mx-auto" :src="getEmbedLink(riverBasin['Video'])" frameborder="0" allowfullscreen></iframe>
                         </td>
                     </tr>
                     <tr>
