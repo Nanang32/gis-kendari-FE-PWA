@@ -47,7 +47,7 @@ async function onSubmit(){
       formdata.append(key, weir[key]);
   });
   const response = await sendRequest({
-      method: 'PUT',
+      method: 'POST',
       url: `/weirs/${route.params.id}`,
       data: formdata
   });
