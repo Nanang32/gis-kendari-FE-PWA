@@ -22,7 +22,7 @@
                         <td class="font-semibold">status</td>
                         <td>{{ bridge['Status'] }}</td>
                     </tr>
-                     <tr>
+                    <tr>
                         <td class="font-semibold">Fungsi</td>
                         <td>{{ bridge['Fungsi'] }}</td>
                     </tr>
@@ -185,7 +185,7 @@
                         <td class="font-semibold">titik koord. y (titik awal jembatan)</td>
                         <td>{{ bridge['Koord_Y_Awal'] }}</td>
                     </tr>
-                     <tr>
+                    <tr>
                         <td class="font-semibold">titik koord. x (titik akhir jembatan)</td>
                         <td>{{ bridge['Koord_X_Akhir'] }}</td>
                     </tr>
@@ -201,19 +201,23 @@
             <table class="table table-bordered table-hover capitalize">
                 <tbody>
                     <tr>
-                        <td class="font-semibold">Foto</td>
-                        <td>---</td>
+                        <td class="font-semibold" colspan="3">
+                            Foto
+                            <img class="content-start mx-auto" :src="(bridge['Foto'])" alt="" style="height:300px;width:300px;">
+                        </td>
                     </tr>
                     <tr>
-                        <td class="font-semibold" colspan="2">
+                        <td class="font-semibold h-56" colspan="3">
                             Video
-                            <iframe v-if="bridge['Video']" class="max-w-full w-full mx-auto" :src="getEmbedLink(bridge['Video'])" frameborder="0" allowfullscreen></iframe>
+                            <iframe v-if="bridge['Video']" class="max-w-full w-full aspect-video" :src="getEmbedLink(bridge['Video'])" frameborder="0" allowfullscreen></iframe>
                         </td>
                     </tr>
                     <tr>
                         <td class="font-semibold" colspan="2">
-                            File
-                            <a v-if="bridge['Peta']" :href="bridge['Peta']">Download</a>
+                            File Peta (Shp)
+                        </td>
+                        <td class="font-semibold" colspan="2">
+                            <a v-if="bridge['Peta']" :href="bridge['Peta']" target="_blank" class="text-blue-500">File Download</a>
                         </td>
                     </tr>
                 </tbody>
@@ -229,8 +233,8 @@ const props = defineProps({
     }
 })
 
-function getEmbedLink(youtubeLink){
+function getEmbedLink(youtubeLink) {
     var res = youtubeLink.split("=");
-    return "https://www.youtube.com/embed/"+res[1];
+    return "https://www.youtube.com/embed/" + res[1];
 }
 </script>

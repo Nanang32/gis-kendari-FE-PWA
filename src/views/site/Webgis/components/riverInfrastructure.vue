@@ -30,7 +30,6 @@
                         </tr>
                     </tbody>
                 </table>
-                
                 <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800 mt-3">
                     <h2 class="text-base text-white  uppercase">I. lokasi</h2>
                 </div>
@@ -52,10 +51,8 @@
                             <td class="font-semibold">kelurahan/Desa</td>
                             <td>{{ riverInfrastructure['KelDesa'] }}</td>
                         </tr>
-                        
                     </tbody>
                 </table>
-                
                 <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800 mt-3">
                     <h2 class="text-base text-white  uppercase">II. data teknis</h2>
                 </div>
@@ -82,7 +79,6 @@
                             <td class="font-semibold">Material</td>
                             <td>{{ riverInfrastructure['Material'] }}</td>
                         </tr>
-                        
                     </tbody>
                 </table>
                 <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800 mt-3">
@@ -98,7 +94,6 @@
                             <td class="font-semibold">koordinat y</td>
                             <td>{{ riverInfrastructure['Koordinat Y'] }}</td>
                         </tr>
-
                     </tbody>
                 </table>
                 <div class="flex items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400 bg-blue-800 mt-3">
@@ -107,19 +102,23 @@
                 <table class="table table-bordered table-hover capitalize">
                     <tbody>
                         <tr>
-                            <td class="font-semibold">Foto</td>
-                            <td>{{ riverInfrastructure['Foto_file_path'] }}</td>
+                            <td class="font-semibold" colspan="3">
+                                Foto
+                                <img class="content-start mx-auto" :src="(riverInfrastructure['Foto'])" alt="" style="height:300px;width:300px;">
+                            </td>
                         </tr>
                         <tr>
-                            <td class="font-semibold" colspan="2">
+                            <td class="font-semibold h-56" colspan="3">
                                 Video
-                                <iframe v-if="riverInfrastructure['Video']" class="max-w-full w-full mx-auto" :src="getEmbedLink(riverInfrastructure['Video'])" frameborder="0" allowfullscreen></iframe>
+                                <iframe v-if="riverInfrastructure['Video']" class="max-w-full w-full aspect-video" :src="getEmbedLink(riverInfrastructure['Video'])" frameborder="0" allowfullscreen></iframe>
                             </td>
                         </tr>
                         <tr>
                             <td class="font-semibold" colspan="2">
-                                File
-                                <a v-if="riverInfrastructure['Peta']" :href="riverInfrastructure['Peta']">Download</a>
+                                File Peta (Shp)
+                            </td>
+                            <td class="font-semibold" colspan="2">
+                                <a v-if="riverInfrastructure['Peta']" :href="riverInfrastructure['Peta']" target="_blank" class="text-blue-500">File Download</a>
                             </td>
                         </tr>
                     </tbody>
@@ -136,8 +135,8 @@ const props = defineProps({
     }
 })
 
-function getEmbedLink(youtubeLink){
+function getEmbedLink(youtubeLink) {
     var res = youtubeLink.split("=");
-    return "https://www.youtube.com/embed/"+res[1];
+    return "https://www.youtube.com/embed/" + res[1];
 }
 </script>

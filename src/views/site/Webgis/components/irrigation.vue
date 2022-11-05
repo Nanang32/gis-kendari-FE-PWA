@@ -309,19 +309,23 @@
             <table class="table table-bordered table-hover capitalize">
                 <tbody>
                     <tr>
-                        <td class="font-semibold">Foto</td>
-                        <td>---</td>
+                        <td class="font-semibold" colspan="3">
+                            Foto
+                            <img class="content-start mx-auto" :src="(irrigation['Foto'])" alt="" style="height:300px;width:300px;">
+                        </td>
                     </tr>
                     <tr>
-                        <td class="font-semibold" colspan="2">
+                        <td class="font-semibold h-56" colspan="3">
                             Video
-                            <iframe v-if="irrigation['Video']" class="max-w-full w-full mx-auto" :src="getEmbedLink(irrigation['Video'])" frameborder="0" allowfullscreen></iframe>
+                            <iframe v-if="irrigation['Video']" class="max-w-full w-full aspect-video" :src="getEmbedLink(irrigation['Video'])" frameborder="0" allowfullscreen></iframe>
                         </td>
                     </tr>
                     <tr>
                         <td class="font-semibold" colspan="2">
-                            File
-                            <a v-if="irrigation['Peta']" :href="irrigation['Peta']">Download</a>
+                            File Peta (Shp)
+                        </td>
+                        <td class="font-semibold" colspan="2">
+                            <a v-if="irrigation['Peta']" :href="irrigation['Peta']" target="_blank" class="text-blue-500">File Download</a>
                         </td>
                     </tr>
                 </tbody>
@@ -337,8 +341,8 @@ const props = defineProps({
     }
 })
 
-function getEmbedLink(youtubeLink){
+function getEmbedLink(youtubeLink) {
     var res = youtubeLink.split("=");
-    return "https://www.youtube.com/embed/"+res[1];
+    return "https://www.youtube.com/embed/" + res[1];
 }
 </script>
