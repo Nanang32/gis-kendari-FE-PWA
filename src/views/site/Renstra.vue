@@ -69,7 +69,7 @@
                                     <tbody>
                                         <tr v-for="strategicPlan in rpjmd">
                                             <td class="whitespace-nowrap" @click="loadStrategicPlan(strategicPlan.id)">
-                                                <FileTextIcon class="w-4 h-4 mr-2 inline" /> {{ strategicPlan.title }}
+                                                <FileTextIcon class="w-4 h-4 mr-2 inline-block" /> {{ strategicPlan.title }}
                                             </td>
                                         </tr>
                                     </tbody>
@@ -87,7 +87,7 @@
                                     <tbody>
                                         <tr v-for="strategicPlan in sdabm">
                                             <td class="whitespace-nowrap" @click="loadStrategicPlan(strategicPlan.id)">
-                                                <FileTextIcon class="w-4 h-4 mr-2 inline" /> {{ strategicPlan.title }}
+                                                <FileTextIcon class="w-4 h-4 mr-2 inline-block" /> {{ strategicPlan.title }}
                                             </td>
                                         </tr>
                                     </tbody>

@@ -71,7 +71,7 @@
                                     <tbody>
                                         <tr v-for="category in categories">
                                             <td class="whitespace-nowrap" @click="loadLaw(category.id)">
-                                                <FileTextIcon class="w-4 h-4 mr-2 inline" /> {{ category.name }}
+                                                <FileTextIcon class="w-4 h-4 mr-2 inline-block" /> {{ category.name }}
                                             </td>
                                         </tr>
                                     </tbody>
