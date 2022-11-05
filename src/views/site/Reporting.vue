@@ -98,6 +98,14 @@
                         <div class="flex-shrink max-w-full w-full lg:w-7/12 lg:pl-8 lg:pt-14 lg:pb-8 order-first lg:order-last">
                             <div class="w-full bg-white">
                                 <div class="mb-6">
+                                    <div class="px-2 py-2 border border-gray-100 bg-white">
+                        <div class="flex items-center py-2">
+                            <input type="text" class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" v-model="query" placeholder="Ketik pencarian disini...">
+                            <button class="flex items-center py-3 px-5 leading-5 text-gray-100 bg-black hover:text-white hover:bg-gray-900 hover:ring-0 focus:outline-none focus:ring-0" type="button" @click="search">
+                                Cari
+                            </button>
+                        </div>
+                    </div>
                                     <div class="p-4 bg-gray-100">
                                         <h2 class="text-lg font-bold">Tabel pengaduan</h2>
                                     </div>

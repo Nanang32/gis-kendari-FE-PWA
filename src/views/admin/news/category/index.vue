@@ -1,6 +1,14 @@
 <template>
     <div class="intro-y flex items-center mt-8">
         <h2 class="text-lg font-medium capitalize mr-auto">Data list Kategori (pemberitaan & produk hukum)</h2>
+        <div class="intro-y flex  items-center mt-8">
+            <div class="form-check form-switch w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0">
+                <input type="text" class="form-control" placeholder="ketik disini" />
+                <button type="button" class="btn btn-warning w-24 ml-3">
+                    Cari
+                </button>
+            </div>
+        </div>
     </div>
     <div class="grid grid-cols-12 gap-6 mt-5 mb-20">
         <div class="intro-y col-span-12">
