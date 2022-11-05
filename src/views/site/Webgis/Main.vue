@@ -136,7 +136,7 @@ const onEachRiverInfrastructure = function(feature, layer) {
                     </tr>
                 </tbody>
     </table>
-    <image src="${feature.properties.Foto}" class='m-2' alt='none' style='width:10%;height:10%;'>
+    <image src="${feature.properties.Foto}" class='mt-2 mb-2 content-start' alt='none' style='width:550px;height:200px;'>
     <div style="text-align: center">
         <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
@@ -183,7 +183,7 @@ const onEachRiver = function(feature, layer) {
                     </tr>
                 </tbody>
     </table>
-    <image src="${feature.properties.Foto}"alt='none' class='m-2' style='width:10%;height:10%;'>
+    <image src="${feature.properties.Foto}"alt='none' class='mt-2 mb-2 content-start' style='width:550px;height:200px;'>
     <div style="text-align: center">
         <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
@@ -223,7 +223,7 @@ const onEachWatershed = function(feature, layer) {
                     </tr>
                 </tbody>
     </table>
-    <image src="${feature.properties.Foto}"alt='none' class='m-2' style='width:10%;height:10%;'>
+    <image src="${feature.properties.Foto}"alt='none' class='mt-2 mb-2 content-start' style='width:550px;height:200px;'>
     <div style="text-align: center">
         <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
@@ -268,7 +268,7 @@ const onEachWeir = function(feature, layer) {
                     </tr>
                 </tbody>
     </table>
-    <image src="${feature.properties.Foto}"alt='none' class='m-2' style='width:10%;height:10%;'>
+    <image src="${feature.properties.Foto}"alt='none' class='mt-2 mb-2 content-start' style='width:550px;height:200px;'>
     <div style="text-align: center">
         <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
@@ -320,7 +320,7 @@ const onEachGroin = function(feature, layer) {
                     
                 </tbody>
     </table>
-    <image src="${feature.properties.Foto}"alt='none' class='m-2' style='width:10%;height:10%;'>
+    <image src="${feature.properties.Foto}"alt='none' class='mt-2 mb-2 content-start' style='width:550px;height:200px;'>
     <div style="text-align: center">
         <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
@@ -371,7 +371,7 @@ const onEachBridge = function(feature, layer) {
                     </tr>
                 </tbody>
     </table>
-    <image src="${feature.properties.Foto}"alt='none' class='m-2' style='width:10%;height:10%;'>
+    <image src="${feature.properties.Foto}"alt='none' class='mt-2 mb-2 content-start' style='width:550px;height:200px;'>
     <div style="text-align: center">
         <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
@@ -423,7 +423,7 @@ const onEachIrrigation = function(feature, layer) {
                     
                 </tbody>
     </table>
-    <image src="${feature.properties.Foto}"alt='none' class='m-2' style='width:10%;height:10%;'>
+    <image src="${feature.properties.Foto}"alt='none' class='mt-2 mb-2 content-start' style='width:550px;height:200px;'>
     <div style="text-align: center">
         <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
@@ -472,7 +472,7 @@ const onEachRiverBasin = function(feature, layer) {
                     
                 </tbody>
     </table>
-    <image src="${feature.properties.Foto}"alt='none' class='m-2' style='width:10%;height:10%;'>
+    <image src="${feature.properties.Foto}"alt='none' class='mt-2 mb-2 content-start' style='width:550px;height:200px;'>
     <div style="text-align: center">
         <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
@@ -527,7 +527,7 @@ const onEachRoad = function(feature, layer) {
                     
                 </tbody>
     </table>
-    <image src="${feature.properties.Foto}"alt='none' class='m-2' style='width:10%;height:10%;'>
+    <image src="${feature.properties.Foto}"alt='none' class='mt-2 mb-2 content-start' style='width:550px;height:200px;'>
     <div style="text-align: center">
         <a class="btn bg-blue-700 hover:bg-blue-500" style="color:white;" onclick="onDetailClick()">Detail</a>
     </div>`;
