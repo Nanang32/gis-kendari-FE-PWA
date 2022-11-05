@@ -243,7 +243,11 @@
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">video</label>
-                    <input type="file" class="form-control" />
+                    <input type="text" class="form-control" v-model="watershed.Video" placeholder="ketik disini..." />
+                </div>
+                <div class="form-inline mt-5">
+                    <label class="form-label sm:w-30 capitalize">peta</label>
+                    <input type="text" class="form-control" v-model="watershed.Peta" placeholder="ketik disini..." />
                 </div>
             </div>
         </div>

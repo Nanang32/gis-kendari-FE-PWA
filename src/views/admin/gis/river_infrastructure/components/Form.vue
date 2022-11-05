@@ -117,11 +117,11 @@
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">video</label>
-                    <input type="file" class="form-control" @change="onVideoChange"/>
+                    <input type="text" class="form-control" v-model="riverInfrastructure.Video" placeholder="ketik disini..." />
                 </div>
                 <div class="form-inline mt-5">
                     <label class="form-label sm:w-30 capitalize">peta</label>
-                    <input type="file" class="form-control" @change="onMapChange"/>
+                    <input type="text" class="form-control" v-model="riverInfrastructure.Peta" placeholder="ketik disini..." />
                 </div>
             </div>
         </div>
@@ -165,14 +165,6 @@ function submit() {
 
 function onPhotoChange(e) {
     props.riverInfrastructure.Foto = e.target.files[0];
-}
-
-function onVideoChange(e) {
-    props.riverInfrastructure.Video = e.target.files[0];
-}
-
-function onMapChange(e) {
-    props.riverInfrastructure.Peta = e.target.files[0];
 }
 
 function getLatLngs(geoJson) {
