@@ -3,8 +3,8 @@
         <h2 class="text-lg font-medium capitalize mr-auto">Database Bendung</h2>
          <div class="intro-y flex  items-center mt-8">
             <div class="form-check form-switch w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0">
-                <input type="text" class="form-control" placeholder="ketik disini" />
-                <button type="button" class="btn btn-warning w-24 ml-3">
+                <input type="text" class="form-control" placeholder="ketik disini" v-model="query" />
+                <button type="button" class="btn btn-warning w-24 ml-3" @click="search">
                     Cari
                 </button>
             </div>
@@ -67,6 +67,8 @@ const lastPage = ref(1);
 const showDeleteModal = ref(false);
 const deleteId = ref(null);
 const router = useRouter();
+const loading = ref(true);
+const query = ref('');
 
 function setPage(newPage) {
     page.value = newPage
@@ -84,6 +86,21 @@ async function onConfirmDelete() {
     });
     showDeleteModal.value = false
     await loadData(page.value);
+}
+
+async function search() {
+    loading.value = true;
+    weirs.value = [];
+    const response = await sendRequest({
+        method: 'get',
+        url: '/weirs',
+        params: { search: query.value }
+    });
+    if ((response !== null) && (response.status === true)){
+        weirs.value = response.data.weir.data
+        lastPage.value = response.data.weir.last_page
+    }
+    loading.value = false;
 }
 
 async function loadData(page = 1) {
