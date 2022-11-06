@@ -3,8 +3,8 @@
         <h2 class="text-lg font-medium capitalize mr-auto">Data list Infrastruktur Sungai</h2>
          <div class="intro-y flex  items-center mt-8">
             <div class="form-check form-switch w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0">
-                <input type="text" class="form-control" placeholder="ketik disini" />
-                <button type="button" class="btn btn-warning w-24 ml-3">
+                <input type="text" class="form-control" placeholder="ketik disini" v-model="query" />
+                <button type="button" class="btn btn-warning w-24 ml-3" @click="search">
                     Cari
                 </button>
             </div>
@@ -29,7 +29,7 @@
                     <tbody v-for="(riverInfrastructure, index) in riverInfrastructures" :key="index">
                         <tr>
                             <td>{{ index + 1 }}</td>
-                            <td>{{ riverInfrastructure.name }}</td>
+                            <td>{{ riverInfrastructure['Nama Data Infrastruktur'] }}</td>
                             <td>
                                 <div class="flex justify-center items-center">
                                     <button class="flex items-center mr-3" @click="router.push({name: 'admin-riverinfrastructure-edit', params: { id: riverInfrastructure.id }})">
@@ -67,6 +67,8 @@ const lastPage = ref(1);
 const showDeleteModal = ref(false);
 const deleteId = ref(null);
 const router = useRouter();
+const loading = ref(true);
+const query = ref('');
 
 function setPage(newPage) {
     page.value = newPage
@@ -84,6 +86,21 @@ async function onConfirmDelete() {
     });
     showDeleteModal.value = false
     await loadData(page.value);
+}
+
+async function search() {
+    loading.value = true;
+    riverInfrastructures.value = [];
+    const response = await sendRequest({
+        method: 'get',
+        url: '/riverInfrastructures',
+        params: { search: query.value }
+    });
+    if ((response !== null) && (response.status === true)){
+        riverInfrastructures.value = response.data.riverInfrastructure.data
+        lastPage.value = response.data.riverInfrastructure.last_page
+    }
+    loading.value = false;
 }
 
 async function loadData(page = 1) {
