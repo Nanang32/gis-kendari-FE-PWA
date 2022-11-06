@@ -101,8 +101,6 @@ const loading = ref(true);
 const query = ref('');
 
 async function search() {
-    if (query == '')
-        return;
     loading.value = true;
     lawDocuments.value = [];
     const response = await sendRequest({

@@ -3,8 +3,8 @@
       <h2 class="text-lg font-medium mr-auto">Data list laporan</h2>
        <div class="intro-y flex  items-center mt-8">
             <div class="form-check form-switch w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0">
-                <input type="text" class="form-control" placeholder="ketik disini" />
-                <button type="button" class="btn btn-warning w-24 ml-3">
+                <input type="text" class="form-control" placeholder="ketik disini" v-model="query" />
+                <button type="button" class="btn btn-warning w-24 ml-3" @click="search">
                     Cari
                 </button>
             </div>
@@ -60,21 +60,32 @@
 </template>
 <script setup>
 import Paginator from "@/components/paginator/Main.vue";
-import ModalConfirmDelete from "@/components/modal-confirm-delete/Main.vue";
 import sendRequest from '@libs/http.js'
 import { ref, watch , onMounted } from "vue";
-import { useRoute } from "vue-router";
 
 const reports = ref([]);
 const page = ref(1);
 const perPage = ref(10);
 const lastPage = ref(1);
-const showDeleteModal = ref(false);
-const route = useRoute();
+const loading = ref(true);
+const query = ref('');
 
 function setPage(newPage){
   page.value = newPage
 } 
+
+async function search() {
+    loading.value = true;
+    reports.value = [];
+    const response = await sendRequest({
+        method: 'get',
+        url: '/reports',
+        params: { search: query.value }
+    });
+    if ((response !== null) && (response.status === true))
+        reports.value = response.data.reports.data
+    loading.value = false;
+}
 
 async function loadData(page=1){
   const response = await sendRequest({

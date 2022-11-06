@@ -99,13 +99,13 @@
                             <div class="w-full bg-white">
                                 <div class="mb-6">
                                     <div class="px-2 py-2 border border-gray-100 bg-white">
-                        <div class="flex items-center py-2">
-                            <input type="text" class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" v-model="query" placeholder="Ketik pencarian disini...">
-                            <button class="flex items-center py-3 px-5 leading-5 text-gray-100 bg-black hover:text-white hover:bg-gray-900 hover:ring-0 focus:outline-none focus:ring-0" type="button" @click="search">
-                                Cari
-                            </button>
-                        </div>
-                    </div>
+                                        <div class="flex items-center py-2">
+                                            <input type="text" class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" v-model="query" placeholder="Ketik pencarian disini...">
+                                            <button class="flex items-center py-3 px-5 leading-5 text-gray-100 bg-black hover:text-white hover:bg-gray-900 hover:ring-0 focus:outline-none focus:ring-0" type="button" @click="search">
+                                                Cari
+                                            </button>
+                                        </div>
+                                    </div>
                                     <div class="p-4 bg-gray-100">
                                         <h2 class="text-lg font-bold">Tabel pengaduan</h2>
                                     </div>
@@ -157,12 +157,11 @@
     import Navbar from "../../components/navbar-menu/Main.vue";
     import Footer from "../../components/footer-public/Main.vue";
     import sendRequest from '@libs/http.js'
-    import { useRouter } from "vue-router";
     import { ref, reactive, onMounted } from "vue";
-    const router = useRouter();
     const loading = ref(false);
     let report = reactive({});
     let reports = ref([]);
+    const query = ref('');
 
     async function onSubmit(data){
         loading.value = true;
@@ -176,9 +175,6 @@
             url: '/reports',
             data: formdata
         });
-        // if ((response !== null) && (response.status === true)) {
-        //     router.push({name: 'admin-category'});
-        // }
         loading.value = false;
     }
     const onFileChange = (e) => {
@@ -197,6 +193,19 @@
         report.latlng = position.coords.latitude + ',' + position.coords.longitude;
     }
 
+    async function search() {
+    loading.value = true;
+    reports.value = [];
+    const response = await sendRequest({
+        method: 'get',
+        url: '/reports/confirmed',
+        params: { search: query.value }
+    });
+    if ((response !== null) && (response.status === true))
+        reports.value = response.data.reports.data
+    loading.value = false;
+}
+
     onMounted(async () => {
         const response = await sendRequest({
             method: 'get',
@@ -204,7 +213,6 @@
         });
         if ((response !== null) && (response.status === true)) {
             reports.value = response.data.reports.data
-            console.log(reports.value);
         }
     });
 </script>
