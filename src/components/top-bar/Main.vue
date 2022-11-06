@@ -1,5 +1,4 @@
 <template>
-    <TinySlider />
     <!-- BEGIN: Top Bar -->
     <div class="top-bar-boxed h-[70px] md:h-[65px] z-[51] border-b border-white/[0.08] mt-12 md:mt-0 -mx-3 sm:-mx-8 md:-mx-0 px-3 md:border-b-0 relative md:fixed md:inset-x-0 md:top-0 sm:px-8 md:px-10 md:pt-10 md:bg-gradient-to-b md:from-slate-100 md:to-transparent dark:md:from-darkmode-700">
         <div class="h-full flex items-center">
@@ -12,21 +11,21 @@
             <!-- BEGIN: Breadcrumb -->
             <nav aria-label="breadcrumb" class="-intro-x h-[45px] mr-auto">
                 <ol class="breadcrumb breadcrumb-light">
-                    <li class="breadcrumb-item"><a href="#">Application</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                    <li class="breadcrumb-item"><a href="#"></a></li>
+                    <li class="breadcrumb-item active" aria-current="page"></li>
                 </ol>
             </nav>
             <!-- END: Breadcrumb -->
             <!-- BEGIN: Search -->
             <div class="intro-x relative mr-3 sm:mr-6">
-                <div class="search hidden sm:block">
+                <!-- <div class="search hidden sm:block">
                     <input type="text" class="search__input form-control border-transparent" placeholder="Search..." @focus="showSearchDropdown" @blur="hideSearchDropdown" />
                     <SearchIcon class="search__icon dark:text-slate-500" />
-                </div>
-                <a class="notification notification--light sm:hidden" href="">
+                </div> -->
+                <!-- <a class="notification notification--light sm:hidden" href="">
                     <SearchIcon class="notification__icon dark:text-slate-500" />
-                </a>
-                <div class="search-result" :class="{ show: searchDropdown }">
+                </a> -->
+                <!-- <div class="search-result" :class="{ show: searchDropdown }">
                     <div class="search-result__content">
                         <div class="search-result__content__title">Pages</div>
                         <div class="mb-5">
@@ -72,11 +71,11 @@
                             </div>
                         </a>
                     </div>
-                </div>
+                </div> -->
             </div>
             <!-- END: Search -->
             <!-- BEGIN: Notifications -->
-            <Dropdown class="intro-x mr-4 sm:mr-6">
+            <!-- <Dropdown class="intro-x mr-4 sm:mr-6">
                 <DropdownToggle tag="div" role="button" class="notification notification--bullet cursor-pointer">
                     <BellIcon class="notification__icon dark:text-slate-500" />
                 </DropdownToggle>
@@ -104,25 +103,25 @@
                         </div>
                     </DropdownContent>
                 </DropdownMenu>
-            </Dropdown>
+            </Dropdown> -->
             <!-- END: Notifications -->
             <!-- BEGIN: Account Menu -->
             <Dropdown class="intro-x w-8 h-8">
                 <DropdownToggle tag="div" role="button" class="w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in scale-110">
-                    <img alt="Enigma Tailwind HTML Admin Template" :src="$f()[9].photos[0]" />
+                    <img alt="Enigma Tailwind HTML Admin Template"  />
                 </DropdownToggle>
                 <DropdownMenu class="w-56">
                     <DropdownContent class="bg-primary/80 before:block before:absolute before:bg-black before:inset-0 before:rounded-md before:z-[-1] text-white">
                         <DropdownHeader tag="div" class="!font-normal">
                             <div class="font-medium">
-                                {{ $f()[0].users[0].name }}
+                                <!-- {{ $f()[0].users[0].name }} -->
                             </div>
                             <div class="text-xs text-white/60 mt-0.5 dark:text-slate-500">
-                                {{ $f()[0].jobs[0] }}
+                                <!-- {{ $f()[0].jobs[0] }} -->
                             </div>
                         </DropdownHeader>
                         <DropdownDivider class="border-white/[0.08]" />
-                        <DropdownItem class="dropdown-item hover:bg-white/5">
+                        <!-- <DropdownItem class="dropdown-item hover:bg-white/5">
                             <UserIcon class="w-4 h-4 mr-2" /> Profile</DropdownItem>
                         <DropdownItem class="dropdown-item hover:bg-white/5">
                             <EditIcon class="w-4 h-4 mr-2" /> Add Account</DropdownItem>
@@ -130,7 +129,7 @@
                             <LockIcon class="w-4 h-4 mr-2" /> Reset Password</DropdownItem>
                         <DropdownItem class="dropdown-item hover:bg-white/5">
                             <HelpCircleIcon class="w-4 h-4 mr-2" /> Help</DropdownItem>
-                        <DropdownDivider class="border-white/[0.08]" />
+                        <DropdownDivider class="border-white/[0.08]" /> -->
                         <DropdownItem class="dropdown-item hover:bg-white/5">
                             <ToggleRightIcon class="w-4 h-4 mr-2" /> Logout</DropdownItem>
                     </DropdownContent>
@@ -142,7 +141,6 @@
     <!-- END: Top Bar -->
 </template>
 <script setup>
-import TinySlider from '@/components/tiny-slider/Main.vue'
 import { ref } from "vue";
 
 const searchDropdown = ref(false);
