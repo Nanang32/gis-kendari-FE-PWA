@@ -30,7 +30,7 @@
           mt-8
           space-y-4
           text-black text-sm items-center font-bold
-          md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0
+          md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0 pr-14
         ">
                 <li class="border-ember-800 cursor-pointer">
                     <router-link :to="{name: 'site'}" class=" block px-4 py-2 text-sm text-white hover:text-blue-300 uppercase">
