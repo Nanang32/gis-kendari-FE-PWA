@@ -70,7 +70,7 @@
                                 <table class="table table-hover">
                                     <thead class="table-dark rounded-lg">
                                         <tr>
-                                            <th class="whitespace-nowrap">Undang - undang</th>
+                                            <th class="whitespace-nowrap capitalize">Kategori</th>
                                         </tr>
                                     </thead>
                                     <tbody>

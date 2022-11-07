@@ -81,7 +81,7 @@
                                 <table class="table table-hover">
                                     <thead class="table-dark rounded-lg">
                                         <tr>
-                                            <th class="whitespace-nowrap">RPJMD PROV.SULTRA </th>
+                                            <th class="whitespace-nowrap">RPJMD PROV. SULTRA</th>
                                         </tr>
                                     </thead>
                                     <tbody>

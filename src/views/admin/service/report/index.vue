@@ -1,6 +1,6 @@
 <template>
   <div class="intro-y flex items-center mt-8">
-      <h2 class="text-lg font-medium mr-auto">Data list laporan</h2>
+      <h2 class="text-lg font-medium mr-auto capitalize">Data Pelaporan warga</h2>
        <div class="intro-y flex  items-center mt-8">
             <div class="form-check form-switch w-full sm:w-auto sm:ml-auto mt-3 sm:mt-0">
                 <input type="text" class="form-control" placeholder="ketik disini" v-model="query" />

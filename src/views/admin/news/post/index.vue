@@ -13,7 +13,7 @@
   <div class="grid grid-cols-12 gap-6 mt-5 mb-20">
       <div class="intro-y col-span-12">
           <button class="btn btn-primary shadow-md mr-2" @click="router.push({ name: 'admin-post-create'})">
-              Add new
+              Tambah
           </button>
           <div class="intro-y box col-span-12 overflow-auto lg:overflow-visible">
               <table class="table table-report mt-2">
