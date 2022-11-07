@@ -4,7 +4,7 @@
         <main id="content">
             <div class="flex flex-row items-center">
                 <div class="rounded-md object-cover overflow-hidden">
-                    <a href="#"><img class="border max-w-full sm:w-full" src="@/assets/images/strukturORG.png" alt="author"></a>
+                    <a href="#"><img class="border max-w-full sm:w-full" src="@/assets/images/strukturORG.jpg" alt="author"></a>
                 </div>
             </div>
             <!-- block news -->

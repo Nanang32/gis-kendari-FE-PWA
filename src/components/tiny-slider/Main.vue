@@ -8,17 +8,17 @@
                 }">
           <div class="h-96">
               <div class="h-full image-fit overflow-hidden">
-                  <img alt="Enigma Tailwind HTML Admin Template" src="@/assets/images/back1.png" />
+                  <img alt="Enigma Tailwind HTML Admin Template" src="@/assets/images/back1.jpg" />
               </div>
           </div>
           <div class="h-96 px-2">
               <div class="h-full image-fit overflow-hidden">
-                  <img alt="Enigma Tailwind HTML Admin Template" src="@/assets/images/back2.png" />
+                  <img alt="Enigma Tailwind HTML Admin Template" src="@/assets/images/back2.jpg" />
               </div>
           </div>
           <div class="h-96 px-2">
               <div class="h-full image-fit overflow-hidden">
-                  <img alt="Enigma Tailwind HTML Admin Template" src="@/assets/images/back3.png" />
+                  <img alt="Enigma Tailwind HTML Admin Template" src="@/assets/images/back3.jpg" />
               </div>
           </div>
       </TinySlider>

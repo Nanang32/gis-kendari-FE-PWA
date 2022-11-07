@@ -1,36 +1,32 @@
 <template>
     <div class="text-gray-700">
         <Navbar />
-
         <main id="content">
-            
-                                        <div class="flex flex-row items-center">
-                                            <div class="rounded-md object-cover overflow-hidden">
-                                                <a href="#"><img class="border max-w-full sm:w-full" src="@/assets/images/profpjpa.png" alt="author"></a>
-                                            </div>
-                                        </div>
+            <div class="flex flex-row items-center">
+                <div class="rounded-md object-cover overflow-hidden">
+                    <a href="#"><img class="border max-w-full sm:w-full" src="@/assets/images/profpjpa.jpg" alt="author"></a>
+                </div>
+            </div>
             <!-- block news -->
             <div class="bg-gray-50 py-6">
                 <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
                     <div class="flex flex-row flex-wrap">
                         <!-- Left -->
                         <div class="flex-shrink max-w-full w-full lg:w-3/3 overflow-hidden">
-                            
                             <div class="box shadow-2xl p-4">
                                 <TabGroup>
-                                <TabList class="nav-boxed-tabs">
-                                    <Tab class="w-full py-2" tag="button">Tugas & Fungsi</Tab>
-                                    <Tab class="w-full py-2" tag="button">Program</Tab>
-                                    <Tab class="w-full py-2" tag="button">Struktur</Tab>
-                                </TabList>
-                                <TabPanels class="mt-5">
-                                    <TabPanelText url="/public/taskFunction/pjpa" dataProp="taskFunction" />
-                                    <TabPanelText url="/public/workingProgram/pjpa" dataProp="workingProgram" />
-                                    <TabPanelImage url="/public/organizationDiagram/pjpa" dataProp="organizationDiagram" />
-                                </TabPanels>
-                            </TabGroup>
+                                    <TabList class="nav-boxed-tabs">
+                                        <Tab class="w-full py-2" tag="button">Tugas & Fungsi</Tab>
+                                        <Tab class="w-full py-2" tag="button">Program</Tab>
+                                        <Tab class="w-full py-2" tag="button">Struktur</Tab>
+                                    </TabList>
+                                    <TabPanels class="mt-5">
+                                        <TabPanelText url="/public/taskFunction/pjpa" dataProp="taskFunction" />
+                                        <TabPanelText url="/public/workingProgram/pjpa" dataProp="workingProgram" />
+                                        <TabPanelImage url="/public/organizationDiagram/pjpa" dataProp="organizationDiagram" />
+                                    </TabPanels>
+                                </TabGroup>
                             </div>
-                            
                         </div>
                         <!-- right -->
                     </div>

@@ -3,7 +3,7 @@
         <Navbar />
         <div class="flex flex-row items-center">
             <div class="rounded-md object-cover overflow-hidden">
-                <a href="#"><img class="border max-w-full sm:w-full" src="@/assets/images/prodhukum.png" alt="author"></a>
+                <a href="#"><img class="border max-w-full sm:w-full" src="@/assets/images/prodhukum.jpg" alt="author"></a>
             </div>
         </div>
         <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
