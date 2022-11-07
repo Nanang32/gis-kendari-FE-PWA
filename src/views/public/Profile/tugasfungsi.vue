@@ -3,7 +3,7 @@
         <!-- BEGIN: Blog Layout -->
         <div class="intro-y mt-6">
             <div class="news__preview image-fit">
-                <img alt="Enigma Tailwind HTML Admin Template" class="object-cover" src="@/assets/images/tugasdanfungsi.png" />
+                <img alt="Enigma Tailwind HTML Admin Template" class="object-cover" src="@/assets/images/tugasfungsi.jpg" />
             </div>
         </div>
         <div class="intro-y text-justify leading-relaxed" v-html="content">
