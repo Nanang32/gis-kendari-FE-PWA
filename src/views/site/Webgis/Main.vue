@@ -109,7 +109,7 @@ const onEachRiverInfrastructure = function(feature, layer) {
                 <tbody class='border-2 border-sky-600'>
                     <tr>
                         <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Nama</td>
-                        <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties['Nama Data Infrastruktur'] || ''}</td>
+                        <td class='border-2 pl-2 pr-2 border-blue-100 capitalize capitalize'>${feature.properties['Nama Data Infrastruktur'] || ''}</td>
                     </tr>
                     <tr>
                         <td class='border-2 font-bold pl-2 pr-2 text-blue-800 border-blue-100'>Jenis Bangunan</td>
@@ -166,7 +166,7 @@ const onEachRiver = function(feature, layer) {
     <table class='border-2' style="width:300px;">
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Nama Sungai</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100 capitalize'>Nama Sungai</td>
                         <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties['Nama Data Dasar'] || ''}</td>
                     </tr>
                     <tr>
@@ -174,7 +174,7 @@ const onEachRiver = function(feature, layer) {
                         <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Orde || ''}</td>
                     </tr>
                     <tr>
-                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Panjang Sungai (KM2)</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Panjang (Km)</td>
                         <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties['Panjang Sungai (km)'] || ''}</td>
                     </tr>
                 </tbody>
@@ -209,11 +209,11 @@ const onEachWatershed = function(feature, layer) {
 <table class='border-2' style="width:300px;">
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Nama DAS</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100 capitalize'>Nama DAS</td>
                         <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.nama_data_dasar || ''}</td>
                     </tr>
                     <tr>
-                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>LUAS (KM2)</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Luas (Km2)</td>
                         <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.luas || ''}</td>
                     </tr>
                 </tbody>
@@ -249,7 +249,7 @@ const onEachWeir = function(feature, layer) {
 <table class='border-2' style="width:300px;">
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Nama Bendung</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100 capitalize'>Nama Bendung</td>
                         <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Nm_Dat_Das || ''}</td>
                     </tr>
                     <tr>
@@ -295,7 +295,7 @@ const onEachGroin = function(feature, layer) {
     <table class='border-2' style="width:300px;">
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Nama</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100 capitalize'>Nama</td>
                         <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Nm_Dat_Das || ''}</td>
                     </tr>
                     <tr>
@@ -307,7 +307,7 @@ const onEachGroin = function(feature, layer) {
                         <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Thn_Pelaksanaan || ''}</td>
                     </tr>
                     <tr>
-                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Panjang</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Panjang (m)</td>
                         <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Pjg || ''}</td>
                     </tr>
                     
@@ -338,7 +338,7 @@ async function loadGroin() {
             });
         }
     });
-    layerControl.value.addOverlay(layerGroup, 'Pelindung pantai', 'PJSA');
+    layerControl.value.addOverlay(layerGroup, 'Pengaman Pantai', 'PJSA');
 }
 
 const onEachBridge = function(feature, layer) {
@@ -346,7 +346,7 @@ const onEachBridge = function(feature, layer) {
   <table class='border-2'>
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Nama Jembatan</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100 capitalize'>Nama Jembatan</td>
                         <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Nm_Dat_Das || ''}</td>
                     </tr>
                     <tr>
@@ -396,7 +396,7 @@ const onEachIrrigation = function(feature, layer) {
   <table class='border-2' style="width:300px;">
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Nama Daerah Irigasi</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100 capitalize'>Nama Daerah Irigasi</td>
                         <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Nm_Dat_Das || ''}</td>
                     </tr>
                     <tr>
@@ -448,7 +448,7 @@ const onEachRiverBasin = function(feature, layer) {
         
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Nama WS</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100 capitalize'>Nama WS</td>
                         <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Nm_Dat_Das || ''}</td>
                     </tr>
                     <tr>
@@ -494,7 +494,7 @@ const onEachRoad = function(feature, layer) {
 <table class='border-2' style="width:300px;">
                 <tbody class='border-2'>
                     <tr>
-                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Nama Ruas</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100 capitalize'>Nama Ruas</td>
                         <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Nm_Dat_Das || ''}</td>
                     </tr>
                     <tr>
@@ -502,7 +502,7 @@ const onEachRoad = function(feature, layer) {
                         <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Nmr_Ruas || ''}</td>
                     </tr>
                     <tr>
-                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Panjang</td>
+                        <td class='border-2 font-bold pl-2 pr-2  text-blue-800 border-blue-100'>Panjang (Km)</td>
                         <td class='border-2 pl-2 pr-2 border-blue-100'>${feature.properties.Pjg_Datar || ''}</td>
                     </tr>
                     <tr>
