@@ -18,33 +18,42 @@
                       <tr>
                           <th class="whitespace-nowrap">#</th>
                           <th class="whitespace-nowrap">Judul</th>
+                          <th class="whitespace-nowrap">Jenis Data</th>
+                          <th class="whitespace-nowrap">Lokasi</th>
+                          <th class="whitespace-nowrap">Foto</th>
                           <th class="text-center whitespace-nowrap">Action</th>
+                          <th class="whitespace-nowrap">Status</th>
+
                       </tr>
                   </thead>
                   <tbody v-for="(report, index) in reports" :key="index">
                       <tr>
                           <td> {{ index +1 }}</td>
                           <td> {{ report.title }} </td>
+                          <td> {{ report.infrastructure }} </td>
+                          <td><a :href="'https://maps.google.com/?q=' + report.latlng" target="_blank">Klik disini  {{ report.latlng }}</a></td>
+                          <td> <a href="" target="_blank">Foto</a> </td>
                           <td>
                               <div class="flex justify-center items-center">
                                   <!-- <button class="flex items-center mr-3"
                                     @click="lihat(report.id)">
                                       <EditIcon class="w-4 h-4 mr-1" /> Lihat
                                   </button> -->
-                                  <button class="flex items-center mr-3"
+                                  <button class="flex items-center mr-3 text-red-700"
                                     @click="onClick('Tolak', report.id)">
                                       <EditIcon class="w-4 h-4 mr-1" /> Tolak
                                   </button>
-                                  <button class="flex items-center mr-3"
+                                  <button class="flex items-center mr-3 text-blue-700"
                                     @click="onClick('Proses', report.id)">
                                       <EditIcon class="w-4 h-4 mr-1" /> Proses
                                   </button>
-                                  <button class="flex items-center mr-3"
+                                  <button class="flex items-center mr-3 text-green-700"
                                     @click="onClick('Selesai', report.id)">
                                       <EditIcon class="w-4 h-4 mr-1" /> Selesai
                                   </button>
                               </div>
                           </td>
+                          <td> status di ambil dari input kolom di atas</td>
                       </tr>
                   </tbody>
               </table>
