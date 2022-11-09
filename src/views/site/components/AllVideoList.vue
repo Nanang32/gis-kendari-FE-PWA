@@ -22,7 +22,9 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
+                <Paginator :page="page" :perPage="perPage" :lastPage="lastPage" @goToPage="setPage" />
             </div>
             <!-- right -->
         </div>
@@ -30,6 +32,7 @@
 </div>
 </template>
 <script setup>
+import Paginator from "@/components/paginator/Main.vue";
   import { ref, onMounted } from "vue";
   import sendRequest from '@libs/http.js'
 

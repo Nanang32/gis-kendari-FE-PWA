@@ -24,13 +24,15 @@
                             </div>
                         </article>
                     </div>
+                    <Paginator :page="page" :perPage="perPage" :lastPage="lastPage" @goToPage="setPage" />
                 </div>
             </div>
-            <div class="border-b border-black border-1"></div>
+            <div class="border-b border-black border-1 mt-3"></div>
         </div>
     </div>
 </template>
 <script setup>
+import Paginator from "@/components/paginator/Main.vue";
 import { ref, onMounted } from "vue";
 import sendRequest from '@libs/http.js'
 import { useRouter } from "vue-router";
