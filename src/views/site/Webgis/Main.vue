@@ -49,6 +49,9 @@ import sendRequest from '@libs/http.js'
 import L from "leaflet"
 import "leaflet/dist/leaflet.css";
 import 'leaflet-groupedlayercontrol';
+import 'leaflet.markercluster';
+import 'leaflet.markercluster/dist/MarkerCluster.css';
+import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 
 const layerControl = ref(null);
 const showModal = ref(false);
@@ -158,7 +161,9 @@ async function loadRiverInfrastructure() {
             });
         }
     });
-    layerControl.value.addOverlay(layerGroup, 'Infrastruktur Sungai', 'PJSA');
+    var clusterGroup = new L.MarkerClusterGroup();
+    clusterGroup.addLayer(layerGroup);
+    layerControl.value.addOverlay(clusterGroup, 'Infrastruktur Sungai', 'PJSA');
 }
 
 const onEachRiver = function(feature, layer) {
@@ -287,7 +292,9 @@ async function loadWeirs() {
             });
         }
     });
-    layerControl.value.addOverlay(layerGroup, 'Bendung', 'PJPA');
+    var clusterGroup = new L.MarkerClusterGroup();
+    clusterGroup.addLayer(layerGroup);
+    layerControl.value.addOverlay(clusterGroup, 'Bendung', 'PJPA');
 }
 
 const onEachGroin = function(feature, layer) {
@@ -338,7 +345,9 @@ async function loadGroin() {
             });
         }
     });
-    layerControl.value.addOverlay(layerGroup, 'Pengaman Pantai', 'PJSA');
+    var clusterGroup = new L.MarkerClusterGroup();
+    clusterGroup.addLayer(layerGroup);
+    layerControl.value.addOverlay(clusterGroup, 'Pengaman Pantai', 'PJSA');
 }
 
 const onEachBridge = function(feature, layer) {
@@ -388,7 +397,9 @@ async function loadBridge() {
             });
         }
     });
-    layerControl.value.addOverlay(layerGroup, 'Jembatan', 'Bina Marga');
+    var clusterGroup = new L.MarkerClusterGroup();
+    clusterGroup.addLayer(layerGroup);
+    layerControl.value.addOverlay(clusterGroup, 'Jembatan', 'Bina Marga');
 }
 
 const onEachIrrigation = function(feature, layer) {
