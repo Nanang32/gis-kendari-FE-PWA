@@ -44,7 +44,7 @@
                                       <EditIcon class="w-4 h-4 mr-1" /> Tolak
                                   </button>
                                   <button class="flex items-center mr-3 text-blue-700"
-                                    @click="onClick('Proses', report.id)">
+                                    @click="onClick('On Progress', report.id)">
                                       <EditIcon class="w-4 h-4 mr-1" /> Proses
                                   </button>
                                   <button class="flex items-center mr-3 text-green-700"
