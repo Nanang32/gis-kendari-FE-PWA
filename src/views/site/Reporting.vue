@@ -18,6 +18,10 @@
                                     <span class="inline-block h-5 border-l-3 border-red-600 mr-2"></span> Pengaduan masyarakat
                                 </h2>
                             </div>
+
+                            <div v-if="success">
+                                Laporan berhasil terkirim
+                            </div>
                             <div class="flex flex-row flex-wrap -mx-3">
                                 <div class="flex-shrink max-w-full w-full px-3 pb-5">
                                     <div class="px-8 py-6 border border-gray-100 bg-white">
@@ -162,6 +166,7 @@
     let report = reactive({});
     let reports = ref([]);
     const query = ref('');
+    const success = ref(false);
 
     async function onSubmit(data){
         loading.value = true;
@@ -175,6 +180,15 @@
             url: '/reports',
             data: formdata
         });
+        if ((response !== null) && (response.status === true)){
+            report.name = null;
+            report.title = null;
+            report.infrastructure = null;
+            report.note = null;
+            report.latlng = null;
+            report.image = null;
+            success.value = true;
+        }
         loading.value = false;
     }
     const onFileChange = (e) => {
@@ -194,17 +208,17 @@
     }
 
     async function search() {
-    loading.value = true;
-    reports.value = [];
-    const response = await sendRequest({
-        method: 'get',
-        url: '/reports/confirmed',
-        params: { search: query.value }
-    });
-    if ((response !== null) && (response.status === true))
-        reports.value = response.data.reports.data
-    loading.value = false;
-}
+        loading.value = true;
+        reports.value = [];
+        const response = await sendRequest({
+            method: 'get',
+            url: '/reports/confirmed',
+            params: { search: query.value }
+        });
+        if ((response !== null) && (response.status === true))
+            reports.value = response.data.reports.data
+        loading.value = false;
+    }
 
     onMounted(async () => {
         const response = await sendRequest({
