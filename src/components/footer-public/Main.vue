@@ -49,7 +49,7 @@
                                     <li class="py-1 hover:text-blue-300 capitalize">
                                         <MapIcon class="w-4 h-4 mr-1 inline-block" />Jalan Haluoleo No. 05 Kompleks Perkantoran Bumi Praja Anduonohu, Kota Kendari</li>
                                     <li class="py-1 hover:text-blue-300">
-                                        <MailIcon class="w-4 h-4 mr-1 inline-block" /> sisdjatan.sdabmsultra@gmail.com</li>
+                                        <MailIcon class="w-4 h-4 mr-1 inline-block" /> sdabinamarga@sultraprov.go.id </li>
                                 </ul>
                             </div>
                             <div class="flex-shrink max-w-full w-1/3 md:w-2/4 mb-6 lg:mb-0 ml-10">
