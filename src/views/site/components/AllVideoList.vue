@@ -43,7 +43,8 @@
         method: 'get',
         url: '/videos',
         params: {
-          page: page
+          page: page,
+          perPage: 9
         },
     });
     if ((response !== null) && (response.status === true)) {

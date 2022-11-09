@@ -45,7 +45,8 @@ async function loadData(page = 1) {
         method: 'get',
         url: '/posts',
         params: {
-            page: page
+            page: page,
+            perPage: 9
         },
     });
     if ((response !== null) && (response.status === true)) {

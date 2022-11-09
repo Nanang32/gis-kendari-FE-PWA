@@ -46,7 +46,8 @@ async function loadData(page = 1) {
         method: 'get',
         url: '/images',
         params: {
-            page: page
+            page: page,
+            perPage: 9
         },
     });
     if ((response !== null) && (response.status === true)) {
