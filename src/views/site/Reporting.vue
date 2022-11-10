@@ -6,49 +6,43 @@
                 <div class="rounded-md object-cover overflow-hidden">
                     <a href="#"><img class="border max-w-full sm:w-full" src="@/assets/images/pelpmasyarakat.jpg" alt="author"></a>
                 </div>
+
             </div>
+
             <!-- block news -->
             <div class="bg-gray-50 py-6">
+
                 <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
+
                     <div class="flex flex-row flex-wrap">
                         <!-- Left -->
+
                         <div class="flex-shrink max-w-full w-full overflow-hidden">
                             <div class="w-full py-3">
                                 <h2 class="text-gray-800 text-3xl font-bold">
                                     <span class="inline-block h-5 border-l-3 border-red-600 mr-2"></span> Pengaduan masyarakat
                                 </h2>
                             </div>
-
-                            <div v-if="success">
-                                Laporan berhasil terkirim
-                            </div>
+                            
                             <div class="flex flex-row flex-wrap -mx-3">
+                                <Alert class="alert-primary flex items-center mb-2 float-right" v-if="success">
+                                <AlertCircleIcon class="w-6 h-6 mr-2" />
+                                Laporan berhasil terkirim
+                            </Alert>
                                 <div class="flex-shrink max-w-full w-full px-3 pb-5">
                                     <div class="px-8 py-6 border border-gray-100 bg-white">
                                         <div class="flex flex-wrap flex-row -mx-4">
                                             <div class="flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6">
                                                 <label for="inputfirst4" class="inline-block mb-2">Nama</label>
-                                                <input type="text"
-                                                    class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
-                                                    id="inputfirst4"
-                                                    v-model="report.name"
-                                                    required>
+                                                <input type="text" class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" id="inputfirst4" v-model="report.name" required>
                                             </div>
                                             <div class="flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6">
                                                 <label for="inputlast4" class="inline-block mb-2">Judul laporan</label>
-                                                <input type="text"
-                                                    class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
-                                                    id="inputlast4"
-                                                    v-model="report.title"
-                                                    required>
+                                                <input type="text" class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" id="inputlast4" v-model="report.title" required>
                                             </div>
                                             <div class="flex-shrink max-w-full px-4 w-full md:w-2/2 mb-6">
                                                 <label for="inputurgent" class="inline-block mb-2">Jenis infrastruktur</label>
-                                                <select id="inputurgent"
-                                                    class="inline-block w-full leading-5 relative py-3 pl-3 pr-8 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 select-caret appearance-none dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
-                                                    v-model="report.infrastructure"
-                                                    required
-                                                    >
+                                                <select id="inputurgent" class="inline-block w-full leading-5 relative py-3 pl-3 pr-8 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 select-caret appearance-none dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" v-model="report.infrastructure" required>
                                                     <option value="Jalan">Jalan</option>
                                                     <option value="Jembatan">Jembatan</option>
                                                     <option value="Sungai">Sungai</option>
@@ -59,37 +53,21 @@
                                             </div>
                                             <div class="flex-shrink max-w-full px-4 w-full mb-6">
                                                 <label for="exampleTextarea1" class="inline-block mb-2">Keterangan</label>
-                                                <textarea class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
-                                                    id="exampleTextarea1"
-                                                    v-model="report.note"
-                                                    rows="3"
-                                                ></textarea>
+                                                <textarea class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" id="exampleTextarea1" v-model="report.note" rows="3"></textarea>
                                             </div>
                                             <div class="flex-shrink max-w-full px-4 w-full md:w-1/2 mb-6">
                                                 <label for="inputfirst4" class="inline-block mb-2">Foto</label>
-                                                <input type="file"
-                                                    class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
-                                                    id="inputfirst4"
-                                                    @change="onFileChange"
-                                                    required>
+                                                <input type="file" class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" id="inputfirst4" @change="onFileChange" required>
                                             </div>
                                             <div class="flex-shrink max-w-full px-4 w-full md:w-2/2 mb-6">
                                                 <label for="inputfirst4" class="inline-block mb-2">Lokasi (Peta)</label>
-                                                <button class="flex items-center py-3 px-5 leading-5 text-gray-100 bg-black"
-                                                    @click="getLocation()"
-                                                    type="button">
+                                                <button class="flex items-center py-3 px-5 leading-5 text-gray-100 bg-black" @click="getLocation()" type="button">
                                                     Deteksi Lokasi
                                                 </button>
-                                                <input type="text"
-                                                    class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600"
-                                                    id="inputfirst4"
-                                                    v-model = "report.latlng"
-                                                    readonly>
+                                                <input type="text" class="w-full leading-5 relative py-3 px-5 text-gray-800 bg-white border border-gray-100 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" id="inputfirst4" v-model="report.latlng" readonly>
                                             </div>
                                             <div class="flex-shrink max-w-full px-4 w-full">
-                                                <button class="flex items-center py-3 px-5 leading-5 text-gray-100 bg-black hover:text-white hover:bg-gray-900 hover:ring-0 focus:outline-none focus:ring-0"
-                                                    type="button"
-                                                    @click="onSubmit">
+                                                <button class="flex items-center py-3 px-5 leading-5 text-gray-100 bg-black hover:text-white hover:bg-gray-900 hover:ring-0 focus:outline-none focus:ring-0" type="button" @click="onSubmit">
                                                     Kirim laporan
                                                 </button>
                                             </div>
@@ -133,10 +111,7 @@
                                                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                                         {{ report.infrastructure }}</td>
                                                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-yellow-900 font-semibold">
-                                                        
-                                                     
-
-                                                        <a :href="'https://maps.google.com/?q=' + report.latlng" target="_blank">Klik disini  {{ report.latlng }}</a>
+                                                        <a :href="'https://maps.google.com/?q=' + report.latlng" target="_blank">Klik disini {{ report.latlng }}</a>
                                                     </td>
                                                     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                                                         <div class="flex items-center">
@@ -158,78 +133,78 @@
     </div>
 </template>
 <script setup>
-    import Navbar from "../../components/navbar-menu/Main.vue";
-    import Footer from "../../components/footer-public/Main.vue";
-    import sendRequest from '@libs/http.js'
-    import { ref, reactive, onMounted } from "vue";
-    const loading = ref(false);
-    let report = reactive({});
-    let reports = ref([]);
-    const query = ref('');
-    const success = ref(false);
+import Navbar from "../../components/navbar-menu/Main.vue";
+import Footer from "../../components/footer-public/Main.vue";
+import sendRequest from '@libs/http.js'
+import { ref, reactive, onMounted } from "vue";
+const loading = ref(false);
+let report = reactive({});
+let reports = ref([]);
+const query = ref('');
+const success = ref(false);
 
-    async function onSubmit(data){
-        loading.value = true;
-        const formdata = new FormData();
-        Object.keys(report).forEach(key => {
-            formdata.append(key, report[key]);
-        });
-
-        const response = await sendRequest({
-            method: 'post',
-            url: '/reports',
-            data: formdata
-        });
-        if ((response !== null) && (response.status === true)){
-            report.name = null;
-            report.title = null;
-            report.infrastructure = null;
-            report.note = null;
-            report.latlng = null;
-            report.image = null;
-            success.value = true;
-        }
-        loading.value = false;
-    }
-    const onFileChange = (e) => {
-        report.image = e.target.files[0];
-    };
-
-    function getLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } else { 
-            console.log("Geolocation is not supported by this browser.");
-        }
-    }
-
-    function showPosition(position) {
-        report.latlng = position.coords.latitude + ',' + position.coords.longitude;
-    }
-
-    async function search() {
-        loading.value = true;
-        reports.value = [];
-        const response = await sendRequest({
-            method: 'get',
-            url: '/reports/confirmed',
-            params: { search: query.value }
-        });
-        if ((response !== null) && (response.status === true))
-            reports.value = response.data.reports.data
-        loading.value = false;
-    }
-
-    onMounted(async () => {
-        const response = await sendRequest({
-            method: 'get',
-            url: '/reports/confirmed',
-        });
-        if ((response !== null) && (response.status === true)) {
-            reports.value = response.data.reports.data
-        }
+async function onSubmit(data) {
+    loading.value = true;
+    const formdata = new FormData();
+    Object.keys(report).forEach(key => {
+        formdata.append(key, report[key]);
     });
+
+    const response = await sendRequest({
+        method: 'post',
+        url: '/reports',
+        data: formdata
+    });
+    if ((response !== null) && (response.status === true)) {
+        report.name = null;
+        report.title = null;
+        report.infrastructure = null;
+        report.note = null;
+        report.latlng = null;
+        report.image = null;
+        success.value = true;
+    }
+    loading.value = false;
+}
+const onFileChange = (e) => {
+    report.image = e.target.files[0];
+};
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        console.log("Geolocation is not supported by this browser.");
+    }
+}
+
+function showPosition(position) {
+    report.latlng = position.coords.latitude + ',' + position.coords.longitude;
+}
+
+async function search() {
+    loading.value = true;
+    reports.value = [];
+    const response = await sendRequest({
+        method: 'get',
+        url: '/reports/confirmed',
+        params: { search: query.value }
+    });
+    if ((response !== null) && (response.status === true))
+        reports.value = response.data.reports.data
+    loading.value = false;
+}
+
+onMounted(async () => {
+    const response = await sendRequest({
+        method: 'get',
+        url: '/reports/confirmed',
+    });
+    if ((response !== null) && (response.status === true)) {
+        reports.value = response.data.reports.data
+    }
+});
 </script>
 <style scoped>
-    @import "./style.css";
+@import "./style.css";
 </style>
