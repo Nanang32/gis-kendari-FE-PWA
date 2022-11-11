@@ -15,7 +15,6 @@ import ProfilepjsaIndex from "../views/public/Profile/profpjsa.vue"
 import ProfilebmargaIndex from "../views/public/Profile/profbmarga.vue"
 import ProfileuwilayahIndex from "../views/public/Profile/profuwilayah.vue"
 import ProfileulabIndex from "../views/public/Profile/profulab.vue"
-import ProfileupkonstruksiIndex from "../views/public/Profile/profupkonstruksi.vue"
 
 //publikasi
 import PublicationIndex from "../views/public/Publication/Main.vue";
@@ -921,11 +920,6 @@ const routes = [{
                 path: "profulab",
                 name: "profulab",
                 component: ProfileulabIndex,
-            },
-            {
-                path: "profupkonstruksi",
-                name: "profupkonstruksi",
-                component: ProfileupkonstruksiIndex,
             },
             {
                 path: "strukturorg",
